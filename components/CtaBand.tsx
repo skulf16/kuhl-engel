@@ -9,9 +9,12 @@ export default function CtaBand({
     </>
   ),
   text = "Lerne uns in einem kostenlosen, unverbindlichen Erstgespräch kennen – telefonisch, online oder vor Ort.",
+  formal = false,
 }: {
   title?: React.ReactNode;
   text?: string;
+  /** Sie-Ansprache (z. B. für Schulen und Lehrkräfte) */
+  formal?: boolean;
 }) {
   return (
     <section className="relative overflow-hidden bg-cream-deep">
@@ -35,7 +38,7 @@ export default function CtaBand({
                 href={CONTACT.phoneHref}
                 className="inline-flex items-center justify-center gap-2 px-4 py-4 font-semibold text-ink/80 transition-colors hover:text-gold"
               >
-                oder ruf an: {CONTACT.phone}
+                {formal ? "oder rufen Sie an:" : "oder ruf an:"} {CONTACT.phone}
               </a>
             </div>
           </div>

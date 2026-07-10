@@ -71,8 +71,9 @@ export default function Home() {
             className="hero-rise mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-cream/75 md:text-xl"
             style={{ animationDelay: "360ms" }}
           >
-            Systemisches Coaching bei Kuhl & Engel – für Erwachsene im AVGS-geförderten
-            Jobcoaching und für Jugendliche in der Berufsorientierung. Wähle Deinen Weg:
+            Systemisches Coaching bei Kuhl & Engel – AVGS-gefördertes Jobcoaching
+            für Erwachsene und Berufsorientierung für Schulen, Lehrkräfte und
+            Kooperationspartner. Zwei Wege, ein Klick:
           </p>
           <div
             className="hero-rise mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
@@ -196,14 +197,15 @@ export default function Home() {
             <div className="mx-auto max-w-2xl text-center">
               <p className="eyebrow flex items-center justify-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Wähle Deinen Weg
+                Unsere zwei Bereiche
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                Zwei Wege, <em>ein Anspruch: der richtige für Dich.</em>
+                Zwei Wege, <em>ein Ziel: Orientierung, die trägt.</em>
               </h2>
               <p className="mt-5 leading-relaxed text-ink/65">
-                Sag uns, worum es geht – wir führen Dich direkt zum passenden Angebot.
+                Ein Klick führt direkt zum passenden Angebot – für Jobsuchende oder
+                für Schulen, Lehrkräfte und Kooperationspartner.
               </p>
             </div>
           </Reveal>

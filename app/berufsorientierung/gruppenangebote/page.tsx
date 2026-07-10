@@ -55,6 +55,7 @@ export default function GruppenangebotePage() {
           path: "/berufsorientierung/gruppenangebote",
           serviceType: "Berufsorientierung Gruppenseminar für Schulen",
           areaServed: ["Berlin", "Brandenburg"],
+          audience: "Schulen, Schulleitungen und Lehrkräfte",
         })}
       />
       <JsonLd
@@ -177,12 +178,13 @@ export default function GruppenangebotePage() {
       </section>
 
       <CtaBand
+        formal
         title={
           <>
-            Bringt „Mein Berufseinstieg“ <em>an Eure Schule.</em>
+            Bringen Sie „Mein Berufseinstieg“ <em>an Ihre Schule.</em>
           </>
         }
-        text="Wie sich das Seminar optimal in Euren Projektablauf einbetten lässt, klären wir gern im persönlichen Gespräch."
+        text="Wie sich das Seminar optimal in den Projektablauf an Ihrer Schule einbetten lässt, klären wir gern im persönlichen Gespräch – inklusive aller Fragen zur PraxisBO-Förderung."
       />
 
       <div className="bg-cream-deep py-6 text-center">

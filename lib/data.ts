@@ -33,14 +33,14 @@ export const BEREICHE: Bereich[] = [
   },
   {
     slug: "/berufsorientierung",
-    kicker: "Für Jugendliche & Schulen",
+    kicker: "Für Schulen, Lehrkräfte & Partner",
     title: "Berufsorientierung",
     claim: "Mein Berufseinstieg – seit über 10 Jahren",
-    text: "Studium, Ausbildung oder duales Studium? Wir helfen jungen Menschen, ihre Stärken zu erkennen und den Weg zu finden, der wirklich zu ihnen passt.",
+    text: "Sie möchten Ihre Schüler:innen bei der Berufs- und Studienwahl unterstützen? Wir begleiten junge Menschen dabei, ihre Stärken zu erkennen und den Weg zu finden, der wirklich zu ihnen passt.",
     points: [
+      "Gruppenprojekte an Ihrer Schule",
       "Einzelcoaching für Schüler:innen",
-      "Gruppenprojekte für Schulen",
-      "Hilfreiches für den Berufsstart",
+      "Materialien für den Berufsstart",
     ],
     cta: "Zur Berufsorientierung",
     image: "/images/jugend-quadrat.jpg",
@@ -87,27 +87,27 @@ export const JOBCOACHING_LEISTUNGEN: Leistung[] = [
 /** Angebote der Berufsorientierung für Jugendliche. */
 export const JUGEND_ANGEBOTE: Leistung[] = [
   {
-    slug: "/berufsorientierung/einzelcoaching",
-    nr: "01",
-    title: "Einzelcoaching",
-    claim: "Für Schüler:innen & Abiturient:innen",
-    text: "Dein geschützter Raum: In vier Sitzungen finden wir gemeinsam Deine berufliche Richtung, lösen Blockaden und entwickeln konkrete Ziele.",
-    image: "/images/jugend-einzel.jpg",
-  },
-  {
     slug: "/berufsorientierung/gruppenangebote",
-    nr: "02",
+    nr: "01",
     title: "Gruppenangebote",
     claim: "Für Schulen in Berlin & Brandenburg",
     text: "„Mein Berufseinstieg“: unser 2- bis 2,5-tägiges Coaching-Seminar für ganze Klassen – in Brandenburg über PraxisBO förderfähig.",
     image: "/images/jugend-gruppe.jpg",
   },
   {
+    slug: "/berufsorientierung/einzelcoaching",
+    nr: "02",
+    title: "Einzelcoaching",
+    claim: "Für Schüler:innen & Abiturient:innen",
+    text: "Ein geschützter Raum für junge Menschen: In vier Sitzungen finden wir die berufliche Richtung, lösen Blockaden und entwickeln konkrete Ziele.",
+    image: "/images/jugend-einzel.jpg",
+  },
+  {
     slug: "/berufsorientierung/berufsstart",
     nr: "03",
     title: "Für den Berufsstart",
-    claim: "Tipps, Links & Downloads",
-    text: "Studium, Ausbildung oder duales Studium? Hilfreiche Infos, Lebenslauf-Vorlagen und Ausbildungsbörsen – alles an einem Ort.",
+    claim: "Materialien zum Weitergeben",
+    text: "Bewerbungs- und Lebenslauf-Beispiele, Ausbildungsbörsen und Infos zu Studium & Ausbildung – zum direkten Weitergeben an Schüler:innen.",
     image: "/images/jugend-beelitz-3.jpg",
   },
 ];

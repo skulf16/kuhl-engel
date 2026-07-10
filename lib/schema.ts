@@ -119,6 +119,7 @@ export function serviceSchema(opts: {
   path: string;
   serviceType: string;
   areaServed?: string[];
+  audience?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -134,7 +135,7 @@ export function serviceSchema(opts: {
     ),
     audience: {
       "@type": "Audience",
-      audienceType: "Akademiker:innen, Fach- und Führungskräfte",
+      audienceType: opts.audience ?? "Akademiker:innen, Fach- und Führungskräfte",
     },
     availableChannel: [
       {

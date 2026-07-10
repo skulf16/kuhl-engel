@@ -50,7 +50,7 @@ export default function Footer() {
 
           {/* Berufsorientierung */}
           <nav aria-label="Berufsorientierung">
-            <p className="eyebrow mb-5 text-gold-bright">Jugendliche</p>
+            <p className="eyebrow mb-5 text-gold-bright">Berufsorientierung</p>
             <ul className="space-y-2.5 text-[0.92rem]">
               {FOOTER_JUGEND.map((item) => (
                 <li key={item.href}>

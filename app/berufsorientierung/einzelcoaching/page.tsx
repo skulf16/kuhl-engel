@@ -11,15 +11,15 @@ import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Einzelcoaching Berufsorientierung für Schüler:innen",
   description:
-    "Einzelcoaching zur beruflichen Orientierung für Schüler:innen, Abiturient:innen und junge Erwachsene. 4 Sitzungen à 90 Minuten für 570 €, an allen Standorten oder online. Systemisch und lösungsorientiert.",
+    "Einzelcoaching zur beruflichen Orientierung für Schüler:innen, Abiturient:innen und junge Erwachsene: 4 Sitzungen à 90 Minuten für 570 €, an allen Standorten oder online. Systemisch, ziel- und lösungsorientiert.",
   alternates: { canonical: "/berufsorientierung/einzelcoaching" },
 };
 
 const IM_COACHING = [
-  "Wir finden gemeinsam Deine berufliche Ausrichtung",
-  "Wir lösen hinderliche Haltungen und Überzeugungen",
-  "Du entwickelst Ziele, die Dich wirklich motivieren",
-  "Wir leiten konkrete nächste Schritte daraus ab",
+  "Gemeinsam finden wir die berufliche Ausrichtung des jungen Menschen",
+  "Wir lösen hinderliche Haltungen, Muster und Überzeugungen",
+  "Die Jugendlichen entwickeln Ziele, die sie wirklich motivieren",
+  "Daraus leiten wir konkrete nächste Schritte und Handlungen ab",
 ];
 
 export default function EinzelcoachingPage() {
@@ -33,6 +33,7 @@ export default function EinzelcoachingPage() {
           path: "/berufsorientierung/einzelcoaching",
           serviceType: "Einzelcoaching Berufsorientierung",
           areaServed: ["Berlin", "Potsdam", "Augsburg", "online"],
+          audience: "Eltern, Lehrkräfte und junge Menschen vor der Berufswahl",
         })}
       />
       <JsonLd
@@ -46,10 +47,10 @@ export default function EinzelcoachingPage() {
         eyebrow="Berufsorientierung · Einzelcoaching"
         title={
           <>
-            Dein geschützter Raum, <em>ganz für Dich.</em>
+            Ein geschützter Raum – <em>ganz für den jungen Menschen.</em>
           </>
         }
-        intro="Geht's noch individueller? Na klar. An allen Standorten und online bieten wir Einzelcoaching zur beruflichen Orientierung für Schüler:innen, Abiturient:innen und junge Erwachsene an – passend zu Deiner Situation."
+        intro="Geht es noch individueller? Na klar. An allen Standorten und online bieten wir Einzelcoaching zur beruflichen Orientierung für Schüler:innen, Abiturient:innen und junge Erwachsene an – passend zur jeweiligen Situation, systemisch und lösungsorientiert."
         image="/images/jugend-einzel.jpg"
       />
 
@@ -58,7 +59,7 @@ export default function EinzelcoachingPage() {
         <Reveal>
           <FactBox
             question="Wie läuft das Einzelcoaching ab?"
-            answer="In vier Sitzungen à 90 Minuten finden wir gemeinsam Deine berufliche Ausrichtung, lösen hinderliche Haltungen und entwickeln konkrete Ziele. Unser Coaching ist systemisch, ziel- und lösungsorientiert und aktiviert Deine vorhandenen Ressourcen. Nach den Sitzungen ist Deine Ausrichtung deutlich klarer – Du startest motiviert in Deinen Weg."
+            answer="In vier Sitzungen à 90 Minuten finden wir gemeinsam mit dem jungen Menschen die berufliche Ausrichtung, lösen hinderliche Haltungen und entwickeln konkrete Ziele. Das Coaching ist systemisch, ziel- und lösungsorientiert und aktiviert vorhandene Ressourcen. Die Erfahrung zeigt: Nach den Sitzungen ist die eigene Ausrichtung deutlich klarer – motivierter Start in Bewerbung, Ausbildung oder Studium inklusive."
             facts={[
               { label: "Für wen", value: "Schüler:innen, Abiturient:innen, junge Erwachsene" },
               { label: "Umfang", value: "4 Sitzungen à 90 Minuten" },
@@ -76,15 +77,16 @@ export default function EinzelcoachingPage() {
             <div>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Was wir zusammen machen
+                Was im Coaching passiert
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                In vier Schritten <em>zu Deiner Richtung.</em>
+                In vier Schritten <em>zu einer klaren Richtung.</em>
               </h2>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/70">
-                Neben der Berufsorientierung können wir im Einzelcoaching auch
-                unförderliche Muster oder belastende Situationen reflektieren und
-                lösen. Du entscheidest, wie tief wir gehen.
+                Neben der Berufsorientierung können im Einzelcoaching auch
+                unförderliche Muster und Überzeugungen oder belastende Situationen
+                reflektiert und gelöst werden – im Tempo des jungen Menschen, in
+                einem vertrauensvollen Rahmen.
               </p>
               <ul className="mt-8 space-y-3.5">
                 {IM_COACHING.map((punkt) => (
@@ -117,12 +119,13 @@ export default function EinzelcoachingPage() {
       </section>
 
       <CtaBand
+        formal
         title={
           <>
-            Bereit, Deinen Weg <em>zu finden?</em>
+            Sie möchten einen jungen Menschen <em>unterstützen?</em>
           </>
         }
-        text="Schreib uns oder ruf an – wir klären alle Fragen und finden heraus, ob die Chemie stimmt. Auch Eltern sind herzlich willkommen."
+        text="Ob als Lehrkraft, Elternteil oder Kooperationspartner: Schreiben Sie uns oder rufen Sie an – wir klären alle Fragen und finden heraus, ob die Chemie stimmt."
       />
 
       <div className="bg-cream-deep py-6 text-center">

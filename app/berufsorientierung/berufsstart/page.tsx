@@ -84,6 +84,18 @@ export default function BerufsstartPage() {
       />
 
       <section className="mx-auto max-w-4xl px-5 py-24 md:px-8 md:py-32">
+        <Reveal>
+          <p className="mb-14 border border-ink/10 bg-cream-deep px-6 py-4 text-[0.9rem] leading-relaxed text-ink/65">
+            <span className="font-semibold text-ink">Hinweis für Lehrkräfte und Eltern:</span>{" "}
+            Diese Seite ist zum direkten Weitergeben gedacht – alle Links und
+            Vorlagen sind frei zugänglich. Informationen zu unseren Angeboten für
+            Schulen finden Sie unter{" "}
+            <Link href="/berufsorientierung" className="link-gold font-semibold text-gold">
+              Berufsorientierung
+            </Link>
+            .
+          </p>
+        </Reveal>
         <div className="space-y-16">
           {SECTIONS.map((section, i) => (
             <Reveal key={section.nr} delay={i * 80}>
@@ -128,7 +140,8 @@ export default function BerufsstartPage() {
               <Link href="/berufsorientierung/gruppenangebote" className="link-gold font-semibold text-gold">
                 Projekttagen
               </Link>{" "}
-              finden wir gemeinsam heraus, was wirklich zu Dir passt.
+              finden wir gemeinsam heraus, was wirklich zu Dir passt. Sprich am
+              besten mit Deinen Eltern oder Deiner Lehrkraft darüber.
             </p>
           </div>
         </Reveal>
