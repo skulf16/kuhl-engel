@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+
+  --color-ink: #0e1d2b;
+  --color-ink-800: #142a3e;
+  --color-ink-700: #1d3752;
+  --color-steel: #3c6187;
+  --color-cream: #f8f5ee;
+  --color-cream-deep: #efe8da;
+  --color-paper: #fffdf9;
+  --color-gold: #b9862c;
+  --color-gold-bright: #e2ab52;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-gold-bright);
+  color: var(--color-ink);
+}
+
+/* feiner Papierkorn-Schleier über der ganzen Seite */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ------- Typo-Bausteine ------- */
+
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 480;
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+}
+
+.display em,
+.accent-italic {
+  font-style: italic;
+  font-weight: 420;
+  color: var(--color-gold);
+}
+
+.on-dark .display em,
+.on-dark.accent-italic {
+  color: var(--color-gold-bright);
+}
+
+/* Link mit wachsender Gold-Unterstreichung */
+.link-gold {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.35s cubic-bezier(0.2, 0.6, 0.2, 1);
+  padding-bottom: 2px;
+}
+
+.link-gold:hover {
+  background-size: 100% 1px;
+}
+
+/* ------- Scroll-Reveal ------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.9s cubic-bezier(0.2, 0.6, 0.2, 1),
+    transform 0.9s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero-rise {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ------- Hero-Intro (gestaffeltes Aufsteigen beim Laden) ------- */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-rise {
+  opacity: 0;
+  animation: rise 1s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+}
+
+/* langsamer Ken-Burns-Zoom für Hero-Bilder */
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero-zoom {
+  animation: hero-zoom 2.6s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+}
+
+/* dezente Scroll-Aufforderung */
+@keyframes drip {
+  0% {
+    transform: translateY(-100%);
+  }
+  60%,
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scroll-drip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-gold-bright);
+  animation: drip 2.2s cubic-bezier(0.6, 0, 0.3, 1) infinite;
+}
