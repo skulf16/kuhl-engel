@@ -22,16 +22,16 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://kuhlundengel.de"),
   title: {
     default:
-      "AVGS Coaching & Karrierecoaching für Akademiker:innen · Kuhl & Engel",
+      "AVGS Jobcoaching für Akademikerinnen & Akademiker · Kuhl & Engel",
     template: "%s · Kuhl & Engel",
   },
   description:
-    "AZAV-zertifiziertes Jobcoaching für Akademiker:innen, Fach- und Führungskräfte: AVGS Coaching, berufliche Neuorientierung und Supervision – in Berlin, Potsdam, Augsburg und online. Mit AVGS-Gutschein 100 % kostenfrei.",
+    "AZAV-zertifiziertes Jobcoaching für Akademikerinnen und Akademiker, Fach- und Führungskräfte: AVGS Coaching, berufliche Neuorientierung und Supervision – in Berlin, Potsdam, Augsburg und online. Mit AVGS-Gutschein 100 % kostenfrei.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "AVGS Coaching & Karrierecoaching für Akademiker:innen · Kuhl & Engel",
+    title: "AVGS Jobcoaching für Akademikerinnen & Akademiker · Kuhl & Engel",
     description:
-      "Systemisches Karrierecoaching für Akademiker:innen, Fach- und Führungskräfte. Mit AVGS-Gutschein zu 100 % kostenfrei – Berlin, Potsdam, Augsburg & online.",
+      "Systemisches Karrierecoaching für Akademikerinnen und Akademiker, Fach- und Führungskräfte. Mit AVGS-Gutschein zu 100 % kostenfrei – Berlin, Potsdam, Augsburg & online.",
     locale: "de_DE",
     type: "website",
     images: [{ url: "/images/gruenderinnen.jpg" }],

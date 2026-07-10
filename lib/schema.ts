@@ -135,7 +135,7 @@ export function serviceSchema(opts: {
     ),
     audience: {
       "@type": "Audience",
-      audienceType: opts.audience ?? "Akademiker:innen, Fach- und Führungskräfte",
+      audienceType: opts.audience ?? "Akademikerinnen und Akademiker, Fach- und Führungskräfte",
     },
     availableChannel: [
       {

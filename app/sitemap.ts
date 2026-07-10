@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "", priority: 1 },
     { path: "/jobcoaching", priority: 0.9 },
     { path: "/avgs-coaching", priority: 0.9 },
+    { path: "/coaching-fuer-frauen", priority: 0.9 },
     { path: "/jobcoaching-berlin", priority: 0.9 },
     { path: "/jobcoaching-potsdam", priority: 0.8 },
     { path: "/berufsorientierung", priority: 0.9 },

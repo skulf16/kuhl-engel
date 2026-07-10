@@ -19,13 +19,13 @@ export type Bereich = {
 export const BEREICHE: Bereich[] = [
   {
     slug: "/jobcoaching",
-    kicker: "Für Erwachsene · Jobsuchende",
+    kicker: "Für Akademikerinnen & Akademiker",
     title: "AVGS Jobcoaching",
     claim: "Mit AVGS-Gutschein 100 % kostenfrei",
-    text: "Du willst beruflich neu durchstarten, Klarheit finden oder sicher in Bewerbungen gehen? Unser AVGS-zertifiziertes Jobcoaching begleitet Dich – finanziert über die Agentur für Arbeit.",
+    text: "Du willst beruflich neu durchstarten, nach der Elternzeit wieder einsteigen oder sicher in Bewerbungen gehen? Unser AVGS-zertifiziertes Jobcoaching begleitet Dich – finanziert über die Agentur für Arbeit.",
     points: [
-      "Orientierung, Bewerbung & Karriere",
-      "Berlin, Potsdam, Augsburg & online",
+      "Orientierung, Bewerbung & Wiedereinstieg",
+      "14 Coachinnen – auf Wunsch von Frau zu Frau",
       "Wir übernehmen den Papierkram",
     ],
     cta: "Zum AVGS Jobcoaching",
@@ -67,8 +67,16 @@ export const JOBCOACHING_LEISTUNGEN: Leistung[] = [
     image: "/images/coaching-sq-2.jpg",
   },
   {
-    slug: "/jobcoaching-berlin",
+    slug: "/coaching-fuer-frauen",
     nr: "02",
+    title: "Coaching für Frauen",
+    claim: "Von Frau zu Frau · 14 Coachinnen",
+    text: "Wiedereinstieg nach der Elternzeit, Sichtbarkeit, Neuorientierung: Coachinnen, die Deine Fragen aus eigener Erfahrung kennen.",
+    image: "/images/coaching-7.jpg",
+  },
+  {
+    slug: "/jobcoaching-berlin",
+    nr: "03",
     title: "Jobcoaching Berlin",
     claim: "Prenzlauer Berg & online",
     text: "AVGS Coaching in der Bötzowstraße 28 – oder online. Systemisch, individuell und auf Augenhöhe.",
@@ -76,7 +84,7 @@ export const JOBCOACHING_LEISTUNGEN: Leistung[] = [
   },
   {
     slug: "/jobcoaching-potsdam",
-    nr: "03",
+    nr: "04",
     title: "Jobcoaching Potsdam",
     claim: "Nördliche Innenstadt & online",
     text: "AVGS Coaching in der Gutenbergstraße 87, nahe Holländisches Viertel – oder digital, ganz wie es zu Dir passt.",
@@ -260,7 +268,7 @@ export const FUNNEL_GUTSCHEIN = [
 export const FUNNEL_THEMEN = [
   { value: "orientierung", label: "Berufliche Orientierung finden" },
   { value: "bewerbung", label: "Bewerbung & Vorstellungsgespräch" },
-  { value: "wiedereinstieg", label: "Wiedereinstieg nach einer Pause" },
+  { value: "wiedereinstieg", label: "Wiedereinstieg nach Elternzeit oder Pause" },
   { value: "neustart", label: "Kompletter beruflicher Neustart" },
   { value: "selbstvertrauen", label: "Mehr Selbstvertrauen & Klarheit" },
   { value: "unsicher", label: "Ich bin mir noch nicht sicher" },
@@ -296,15 +304,15 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "Nach zirka 30 Jahren der Selbständigkeit und Arbeit im mittleren bis höheren Management gelang meiner Coachin mit passgenauen Methoden, dass ich neue Erkenntnisse über mich gewann und sich von ganz allein ein Perspektivwechsel vollzog.",
-    author: "Michael Jurischka",
-    meta: "Berufliche Neuorientierung",
+      "Sehr ganzheitlich, mit viel Empathie und gleichzeitig professionell und strukturiert. Ich habe schnell Fortschritte festgestellt: mehr Klarheit, mehr Selbstvertrauen und konkrete nächste Schritte – plus einen Plan für meine berufliche Zukunft.",
+    author: "Nina",
+    meta: "Berufliche Perspektive & Weiterentwicklung",
   },
   {
     quote:
-      "Die Gespräche fanden auf Augenhöhe statt, waren wertschätzend und gleichzeitig lösungsorientiert. Ich habe mich jederzeit ernst genommen und verstanden gefühlt – eine rundum wertvolle und bereichernde Erfahrung.",
-    author: "Armin S.",
-    meta: "Google-Bewertung, 5 Sterne",
+      "Die Mitarbeiterin im Büro war klar, schnell, kompetent und dabei herzlich – und hat die perfekt zu mir passende Coachin empfohlen. Mein Coaching war eine riesen Bereicherung!",
+    author: "Isabell P.",
+    meta: "AVGS Coaching",
   },
 ];
 

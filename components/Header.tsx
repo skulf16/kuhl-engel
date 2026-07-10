@@ -8,6 +8,7 @@ import { CONTACT } from "@/lib/data";
 const JOBCOACHING_LINKS = [
   { href: "/jobcoaching", label: "Jobcoaching – Überblick" },
   { href: "/avgs-coaching", label: "AVGS Coaching & Gutschein" },
+  { href: "/coaching-fuer-frauen", label: "Coaching für Frauen" },
   { href: "/jobcoaching-berlin", label: "Jobcoaching Berlin" },
   { href: "/jobcoaching-potsdam", label: "Jobcoaching Potsdam" },
 ];

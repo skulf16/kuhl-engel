@@ -4,6 +4,7 @@ import { CONTACT, STANDORTE } from "@/lib/data";
 const FOOTER_JOBCOACHING = [
   { href: "/jobcoaching", label: "Jobcoaching – Überblick" },
   { href: "/avgs-coaching", label: "AVGS Coaching & Gutschein" },
+  { href: "/coaching-fuer-frauen", label: "Coaching für Frauen" },
   { href: "/jobcoaching-berlin", label: "Jobcoaching Berlin" },
   { href: "/jobcoaching-potsdam", label: "Jobcoaching Potsdam" },
 ];

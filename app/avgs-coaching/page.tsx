@@ -14,7 +14,7 @@ import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "AVGS Coaching & Gutschein – 100 % kostenfrei in Berlin & online",
   description:
-    "AVGS Coaching für Akademiker:innen: individuelles 1:1-Jobcoaching, mit Gutschein der Agentur für Arbeit zu 100 % kostenfrei. So bekommst und löst Du den AVGS-Gutschein ein – Berlin, Potsdam, Augsburg & online.",
+    "AVGS Coaching für Akademikerinnen und Akademiker: individuelles 1:1-Jobcoaching, mit Gutschein der Agentur für Arbeit zu 100 % kostenfrei. So bekommst und löst Du den AVGS-Gutschein ein – Berlin, Potsdam, Augsburg & online.",
   alternates: { canonical: "/avgs-coaching" },
 };
 
@@ -84,7 +84,7 @@ export default function AvgsCoachingPage() {
         data={serviceSchema({
           name: "AVGS Coaching",
           description:
-            "Individuelles 1:1-Jobcoaching für Akademiker:innen, finanziert über den Aktivierungs- und Vermittlungsgutschein (AVGS) der Agentur für Arbeit oder des Jobcenters – zu 100 % kostenfrei.",
+            "Individuelles 1:1-Jobcoaching für Akademikerinnen und Akademiker, finanziert über den Aktivierungs- und Vermittlungsgutschein (AVGS) der Agentur für Arbeit oder des Jobcenters – zu 100 % kostenfrei.",
           path: "/avgs-coaching",
           serviceType: "Jobcoaching / Karrierecoaching (AVGS-gefördert)",
         })}
@@ -98,7 +98,7 @@ export default function AvgsCoachingPage() {
             Deine Profis für <em>AVGS Coaching.</em>
           </>
         }
-        intro="Wir sind spezialisiert auf Coaching in beruflichen Veränderungssituationen und zertifiziert für Dein AVGS Coaching. Mit langjähriger Erfahrung und maßgeschneidertem Ansatz begleiten wir Akademiker:innen auf dem Weg zu einem Job, der wirklich passt."
+        intro="Wir sind spezialisiert auf Coaching in beruflichen Veränderungssituationen und zertifiziert für Dein AVGS Coaching. Mit langjähriger Erfahrung und maßgeschneidertem Ansatz begleiten wir Akademikerinnen und Akademiker auf dem Weg zu einem Job, der wirklich passt."
         image="/images/coaching-warm.jpg"
       />
 
@@ -112,7 +112,7 @@ export default function AvgsCoachingPage() {
               { label: "Kosten", value: "0 € – vollständig durch den AVGS gedeckt" },
               { label: "Format", value: "1:1-Einzelcoaching, Umfang individuell (mind. 20 UE)" },
               { label: "Orte", value: "Berlin, Potsdam, Augsburg, online oder hybrid" },
-              { label: "Coaches", value: "15+ AZAV-zertifizierte, systemisch ausgebildete Coaches" },
+              { label: "Team", value: "14 Coachinnen & 1 Coach – auf Wunsch Coaching von Frau zu Frau" },
               { label: "Sprachen", value: "Deutsch, Englisch, Französisch, Russisch" },
               { label: "Start", value: "Kostenloses Erstgespräch, Beginn nach Bewilligung" },
             ]}

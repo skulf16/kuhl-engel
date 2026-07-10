@@ -13,7 +13,7 @@ import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Jobcoaching Berlin – AVGS Coaching in Prenzlauer Berg",
   description:
-    "Jobcoaching und AVGS Coaching in Berlin: systemisches Karrierecoaching für Akademiker:innen in der Bötzowstraße 28, Prenzlauer Berg – mit AVGS-Gutschein 100 % kostenfrei. Auch online oder hybrid.",
+    "Jobcoaching und AVGS Coaching in Berlin: systemisches Karrierecoaching für Akademikerinnen und Akademiker in der Bötzowstraße 28, Prenzlauer Berg – mit AVGS-Gutschein 100 % kostenfrei. Auch online oder hybrid.",
   alternates: { canonical: "/jobcoaching-berlin" },
 };
 
@@ -55,7 +55,7 @@ export default function JobcoachingBerlinPage() {
         data={serviceSchema({
           name: "Jobcoaching Berlin",
           description:
-            "AVGS Coaching und Karrierecoaching für Akademiker:innen in Berlin-Prenzlauer Berg (Bötzowstraße 28) – systemisch, individuell und mit AVGS-Gutschein zu 100 % kostenfrei.",
+            "AVGS Coaching und Karrierecoaching für Akademikerinnen und Akademiker in Berlin-Prenzlauer Berg (Bötzowstraße 28) – systemisch, individuell und mit AVGS-Gutschein zu 100 % kostenfrei.",
           path: "/jobcoaching-berlin",
           serviceType: "Jobcoaching / AVGS Coaching",
           areaServed: ["Berlin"],
@@ -80,7 +80,7 @@ export default function JobcoachingBerlinPage() {
         <Reveal>
           <FactBox
             question="Wo finde ich Jobcoaching in Berlin?"
-            answer="Kuhl & Engel bietet AVGS-gefördertes Jobcoaching in Berlin-Prenzlauer Berg an: Bötzowstraße 28, 10407 Berlin. Das Einzelcoaching richtet sich an Akademiker:innen, Fach- und Führungskräfte und ist mit einem AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters zu 100 % kostenfrei. Termine gibt es vor Ort, online oder hybrid."
+            answer="Kuhl & Engel bietet AVGS-gefördertes Jobcoaching in Berlin-Prenzlauer Berg an: Bötzowstraße 28, 10407 Berlin. Das Einzelcoaching richtet sich an Akademikerinnen und Akademiker, Fach- und Führungskräfte und ist mit einem AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters zu 100 % kostenfrei. Termine gibt es vor Ort, online oder hybrid."
             facts={[
               { label: "Adresse", value: "Bötzowstraße 28, 10407 Berlin (Prenzlauer Berg)" },
               { label: "Kosten", value: "Mit AVGS-Gutschein 0 €" },

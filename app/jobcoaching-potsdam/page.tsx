@@ -13,7 +13,7 @@ import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Jobcoaching Potsdam – AVGS Coaching in der Innenstadt",
   description:
-    "Jobcoaching und AVGS Coaching in Potsdam: systemisches Karrierecoaching für Akademiker:innen in der Gutenbergstraße 87, nahe Holländisches Viertel – mit AVGS-Gutschein 100 % kostenfrei. Auch online.",
+    "Jobcoaching und AVGS Coaching in Potsdam: systemisches Karrierecoaching für Akademikerinnen und Akademiker in der Gutenbergstraße 87, nahe Holländisches Viertel – mit AVGS-Gutschein 100 % kostenfrei. Auch online.",
   alternates: { canonical: "/jobcoaching-potsdam" },
 };
 
@@ -55,7 +55,7 @@ export default function JobcoachingPotsdamPage() {
         data={serviceSchema({
           name: "Jobcoaching Potsdam",
           description:
-            "AVGS Coaching und Karrierecoaching für Akademiker:innen in Potsdam (Gutenbergstraße 87, nördliche Innenstadt) – systemisch, individuell und mit AVGS-Gutschein zu 100 % kostenfrei.",
+            "AVGS Coaching und Karrierecoaching für Akademikerinnen und Akademiker in Potsdam (Gutenbergstraße 87, nördliche Innenstadt) – systemisch, individuell und mit AVGS-Gutschein zu 100 % kostenfrei.",
           path: "/jobcoaching-potsdam",
           serviceType: "Jobcoaching / AVGS Coaching",
           areaServed: ["Potsdam", "Brandenburg"],
@@ -80,7 +80,7 @@ export default function JobcoachingPotsdamPage() {
         <Reveal>
           <FactBox
             question="Wo finde ich Jobcoaching in Potsdam?"
-            answer="Kuhl & Engel bietet AVGS-gefördertes Jobcoaching in der Potsdamer Innenstadt an: Gutenbergstraße 87, 14467 Potsdam, wenige Gehminuten vom Holländischen Viertel. Das Einzelcoaching richtet sich an Akademiker:innen, Fach- und Führungskräfte und ist mit einem AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters zu 100 % kostenfrei. Termine gibt es vor Ort, online oder hybrid."
+            answer="Kuhl & Engel bietet AVGS-gefördertes Jobcoaching in der Potsdamer Innenstadt an: Gutenbergstraße 87, 14467 Potsdam, wenige Gehminuten vom Holländischen Viertel. Das Einzelcoaching richtet sich an Akademikerinnen und Akademiker, Fach- und Führungskräfte und ist mit einem AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters zu 100 % kostenfrei. Termine gibt es vor Ort, online oder hybrid."
             facts={[
               { label: "Adresse", value: "Gutenbergstraße 87, 14467 Potsdam (Nördliche Innenstadt)" },
               { label: "Kosten", value: "Mit AVGS-Gutschein 0 €" },

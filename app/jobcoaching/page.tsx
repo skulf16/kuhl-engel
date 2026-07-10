@@ -10,7 +10,7 @@ import { CONTACT, JOBCOACHING_LEISTUNGEN } from "@/lib/data";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Jobcoaching – Karrierecoaching für Akademiker:innen",
+  title: "Jobcoaching – Karrierecoaching für Akademikerinnen und Akademiker",
   description:
     "Jobcoaching bei Kuhl & Engel: systemisches Karrierecoaching für berufliche Orientierung, Bewerbung und Neustart – mit AVGS-Gutschein 100 % kostenfrei. Berlin, Potsdam, Augsburg & online.",
   alternates: { canonical: "/jobcoaching" },
@@ -42,7 +42,7 @@ export default function JobcoachingPage() {
         data={serviceSchema({
           name: "Jobcoaching",
           description:
-            "Systemisches Jobcoaching und Karrierecoaching für Akademiker:innen, Fach- und Führungskräfte: berufliche Orientierung, Bewerbung und Neustart – mit AVGS-Gutschein förderfähig.",
+            "Systemisches Jobcoaching und Karrierecoaching für Akademikerinnen und Akademiker, Fach- und Führungskräfte: berufliche Orientierung, Bewerbung und Neustart – mit AVGS-Gutschein förderfähig.",
           path: "/jobcoaching",
           serviceType: "Jobcoaching / Karrierecoaching",
         })}
@@ -65,9 +65,9 @@ export default function JobcoachingPage() {
         <Reveal>
           <FactBox
             question="Was ist Jobcoaching?"
-            answer="Jobcoaching ist eine individuelle 1:1-Begleitung rund um Beruf und Karriere – von der beruflichen Orientierung über die Bewerbung bis zum Neustart. Bei Kuhl & Engel arbeiten wir systemisch und ganzheitlich und sind auf Akademiker:innen, Fach- und Führungskräfte spezialisiert. Über den AVGS-Gutschein der Agentur für Arbeit ist das Coaching für Dich zu 100 % kostenfrei."
+            answer="Jobcoaching ist eine individuelle 1:1-Begleitung rund um Beruf und Karriere – von der beruflichen Orientierung über die Bewerbung bis zum Neustart. Bei Kuhl & Engel arbeiten wir systemisch und ganzheitlich und sind auf Akademikerinnen und Akademiker, Fach- und Führungskräfte spezialisiert. Über den AVGS-Gutschein der Agentur für Arbeit ist das Coaching für Dich zu 100 % kostenfrei."
             facts={[
-              { label: "Für wen", value: "Jobsuchende, Akademiker:innen, Fach- & Führungskräfte" },
+              { label: "Für wen", value: "Jobsuchende, Akademikerinnen und Akademiker, Fach- & Führungskräfte" },
               { label: "Themen", value: "Orientierung, Bewerbung, Karriere, Neustart" },
               { label: "Kosten", value: "Mit AVGS-Gutschein 0 €" },
               { label: "Orte", value: "Berlin, Potsdam, Augsburg, online oder hybrid" },
@@ -84,10 +84,10 @@ export default function JobcoachingPage() {
             Unsere Jobcoaching-Angebote
           </p>
           <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-            Ein Weg – <em>drei Wege, ihn zu gehen.</em>
+            Ein Ziel – <em>vier Wege dorthin.</em>
           </h2>
         </Reveal>
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2">
           {JOBCOACHING_LEISTUNGEN.map((item, i) => (
             <Reveal key={item.slug} delay={i * 120} className="h-full">
               <Link

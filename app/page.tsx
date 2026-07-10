@@ -14,8 +14,8 @@ import {
 } from "@/lib/data";
 
 const STATS = [
-  { value: "15+", label: "zertifizierte Coaches" },
-  { value: "10+", label: "Jahre Berufsorientierung" },
+  { value: "14", label: "Coachinnen im Team" },
+  { value: "2", label: "Gründerinnen" },
   { value: "5,0", label: "★ Google-Bewertung" },
   { value: "100 %", label: "AVGS-förderfähig" },
 ];
@@ -71,9 +71,9 @@ export default function Home() {
             className="hero-rise mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-cream/75 md:text-xl"
             style={{ animationDelay: "360ms" }}
           >
-            Systemisches Coaching bei Kuhl & Engel – AVGS-gefördertes Jobcoaching
-            für Erwachsene und Berufsorientierung für Schulen, Lehrkräfte und
-            Kooperationspartner. Zwei Wege, ein Klick:
+            Systemisches Coaching bei Kuhl & Engel – AVGS-gefördertes Jobcoaching,
+            spezialisiert auf Akademikerinnen, und Berufsorientierung für Schulen,
+            Lehrkräfte und Kooperationspartner. Zwei Wege, ein Klick:
           </p>
           <div
             className="hero-rise mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
@@ -123,7 +123,7 @@ export default function Home() {
             <Reveal>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Spezialisiert auf Akademiker:innen
+                Spezialisiert auf Akademikerinnen und Akademiker
               </p>
             </Reveal>
             <Reveal delay={100}>
@@ -136,7 +136,7 @@ export default function Home() {
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink/70">
                 Studium, Promotion, Verantwortung – und trotzdem die Frage: War das
                 schon alles? Mit langjähriger Erfahrung und maßgeschneidertem Ansatz
-                begleiten wir Akademiker:innen auf dem Weg zu einem Beruf, der
+                begleiten wir Akademikerinnen und Akademiker auf dem Weg zu einem Beruf, der
                 wirklich passt. Kein Schema F, sondern ein Prozess auf der Höhe
                 Deines Werdegangs.
               </p>
@@ -340,11 +340,11 @@ export default function Home() {
             </Reveal>
             <Reveal delay={200}>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink/70">
-                Statt höher, schneller, weiter plädieren wir für selbstbestimmt,
-                verbunden und erfüllt. Hinter uns steht ein Team von erfahrenen
-                Coaches mit vielseitiger Expertise und verschiedensten Biografien –
-                vereint in der Überzeugung, dass jeder Mensch alle Potenziale für
-                ein erfülltes Berufsleben in sich trägt.
+                Von Frauen gegründet, von Coachinnen getragen: Hinter uns steht ein
+                Team von 14 erfahrenen Coachinnen und einem Coach – mit eigenen
+                Brüchen, Neustarts und Karrieren. Statt höher, schneller, weiter
+                plädieren wir für selbstbestimmt, verbunden und erfüllt. Wer von
+                einer Frau gecoacht werden möchte, sagt es einfach im Erstgespräch.
               </p>
             </Reveal>
             <Reveal delay={300}>
