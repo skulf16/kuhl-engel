@@ -10,6 +10,7 @@ import {
   CONTACT,
   FAQS_AVGS,
   FOUNDERS,
+  TEAM,
   TESTIMONIALS,
 } from "@/lib/data";
 
@@ -38,6 +39,17 @@ const METHODE = [
   },
 ];
 
+// Portrait-Leiste: bewusst nur Coachinnen – Anna Podakova (Assistenz) und
+// Matthias Fink (einziger Coach) gehören nicht zu den „14 Coachinnen“.
+const COACHINNEN = [
+  { name: "Dr. Anna Mandel-Zakharova, Ph.D.", fach: "Neurowissenschaftlerin & Coachin" },
+  { name: "Angelina Werner", fach: "Job- und Karrierecoach" },
+  { name: "Bettina Brammer", fach: "Systemische Berufscoachin" },
+  { name: "Carmen Pilger", fach: "Systemisch-integrative Coachin" },
+  { name: "Saskia Sattler", fach: "DCV-zertifizierte Coachin" },
+  { name: "Grit Staroste", fach: "Systemisch-integrative Coachin" },
+].map((c) => ({ ...c, image: TEAM.find((m) => m.name === c.name)!.image }));
+
 export default function Home() {
   return (
     <>
@@ -50,12 +62,12 @@ export default function Home() {
           fill
           priority
           sizes="100vw"
-          className="hero-zoom object-cover object-[center_35%] opacity-40"
+          className="hero-zoom object-cover object-[center_35%] opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/45 to-ink" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/35 to-ink" />
 
         <div className="relative mx-auto w-full max-w-7xl px-5 pb-40 pt-40 text-center md:px-8">
-          <p className="eyebrow hero-rise inline-flex items-center gap-2.5 border border-cream/25 bg-ink/40 px-4 py-2 text-cream/90 backdrop-blur-sm">
+          <p className="eyebrow hero-rise inline-flex items-center gap-2.5 rounded-full border border-cream/25 bg-ink/40 px-4 py-2 text-cream/90 backdrop-blur-sm">
             <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-gold-bright" />
             100 % AVGS-zertifiziert · Berlin · Potsdam · Augsburg · Online
           </p>
@@ -81,14 +93,14 @@ export default function Home() {
           >
             <a
               href="#wege"
-              className="group inline-flex items-center gap-3 bg-cream px-8 py-4 font-semibold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-bright"
+              className="group inline-flex items-center gap-3 rounded-lg bg-cream px-8 py-4 font-semibold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-bright"
             >
               Meinen Weg wählen
               <span aria-hidden className="transition-transform duration-300 group-hover:translate-y-0.5">↓</span>
             </a>
             <a
               href={CONTACT.phoneHref}
-              className="inline-flex items-center gap-3 border border-cream/30 px-8 py-4 font-semibold text-cream transition-all duration-300 hover:border-gold-bright hover:text-gold-bright"
+              className="inline-flex items-center gap-3 rounded-lg border border-cream/30 px-8 py-4 font-semibold text-cream transition-all duration-300 hover:border-gold-bright hover:text-gold-bright"
             >
               {CONTACT.phone}
             </a>
@@ -104,7 +116,7 @@ export default function Home() {
       {/* ---------- Kennzahlen (überlappen den Hero) ---------- */}
       <section className="relative z-10 mx-auto -mt-20 max-w-6xl px-5 md:px-8">
         <Reveal>
-          <dl className="grid grid-cols-2 divide-ink/10 border border-ink/10 bg-paper shadow-[0_32px_80px_-32px_rgba(14,29,43,0.35)] md:grid-cols-4 md:divide-x">
+          <dl className="grid grid-cols-2 divide-ink/10 overflow-hidden rounded-xl border border-ink/10 bg-paper shadow-[0_32px_80px_-32px_rgba(14,29,43,0.35)] md:grid-cols-4 md:divide-x">
             {STATS.map((stat) => (
               <div key={stat.label} className="px-6 py-8 text-center md:py-10">
                 <dt className="sr-only">{stat.label}</dt>
@@ -165,7 +177,7 @@ export default function Home() {
 
           {/* Bildkomposition */}
           <Reveal delay={150} className="relative">
-            <div className="relative ml-6 aspect-[4/5] overflow-hidden md:ml-14">
+            <div className="relative ml-6 aspect-[4/5] overflow-hidden rounded-t-full md:ml-14">
               <Image
                 src="/images/coaching-sq-1.jpg"
                 alt="Einzelcoaching in den Räumen von Kuhl & Engel"
@@ -174,7 +186,7 @@ export default function Home() {
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>
-            <div className="absolute -bottom-8 left-0 w-52 border-8 border-cream bg-cream md:w-64">
+            <div className="absolute -bottom-8 left-0 w-52 overflow-hidden rounded-xl border-8 border-cream bg-cream md:w-64">
               <Image
                 src="/images/raum.jpg"
                 alt="Coaching-Raum mit zwei Sesseln"
@@ -215,7 +227,7 @@ export default function Home() {
               <Reveal key={bereich.slug} delay={i * 140} className="h-full">
                 <Link
                   href={bereich.slug}
-                  className="group relative flex h-full flex-col overflow-hidden border border-ink/10 bg-paper transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_40px_80px_-32px_rgba(14,29,43,0.4)]"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-ink/10 bg-paper transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_40px_80px_-32px_rgba(14,29,43,0.4)]"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
@@ -226,12 +238,12 @@ export default function Home() {
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
-                    <p className="eyebrow absolute left-6 top-6 border border-cream/30 bg-ink/40 px-3 py-1.5 text-cream backdrop-blur-sm">
+                    <p className="eyebrow absolute left-6 top-6 rounded-full border border-cream/30 bg-ink/40 px-3 py-1.5 text-cream backdrop-blur-sm">
                       {bereich.kicker}
                     </p>
                   </div>
                   <div className="flex grow flex-col p-8 md:p-10">
-                    <h3 className="display text-3xl transition-colors group-hover:text-gold md:text-4xl">
+                    <h3 className="display text-3xl transition-colors group-hover:text-clay md:text-4xl">
                       {bereich.title}
                     </h3>
                     <p className="eyebrow mt-2 !text-[0.62rem] text-gold">{bereich.claim}</p>
@@ -244,7 +256,7 @@ export default function Home() {
                         </li>
                       ))}
                     </ul>
-                    <span className="mt-8 inline-flex items-center gap-3 self-start bg-ink px-6 py-3.5 font-semibold text-cream transition-all duration-300 group-hover:bg-ink-700">
+                    <span className="mt-8 inline-flex items-center gap-3 self-start rounded-lg bg-ink px-6 py-3.5 font-semibold text-cream transition-all duration-300 group-hover:bg-ink-700">
                       {bereich.cta}
                       <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                     </span>
@@ -256,13 +268,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- Methode (dunkel) ---------- */}
-      <section className="on-dark relative overflow-hidden bg-ink py-24 text-cream md:py-36">
-        <div aria-hidden className="absolute -left-40 top-1/2 h-[34rem] w-[34rem] -translate-y-1/2 rounded-full border border-cream/6" />
+      {/* ---------- Methode (warm) ---------- */}
+      <section className="relative overflow-hidden bg-puder py-24 md:py-36">
+        <div aria-hidden className="absolute -left-40 top-1/2 h-[34rem] w-[34rem] -translate-y-1/2 rounded-full border border-clay/20" />
         <div className="relative mx-auto max-w-7xl px-5 md:px-8">
           <Reveal>
-            <p className="eyebrow flex items-center gap-3 text-gold-bright">
-              <span aria-hidden className="inline-block h-px w-10 bg-gold-bright" />
+            <p className="eyebrow flex items-center gap-3 text-clay-deep">
+              <span aria-hidden className="inline-block h-px w-10 bg-clay" />
               Unsere Methode
             </p>
           </Reveal>
@@ -273,7 +285,7 @@ export default function Home() {
               </h2>
             </Reveal>
             <Reveal delay={200}>
-              <p className="text-lg leading-relaxed text-cream/70">
+              <p className="text-lg leading-relaxed text-ink/70">
                 Du bist immer Teil von Systemen, die Du selbst mitgestaltest – eines
                 Teams, einer Organisation, einer Familie. Deshalb schauen wir nicht
                 nur auf Deinen Lebenslauf, sondern auf das Ganze: Gefühle, Gedanken,
@@ -282,15 +294,15 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <div className="mt-16 grid gap-px overflow-hidden border border-cream/12 bg-cream/12 md:grid-cols-3">
+          <div className="mt-16 grid gap-px overflow-hidden rounded-xl border border-ink/10 bg-ink/10 md:grid-cols-3">
             {METHODE.map((phase, i) => (
               <Reveal key={phase.step} delay={i * 140} className="h-full">
-                <div className="group h-full bg-ink p-9 transition-colors duration-500 hover:bg-ink-800 md:p-11">
-                  <p className="display text-5xl italic text-gold-bright/60 transition-colors duration-500 group-hover:text-gold-bright">
+                <div className="group h-full bg-paper p-9 transition-colors duration-500 hover:bg-cream md:p-11">
+                  <p className="display text-5xl italic text-clay/60 transition-colors duration-500 group-hover:text-clay">
                     {phase.step}
                   </p>
                   <h3 className="display mt-6 text-2xl">{phase.title}</h3>
-                  <p className="mt-4 text-[0.95rem] leading-relaxed text-cream/65">{phase.text}</p>
+                  <p className="mt-4 text-[0.95rem] leading-relaxed text-ink/65">{phase.text}</p>
                 </div>
               </Reveal>
             ))}
@@ -298,10 +310,10 @@ export default function Home() {
 
           <Reveal delay={150}>
             <figure className="mx-auto mt-20 max-w-2xl text-center">
-              <blockquote className="display text-2xl italic leading-snug text-cream/90 md:text-3xl">
+              <blockquote className="display text-2xl italic leading-snug text-ink/85 md:text-3xl">
                 „Welch eine himmlische Empfindung ist es, seinem Herzen zu folgen.“
               </blockquote>
-              <figcaption className="eyebrow mt-5 text-gold-bright">J. W. von Goethe</figcaption>
+              <figcaption className="eyebrow mt-5 text-clay-deep">J. W. von Goethe</figcaption>
             </figure>
           </Reveal>
         </div>
@@ -311,7 +323,7 @@ export default function Home() {
       <section className="bg-cream-deep py-24 md:py-32">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 md:px-8 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <Reveal className="relative order-2 lg:order-1">
-            <div className="relative aspect-[4/3] overflow-hidden">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Image
                 src="/images/gruenderinnen.jpg"
                 alt="Heike Kuhl und Martina Engel-Fürstberger"
@@ -320,7 +332,7 @@ export default function Home() {
                 className="object-cover object-top transition-transform duration-700 hover:scale-105"
               />
             </div>
-            <div className="absolute -bottom-6 -right-4 bg-ink px-7 py-5 text-cream md:-right-8">
+            <div className="absolute -bottom-6 -right-4 rounded-lg bg-ink px-7 py-5 text-cream md:-right-8">
               <p className="display text-lg italic text-gold-bright">Kuhl & Engel</p>
               <p className="mt-1 text-[0.8rem] text-cream/70">Heike Kuhl · Martina Engel-Fürstberger</p>
             </div>
@@ -366,6 +378,57 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---------- Coachinnen ---------- */}
+      <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
+        <Reveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="eyebrow flex items-center justify-center gap-3 text-clay-deep">
+              <span aria-hidden className="inline-block h-px w-10 bg-clay" />
+              Dein Team
+              <span aria-hidden className="inline-block h-px w-10 bg-clay" />
+            </p>
+            <h2 className="display mt-6 text-4xl md:text-5xl">
+              14 Coachinnen. <em>Eine, die zu Dir passt.</em>
+            </h2>
+            <p className="mt-5 leading-relaxed text-ink/65">
+              Systemisch ausgebildet, mit eigenen Karrierewegen, Brüchen und
+              Neustarts – auf Wunsch begleitet Dich garantiert eine Frau.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="mt-14 grid grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
+          {COACHINNEN.map((coachin, i) => (
+            <Reveal key={coachin.name} delay={i * 80}>
+              <figure className="text-center">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-t-full">
+                  <Image
+                    src={coachin.image}
+                    alt={coachin.name}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <figcaption className="mt-4">
+                  <p className="text-[0.92rem] font-semibold leading-snug">{coachin.name}</p>
+                  <p className="mt-1 text-[0.78rem] leading-snug text-ink/55">{coachin.fach}</p>
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={200}>
+          <p className="mt-12 text-center text-[0.95rem] text-ink/60">
+            … und acht weitere Kolleginnen.{" "}
+            <Link href="/ueber-uns" className="link-gold font-semibold text-gold">
+              Alle Coachinnen kennenlernen <span aria-hidden>→</span>
+            </Link>
+          </p>
+        </Reveal>
+      </section>
+
       {/* ---------- Stimmen ---------- */}
       <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
         <Reveal>
@@ -388,8 +451,8 @@ export default function Home() {
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {TESTIMONIALS.map((t, i) => (
             <Reveal key={t.author} delay={(i % 2) * 120}>
-              <figure className="flex h-full flex-col border border-ink/10 bg-paper p-9 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_56px_-28px_rgba(14,29,43,0.3)] md:p-10">
-                <p aria-hidden className="display text-6xl italic leading-none text-gold/30">„</p>
+              <figure className="flex h-full flex-col rounded-xl border border-ink/10 bg-paper p-9 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_56px_-28px_rgba(14,29,43,0.3)] md:p-10">
+                <p aria-hidden className="display text-6xl italic leading-none text-clay/40">„</p>
                 <blockquote className="display mt-2 grow text-lg leading-relaxed md:text-xl">
                   {t.quote}
                 </blockquote>
