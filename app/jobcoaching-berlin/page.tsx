@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
@@ -7,15 +6,18 @@ import CtaBand from "@/components/CtaBand";
 import Accordion from "@/components/Accordion";
 import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
-import { FOUNDERS, TEAM, type Faq } from "@/lib/data";
+import { FOUNDERS, TEAM, TESTIMONIALS, type Faq } from "@/lib/data";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Jobcoaching Berlin – AVGS Coaching in Prenzlauer Berg",
   description:
-    "Jobcoaching und AVGS Coaching in Berlin: systemisches Karrierecoaching für Akademikerinnen und Akademiker in der Bötzowstraße 28, Prenzlauer Berg – mit AVGS-Gutschein 100 % kostenfrei. Auch online oder hybrid.",
-  alternates: { canonical: "/jobcoaching-berlin" },
-};
+    "Jobcoaching Berlin: AVGS Coaching und Karrierecoaching für Akademikerinnen und Akademiker in der Bötzowstraße 28, Prenzlauer Berg – mit AVGS-Gutschein 100 % kostenfrei. AZAV-zertifiziert, auch online oder hybrid.",
+  path: "/jobcoaching-berlin",
+  image: "/images/standort-berlin.jpg",
+  imageAlt: "Standort von Kuhl & Engel in der Bötzowstraße 28, Berlin-Prenzlauer Berg",
+});
 
 const FAQS_BERLIN: Faq[] = [
   {
@@ -23,16 +25,32 @@ const FAQS_BERLIN: Faq[] = [
     a: "Unser Berliner Standort liegt in der Bötzowstraße 28, 10407 Berlin – im ruhigen Bötzowviertel in Prenzlauer Berg, wenige Minuten vom Volkspark Friedrichshain. Alternativ coachen wir Dich online oder hybrid.",
   },
   {
+    q: "Was kostet ein Jobcoaching in Berlin?",
+    a: "Mit einem AVGS-Gutschein (Aktivierungs- und Vermittlungsgutschein) der Agentur für Arbeit oder des Jobcenters ist das Jobcoaching bei Kuhl & Engel zu 100 % kostenfrei – die Förderung deckt alle Kosten ab. Auch das Erstgespräch kostet nichts. Ohne Gutschein finden wir im kostenlosen Erstgespräch eine individuelle Lösung.",
+  },
+  {
     q: "Kann ich meinen AVGS-Gutschein in Berlin einlösen?",
     a: "Ja. Kuhl & Engel ist AZAV-zertifizierter Träger, Du kannst Deinen Aktivierungs- und Vermittlungsgutschein direkt an unserem Berliner Standort einlösen. Der Gutschein muss noch mindestens 10 Tage gültig sein, mindestens 20 Unterrichtseinheiten umfassen und in Teilzeit ausgestellt sein – das Coaching ist dann für Dich kostenfrei.",
+  },
+  {
+    q: "Was genau macht ein Jobcoach?",
+    a: "Ein Jobcoach begleitet Dich im 1:1 bei beruflicher Orientierung, Bewerbungsstrategie, Vorstellungsgesprächen und Karriereentscheidungen. Bei Kuhl & Engel arbeiten alle Coaches systemisch: Statt fertiger Rezepte entwickelst Du Klarheit über Deine Stärken, Werte und Ziele – und einen konkreten Plan für Deinen nächsten beruflichen Schritt.",
+  },
+  {
+    q: "Wie finde ich einen seriösen Jobcoach in Berlin?",
+    a: "Achte auf drei Dinge: eine AZAV-Zertifizierung des Trägers (Voraussetzung, um AVGS-Gutscheine annehmen zu dürfen), eine fundierte, zertifizierte Coaching-Ausbildung und ein kostenloses Erstgespräch, in dem Du prüfst, ob die Chemie stimmt. Kuhl & Engel erfüllt alle drei Kriterien – und wenn es doch nicht passt, wechselst Du einfach die Coachin.",
+  },
+  {
+    q: "Ist Kuhl & Engel dasselbe wie das „Berliner JobCoaching“ des Senats?",
+    a: "Nein. Das „Berliner JobCoaching (BJC)“ ist ein Programm der Senatsverwaltung für Teilnehmende öffentlich geförderter Beschäftigungsmaßnahmen. Kuhl & Engel ist ein unabhängiger, AZAV-zertifizierter Träger: Unser AVGS-Jobcoaching ist ein individuelles 1:1-Karrierecoaching für Akademikerinnen und Akademiker – finanziert über den AVGS-Gutschein Deiner Agentur für Arbeit oder Deines Jobcenters.",
   },
   {
     q: "Welche Coaches arbeiten in Berlin?",
     a: "In Berlin coachen unter anderem Gründerin Heike Kuhl, Angelina Werner und Carmen Pilger – alle systemisch ausgebildet und zertifiziert. Carmen Pilger coacht auch auf Englisch. Gemeinsam finden wir die Person, die am besten zu Dir und Deinem Thema passt.",
   },
   {
-    q: "Gibt es in Berlin auch Supervision?",
-    a: "Ja, unsere Gruppensupervision (max. 12 Personen) findet regelmäßig in der Bötzowstraße 28 statt – geleitet von Heike Kuhl. Einzeltermin 70 €, Paket 6 × für 390 €.",
+    q: "Geht das Jobcoaching auch auf Englisch?",
+    a: "Ja. In Berlin coacht Carmen Pilger auch auf Englisch, online zusätzlich Saskia Sattler (Englisch), Matthias Fink (Englisch, Französisch) und Dr. Anna Mandel-Zakharova (Englisch, Russisch).",
   },
 ];
 
@@ -43,9 +61,9 @@ const COACHES_BERLIN = [
 
 const LEISTUNGEN = [
   { href: "/avgs-coaching", label: "AVGS Coaching", note: "Mit Gutschein 100 % kostenfrei" },
-  { href: "/neuorientierung", label: "Berufliche Neuorientierung", note: "Für Ein-, Um- und Aussteiger:innen" },
-  { href: "/fuehrungskraefte", label: "Coaching für Führungskräfte", note: "Diskret und individuell" },
-  { href: "/supervision", label: "Supervision", note: "Gruppe oder einzeln, vor Ort in der Bötzowstraße" },
+  { href: "/coaching-fuer-frauen", label: "Coaching für Frauen", note: "Von Frau zu Frau – 14 Coachinnen" },
+  { href: "/jobcoaching", label: "Karriere- & Bewerbungscoaching", note: "Orientierung, Bewerbung, Neustart" },
+  { href: "/avgs-gutschein-beantragen", label: "AVGS-Gutschein beantragen", note: "Schritt für Schritt zur Förderung" },
 ];
 
 export default function JobcoachingBerlinPage() {
@@ -59,6 +77,7 @@ export default function JobcoachingBerlinPage() {
           path: "/jobcoaching-berlin",
           serviceType: "Jobcoaching / AVGS Coaching",
           areaServed: ["Berlin"],
+          avgsFree: true,
         })}
       />
       <JsonLd data={faqSchema(FAQS_BERLIN, "/jobcoaching-berlin")} />
@@ -71,7 +90,7 @@ export default function JobcoachingBerlinPage() {
             Jobcoaching in Berlin – <em>mitten im Bötzowviertel.</em>
           </>
         }
-        intro="AVGS Coaching, berufliche Neuorientierung und Supervision in der Bötzowstraße 28, wenige Minuten vom Volkspark Friedrichshain – oder online, ganz wie es zu Dir passt."
+        intro="AVGS Coaching, Karrierecoaching und berufliche Neuorientierung in der Bötzowstraße 28, wenige Minuten vom Volkspark Friedrichshain – oder online, ganz wie es zu Dir passt."
         image="/images/standort-berlin.jpg"
       />
 
@@ -104,9 +123,11 @@ export default function JobcoachingBerlinPage() {
                 Alles, was Deine Karriere <em>weiterbringt.</em>
               </h2>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink/70">
-                Vom geförderten AVGS Coaching bis zur Supervision für Teams:
+                Vom geförderten AVGS Coaching über Bewerbungs- und
+                Karrierecoaching bis zum Wiedereinstieg nach der Elternzeit:
                 Am Berliner Standort steht Dir unser komplettes Angebot offen –
-                begleitet von systemisch ausgebildeten, zertifizierten Coaches.
+                begleitet von systemisch ausgebildeten, zertifizierten
+                Coachinnen und Coaches.
               </p>
             </Reveal>
             <Reveal delay={150}>
@@ -201,11 +222,68 @@ export default function JobcoachingBerlinPage() {
         </div>
       </section>
 
+      {/* Anfahrt & Abgrenzung */}
+      <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
+        <div className="grid gap-14 lg:grid-cols-2 lg:gap-20">
+          <Reveal>
+            <p className="eyebrow flex items-center gap-3 text-gold">
+              <span aria-hidden className="inline-block h-px w-10 bg-gold" />
+              Anfahrt
+            </p>
+            <h2 className="display mt-6 text-3xl md:text-4xl">
+              Aus allen Berliner Bezirken <em>gut erreichbar.</em>
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-ink/70">
+              Das Bötzowviertel liegt wenige Minuten vom Volkspark
+              Friedrichshain: Die Tram M10 (Haltestelle Arnswalder Platz) hält
+              um die Ecke, der S-Bahnhof Greifswalder Straße ist fußläufig
+              erreichbar. Unsere Klientinnen und Klienten kommen aus Prenzlauer
+              Berg, Pankow, Mitte, Friedrichshain-Kreuzberg, Lichtenberg – und
+              aus dem gesamten Stadtgebiet. Wer sich den Weg sparen möchte,
+              nimmt Termine online oder hybrid wahr.
+            </p>
+            <blockquote className="mt-10 border-l-2 border-gold pl-6">
+              <p className="display text-lg italic leading-relaxed text-ink/80">
+                „{TESTIMONIALS[3].quote}“
+              </p>
+              <footer className="mt-4 text-[0.85rem] text-ink/55">
+                {TESTIMONIALS[3].author} · {TESTIMONIALS[3].meta}
+              </footer>
+            </blockquote>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="eyebrow flex items-center gap-3 text-gold">
+              <span aria-hidden className="inline-block h-px w-10 bg-gold" />
+              Gut zu wissen
+            </p>
+            <h2 className="display mt-6 text-3xl md:text-4xl">
+              Kuhl & Engel oder <em>„Berliner JobCoaching“?</em>
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-ink/70">
+              Das „Berliner JobCoaching (BJC)“ der Senatsverwaltung richtet
+              sich an Teilnehmende öffentlich geförderter
+              Beschäftigungsmaßnahmen. Unser Angebot ist davon unabhängig:
+              Kuhl & Engel ist ein privater, AZAV-zertifizierter Träger für
+              AVGS-Jobcoaching – individuelles 1:1-Karrierecoaching für
+              Akademikerinnen und Akademiker, Fach- und Führungskräfte. Mit
+              einem AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters
+              ist es für Dich zu 100 % kostenfrei.
+            </p>
+            <p className="mt-6 text-lg leading-relaxed text-ink/70">
+              Du hast noch keinen Gutschein?{" "}
+              <Link href="/avgs-gutschein-beantragen" className="link-gold font-semibold text-gold">
+                So beantragst Du den AVGS →
+              </Link>
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="mx-auto max-w-4xl px-5 py-24 md:px-8 md:py-32">
         <Reveal>
           <h2 className="display text-center text-4xl md:text-5xl">
-            Häufige Fragen zum <em>Standort Berlin.</em>
+            Häufige Fragen zum <em>Jobcoaching in Berlin.</em>
           </h2>
         </Reveal>
         <Reveal delay={150}>

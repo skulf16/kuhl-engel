@@ -9,11 +9,16 @@ const AI_CRAWLERS = [
   "ChatGPT-User",
   "ClaudeBot",
   "Claude-SearchBot",
+  "Claude-User",
   "PerplexityBot",
   "Perplexity-User",
   "Google-Extended",
   "Applebot-Extended",
   "meta-externalagent",
+  "Amazonbot",
+  "DuckAssistBot",
+  "MistralAI-User",
+  "YouBot",
 ];
 
 export default function robots(): MetadataRoute.Robots {

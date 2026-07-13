@@ -4,9 +4,18 @@ import { CONTACT, STANDORTE } from "@/lib/data";
 const FOOTER_JOBCOACHING = [
   { href: "/jobcoaching", label: "Jobcoaching – Überblick" },
   { href: "/avgs-coaching", label: "AVGS Coaching & Gutschein" },
+  { href: "/avgs-gutschein-beantragen", label: "AVGS-Gutschein beantragen" },
   { href: "/coaching-fuer-frauen", label: "Coaching für Frauen" },
   { href: "/jobcoaching-berlin", label: "Jobcoaching Berlin" },
   { href: "/jobcoaching-potsdam", label: "Jobcoaching Potsdam" },
+];
+
+const SOCIALS = [
+  { href: "https://www.instagram.com/kuhlundengel/", label: "Instagram" },
+  { href: "https://www.linkedin.com/company/kuhl-engel/", label: "LinkedIn" },
+  { href: "https://www.facebook.com/profile.php?id=100083691926340", label: "Facebook" },
+  { href: "https://www.youtube.com/@kuhlundengel-coaching", label: "YouTube" },
+  { href: "https://www.tiktok.com/@kuhl.engel", label: "TikTok" },
 ];
 
 const FOOTER_JUGEND = [
@@ -27,12 +36,26 @@ export default function Footer() {
               kuhl<em className="mx-0.5">&</em>engel
             </p>
             <p className="mt-4 max-w-xs text-[0.92rem] leading-relaxed text-cream/60">
-              AVGS-zertifiziertes Jobcoaching und Berufsorientierung für
+              AZAV-zertifiziertes Jobcoaching und Berufsorientierung für
               Jugendliche. In Berlin, Potsdam, Augsburg und online.
             </p>
             <p className="display mt-6 text-lg italic text-gold-bright">
               Jetzt, nicht irgendwann.
             </p>
+            <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[0.85rem]">
+              {SOCIALS.map((social) => (
+                <li key={social.href}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-gold text-cream/60 hover:text-cream"
+                  >
+                    {social.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Jobcoaching */}

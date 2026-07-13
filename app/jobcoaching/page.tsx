@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
@@ -8,13 +7,16 @@ import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
 import { CONTACT, JOBCOACHING_LEISTUNGEN } from "@/lib/data";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Jobcoaching – Karrierecoaching für Akademikerinnen und Akademiker",
   description:
     "Jobcoaching bei Kuhl & Engel: systemisches Karrierecoaching für berufliche Orientierung, Bewerbung und Neustart – mit AVGS-Gutschein 100 % kostenfrei. Berlin, Potsdam, Augsburg & online.",
-  alternates: { canonical: "/jobcoaching" },
-};
+  path: "/jobcoaching",
+  image: "/images/coaching-warm.jpg",
+  imageAlt: "Coaching-Gespräch bei Kuhl & Engel",
+});
 
 const GRUENDE = [
   {
@@ -97,7 +99,7 @@ export default function JobcoachingPage() {
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={item.image}
-                    alt=""
+                    alt={item.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"

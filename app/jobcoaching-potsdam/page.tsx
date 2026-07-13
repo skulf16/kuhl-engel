@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
@@ -9,13 +8,16 @@ import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
 import { FOUNDERS, TEAM, type Faq } from "@/lib/data";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Jobcoaching Potsdam – AVGS Coaching in der Innenstadt",
   description:
     "Jobcoaching und AVGS Coaching in Potsdam: systemisches Karrierecoaching für Akademikerinnen und Akademiker in der Gutenbergstraße 87, nahe Holländisches Viertel – mit AVGS-Gutschein 100 % kostenfrei. Auch online.",
-  alternates: { canonical: "/jobcoaching-potsdam" },
-};
+  path: "/jobcoaching-potsdam",
+  image: "/images/standort-potsdam.jpg",
+  imageAlt: "Standort von Kuhl & Engel in der Gutenbergstraße 87, Potsdam",
+});
 
 const FAQS_POTSDAM: Faq[] = [
   {
@@ -34,6 +36,10 @@ const FAQS_POTSDAM: Faq[] = [
     q: "Ich wohne in Brandenburg außerhalb Potsdams – geht das trotzdem?",
     a: "Ja. Viele unserer Klient:innen kombinieren Termine vor Ort mit Online-Sitzungen via Zoom (hybrid) oder lassen sich komplett digital coachen. So funktioniert das Coaching unabhängig vom Wohnort.",
   },
+  {
+    q: "Was kostet ein Jobcoaching in Potsdam?",
+    a: "Mit einem AVGS-Gutschein (Aktivierungs- und Vermittlungsgutschein) der Agentur für Arbeit oder des Jobcenters ist das Jobcoaching bei Kuhl & Engel zu 100 % kostenfrei – die Förderung deckt alle Kosten ab. Auch das Erstgespräch kostet nichts.",
+  },
 ];
 
 const COACHES_POTSDAM = [
@@ -43,9 +49,9 @@ const COACHES_POTSDAM = [
 
 const LEISTUNGEN = [
   { href: "/avgs-coaching", label: "AVGS Coaching", note: "Mit Gutschein 100 % kostenfrei" },
-  { href: "/neuorientierung", label: "Berufliche Neuorientierung", note: "Für Ein-, Um- und Aussteiger:innen" },
-  { href: "/fuehrungskraefte", label: "Coaching für Führungskräfte", note: "Diskret und individuell" },
-  { href: "/weiterbildungen", label: "Weiterbildungen", note: "Für Coaches und Berater:innen" },
+  { href: "/coaching-fuer-frauen", label: "Coaching für Frauen", note: "Von Frau zu Frau – 14 Coachinnen" },
+  { href: "/jobcoaching", label: "Karriere- & Bewerbungscoaching", note: "Orientierung, Bewerbung, Neustart" },
+  { href: "/avgs-gutschein-beantragen", label: "AVGS-Gutschein beantragen", note: "Schritt für Schritt zur Förderung" },
 ];
 
 export default function JobcoachingPotsdamPage() {
@@ -59,6 +65,7 @@ export default function JobcoachingPotsdamPage() {
           path: "/jobcoaching-potsdam",
           serviceType: "Jobcoaching / AVGS Coaching",
           areaServed: ["Potsdam", "Brandenburg"],
+          avgsFree: true,
         })}
       />
       <JsonLd data={faqSchema(FAQS_POTSDAM, "/jobcoaching-potsdam")} />

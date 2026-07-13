@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
@@ -6,19 +5,20 @@ import CtaBand from "@/components/CtaBand";
 import JsonLd from "@/components/JsonLd";
 import Link from "next/link";
 import { FOUNDERS, STANDORTE, TEAM } from "@/lib/data";
-import { breadcrumbSchema, foundersSchema } from "@/lib/schema";
+import { breadcrumbSchema, teamGraph } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Über uns & Team",
+export const metadata = pageMetadata({
+  title: "Über uns & Team – 15+ zertifizierte Coaches",
   description:
     "Kuhl & Engel, das sind Heike Kuhl und Martina Engel-Fürstberger – mit einem Team aus 15+ zertifizierten, systemisch arbeitenden Coaches in Berlin, Potsdam, Augsburg und online.",
-  alternates: { canonical: "/ueber-uns" },
-};
+  path: "/ueber-uns",
+});
 
 export default function UeberUnsPage() {
   return (
     <>
-      <JsonLd data={foundersSchema} />
+      <JsonLd data={teamGraph} />
       <JsonLd data={breadcrumbSchema([{ name: "Über uns & Team", path: "/ueber-uns" }])} />
       <PageHero
         eyebrow="Über uns"

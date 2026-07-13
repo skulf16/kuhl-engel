@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
@@ -6,13 +5,14 @@ import ContactForm from "@/components/ContactForm";
 import JsonLd from "@/components/JsonLd";
 import { CONTACT, STANDORTE } from "@/lib/data";
 import { breadcrumbSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Kontakt & Standorte",
   description:
     "Kontaktiere Kuhl & Engel: Rückruf-Service, Telefon 030 51565388-0 oder info@kuhlundengel.de. Standorte in Berlin, Potsdam, Augsburg – und online.",
-  alternates: { canonical: "/kontakt" },
-};
+  path: "/kontakt",
+});
 
 export default function KontaktPage() {
   return (

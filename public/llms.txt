@@ -22,6 +22,9 @@ Wichtige Fakten:
   berufliche Orientierung, Bewerbung und Neustart
 - [AVGS Coaching & Gutschein](https://kuhlundengel.de/avgs-coaching): gefördertes
   1:1-Coaching, mit Gutschein 100 % kostenfrei – inkl. Erklärung und Buchungsfunnel
+- [AVGS-Gutschein beantragen](https://kuhlundengel.de/avgs-gutschein-beantragen):
+  Ratgeber in 5 Schritten – wer den AVGS bekommt (§ 45 SGB III), wie das Gespräch bei
+  Agentur für Arbeit oder Jobcenter läuft, welche Variante nötig ist (AVGS MAT)
 - [Coaching für Frauen](https://kuhlundengel.de/coaching-fuer-frauen): Karrierecoaching
   von Frau zu Frau (14 Coachinnen, 2 Gründerinnen) – Schwerpunkte Wiedereinstieg nach
   Elternzeit, Sichtbarkeit, Neuorientierung, nächster Karriereschritt
@@ -44,3 +47,8 @@ Wichtige Fakten:
 
 - [Team & Standorte](https://kuhlundengel.de/ueber-uns): 15+ systemisch ausgebildete Coaches
 - [Kontakt](https://kuhlundengel.de/kontakt): Rückruf-Service, Telefon, Adressen
+
+## Weitere Ressourcen
+
+- [Ausführliche Fakten (llms-full.txt)](https://kuhlundengel.de/llms-full.txt):
+  alle Angebote, Preise, Standorte und häufige Fragen mit Antworten in einer Datei

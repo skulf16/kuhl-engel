@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
@@ -9,13 +8,16 @@ import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
 import { FOUNDERS, TEAM, type Faq } from "@/lib/data";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Coaching für Frauen – Karrierecoaching von Coachinnen",
   description:
     "Coaching für Frauen bei Kuhl & Engel: 14 Coachinnen begleiten Akademikerinnen bei Wiedereinstieg nach der Elternzeit, Neuorientierung und Sichtbarkeit – mit AVGS-Gutschein 100 % kostenfrei. Berlin, Potsdam & online.",
-  alternates: { canonical: "/coaching-fuer-frauen" },
-};
+  path: "/coaching-fuer-frauen",
+  image: "/images/coaching-7.jpg",
+  imageAlt: "Coaching von Frau zu Frau bei Kuhl & Engel",
+});
 
 const THEMEN = [
   {

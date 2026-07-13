@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
@@ -10,13 +9,16 @@ import JsonLd from "@/components/JsonLd";
 import BookingFunnel from "@/components/BookingFunnel";
 import { FAQS_AVGS } from "@/lib/data";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "AVGS Coaching & Gutschein – 100 % kostenfrei in Berlin & online",
   description:
     "AVGS Coaching für Akademikerinnen und Akademiker: individuelles 1:1-Jobcoaching, mit Gutschein der Agentur für Arbeit zu 100 % kostenfrei. So bekommst und löst Du den AVGS-Gutschein ein – Berlin, Potsdam, Augsburg & online.",
-  alternates: { canonical: "/avgs-coaching" },
-};
+  path: "/avgs-coaching",
+  image: "/images/coaching-warm.jpg",
+  imageAlt: "Coaching-Gespräch bei Kuhl & Engel",
+});
 
 const GUTSCHEIN_STEPS = [
   { title: "Infogespräch mit uns", text: "Kontaktiere uns für eine unverbindliche Erstberatung. Wir klären alle Fragen zu Ablauf und Möglichkeiten." },
@@ -160,7 +162,7 @@ export default function AvgsCoachingPage() {
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={thema.image}
-                    alt=""
+                    alt={thema.q}
                     fill
                     sizes="(max-width: 1024px) 100vw, 46vw"
                     className="object-cover transition-transform duration-700 hover:scale-105"
@@ -214,6 +216,14 @@ export default function AvgsCoachingPage() {
             </Reveal>
           ))}
         </ol>
+        <Reveal delay={150}>
+          <p className="mt-12 text-lg text-ink/70">
+            Du hast noch keinen Gutschein?{" "}
+            <Link href="/avgs-gutschein-beantragen" className="link-gold font-semibold text-gold">
+              So beantragst Du den AVGS bei Agentur für Arbeit oder Jobcenter →
+            </Link>
+          </p>
+        </Reveal>
       </section>
 
       {/* Buchungsfunnel */}

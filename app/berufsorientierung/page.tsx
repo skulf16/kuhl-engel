@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
@@ -8,13 +7,16 @@ import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
 import { CONTACT, JUGEND_ANGEBOTE } from "@/lib/data";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Berufsorientierung für Jugendliche – Angebote für Schulen",
   description:
     "Berufsorientierung „Mein Berufseinstieg“ für Schulen, Lehrkräfte und Kooperationspartner: Gruppenprojekte für ganze Klassen, Einzelcoaching für Schüler:innen und Materialien für den Berufsstart. Seit über 10 Jahren in Berlin & Brandenburg.",
-  alternates: { canonical: "/berufsorientierung" },
-};
+  path: "/berufsorientierung",
+  image: "/images/jugend-hero.jpg",
+  imageAlt: "Berufsorientierung „Mein Berufseinstieg“ von Kuhl & Engel",
+});
 
 const NUTZEN = [
   "lernen ihre Stärken und Interessen kennen",
@@ -89,7 +91,7 @@ export default function BerufsorientierungPage() {
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={item.image}
-                    alt=""
+                    alt={item.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
