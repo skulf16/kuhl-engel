@@ -23,41 +23,41 @@ const THEMEN = [
   {
     nr: "01",
     title: "Wiedereinstieg nach der Elternzeit",
-    text: "Du willst zurück ins Berufsleben, aber nicht einfach zurück in den alten Trott? Gemeinsam klären wir, ob der alte Job noch passt, wie Du Dich neu ausrichtest und wie Du Beruf und Familie so verbindest, dass es Dir entspricht – ohne schlechtes Gewissen in beide Richtungen.",
+    text: "Sie wollen zurück ins Berufsleben, aber nicht einfach zurück in den alten Trott? Gemeinsam klären wir, ob der alte Job noch passt, wie Sie sich neu ausrichten und wie Sie Beruf und Familie so verbinden, dass es Ihnen entspricht – ohne schlechtes Gewissen in beide Richtungen.",
   },
   {
     nr: "02",
     title: "Sichtbarkeit & Selbstzweifel",
-    text: "Bestens qualifiziert und trotzdem das Gefühl, nicht zu genügen? Viele Akademikerinnen kennen das. Im Coaching reflektierst Du Deine Muster, erkennst Deine Kernkompetenzen anhand echter Erfolge und lernst, auf natürliche Weise zu überzeugen – im Meeting wie im Vorstellungsgespräch.",
+    text: "Bestens qualifiziert und trotzdem das Gefühl, nicht zu genügen? Viele Akademikerinnen kennen das. Im Coaching reflektieren Sie Ihre Muster, erkennen Ihre Kernkompetenzen anhand echter Erfolge und lernen, auf natürliche Weise zu überzeugen – im Meeting wie im Vorstellungsgespräch.",
   },
   {
     nr: "03",
     title: "Neuorientierung nach Studium oder Promotion",
-    text: "Raus aus der Wissenschaft, rein – aber wohin? Wenn der akademische Weg nicht mehr trägt, helfen wir Dir, Deine Fähigkeiten in neue Kontexte zu übersetzen und eine Richtung zu finden, die Deinem Leben Sinn gibt.",
+    text: "Raus aus der Wissenschaft, rein – aber wohin? Wenn der akademische Weg nicht mehr trägt, helfen wir Ihnen, Ihre Fähigkeiten in neue Kontexte zu übersetzen und eine Richtung zu finden, die Ihrem Leben Sinn gibt.",
   },
   {
     nr: "04",
     title: "Der nächste Karriereschritt",
-    text: "Mehr Verantwortung, ein neues Feld oder endlich die Position, die Deinem Können entspricht? Wir entwickeln mit Dir inspirierende, realistische Ziele und eine Strategie, die Dich souverän verhandeln und auftreten lässt.",
+    text: "Mehr Verantwortung, ein neues Feld oder endlich die Position, die Ihrem Können entspricht? Wir entwickeln mit Ihnen inspirierende, realistische Ziele und eine Strategie, die Sie souverän verhandeln und auftreten lässt.",
   },
 ];
 
 const FAQS_FRAUEN: Faq[] = [
   {
     q: "Werde ich bei euch von einer Frau gecoacht?",
-    a: "Sehr wahrscheinlich – und auf Wunsch garantiert. 14 unserer 15 Coaches sind Frauen, beide Gründerinnen eingeschlossen. Sag uns im Erstgespräch einfach, dass Du ein Coaching von Frau zu Frau möchtest, und wir stellen die passende Coachin an Deine Seite.",
+    a: "Sehr wahrscheinlich – und auf Wunsch garantiert. 14 unserer 15 Coaches sind Frauen, beide Gründerinnen eingeschlossen. Sagen Sie uns im Erstgespräch einfach, dass Sie ein Coaching von Frau zu Frau möchten, und wir stellen die passende Coachin an Ihre Seite.",
   },
   {
     q: "Ist das Coaching wirklich kostenlos?",
-    a: "Ja – wenn Du bei der Agentur für Arbeit oder dem Jobcenter arbeitssuchend gemeldet bist und einen AVGS-Gutschein bekommst, übernimmt die Agentur 100 % der Kosten. Das gilt auch während oder nach der Elternzeit. Wir übernehmen die komplette Abwicklung mit der Behörde.",
+    a: "Ja – wenn Sie bei der Agentur für Arbeit oder dem Jobcenter arbeitssuchend gemeldet sind und einen AVGS-Gutschein bekommen, übernimmt die Agentur 100 % der Kosten. Das gilt auch während oder nach der Elternzeit. Wir übernehmen die komplette Abwicklung mit der Behörde.",
   },
   {
     q: "Ich stecke mitten in der Elternzeit – wann ist der richtige Zeitpunkt?",
-    a: "Früher, als die meisten denken: Ein Coaching vor dem Wiedereinstieg verschafft Dir Klarheit, bevor Du Entscheidungen triffst oder verhandeln musst. Viele Klientinnen starten sechs bis drei Monate vor dem geplanten Wiedereinstieg – online geht das auch mit Kind zu Hause.",
+    a: "Früher, als die meisten denken: Ein Coaching vor dem Wiedereinstieg verschafft Ihnen Klarheit, bevor Sie Entscheidungen treffen oder verhandeln müssen. Viele Klientinnen starten sechs bis drei Monate vor dem geplanten Wiedereinstieg – online geht das auch mit Kind zu Hause.",
   },
   {
     q: "Geht das Coaching auch online oder hybrid?",
-    a: "Ja. Alle Coachings finden wahlweise in Berlin, Potsdam oder Augsburg, komplett online via Zoom oder hybrid statt. Die Termine legen wir so, dass sie in Deinen Alltag passen.",
+    a: "Ja. Alle Coachings finden wahlweise in Berlin, Potsdam oder Augsburg, komplett online via Zoom oder hybrid statt. Die Termine legen wir so, dass sie in Ihren Alltag passen.",
   },
 ];
 
@@ -90,7 +90,7 @@ export default function CoachingFuerFrauenPage() {
             Karrierecoaching <em>von Frau zu Frau.</em>
           </>
         }
-        intro="Wiedereinstieg nach der Elternzeit, Neuorientierung oder der nächste Karriereschritt: Bei Kuhl & Engel begleiten Dich Coachinnen, die Deine Fragen aus eigener Erfahrung kennen. Gegründet von zwei Frauen, getragen von 14 Coachinnen – und mit AVGS-Gutschein zu 100 % kostenfrei."
+        intro="Wiedereinstieg nach der Elternzeit, Neuorientierung oder der nächste Karriereschritt: Bei Kuhl & Engel begleiten Sie Coachinnen, die Ihre Fragen aus eigener Erfahrung kennen. Gegründet von zwei Frauen, getragen von 14 Coachinnen – und mit AVGS-Gutschein zu 100 % kostenfrei."
         image="/images/coaching-7.jpg"
       />
 
@@ -118,7 +118,7 @@ export default function CoachingFuerFrauenPage() {
             Womit Frauen zu uns kommen
           </p>
           <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-            Deine Themen. <em>Unsere Erfahrung.</em>
+            Ihre Themen. <em>Unsere Erfahrung.</em>
           </h2>
         </Reveal>
         <div className="mt-14 grid gap-px overflow-hidden border border-ink/10 bg-ink/10 sm:grid-cols-2">
@@ -175,7 +175,7 @@ export default function CoachingFuerFrauenPage() {
             </p>
             <div className="mt-6 flex flex-wrap items-end justify-between gap-6">
               <h2 className="display max-w-xl text-4xl md:text-5xl">
-                Coachinnen, die Deinen Weg <em>selbst gegangen sind.</em>
+                Coachinnen, die Ihren Weg <em>selbst gegangen sind.</em>
               </h2>
               <p className="mb-2 max-w-md text-[0.95rem] leading-relaxed text-ink/60">
                 Heike Kuhl und Martina Engel-Fürstberger haben Kuhl & Engel
@@ -207,7 +207,7 @@ export default function CoachingFuerFrauenPage() {
           </div>
           <Reveal delay={150}>
             <p className="mt-10 text-[0.95rem] text-ink/60">
-              Alle 14 Coachinnen mit ihren Schwerpunkten findest Du{" "}
+              Alle 14 Coachinnen mit ihren Schwerpunkten finden Sie{" "}
               <Link href="/ueber-uns#team" className="link-gold font-semibold text-gold">
                 im Team →
               </Link>
@@ -233,10 +233,10 @@ export default function CoachingFuerFrauenPage() {
       <CtaBand
         title={
           <>
-            Dein nächstes Kapitel beginnt <em>mit einem Gespräch.</em>
+            Ihr nächstes Kapitel beginnt <em>mit einem Gespräch.</em>
           </>
         }
-        text="Lerne uns in einem kostenlosen Erstgespräch kennen – vertraulich, unverbindlich und auf Wunsch von Frau zu Frau."
+        text="Lernen Sie uns in einem kostenlosen Erstgespräch kennen – vertraulich, unverbindlich und auf Wunsch von Frau zu Frau."
       />
     </>
   );

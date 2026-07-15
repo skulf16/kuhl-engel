@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Kontakt & Standorte",
   description:
-    "Kontaktiere Kuhl & Engel: Rückruf-Service, Telefon 030 51565388-0 oder info@kuhlundengel.de. Standorte in Berlin, Potsdam, Augsburg – und online.",
+    "Kontaktieren Sie Kuhl & Engel: Rückruf-Service, Telefon 030 51565388-0 oder info@kuhlundengel.de. Standorte in Berlin, Potsdam, Augsburg – und online.",
   path: "/kontakt",
 });
 
@@ -25,7 +25,7 @@ export default function KontaktPage() {
             Der erste Schritt ist <em>ein Gespräch.</em>
           </>
         }
-        intro="Ruf uns an, schreib uns oder nutze den Rückruf-Service – wir melden uns schnellstmöglich und finden gemeinsam heraus, welches Coaching zu Dir passt."
+        intro="Rufen Sie uns an, schreiben Sie uns oder nutzen Sie den Rückruf-Service – wir melden uns schnellstmöglich und finden gemeinsam heraus, welches Coaching zu Ihnen passt."
       />
 
       {/* Kontakt + Formular */}
@@ -38,7 +38,7 @@ export default function KontaktPage() {
                 Direkter Draht
               </p>
               <h2 className="display mt-6 text-4xl">
-                Wir freuen uns <em>auf Dich.</em>
+                Wir freuen uns <em>auf Sie.</em>
               </h2>
             </Reveal>
             <Reveal delay={150}>
@@ -60,7 +60,7 @@ export default function KontaktPage() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="eyebrow text-ink/45">Deine Ansprechpartnerinnen</dt>
+                  <dt className="eyebrow text-ink/45">Ihre Ansprechpartnerinnen</dt>
                   <dd className="mt-2 leading-relaxed text-ink/70">
                     Heike Kuhl & Martina Engel-Fürstberger
                     <br />
@@ -79,7 +79,7 @@ export default function KontaktPage() {
                 Rückruf, <em>bitte!</em>
               </h3>
               <p className="mt-3 text-[0.95rem] leading-relaxed text-ink/65">
-                Hinterlasse uns Deine Nummer – wir rufen Dich zu Deiner Wunschzeit
+                Hinterlassen Sie uns Ihre Nummer – wir rufen Sie zu Ihrer Wunschzeit
                 zurück.
               </p>
               <div className="mt-8">
@@ -99,7 +99,7 @@ export default function KontaktPage() {
               Unsere Standorte
             </p>
             <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-              Berlin, Potsdam, Augsburg – <em>oder bei Dir.</em>
+              Berlin, Potsdam, Augsburg – <em>oder bei Ihnen.</em>
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

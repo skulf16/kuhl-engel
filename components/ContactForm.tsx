@@ -33,9 +33,9 @@ export default function ContactForm() {
       <div className="border border-gold/40 bg-gold/8 p-8">
         <p className="display text-2xl">Fast geschafft!</p>
         <p className="mt-3 leading-relaxed text-ink/70">
-          Dein E-Mail-Programm hat sich mit der vorbereiteten Nachricht geöffnet –
-          einfach absenden, wir melden uns schnellstmöglich bei Dir. Falls sich kein
-          Fenster geöffnet hat, erreichst Du uns direkt unter{" "}
+          Ihr E-Mail-Programm hat sich mit der vorbereiteten Nachricht geöffnet –
+          einfach absenden, wir melden uns schnellstmöglich bei Ihnen. Falls sich kein
+          Fenster geöffnet hat, erreichen Sie uns direkt unter{" "}
           <a href={`mailto:${CONTACT.email}`} className="font-semibold text-gold">
             {CONTACT.email}
           </a>{" "}
@@ -53,11 +53,11 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="grid gap-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="grid gap-2">
-          <span className="text-sm font-semibold">Dein Name *</span>
+          <span className="text-sm font-semibold">Ihr Name *</span>
           <input name="name" required autoComplete="name" className={inputStyles} placeholder="Vor- und Nachname" />
         </label>
         <label className="grid gap-2">
-          <span className="text-sm font-semibold">Deine E-Mail-Adresse *</span>
+          <span className="text-sm font-semibold">Ihre E-Mail-Adresse *</span>
           <input name="email" type="email" required autoComplete="email" className={inputStyles} placeholder="name@beispiel.de" />
         </label>
       </div>
@@ -77,7 +77,7 @@ export default function ContactForm() {
         </label>
       </div>
       <fieldset className="grid gap-2">
-        <legend className="mb-2 text-sm font-semibold">Hast Du schon einen AVGS-Gutschein?</legend>
+        <legend className="mb-2 text-sm font-semibold">Haben Sie schon einen AVGS-Gutschein?</legend>
         <div className="flex flex-wrap gap-3">
           {["ja", "nein", "ist in Beantragung"].map((option) => (
             <label
@@ -97,11 +97,11 @@ export default function ContactForm() {
         </div>
       </fieldset>
       <label className="grid gap-2">
-        <span className="text-sm font-semibold">Deine Nachricht (optional)</span>
-        <textarea name="nachricht" rows={4} className={inputStyles} placeholder="Worum geht es Dir? Ein Satz genügt." />
+        <span className="text-sm font-semibold">Ihre Nachricht (optional)</span>
+        <textarea name="nachricht" rows={4} className={inputStyles} placeholder="Worum geht es Ihnen? Ein Satz genügt." />
       </label>
       <p className="text-[0.82rem] leading-relaxed text-ink/50">
-        Mit dem Absenden erkennst Du unsere{" "}
+        Mit dem Absenden erkennen Sie unsere{" "}
         <a href="/datenschutz" className="underline decoration-gold underline-offset-2 hover:text-ink">
           Datenschutzerklärung
         </a>{" "}

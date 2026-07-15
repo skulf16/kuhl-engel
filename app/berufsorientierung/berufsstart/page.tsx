@@ -154,6 +154,7 @@ export default function BerufsstartPage() {
           </>
         }
         text="Melde Dich für ein unverbindliches Gespräch – wir helfen Dir, Deinen Weg nach der Schule zu finden."
+        informal
       />
 
       <div className="bg-cream-deep py-6 text-center">

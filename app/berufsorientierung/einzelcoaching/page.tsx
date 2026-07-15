@@ -119,7 +119,6 @@ export default function EinzelcoachingPage() {
       </section>
 
       <CtaBand
-        formal
         title={
           <>
             Sie möchten einen jungen Menschen <em>unterstützen?</em>

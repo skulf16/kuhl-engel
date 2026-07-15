@@ -22,7 +22,7 @@ export const BEREICHE: Bereich[] = [
     kicker: "Für Akademikerinnen & Akademiker",
     title: "AVGS Jobcoaching",
     claim: "Mit AVGS-Gutschein 100 % kostenfrei",
-    text: "Du willst beruflich neu durchstarten, nach der Elternzeit wieder einsteigen oder sicher in Bewerbungen gehen? Unser AVGS-zertifiziertes Jobcoaching begleitet Dich – finanziert über die Agentur für Arbeit.",
+    text: "Sie wollen beruflich neu durchstarten, nach der Elternzeit wieder einsteigen oder sicher in Bewerbungen gehen? Unser AVGS-zertifiziertes Jobcoaching begleitet Sie – finanziert über den AVGS-Gutschein der Agentur für Arbeit.",
     points: [
       "Orientierung, Bewerbung & Wiedereinstieg",
       "14 Coachinnen – auf Wunsch von Frau zu Frau",
@@ -62,8 +62,8 @@ export const JOBCOACHING_LEISTUNGEN: Leistung[] = [
     slug: "/avgs-coaching",
     nr: "01",
     title: "AVGS Coaching & Gutschein",
-    claim: "Zu 100 % staatlich gefördert",
-    text: "Individuelles 1:1-Coaching mit dem Aktivierungs- und Vermittlungsgutschein – für Dich vollständig kostenfrei. Wir erklären Dir auch, wie Du den Gutschein bekommst.",
+    claim: "Finanziert durch den AVGS-Gutschein",
+    text: "Individuelles 1:1-Coaching mit dem Aktivierungs- und Vermittlungsgutschein – für Sie vollständig kostenfrei. Wir erklären Ihnen auch, wie Sie den Gutschein bekommen.",
     image: "/images/coaching-sq-2.jpg",
   },
   {
@@ -71,7 +71,7 @@ export const JOBCOACHING_LEISTUNGEN: Leistung[] = [
     nr: "02",
     title: "Coaching für Frauen",
     claim: "Von Frau zu Frau · 14 Coachinnen",
-    text: "Wiedereinstieg nach der Elternzeit, Sichtbarkeit, Neuorientierung: Coachinnen, die Deine Fragen aus eigener Erfahrung kennen.",
+    text: "Wiedereinstieg nach der Elternzeit, Sichtbarkeit, Neuorientierung: Coachinnen, die Ihre Fragen aus eigener Erfahrung kennen.",
     image: "/images/coaching-7.jpg",
   },
   {
@@ -87,7 +87,7 @@ export const JOBCOACHING_LEISTUNGEN: Leistung[] = [
     nr: "04",
     title: "Jobcoaching Potsdam",
     claim: "Nördliche Innenstadt & online",
-    text: "AVGS Coaching in der Gutenbergstraße 87, nahe Holländisches Viertel – oder digital, ganz wie es zu Dir passt.",
+    text: "AVGS Coaching in der Gutenbergstraße 87, nahe Holländisches Viertel – oder digital, ganz wie es zu Ihnen passt.",
     image: "/images/standort-potsdam.jpg",
   },
 ];
@@ -153,7 +153,7 @@ export const TEAM: TeamMember[] = [
   {
     name: "Anna Podakova",
     role: "Assistentin der Geschäftsführung",
-    quali: "Deine Ansprechpartnerin für alle Fragen rund um Dein Coaching",
+    quali: "Ihre Ansprechpartnerin für alle Fragen rund um Ihr Coaching",
     image: "/images/team-anna-podakova.jpg",
     quote:
       "Ich übernehme den Kontakt mit der Agentur oder dem Jobcenter für dich, sodass du dich ganz auf dich und deinen Prozess konzentrieren kannst.",
@@ -261,8 +261,8 @@ export const TEAM: TeamMember[] = [
 /** Optionen für den AVGS-Buchungsfunnel. */
 export const FUNNEL_GUTSCHEIN = [
   { value: "ja", label: "Ja, habe ich", hint: "Perfekt – dann kann es schnell losgehen." },
-  { value: "nein", label: "Nein, noch nicht", hint: "Kein Problem – wir zeigen Dir, wie Du ihn bekommst." },
-  { value: "beantragung", label: "In Beantragung", hint: "Sehr gut – wir begleiten Dich durch den Rest." },
+  { value: "nein", label: "Nein, noch nicht", hint: "Kein Problem – wir zeigen Ihnen, wie Sie ihn bekommen." },
+  { value: "beantragung", label: "In Beantragung", hint: "Sehr gut – wir begleiten Sie durch den Rest." },
 ];
 
 export const FUNNEL_THEMEN = [
@@ -321,7 +321,7 @@ export type Faq = { q: string; a: string };
 export const FAQS_AVGS: Faq[] = [
   {
     q: "Ich habe einen AVGS. Wie ist das Procedere?",
-    a: "Wir telefonieren und finden gemeinsam heraus, welche:r Coach:in zu dir passt. Nach einem kostenlosen Erstgespräch (20–30 Minuten) entscheidest du, ob du das Coaching machen möchtest. Du schickst uns deinen AVGS, wir füllen den Gutschein aus und übernehmen die gesamte Korrespondenz mit der Agentur oder dem Jobcenter. Sobald die Bewilligung vorliegt, kann das Coaching beginnen.",
+    a: "Wir telefonieren und finden gemeinsam heraus, welche:r Coach:in zu Ihnen passt. Nach einem kostenlosen Erstgespräch (20–30 Minuten) entscheiden Sie, ob Sie das Coaching machen möchten. Sie schicken uns Ihren AVGS, wir füllen den Gutschein aus und übernehmen die gesamte Korrespondenz mit der Agentur oder dem Jobcenter. Sobald die Bewilligung vorliegt, kann das Coaching beginnen.",
   },
   {
     q: "Was muss auf meinem AVGS stehen, damit ich ihn einlösen kann?",
@@ -333,11 +333,11 @@ export const FAQS_AVGS: Faq[] = [
   },
   {
     q: "Wie viele Stunden umfasst das AVGS Coaching?",
-    a: "Je nach Bewilligung 24 Unterrichtseinheiten in 6 Wochen, 32 UE in 8 Wochen oder 44 UE in 11 Wochen (1 UE = 45 Minuten). Welcher Umfang zu deinem Anliegen passt, klären wir im kostenlosen Erstgespräch – beantragt wird er über deinen AVGS.",
+    a: "Je nach Bewilligung 24 Unterrichtseinheiten in 6 Wochen, 32 UE in 8 Wochen oder 44 UE in 11 Wochen (1 UE = 45 Minuten). Welcher Umfang zu Ihrem Anliegen passt, klären wir im kostenlosen Erstgespräch – beantragt wird er über Ihren AVGS.",
   },
   {
-    q: "Ich habe keinen AVGS. Kann ich trotzdem zu euch kommen?",
-    a: "Ja, unbedingt. Ruf uns einfach an – wir schauen uns gemeinsam deine Situation an und finden eine individuelle Lösung.",
+    q: "Ich habe keinen AVGS. Kann ich trotzdem zu Ihnen kommen?",
+    a: "Ja, unbedingt. Rufen Sie uns einfach an – wir schauen uns gemeinsam Ihre Situation an und finden eine individuelle Lösung.",
   },
 ];
 

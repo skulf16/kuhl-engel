@@ -22,7 +22,7 @@ export const metadata = pageMetadata({
 const FAQS_BERLIN: Faq[] = [
   {
     q: "Wo findet das Jobcoaching in Berlin statt?",
-    a: "Unser Berliner Standort liegt in der Bötzowstraße 28, 10407 Berlin – im ruhigen Bötzowviertel in Prenzlauer Berg, wenige Minuten vom Volkspark Friedrichshain. Alternativ coachen wir Dich online oder hybrid.",
+    a: "Unser Berliner Standort liegt in der Bötzowstraße 28, 10407 Berlin – im ruhigen Bötzowviertel in Prenzlauer Berg, wenige Minuten vom Volkspark Friedrichshain. Alternativ coachen wir Sie online oder hybrid.",
   },
   {
     q: "Was kostet ein Jobcoaching in Berlin?",
@@ -30,23 +30,23 @@ const FAQS_BERLIN: Faq[] = [
   },
   {
     q: "Kann ich meinen AVGS-Gutschein in Berlin einlösen?",
-    a: "Ja. Kuhl & Engel ist AZAV-zertifizierter Träger, Du kannst Deinen Aktivierungs- und Vermittlungsgutschein direkt an unserem Berliner Standort einlösen. Der Gutschein muss noch mindestens 10 Tage gültig sein, mindestens 20 Unterrichtseinheiten umfassen und in Teilzeit ausgestellt sein – das Coaching ist dann für Dich kostenfrei.",
+    a: "Ja. Kuhl & Engel ist AZAV-zertifizierter Träger, Sie können Ihren Aktivierungs- und Vermittlungsgutschein direkt an unserem Berliner Standort einlösen. Der Gutschein muss noch mindestens 10 Tage gültig sein, mindestens 20 Unterrichtseinheiten umfassen und in Teilzeit ausgestellt sein – das Coaching ist dann für Sie kostenfrei.",
   },
   {
     q: "Was genau macht ein Jobcoach?",
-    a: "Ein Jobcoach begleitet Dich im 1:1 bei beruflicher Orientierung, Bewerbungsstrategie, Vorstellungsgesprächen und Karriereentscheidungen. Bei Kuhl & Engel arbeiten alle Coaches systemisch: Statt fertiger Rezepte entwickelst Du Klarheit über Deine Stärken, Werte und Ziele – und einen konkreten Plan für Deinen nächsten beruflichen Schritt.",
+    a: "Ein Jobcoach begleitet Sie im 1:1 bei beruflicher Orientierung, Bewerbungsstrategie, Vorstellungsgesprächen und Karriereentscheidungen. Bei Kuhl & Engel arbeiten alle Coaches systemisch: Statt fertiger Rezepte entwickeln Sie Klarheit über Ihre Stärken, Werte und Ziele – und einen konkreten Plan für Ihren nächsten beruflichen Schritt.",
   },
   {
     q: "Wie finde ich einen seriösen Jobcoach in Berlin?",
-    a: "Achte auf drei Dinge: eine AZAV-Zertifizierung des Trägers (Voraussetzung, um AVGS-Gutscheine annehmen zu dürfen), eine fundierte, zertifizierte Coaching-Ausbildung und ein kostenloses Erstgespräch, in dem Du prüfst, ob die Chemie stimmt. Kuhl & Engel erfüllt alle drei Kriterien – und wenn es doch nicht passt, wechselst Du einfach die Coachin.",
+    a: "Achten Sie auf drei Dinge: eine AZAV-Zertifizierung des Trägers (Voraussetzung, um AVGS-Gutscheine annehmen zu dürfen), eine fundierte, zertifizierte Coaching-Ausbildung und ein kostenloses Erstgespräch, in dem Sie prüfen, ob die Chemie stimmt. Kuhl & Engel erfüllt alle drei Kriterien – und wenn es doch nicht passt, wechseln Sie einfach die Coachin.",
   },
   {
     q: "Ist Kuhl & Engel dasselbe wie das „Berliner JobCoaching“ des Senats?",
-    a: "Nein. Das „Berliner JobCoaching (BJC)“ ist ein Programm der Senatsverwaltung für Teilnehmende öffentlich geförderter Beschäftigungsmaßnahmen. Kuhl & Engel ist ein unabhängiger, AZAV-zertifizierter Träger: Unser AVGS-Jobcoaching ist ein individuelles 1:1-Karrierecoaching für Akademikerinnen und Akademiker – finanziert über den AVGS-Gutschein Deiner Agentur für Arbeit oder Deines Jobcenters.",
+    a: "Nein. Das „Berliner JobCoaching (BJC)“ ist ein Programm der Senatsverwaltung für Teilnehmende öffentlich geförderter Beschäftigungsmaßnahmen. Kuhl & Engel ist ein unabhängiger, AZAV-zertifizierter Träger: Unser AVGS-Jobcoaching ist ein individuelles 1:1-Karrierecoaching für Akademikerinnen und Akademiker – finanziert über den AVGS-Gutschein Ihrer Agentur für Arbeit oder Ihres Jobcenters.",
   },
   {
     q: "Welche Coaches arbeiten in Berlin?",
-    a: "In Berlin coachen unter anderem Gründerin Heike Kuhl, Angelina Werner und Carmen Pilger – alle systemisch ausgebildet und zertifiziert. Carmen Pilger coacht auch auf Englisch. Gemeinsam finden wir die Person, die am besten zu Dir und Deinem Thema passt.",
+    a: "In Berlin coachen unter anderem Gründerin Heike Kuhl, Angelina Werner und Carmen Pilger – alle systemisch ausgebildet und zertifiziert. Carmen Pilger coacht auch auf Englisch. Gemeinsam finden wir die Person, die am besten zu Ihnen und Ihrem Thema passt.",
   },
   {
     q: "Geht das Jobcoaching auch auf Englisch?",
@@ -90,7 +90,7 @@ export default function JobcoachingBerlinPage() {
             Jobcoaching in Berlin – <em>mitten im Bötzowviertel.</em>
           </>
         }
-        intro="AVGS Coaching, Karrierecoaching und berufliche Neuorientierung in der Bötzowstraße 28, wenige Minuten vom Volkspark Friedrichshain – oder online, ganz wie es zu Dir passt."
+        intro="AVGS Coaching, Karrierecoaching und berufliche Neuorientierung in der Bötzowstraße 28, wenige Minuten vom Volkspark Friedrichshain – oder online, ganz wie es zu Ihnen passt."
         image="/images/standort-berlin.jpg"
       />
 
@@ -120,12 +120,12 @@ export default function JobcoachingBerlinPage() {
                 Angebote in Berlin
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                Alles, was Deine Karriere <em>weiterbringt.</em>
+                Alles, was Ihre Karriere <em>weiterbringt.</em>
               </h2>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink/70">
                 Vom geförderten AVGS Coaching über Bewerbungs- und
                 Karrierecoaching bis zum Wiedereinstieg nach der Elternzeit:
-                Am Berliner Standort steht Dir unser komplettes Angebot offen –
+                Am Berliner Standort steht Ihnen unser komplettes Angebot offen –
                 begleitet von systemisch ausgebildeten, zertifizierten
                 Coachinnen und Coaches.
               </p>
@@ -184,10 +184,10 @@ export default function JobcoachingBerlinPage() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              Dein Team in Berlin
+              Ihr Team in Berlin
             </p>
             <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-              Diese Coaches begleiten Dich <em>vor Ort.</em>
+              Diese Coaches begleiten Sie <em>vor Ort.</em>
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
@@ -213,7 +213,7 @@ export default function JobcoachingBerlinPage() {
           </div>
           <Reveal delay={150}>
             <p className="mt-10 text-[0.95rem] text-ink/60">
-              Das komplette Team mit allen Schwerpunkten findest Du{" "}
+              Das komplette Team mit allen Schwerpunkten finden Sie{" "}
               <Link href="/ueber-uns#team" className="link-gold font-semibold text-gold">
                 hier →
               </Link>
@@ -267,12 +267,12 @@ export default function JobcoachingBerlinPage() {
               AVGS-Jobcoaching – individuelles 1:1-Karrierecoaching für
               Akademikerinnen und Akademiker, Fach- und Führungskräfte. Mit
               einem AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters
-              ist es für Dich zu 100 % kostenfrei.
+              ist es für Sie zu 100 % kostenfrei.
             </p>
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
-              Du hast noch keinen Gutschein?{" "}
+              Sie haben noch keinen Gutschein?{" "}
               <Link href="/avgs-gutschein-beantragen" className="link-gold font-semibold text-gold">
-                So beantragst Du den AVGS →
+                So beantragen Sie den AVGS →
               </Link>
             </p>
           </Reveal>
@@ -296,10 +296,10 @@ export default function JobcoachingBerlinPage() {
       <CtaBand
         title={
           <>
-            Lerne uns in Berlin <em>persönlich kennen.</em>
+            Lernen Sie uns in Berlin <em>persönlich kennen.</em>
           </>
         }
-        text="Vereinbare ein kostenloses Erstgespräch – in der Bötzowstraße, telefonisch oder online."
+        text="Vereinbaren Sie ein kostenloses Erstgespräch – in der Bötzowstraße, telefonisch oder online."
       />
     </>
   );

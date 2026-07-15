@@ -22,15 +22,15 @@ export const metadata = pageMetadata({
 const GRUENDE = [
   {
     title: "Nachhaltig & ganzheitlich",
-    text: "Wir entwickeln mit Dir eine berufliche Ausrichtung, die Dich langfristig motiviert – nicht die schnelle Notlösung.",
+    text: "Wir entwickeln mit Ihnen eine berufliche Ausrichtung, die Sie langfristig motiviert – nicht die schnelle Notlösung.",
   },
   {
     title: "Empathisch & wertschätzend",
-    text: "Zugewandte Coaches, die Deinen Handlungsspielraum mit Dir neu definieren. Immer auf Augenhöhe.",
+    text: "Zugewandte Coaches, die Ihren Handlungsspielraum mit Ihnen neu definieren. Immer auf Augenhöhe.",
   },
   {
     title: "Persönlich & individuell",
-    text: "Kein Schema F: Du gibst die Richtung an, wir begleiten Dich an Deinen Bedürfnissen ausgerichtet.",
+    text: "Kein Schema F: Sie geben die Richtung an, wir begleiten Sie an Ihren Bedürfnissen ausgerichtet.",
   },
   {
     title: "Professionell & erfahren",
@@ -40,28 +40,28 @@ const GRUENDE = [
 
 const SZENARIEN = [
   {
-    title: "Du willst raus – weißt aber nicht, wohin.",
-    text: "Der aktuelle Job trägt nicht mehr, doch keine Stellenanzeige fühlt sich richtig an. Im Coaching findest Du heraus, was Dir wirklich wichtig ist – und welche Wege dazu passen.",
+    title: "Sie wollen raus – wissen aber nicht, wohin.",
+    text: "Der aktuelle Job trägt nicht mehr, doch keine Stellenanzeige fühlt sich richtig an. Im Coaching finden Sie heraus, was Ihnen wirklich wichtig ist – und welche Wege dazu passen.",
   },
   {
-    title: "Deine Bewerbungen bleiben unbeantwortet.",
-    text: "Starke Qualifikation, wenig Resonanz: Gemeinsam schärfen wir Deine Positionierung, Deine Unterlagen und Deine Strategie – bis die Einladungen kommen.",
+    title: "Ihre Bewerbungen bleiben unbeantwortet.",
+    text: "Starke Qualifikation, wenig Resonanz: Gemeinsam schärfen wir Ihre Positionierung, Ihre Unterlagen und Ihre Strategie – bis die Einladungen kommen.",
   },
   {
-    title: "Du willst nach der Elternzeit neu ansetzen.",
-    text: "Zurück ja – aber nicht zurück in den alten Trott. Wir klären, wie ein Wiedereinstieg aussieht, der zu Deinem Leben von heute passt.",
+    title: "Sie wollen nach der Elternzeit neu ansetzen.",
+    text: "Zurück ja – aber nicht zurück in den alten Trott. Wir klären, wie ein Wiedereinstieg aussieht, der zu Ihrem Leben von heute passt.",
   },
   {
     title: "Nach Studium oder Promotion fehlt der rote Faden.",
-    text: "Hochqualifiziert, aber der Arbeitsmarkt wirkt unübersichtlich? Wir übersetzen Deine Fähigkeiten in konkrete berufliche Richtungen.",
+    text: "Hochqualifiziert, aber der Arbeitsmarkt wirkt unübersichtlich? Wir übersetzen Ihre Fähigkeiten in konkrete berufliche Richtungen.",
   },
   {
-    title: "Im Vorstellungsgespräch bleibst Du unter Deinem Wert.",
-    text: "Du kannst mehr, als Du zeigst. Wir arbeiten an Auftreten, Selbstsicherheit und dem Umgang mit schwierigen Fragen – bis Du überzeugst, ohne Dich zu verbiegen.",
+    title: "Im Vorstellungsgespräch bleiben Sie unter Ihrem Wert.",
+    text: "Sie können mehr, als Sie zeigen. Wir arbeiten an Auftreten, Selbstsicherheit und dem Umgang mit schwierigen Fragen – bis Sie überzeugen, ohne sich zu verbiegen.",
   },
   {
     title: "Die Arbeitslosigkeit nagt am Selbstvertrauen.",
-    text: "Je länger die Suche, desto lauter die Zweifel. Im Coaching gewinnst Du Struktur, Zuversicht und einen Plan, der Dich wieder in Bewegung bringt.",
+    text: "Je länger die Suche, desto lauter die Zweifel. Im Coaching gewinnen Sie Struktur, Zuversicht und einen Plan, der Sie wieder in Bewegung bringt.",
   },
 ];
 
@@ -93,27 +93,27 @@ const FAQS_JOBCOACHING: Faq[] = [
   },
   {
     q: "Was macht ein Jobcoach genau?",
-    a: "Ein Jobcoach begleitet Dich im 1:1 durch berufliche Veränderung: Standortbestimmung, Klarheit über Stärken und Werte, Bewerbungsstrategie, Vorstellungsgespräche und Entscheidungen. Anders als eine Beratung gibt Dir ein Coach keine fertigen Antworten vor, sondern führt Dich mit Methoden, Struktur und Feedback zu Deinen eigenen – die deshalb auch langfristig tragen.",
+    a: "Ein Jobcoach begleitet Sie im 1:1 durch berufliche Veränderung: Standortbestimmung, Klarheit über Stärken und Werte, Bewerbungsstrategie, Vorstellungsgespräche und Entscheidungen. Anders als eine Beratung gibt Ihnen ein Coach keine fertigen Antworten vor, sondern führt Sie mit Methoden, Struktur und Feedback zu Ihren eigenen – die deshalb auch langfristig tragen.",
   },
   {
     q: "Wie lange dauert ein Jobcoaching?",
-    a: "Bei Kuhl & Engel gibt es drei Umfänge: 24 Unterrichtseinheiten in 6 Wochen, 32 UE in 8 Wochen oder 44 UE in 11 Wochen (1 UE = 45 Minuten). Welcher Umfang zu Deinem Anliegen passt, klären wir im kostenlosen Erstgespräch – bewilligt wird er über Deinen AVGS.",
+    a: "Bei Kuhl & Engel gibt es drei Umfänge: 24 Unterrichtseinheiten in 6 Wochen, 32 UE in 8 Wochen oder 44 UE in 11 Wochen (1 UE = 45 Minuten). Welcher Umfang zu Ihrem Anliegen passt, klären wir im kostenlosen Erstgespräch – bewilligt wird er über Ihren AVGS.",
   },
   {
     q: "Wer bezahlt das Jobcoaching?",
-    a: "In den meisten Fällen die Agentur für Arbeit oder das Jobcenter – über den AVGS-Gutschein nach § 45 SGB III. Die Kostenübernahme ist vollständig, es gibt keinen Eigenanteil. Wie Du den Gutschein bekommst, erklären wir Schritt für Schritt in unserem AVGS-Ratgeber.",
+    a: "In den meisten Fällen die Agentur für Arbeit oder das Jobcenter – über den AVGS-Gutschein nach § 45 SGB III. Die Kostenübernahme ist vollständig, es gibt keinen Eigenanteil. Wie Sie den Gutschein bekommen, erklären wir Schritt für Schritt in unserem AVGS-Ratgeber.",
   },
   {
     q: "Für wen ist Jobcoaching sinnvoll?",
-    a: "Für alle, die beruflich in einer Veränderungssituation stecken: Arbeitslose und Arbeitssuchende, Wiedereinsteigerinnen nach der Elternzeit, Absolventinnen und Promovierte auf Richtungssuche, Fach- und Führungskräfte vor dem nächsten Schritt. Wir sind auf Akademikerinnen und Akademiker spezialisiert – entscheidend ist aber Dein Anliegen, nicht Dein Titel.",
+    a: "Für alle, die beruflich in einer Veränderungssituation stecken: Arbeitslose und Arbeitssuchende, Wiedereinsteigerinnen nach der Elternzeit, Absolventinnen und Promovierte auf Richtungssuche, Fach- und Führungskräfte vor dem nächsten Schritt. Wir sind auf Akademikerinnen und Akademiker spezialisiert – entscheidend ist aber Ihr Anliegen, nicht Ihr Titel.",
   },
   {
     q: "Was ist der Unterschied zwischen Jobcoaching und Bewerbungstraining?",
-    a: "Ein Bewerbungstraining übt Unterlagen und Gespräche. Jobcoaching setzt früher an: Erst klären wir, wohin Du überhaupt willst und was Dich ausmacht – dann folgen Strategie und Bewerbung. Die Bewerbungsthemen sind also ein Teil des Coachings, nicht das Ganze.",
+    a: "Ein Bewerbungstraining übt Unterlagen und Gespräche. Jobcoaching setzt früher an: Erst klären wir, wohin Sie überhaupt wollen und was Sie ausmacht – dann folgen Strategie und Bewerbung. Die Bewerbungsthemen sind also ein Teil des Coachings, nicht das Ganze.",
   },
   {
     q: "Ist Jobcoaching auch online möglich?",
-    a: "Ja. Du kannst komplett online via Zoom gecoacht werden, vor Ort in Berlin, Potsdam oder Augsburg – oder hybrid als Kombination aus beidem. Die Wirkung ist dieselbe, entscheidend ist die Beziehung zu Deiner Coachin.",
+    a: "Ja. Sie können komplett online via Zoom gecoacht werden, vor Ort in Berlin, Potsdam oder Augsburg – oder hybrid als Kombination aus beidem. Die Wirkung ist dieselbe, entscheidend ist die Beziehung zu Ihrer Coachin.",
   },
 ];
 
@@ -139,7 +139,7 @@ export default function JobcoachingPage() {
             Jobcoaching, das <em>wirklich weiterbringt.</em>
           </>
         }
-        intro="Ob berufliche Orientierung, der nächste Karriereschritt oder ein kompletter Neustart: Als AVGS-zertifizierte Jobcoaches begleiten wir Dich dabei, eine Tätigkeit zu finden, die zu Dir passt – und Dir langfristig gefällt. Mit AVGS-Gutschein für Dich vollständig kostenfrei."
+        intro="Ob berufliche Orientierung, der nächste Karriereschritt oder ein kompletter Neustart: Als AVGS-zertifizierte Jobcoaches begleiten wir Sie dabei, eine Tätigkeit zu finden, die zu Ihnen passt – und Ihnen langfristig gefällt. Mit AVGS-Gutschein für Sie vollständig kostenfrei."
         image="/images/coaching-warm.jpg"
       />
 
@@ -148,7 +148,7 @@ export default function JobcoachingPage() {
         <Reveal>
           <FactBox
             question="Was ist Jobcoaching?"
-            answer="Jobcoaching ist eine individuelle 1:1-Begleitung rund um Beruf und Karriere – von der beruflichen Orientierung über die Bewerbung bis zum Neustart. Bei Kuhl & Engel arbeiten wir systemisch und ganzheitlich und sind auf Akademikerinnen und Akademiker, Fach- und Führungskräfte spezialisiert: seit 2018, mit 246 AVGS-Coachings und über 6.500 Unterrichtseinheiten seit 2022. Über den AVGS-Gutschein der Agentur für Arbeit ist das Coaching für Dich zu 100 % kostenfrei."
+            answer="Jobcoaching ist eine individuelle 1:1-Begleitung rund um Beruf und Karriere – von der beruflichen Orientierung über die Bewerbung bis zum Neustart. Bei Kuhl & Engel arbeiten wir systemisch und ganzheitlich und sind auf Akademikerinnen und Akademiker, Fach- und Führungskräfte spezialisiert: seit 2018, mit 246 AVGS-Coachings und über 6.500 Unterrichtseinheiten seit 2022. Über den AVGS-Gutschein der Agentur für Arbeit ist das Coaching für Sie zu 100 % kostenfrei."
             facts={[
               { label: "Für wen", value: "Jobsuchende, Akademikerinnen und Akademiker, Fach- & Führungskräfte" },
               { label: "Themen", value: "Orientierung, Bewerbung, Karriere, Neustart" },
@@ -171,9 +171,9 @@ export default function JobcoachingPage() {
             Sechs Situationen, in denen Jobcoaching <em>den Unterschied macht.</em>
           </h2>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/70">
-            Ein Jobcoaching brauchst Du nicht, weil mit Dir etwas nicht stimmt –
-            sondern weil berufliche Veränderung allein schwer ist. Erkennst Du
-            Dich in einer dieser Situationen wieder?
+            Ein Jobcoaching brauchen Sie nicht, weil mit Ihnen etwas nicht stimmt –
+            sondern weil berufliche Veränderung allein schwer ist. Erkennen Sie
+            sich in einer dieser Situationen wieder?
           </p>
         </Reveal>
         <div className="mt-14 grid gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
@@ -240,7 +240,7 @@ export default function JobcoachingPage() {
             </p>
             <div className="mt-6 flex flex-wrap items-end justify-between gap-6">
               <h2 className="display max-w-2xl text-4xl md:text-5xl">
-                So läuft Dein Jobcoaching <em>ab.</em>
+                So läuft Ihr Jobcoaching <em>ab.</em>
               </h2>
               <p className="mb-1.5 max-w-sm text-[0.95rem] leading-relaxed text-ink/60">
                 Alle Termine finden 1:1 statt – vor Ort in Berlin, Potsdam oder
@@ -265,8 +265,8 @@ export default function JobcoachingPage() {
           </div>
           <Reveal delay={150}>
             <p className="mt-10 max-w-3xl text-lg leading-relaxed text-ink/70">
-              Welcher Umfang zu Deinem Anliegen passt, klären wir im kostenlosen
-              Erstgespräch – bewilligt wird er über Deinen{" "}
+              Welcher Umfang zu Ihrem Anliegen passt, klären wir im kostenlosen
+              Erstgespräch – bewilligt wird er über Ihren{" "}
               <Link href="/avgs-gutschein-beantragen" className="link-gold font-semibold text-gold">
                 AVGS-Gutschein
               </Link>
@@ -311,7 +311,7 @@ export default function JobcoachingPage() {
                 <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
               <a href={CONTACT.phoneHref} className="font-semibold text-cream/80 transition-colors hover:text-gold-bright">
-                oder ruf an: {CONTACT.phone}
+                oder rufen Sie an: {CONTACT.phone}
               </a>
             </div>
           </Reveal>
@@ -330,15 +330,15 @@ export default function JobcoachingPage() {
               Systemisch heißt: Wir schauen <em>aufs Ganze.</em>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
-              Dein Beruf ist kein isoliertes Thema. Er hängt mit Deinen Werten
-              zusammen, mit Deiner Lebenssituation, mit den Erwartungen von
-              Familie und Umfeld – und mit Glaubenssätzen, die Du oft gar nicht
-              bemerkst. Systemisches Coaching bezieht dieses ganze System ein,
+              Ihr Beruf ist kein isoliertes Thema. Er hängt mit Ihren Werten
+              zusammen, mit Ihrer Lebenssituation, mit den Erwartungen von
+              Familie und Umfeld – und mit Glaubenssätzen, die Sie oft gar nicht
+              bemerken. Systemisches Coaching bezieht dieses ganze System ein,
               statt nur am Lebenslauf zu polieren.
             </p>
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
               Das Ergebnis sind keine schnellen Notlösungen, sondern
-              Entscheidungen, die von Dir selbst kommen – und deshalb auch dann
+              Entscheidungen, die von Ihnen selbst kommen – und deshalb auch dann
               noch tragen, wenn das Coaching längst abgeschlossen ist.
             </p>
           </Reveal>
@@ -351,15 +351,15 @@ export default function JobcoachingPage() {
               Coaching oder <em>Beratung?</em>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
-              Eine Karriereberatung gibt Dir Empfehlungen von außen. Ein
-              Jobcoaching entwickelt Deine eigenen Antworten – mit Methoden,
-              Struktur und ehrlichem Feedback. Beides hat seinen Platz; wenn Du
-              nachhaltige Klarheit suchst, ist Coaching der wirksamere Weg.
+              Eine Karriereberatung gibt Ihnen Empfehlungen von außen. Ein
+              Jobcoaching entwickelt Ihre eigenen Antworten – mit Methoden,
+              Struktur und ehrlichem Feedback. Beides hat seinen Platz; wenn Sie
+              nachhaltige Klarheit suchen, ist Coaching der wirksamere Weg.
             </p>
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
               Das Beste: Am Preis ändert der Unterschied nichts. Mit einem
               AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters ist
-              das komplette 1:1-Coaching für Dich kostenfrei – Du bekommst
+              das komplette 1:1-Coaching für Sie kostenfrei – Sie bekommen
               echte Begleitung statt Beratung von der Stange, ohne einen Euro
               zu zahlen.
             </p>
@@ -383,7 +383,7 @@ export default function JobcoachingPage() {
           <p className="mt-10 text-center text-lg text-ink/70">
             Noch keinen Gutschein?{" "}
             <Link href="/avgs-gutschein-beantragen" className="link-gold font-semibold text-gold">
-              So beantragst Du den AVGS →
+              So beantragen Sie den AVGS →
             </Link>
           </p>
         </Reveal>
@@ -392,10 +392,10 @@ export default function JobcoachingPage() {
       <CtaBand
         title={
           <>
-            Stell Dir eine Arbeit vor, die <em>zu Dir passt.</em>
+            Stellen Sie sich eine Arbeit vor, die <em>zu Ihnen passt.</em>
           </>
         }
-        text="Klingt weltfremd? Wir sind überzeugt: Das geht. Lerne uns in einem kostenlosen Erstgespräch kennen."
+        text="Klingt weltfremd? Wir sind überzeugt: Das geht. Lernen Sie uns in einem kostenlosen Erstgespräch kennen."
       />
     </>
   );

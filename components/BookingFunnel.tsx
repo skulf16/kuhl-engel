@@ -73,9 +73,9 @@ export default function BookingFunnel() {
       <div className="border border-gold/40 bg-gold/8 p-8 md:p-10">
         <p className="display text-3xl">Geschafft – wir melden uns!</p>
         <p className="mt-4 max-w-xl leading-relaxed text-ink/70">
-          Dein E-Mail-Programm hat sich mit Deiner Anfrage geöffnet – einmal
-          absenden, und wir rufen Dich zu Deiner Wunschzeit zurück. Falls sich
-          nichts geöffnet hat, erreichst Du uns direkt unter{" "}
+          Ihr E-Mail-Programm hat sich mit Ihrer Anfrage geöffnet – einmal
+          absenden, und wir rufen Sie zu Ihrer Wunschzeit zurück. Falls sich
+          nichts geöffnet hat, erreichen Sie uns direkt unter{" "}
           <a href={CONTACT.phoneHref} className="font-semibold text-gold">
             {CONTACT.phone}
           </a>
@@ -114,11 +114,11 @@ export default function BookingFunnel() {
       {step === 0 && (
         <div className="mt-8">
           <h3 className="display text-2xl md:text-3xl">
-            Hast Du schon einen <em>AVGS-Gutschein?</em>
+            Haben Sie schon einen <em>AVGS-Gutschein?</em>
           </h3>
           <p className="mt-3 text-[0.95rem] leading-relaxed text-ink/60">
-            Damit ist Dein Coaching zu 100 % kostenfrei. Auch ohne Gutschein bist
-            Du richtig – wir helfen Dir dabei.
+            Damit ist Ihr Coaching zu 100 % kostenfrei. Auch ohne Gutschein sind
+            Sie richtig – wir helfen Ihnen dabei.
           </p>
           <div className="mt-6 grid gap-3">
             {FUNNEL_GUTSCHEIN.map((o) => (
@@ -142,11 +142,11 @@ export default function BookingFunnel() {
       {step === 1 && (
         <div className="mt-8">
           <h3 className="display text-2xl md:text-3xl">
-            Worum geht es Dir <em>gerade?</em>
+            Worum geht es Ihnen <em>gerade?</em>
           </h3>
           <p className="mt-3 text-[0.95rem] leading-relaxed text-ink/60">
-            Damit finden wir die Coachin oder den Coach, die:der am besten zu Dir
-            passt.
+            Damit finden wir die Coachin oder den Coach, die:der am besten zu
+            Ihnen passt.
           </p>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {FUNNEL_THEMEN.map((o) => (
@@ -167,10 +167,10 @@ export default function BookingFunnel() {
       {step === 2 && (
         <div className="mt-8">
           <h3 className="display text-2xl md:text-3xl">
-            Wo möchtest Du <em>gecoacht werden?</em>
+            Wo möchten Sie <em>gecoacht werden?</em>
           </h3>
           <p className="mt-3 text-[0.95rem] leading-relaxed text-ink/60">
-            Vor Ort, online oder hybrid – Du entscheidest.
+            Vor Ort, online oder hybrid – Sie entscheiden.
           </p>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {FUNNEL_ORTE.map((o) => (
@@ -198,11 +198,11 @@ export default function BookingFunnel() {
               Fast geschafft – <em>wohin dürfen wir zurückrufen?</em>
             </h3>
             <p className="mt-3 text-[0.95rem] leading-relaxed text-ink/60">
-              Unverbindlich und kostenlos. Wir melden uns zu Deiner Wunschzeit.
+              Unverbindlich und kostenlos. Wir melden uns zu Ihrer Wunschzeit.
             </p>
           </div>
           <label className="grid gap-2">
-            <span className="text-sm font-semibold">Dein Name *</span>
+            <span className="text-sm font-semibold">Ihr Name *</span>
             <input name="name" required autoComplete="name" className={inputStyles} placeholder="Vor- und Nachname" value={answers.name} onChange={(e) => set({ name: e.target.value })} />
           </label>
           <div className="grid gap-5 sm:grid-cols-2">
@@ -216,7 +216,7 @@ export default function BookingFunnel() {
             </label>
           </div>
           <label className="grid gap-2">
-            <span className="text-sm font-semibold">Wann erreichen wir Dich am besten?</span>
+            <span className="text-sm font-semibold">Wann erreichen wir Sie am besten?</span>
             <select className={inputStyles} value={answers.zeit} onChange={(e) => set({ zeit: e.target.value })}>
               <option value="">Bitte wählen</option>
               {FUNNEL_ZEIT.map((z) => (
@@ -225,7 +225,7 @@ export default function BookingFunnel() {
             </select>
           </label>
           <p className="text-[0.82rem] leading-relaxed text-ink/50">
-            Mit dem Absenden erkennst Du unsere{" "}
+            Mit dem Absenden erkennen Sie unsere{" "}
             <a href="/datenschutz" className="underline decoration-gold underline-offset-2 hover:text-ink">Datenschutzerklärung</a> an.
           </p>
           <button

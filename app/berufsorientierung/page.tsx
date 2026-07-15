@@ -164,7 +164,6 @@ export default function BerufsorientierungPage() {
       </section>
 
       <CtaBand
-        formal
         title={
           <>
             Holen Sie „Mein Berufseinstieg“ <em>an Ihre Schule.</em>

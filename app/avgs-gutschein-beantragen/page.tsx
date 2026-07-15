@@ -10,9 +10,9 @@ import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "AVGS-Gutschein beantragen – so bekommst Du die Förderung",
+  title: "AVGS-Gutschein beantragen – so bekommen Sie die Förderung",
   description:
-    "AVGS beantragen in 5 Schritten: Wer den Aktivierungs- und Vermittlungsgutschein bekommt, wie das Gespräch bei Agentur für Arbeit oder Jobcenter läuft und worauf Du beim Gutschein achten musst – damit Dein Jobcoaching 100 % kostenfrei ist.",
+    "AVGS beantragen in 5 Schritten: Wer den Aktivierungs- und Vermittlungsgutschein bekommt, wie das Gespräch bei Agentur für Arbeit oder Jobcenter läuft und worauf Sie beim Gutschein achten müssen – damit Ihr Jobcoaching 100 % kostenfrei ist.",
   path: "/avgs-gutschein-beantragen",
   image: "/images/coaching-4.jpg",
   imageAlt: "Coaching-Gespräch bei Kuhl & Engel",
@@ -21,58 +21,58 @@ export const metadata = pageMetadata({
 const FAQS_AVGS_GUIDE: Faq[] = [
   {
     q: "Was ist ein AVGS (Aktivierungs- und Vermittlungsgutschein)?",
-    a: "Der AVGS ist ein Förderinstrument nach § 45 SGB III: Mit dem Gutschein übernimmt die Agentur für Arbeit oder das Jobcenter die Kosten für Maßnahmen, die Deine beruflichen Chancen verbessern – zum Beispiel ein individuelles Jobcoaching bei einem AZAV-zertifizierten Träger wie Kuhl & Engel. Für Dich ist das Coaching dann zu 100 % kostenfrei.",
+    a: "Der AVGS ist ein Förderinstrument nach § 45 SGB III: Mit dem Gutschein übernimmt die Agentur für Arbeit oder das Jobcenter die Kosten für Maßnahmen, die Ihre beruflichen Chancen verbessern – zum Beispiel ein individuelles Jobcoaching bei einem AZAV-zertifizierten Träger wie Kuhl & Engel. Für Sie ist das Coaching dann zu 100 % kostenfrei.",
   },
   {
     q: "Wer bekommt einen AVGS?",
-    a: "Einen AVGS können Personen erhalten, die arbeitslos oder arbeitssuchend gemeldet sind – egal ob mit Arbeitslosengeld I (Agentur für Arbeit) oder Bürgergeld (Jobcenter). Auch wer von Arbeitslosigkeit bedroht ist, etwa in der Kündigungsfrist oder in Elternzeit ohne Rückkehroption, kann den Gutschein bekommen. Die Bewilligung ist in der Regel eine Ermessensentscheidung Deiner Vermittlerin oder Deines Vermittlers – eine gute Begründung erhöht Deine Chancen deutlich.",
+    a: "Einen AVGS können Personen erhalten, die arbeitslos oder arbeitssuchend gemeldet sind – egal ob mit Arbeitslosengeld I (Agentur für Arbeit) oder Bürgergeld (Jobcenter). Auch wer von Arbeitslosigkeit bedroht ist, etwa in der Kündigungsfrist oder in Elternzeit ohne Rückkehroption, kann den Gutschein bekommen. Die Bewilligung ist in der Regel eine Ermessensentscheidung Ihrer Vermittlerin oder Ihres Vermittlers – eine gute Begründung erhöht Ihre Chancen deutlich.",
   },
   {
     q: "Wie beantrage ich den AVGS?",
-    a: "Vereinbare einen Termin bei Deiner Agentur für Arbeit oder Deinem Jobcenter (telefonisch, online über die eServices oder persönlich) und äußere den Wunsch nach einem Einzelcoaching. Begründe konkret, wobei das Coaching Dich unterstützen soll – zum Beispiel berufliche Orientierung, Bewerbungsstrategie oder Wiedereinstieg nach der Elternzeit. Der Gutschein wird dann direkt ausgestellt oder Dir zugeschickt.",
+    a: "Vereinbaren Sie einen Termin bei Ihrer Agentur für Arbeit oder Ihrem Jobcenter (telefonisch, online über die eServices oder persönlich) und äußern Sie den Wunsch nach einem Einzelcoaching. Begründen Sie konkret, wobei das Coaching Sie unterstützen soll – zum Beispiel berufliche Orientierung, Bewerbungsstrategie oder Wiedereinstieg nach der Elternzeit. Der Gutschein wird dann direkt ausgestellt oder Ihnen zugeschickt.",
   },
   {
     q: "Welche AVGS-Varianten gibt es?",
-    a: "Es gibt drei Varianten: den AVGS MAT für Maßnahmen bei einem zertifizierten Träger (dazu zählt Jobcoaching), den AVGS MAG für betriebliche Erprobungen und den AVGS MPAV für private Arbeitsvermittlung. Für ein Jobcoaching bei Kuhl & Engel brauchst Du einen AVGS für Maßnahmen bei einem Träger (MAT).",
+    a: "Es gibt drei Varianten: den AVGS MAT für Maßnahmen bei einem zertifizierten Träger (dazu zählt Jobcoaching), den AVGS MAG für betriebliche Erprobungen und den AVGS MPAV für private Arbeitsvermittlung. Für ein Jobcoaching bei Kuhl & Engel brauchen Sie einen AVGS für Maßnahmen bei einem Träger (MAT).",
   },
   {
     q: "Was muss auf dem Gutschein stehen, damit ich ihn bei Kuhl & Engel einlösen kann?",
-    a: "Der Gutschein muss noch mindestens 10 Tage gültig sein, mindestens 20 Unterrichtseinheiten umfassen und in Teilzeit ausgestellt sein. Ob Dein Gutschein passt, prüfen wir gern kostenlos – schick ihn uns einfach oder ruf an: 030 51565388-0.",
+    a: "Der Gutschein muss noch mindestens 10 Tage gültig sein, mindestens 20 Unterrichtseinheiten umfassen und in Teilzeit ausgestellt sein. Ob Ihr Gutschein passt, prüfen wir gern kostenlos – schicken Sie ihn uns einfach oder rufen Sie an: 030 51565388-0.",
   },
   {
     q: "Kann der Antrag abgelehnt werden – und was mache ich dann?",
-    a: "Ja, der AVGS ist meist eine Ermessensleistung. Bei einer Ablehnung lohnt es sich nachzufassen: Bitte um eine schriftliche Begründung, konkretisiere Deinen Unterstützungsbedarf (z. B. ausbleibende Rückmeldungen auf Bewerbungen, unklare berufliche Richtung) und stelle den Antrag erneut. Wir beraten Dich im kostenlosen Erstgespräch, wie Du Dein Anliegen überzeugend formulierst.",
+    a: "Ja, der AVGS ist meist eine Ermessensleistung. Bei einer Ablehnung lohnt es sich nachzufassen: Bitten Sie um eine schriftliche Begründung, konkretisieren Sie Ihren Unterstützungsbedarf (z. B. ausbleibende Rückmeldungen auf Bewerbungen, unklare berufliche Richtung) und stellen Sie den Antrag erneut. Wir beraten Sie im kostenlosen Erstgespräch, wie Sie Ihr Anliegen überzeugend formulieren.",
   },
   {
     q: "Was kostet mich das Coaching mit AVGS?",
-    a: "Nichts. Mit einem gültigen AVGS-Gutschein rechnet Kuhl & Engel direkt mit der Agentur für Arbeit oder dem Jobcenter ab – Dir entstehen keinerlei Kosten, auch nicht für das Erstgespräch oder die Abwicklung.",
+    a: "Nichts. Mit einem gültigen AVGS-Gutschein rechnet Kuhl & Engel direkt mit der Agentur für Arbeit oder dem Jobcenter ab – Ihnen entstehen keinerlei Kosten, auch nicht für das Erstgespräch oder die Abwicklung.",
   },
   {
     q: "Wie lange ist der AVGS gültig?",
-    a: "Die Gültigkeit steht auf Deinem Gutschein – üblich sind ein bis drei Monate ab Ausstellung. Warte nach Erhalt nicht zu lange: Für die Einlösung bei uns muss der Gutschein noch mindestens 10 Tage gültig sein. Melde Dich am besten direkt nach der Ausstellung.",
+    a: "Die Gültigkeit steht auf Ihrem Gutschein – üblich sind ein bis drei Monate ab Ausstellung. Warten Sie nach Erhalt nicht zu lange: Für die Einlösung bei uns muss der Gutschein noch mindestens 10 Tage gültig sein. Melden Sie sich am besten direkt nach der Ausstellung.",
   },
 ];
 
 const SCHRITTE = [
   {
     title: "Termin vereinbaren",
-    text: "Kontaktiere Deine Agentur für Arbeit oder Dein Jobcenter – telefonisch, über die eServices oder persönlich. Du musst dafür nicht auf den nächsten Regeltermin warten.",
+    text: "Kontaktieren Sie Ihre Agentur für Arbeit oder Ihr Jobcenter – telefonisch, über die eServices oder persönlich. Sie müssen dafür nicht auf den nächsten Regeltermin warten.",
   },
   {
     title: "Coaching-Wunsch begründen",
-    text: "Sag konkret, wobei Dich ein Einzelcoaching unterstützen soll: berufliche Orientierung, Bewerbungsstrategie, Vorstellungsgespräche oder der Wiedereinstieg nach der Elternzeit. Je klarer Dein Anliegen, desto besser.",
+    text: "Sagen Sie konkret, wobei Sie ein Einzelcoaching unterstützen soll: berufliche Orientierung, Bewerbungsstrategie, Vorstellungsgespräche oder der Wiedereinstieg nach der Elternzeit. Je klarer Ihr Anliegen, desto besser.",
   },
   {
     title: "Gutschein prüfen",
-    text: "Achte darauf, dass der AVGS für Maßnahmen bei einem Träger (MAT) ausgestellt ist, mindestens 20 Unterrichtseinheiten umfasst und in Teilzeit ausgestellt wurde. Unsicher? Wir prüfen ihn kostenlos.",
+    text: "Achten Sie darauf, dass der AVGS für Maßnahmen bei einem Träger (MAT) ausgestellt ist, mindestens 20 Unterrichtseinheiten umfasst und in Teilzeit ausgestellt wurde. Unsicher? Wir prüfen ihn kostenlos.",
   },
   {
     title: "Träger auswählen",
-    text: "Den Gutschein löst Du bei einem AZAV-zertifizierten Träger Deiner Wahl ein – zum Beispiel bei Kuhl & Engel in Berlin, Potsdam, Augsburg oder online. Im kostenlosen Erstgespräch findest Du heraus, ob wir zu Dir passen.",
+    text: "Den Gutschein lösen Sie bei einem AZAV-zertifizierten Träger Ihrer Wahl ein – zum Beispiel bei Kuhl & Engel in Berlin, Potsdam, Augsburg oder online. Im kostenlosen Erstgespräch finden Sie heraus, ob wir zu Ihnen passen.",
   },
   {
     title: "Wir übernehmen den Papierkram",
-    text: "Du schickst uns Deinen AVGS, wir erledigen die komplette Korrespondenz und Abrechnung mit Agentur oder Jobcenter. Nach der Bewilligung startet Dein Coaching.",
+    text: "Sie schicken uns Ihren AVGS, wir erledigen die komplette Korrespondenz und Abrechnung mit Agentur oder Jobcenter. Nach der Bewilligung startet Ihr Coaching.",
   },
 ];
 
@@ -88,9 +88,9 @@ export default function AvgsGutscheinBeantragenPage() {
     <>
       <JsonLd
         data={articleSchema({
-          headline: "AVGS-Gutschein beantragen: So bekommst Du die Förderung für Dein Jobcoaching",
+          headline: "AVGS-Gutschein beantragen: So bekommen Sie die Förderung für Ihr Jobcoaching",
           description:
-            "Schritt-für-Schritt-Anleitung: Wer Anspruch auf den Aktivierungs- und Vermittlungsgutschein (AVGS) hat, wie Du ihn bei Agentur für Arbeit oder Jobcenter beantragst und worauf Du beim Einlösen achten musst.",
+            "Schritt-für-Schritt-Anleitung: Wer Anspruch auf den Aktivierungs- und Vermittlungsgutschein (AVGS) hat, wie Sie ihn bei Agentur für Arbeit oder Jobcenter beantragen und worauf Sie beim Einlösen achten müssen.",
           path: "/avgs-gutschein-beantragen",
           image: "/images/coaching-4.jpg",
           datePublished: "2026-07-10",
@@ -108,10 +108,10 @@ export default function AvgsGutscheinBeantragenPage() {
         eyebrow="Ratgeber · AVGS-Gutschein"
         title={
           <>
-            Der AVGS-Gutschein – <em>so beantragst Du ihn.</em>
+            Der AVGS-Gutschein – <em>so beantragen Sie ihn.</em>
           </>
         }
-        intro="Mit dem Aktivierungs- und Vermittlungsgutschein zahlt die Agentur für Arbeit oder das Jobcenter Dein komplettes Jobcoaching. Hier erfährst Du, wer ihn bekommt, wie das Gespräch läuft und worauf Du achten musst."
+        intro="Mit dem Aktivierungs- und Vermittlungsgutschein zahlt die Agentur für Arbeit oder das Jobcenter Ihr komplettes Jobcoaching. Hier erfahren Sie, wer ihn bekommt, wie das Gespräch läuft und worauf Sie achten müssen."
         image="/images/coaching-4.jpg"
       />
 
@@ -123,7 +123,7 @@ export default function AvgsGutscheinBeantragenPage() {
             answer="Der Aktivierungs- und Vermittlungsgutschein (AVGS) ist eine Förderung nach § 45 SGB III. Agentur für Arbeit oder Jobcenter übernehmen damit die vollen Kosten eines Jobcoachings bei einem AZAV-zertifizierten Träger. Beantragen können ihn Arbeitslose und Arbeitssuchende – auch Menschen in Kündigung oder Elternzeit. Die Ausstellung ist meist eine Ermessensentscheidung; eine konkrete Begründung erhöht die Chancen."
             facts={[
               { label: "Rechtsgrundlage", value: "§ 45 SGB III" },
-              { label: "Kosten für Dich", value: "0 € – vollständig gefördert" },
+              { label: "Kosten für Sie", value: "0 € – vollständig gefördert" },
               { label: "Richtige Variante", value: "AVGS MAT (Maßnahme bei einem Träger)" },
               { label: "Einlösbar bei", value: "Kuhl & Engel – Berlin, Potsdam, Augsburg, online" },
             ]}
@@ -167,11 +167,11 @@ export default function AvgsGutscheinBeantragenPage() {
                 Das Gespräch
               </p>
               <h2 className="display mt-6 text-3xl md:text-4xl">
-                So begründest Du Deinen <em>Coaching-Wunsch.</em>
+                So begründen Sie Ihren <em>Coaching-Wunsch.</em>
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-ink/70">
-                Deine Vermittlerin oder Dein Vermittler entscheidet nach
-                Ermessen. Entscheidend ist, dass Dein Unterstützungsbedarf
+                Ihre Vermittlerin oder Ihr Vermittler entscheidet nach
+                Ermessen. Entscheidend ist, dass Ihr Unterstützungsbedarf
                 konkret wird – nicht „ich hätte gern ein Coaching“, sondern ein
                 klares Anliegen. Diese Formulierungen haben sich bewährt:
               </p>
@@ -208,7 +208,7 @@ export default function AvgsGutscheinBeantragenPage() {
           <p className="mt-10 text-center text-lg text-ink/70">
             Gutschein schon in der Tasche?{" "}
             <Link href="/avgs-coaching" className="link-gold font-semibold text-gold">
-              Hier geht es zu Deinem AVGS Coaching →
+              Hier geht es zu Ihrem AVGS Coaching →
             </Link>
           </p>
         </Reveal>
@@ -217,10 +217,10 @@ export default function AvgsGutscheinBeantragenPage() {
       <CtaBand
         title={
           <>
-            Unsicher, ob Du die Voraussetzungen <em>erfüllst?</em>
+            Unsicher, ob Sie die Voraussetzungen <em>erfüllen?</em>
           </>
         }
-        text="Ruf uns an – wir schauen kostenlos auf Deine Situation und begleiten Dich durch die Beantragung."
+        text="Rufen Sie uns an – wir schauen kostenlos auf Ihre Situation und begleiten Sie durch die Beantragung."
       />
     </>
   );

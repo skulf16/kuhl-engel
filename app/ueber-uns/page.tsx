@@ -49,8 +49,8 @@ export default function UeberUnsPage() {
                 <p>
                   Kuhl & Engel, das sind wir: Heike Kuhl und Martina
                   Engel-Fürstberger. Wir arbeiten seit vielen Jahren als Coaches und
-                  möchten Dich als authentische Persönlichkeiten mit all unseren
-                  Erfahrungen in Deiner beruflichen Entwicklung unterstützen.
+                  möchten Sie als authentische Persönlichkeiten mit all unseren
+                  Erfahrungen in Ihrer beruflichen Entwicklung unterstützen.
                 </p>
                 <p>
                   Statt höher, schneller, weiter plädieren wir als gesamtes Team
@@ -73,12 +73,12 @@ export default function UeberUnsPage() {
               <div className="mt-7 space-y-5 text-lg leading-relaxed text-ink/70">
                 <p>
                   In unseren Coachings schaffen wir eine sichere und vertrauensvolle
-                  Atmosphäre, in der Du ankommen, loslassen und Du selbst sein
-                  darfst. Wir holen Dich da ab, wo Du gerade stehst – und erforschen
-                  gemeinsam, was Deine innere Stimme Dir sagt.
+                  Atmosphäre, in der Sie ankommen, loslassen und Sie selbst sein
+                  dürfen. Wir holen Sie da ab, wo Sie gerade stehen – und erforschen
+                  gemeinsam, was Ihre innere Stimme Ihnen sagt.
                 </p>
                 <p>
-                  Wir arbeiten wertschätzend, ressourcenorientiert und bieten Dir
+                  Wir arbeiten wertschätzend, ressourcenorientiert und bieten Ihnen
                   systemisches Coaching auf höchstem Niveau.
                 </p>
               </div>
@@ -187,7 +187,7 @@ export default function UeberUnsPage() {
               Unsere Standorte
             </p>
             <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-              Berlin, Potsdam, Augsburg – <em>oder bei Dir.</em>
+              Berlin, Potsdam, Augsburg – <em>oder bei Ihnen.</em>
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -246,10 +246,10 @@ export default function UeberUnsPage() {
       <CtaBand
         title={
           <>
-            Mach Dich mit uns <em>auf den Weg.</em>
+            Machen Sie sich mit uns <em>auf den Weg.</em>
           </>
         }
-        text="Buche Dir gleich ein kostenloses Erstgespräch – wir finden gemeinsam heraus, welche:r Coach:in am besten zu Dir passt."
+        text="Buchen Sie sich gleich ein kostenloses Erstgespräch – wir finden gemeinsam heraus, welche:r Coach:in am besten zu Ihnen passt."
       />
     </>
   );

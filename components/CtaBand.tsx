@@ -3,19 +3,27 @@ import Reveal from "@/components/Reveal";
 import { CONTACT } from "@/lib/data";
 
 export default function CtaBand({
-  title = (
-    <>
-      Sag ja zu: <em>Jetzt, nicht irgendwann.</em>
-    </>
-  ),
-  text = "Lerne uns in einem kostenlosen, unverbindlichen Erstgespräch kennen – telefonisch, online oder vor Ort.",
-  formal = false,
+  title,
+  text,
+  informal = false,
 }: {
   title?: React.ReactNode;
   text?: string;
-  /** Sie-Ansprache (z. B. für Schulen und Lehrkräfte) */
-  formal?: boolean;
+  /** Du-Ansprache (nur für die Schüler:innen-Seite /berufsorientierung/berufsstart) */
+  informal?: boolean;
 }) {
+  const fallbackTitle = informal ? (
+    <>
+      Sag ja zu: <em>Jetzt, nicht irgendwann.</em>
+    </>
+  ) : (
+    <>
+      Sagen Sie ja zu: <em>Jetzt, nicht irgendwann.</em>
+    </>
+  );
+  const fallbackText = informal
+    ? "Lerne uns in einem kostenlosen, unverbindlichen Erstgespräch kennen – telefonisch, online oder vor Ort."
+    : "Lernen Sie uns in einem kostenlosen, unverbindlichen Erstgespräch kennen – telefonisch, online oder vor Ort.";
   return (
     <section className="relative overflow-hidden bg-cream-deep">
       <div aria-hidden className="display pointer-events-none absolute -bottom-24 right-0 select-none text-[22rem] italic leading-none text-gold/6">
@@ -24,8 +32,8 @@ export default function CtaBand({
       <div className="relative mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
         <Reveal>
           <div className="max-w-3xl">
-            <h2 className="display text-4xl md:text-5xl">{title}</h2>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/70">{text}</p>
+            <h2 className="display text-4xl md:text-5xl">{title ?? fallbackTitle}</h2>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/70">{text ?? fallbackText}</p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Link
                 href="/kontakt"
@@ -38,7 +46,7 @@ export default function CtaBand({
                 href={CONTACT.phoneHref}
                 className="inline-flex items-center justify-center gap-2 px-4 py-4 font-semibold text-ink/80 transition-colors hover:text-gold"
               >
-                {formal ? "oder rufen Sie an:" : "oder ruf an:"} {CONTACT.phone}
+                {informal ? "oder ruf an:" : "oder rufen Sie an:"} {CONTACT.phone}
               </a>
             </div>
           </div>

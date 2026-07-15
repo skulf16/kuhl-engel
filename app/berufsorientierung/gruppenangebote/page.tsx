@@ -178,7 +178,6 @@ export default function GruppenangebotePage() {
       </section>
 
       <CtaBand
-        formal
         title={
           <>
             Bringen Sie „Mein Berufseinstieg“ <em>an Ihre Schule.</em>
