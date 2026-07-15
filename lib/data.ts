@@ -332,6 +332,10 @@ export const FAQS_AVGS: Faq[] = [
     a: "An unseren Standorten in Berlin, Potsdam und Augsburg – oder digital. Eine hybride Form aus Coaching vor Ort und via Zoom ist ebenfalls möglich.",
   },
   {
+    q: "Wie viele Stunden umfasst das AVGS Coaching?",
+    a: "Je nach Bewilligung 24 Unterrichtseinheiten in 6 Wochen, 32 UE in 8 Wochen oder 44 UE in 11 Wochen (1 UE = 45 Minuten). Welcher Umfang zu deinem Anliegen passt, klären wir im kostenlosen Erstgespräch – beantragt wird er über deinen AVGS.",
+  },
+  {
     q: "Ich habe keinen AVGS. Kann ich trotzdem zu euch kommen?",
     a: "Ja, unbedingt. Ruf uns einfach an – wir schauen uns gemeinsam deine Situation an und finden eine individuelle Lösung.",
   },

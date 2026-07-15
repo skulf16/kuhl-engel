@@ -34,6 +34,7 @@ export const organizationGraph = {
       description:
         "AZAV-zertifizierter Träger mit zwei Schwerpunkten: AVGS-gefördertes Jobcoaching für Erwachsene und Berufsorientierung für Jugendliche – in Berlin, Potsdam, Augsburg und online.",
       slogan: "Jetzt, nicht irgendwann.",
+      foundingDate: "2018",
       email: "info@kuhlundengel.de",
       telephone: "+49 30 515653880",
       priceRange: "Mit AVGS-Gutschein kostenfrei",

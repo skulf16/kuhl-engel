@@ -15,10 +15,10 @@ import {
 } from "@/lib/data";
 
 const STATS = [
+  { value: "246", label: "AVGS-Coachings seit 2022" },
+  { value: "6.555", label: "Unterrichtseinheiten Coaching" },
   { value: "14", label: "Coachinnen im Team" },
-  { value: "2", label: "Gründerinnen" },
   { value: "5,0", label: "★ Google-Bewertung" },
-  { value: "100 %", label: "AVGS-förderfähig" },
 ];
 
 const METHODE = [
