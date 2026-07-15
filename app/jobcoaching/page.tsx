@@ -348,7 +348,7 @@ export default function JobcoachingPage() {
               Gut zu wissen
             </p>
             <h2 className="display mt-6 text-3xl md:text-4xl">
-              Coaching, Beratung <em>oder Therapie?</em>
+              Coaching oder <em>Beratung?</em>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
               Eine Karriereberatung gibt Dir Empfehlungen von außen. Ein
@@ -357,11 +357,11 @@ export default function JobcoachingPage() {
               nachhaltige Klarheit suchst, ist Coaching der wirksamere Weg.
             </p>
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
-              Und: Jobcoaching ist keine Psychotherapie. Es richtet sich an
-              gesunde Menschen in beruflichen Veränderungssituationen. Sollte
-              im Prozess mehr sichtbar werden, sprechen wir das offen an –
-              mehrere unserer Coachinnen sind zusätzlich Heilpraktikerinnen
-              für Psychotherapie und kennen die Grenze genau.
+              Das Beste: Am Preis ändert der Unterschied nichts. Mit einem
+              AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters ist
+              das komplette 1:1-Coaching für Dich kostenfrei – Du bekommst
+              echte Begleitung statt Beratung von der Stange, ohne einen Euro
+              zu zahlen.
             </p>
           </Reveal>
         </div>
