@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Kuhl & Engel – Jobcoaching",
     images: [
       {
-        url: "/images/gruenderinnen.jpg",
+        url: "/images/ke-duo-lachen.jpg",
         alt: "Heike Kuhl und Martina Engel-Fürstberger, Gründerinnen von Kuhl & Engel Jobcoaching",
       },
     ],
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "AVGS Jobcoaching Berlin & Potsdam · Kuhl & Engel",
     description:
       "Systemisches Karrierecoaching für Akademikerinnen und Akademiker. Mit AVGS-Gutschein 100 % kostenfrei – Berlin, Potsdam, Augsburg & online.",
-    images: ["/images/gruenderinnen.jpg"],
+    images: ["/images/ke-duo-lachen.jpg"],
   },
 };
 

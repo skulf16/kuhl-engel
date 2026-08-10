@@ -16,7 +16,7 @@ export const metadata = pageMetadata({
   description:
     "AVGS Coaching für Akademikerinnen und Akademiker: individuelles 1:1-Jobcoaching, mit Gutschein der Agentur für Arbeit zu 100 % kostenfrei. So bekommen und lösen Sie den AVGS-Gutschein ein – Berlin, Potsdam, Augsburg & online.",
   path: "/avgs-coaching",
-  image: "/images/coaching-warm.jpg",
+  image: "/images/ke-beratung.jpg",
   imageAlt: "Coaching-Gespräch bei Kuhl & Engel",
 });
 
@@ -39,7 +39,7 @@ const THEMEN = [
       "Sie entwickeln eine Vision für Ihre berufliche Zukunft und erste Schritte, um sie zu erreichen.",
       "Wir setzen klare, realistische Ziele, die Sie motivieren und Ihnen Orientierung geben.",
     ],
-    image: "/images/coaching-5.jpg",
+    image: "/images/ke-whiteboard.jpg",
   },
   {
     nr: "02",
@@ -51,7 +51,7 @@ const THEMEN = [
       "Sie erforschen, welche Rollen und Aufgaben Ihnen Energie geben.",
       "Wir erarbeiten, wie Sie Ihre Stärken im Beruf optimal einsetzen.",
     ],
-    image: "/images/coaching-2.jpg",
+    image: "/images/ke-gruppe-tisch.jpg",
   },
   {
     nr: "03",
@@ -63,7 +63,7 @@ const THEMEN = [
       "Wir arbeiten Rückschläge auf und entwickeln Strategien, aus denen Sie gestärkt hervorgehen.",
       "Wir klären, ob Sie zusätzliche Qualifikationen brauchen – und wie Sie sie erwerben.",
     ],
-    image: "/images/coaching-7.jpg",
+    image: "/images/ke-coaching-lachen.jpg",
   },
   {
     nr: "04",
@@ -75,7 +75,7 @@ const THEMEN = [
       "Ihre Bewerbung und Ihr Online-Profil werden professionell und überzeugend.",
       "Durch Rollenspiele bereiten Sie sich gezielt auf Gespräche vor – sicher und souverän.",
     ],
-    image: "/images/coaching-6.jpg",
+    image: "/images/ke-unterlagen-duo.jpg",
   },
 ];
 
@@ -101,7 +101,7 @@ export default function AvgsCoachingPage() {
           </>
         }
         intro="Wir sind spezialisiert auf Coaching in beruflichen Veränderungssituationen und zertifiziert für Ihr AVGS Coaching. Mit langjähriger Erfahrung und maßgeschneidertem Ansatz begleiten wir Akademikerinnen und Akademiker auf dem Weg zu einem Job, der wirklich passt."
-        image="/images/coaching-warm.jpg"
+        image="/images/ke-beratung.jpg"
       />
 
       {/* Auf einen Blick (zitierfähig für KI-Suche) */}
@@ -175,15 +175,15 @@ export default function AvgsCoachingPage() {
       </section>
 
       {/* Zwischen-Zitat */}
-      <section className="on-dark bg-ink py-20 text-cream md:py-24">
+      <section className="bg-cream-deep py-20 md:py-24">
         <Reveal>
           <figure className="mx-auto max-w-3xl px-5 text-center md:px-8">
-            <blockquote className="display text-2xl italic leading-snug md:text-3xl">
+            <blockquote className="display text-2xl italic leading-snug text-ink/85 md:text-3xl">
               „Coaching war eine großartige Erfahrung und hat mir jetzt und
               langfristig sehr geholfen. Ich würde Kuhl & Engel jedem empfehlen, der
               professionelles und qualitativ hochwertiges Coaching sucht!“
             </blockquote>
-            <figcaption className="eyebrow mt-6 text-gold-bright">Franziska M.</figcaption>
+            <figcaption className="eyebrow mt-6 text-gold">Franziska M.</figcaption>
           </figure>
         </Reveal>
       </section>

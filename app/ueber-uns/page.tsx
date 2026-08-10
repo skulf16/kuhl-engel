@@ -28,7 +28,7 @@ export default function UeberUnsPage() {
           </>
         }
         intro="Ganzheitliches Coaching für mehr Sinn und Freude im Berufsleben: Wir glauben daran, dass jeder Mensch etwas Wertvolles zu geben hat – und alle Potenziale dafür in sich trägt."
-        image="/images/gruenderinnen.jpg"
+        image="/images/ke-duo-blick.jpg"
       />
 
       {/* Haltung */}
@@ -223,7 +223,7 @@ export default function UeberUnsPage() {
       </section>
 
       {/* Zertifizierung */}
-      <section className="on-dark bg-ink py-16 text-cream md:py-20">
+      <section className="py-16 md:py-20">
         <Reveal>
           <div className="mx-auto flex max-w-4xl flex-col items-center gap-8 px-5 text-center md:flex-row md:text-left">
             <Image
@@ -231,10 +231,10 @@ export default function UeberUnsPage() {
               alt="Certuria AZAV-Siegel Maßnahmezulassung"
               width={130}
               height={103}
-              className="shrink-0 bg-white p-2"
+              className="shrink-0 border border-ink/10 bg-white p-2"
             />
-            <p className="text-lg leading-relaxed text-cream/75">
-              Kuhl & Engel steht für <strong className="text-cream">zertifizierte Qualität</strong>:
+            <p className="text-lg leading-relaxed text-ink/75">
+              Kuhl & Engel steht für <strong className="text-ink">zertifizierte Qualität</strong>:
               Als AZAV-zugelassener Träger sind wir zu 100 % für das AVGS Coaching
               zertifiziert – für langjährige Erfahrung, individuelles und
               nachhaltiges Coaching.

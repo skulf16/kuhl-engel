@@ -14,7 +14,7 @@ export const metadata = pageMetadata({
   description:
     "Berufsorientierung „Mein Berufseinstieg“ für Schulen, Lehrkräfte und Kooperationspartner: Gruppenprojekte für ganze Klassen, Einzelcoaching für Schüler:innen und Materialien für den Berufsstart. Seit über 10 Jahren in Berlin & Brandenburg.",
   path: "/berufsorientierung",
-  image: "/images/jugend-hero.jpg",
+  image: "/images/ke-jugend-gruppe.jpg",
   imageAlt: "Berufsorientierung „Mein Berufseinstieg“ von Kuhl & Engel",
 });
 
@@ -51,7 +51,7 @@ export default function BerufsorientierungPage() {
           </>
         }
         intro="Für die meisten Jugendlichen ist die Berufs- oder Studienwahl ein schwerer Brocken – bei viel Druck und wenig Erfahrung. Seit über 10 Jahren begleiten wir Schulen in Berlin und Brandenburg mit Gruppen- und Einzelcoachings zur beruflichen Orientierung. Professionell, jugendgerecht und mit messbarer Wirkung."
-        image="/images/jugend-hero.jpg"
+        image="/images/ke-jugend-gruppe.jpg"
       />
 
       {/* Auf einen Blick */}
@@ -112,8 +112,8 @@ export default function BerufsorientierungPage() {
         </div>
       </section>
 
-      {/* Wirkung (dunkel) */}
-      <section className="on-dark bg-ink py-24 text-cream md:py-32">
+      {/* Wirkung */}
+      <section className="bg-cream-deep py-24 md:py-32">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 md:px-8 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <Reveal>
             <div className="relative aspect-[4/3] overflow-hidden">
@@ -128,8 +128,8 @@ export default function BerufsorientierungPage() {
           </Reveal>
           <div>
             <Reveal>
-              <p className="eyebrow flex items-center gap-3 text-gold-bright">
-                <span aria-hidden className="inline-block h-px w-10 bg-gold-bright" />
+              <p className="eyebrow flex items-center gap-3 text-gold">
+                <span aria-hidden className="inline-block h-px w-10 bg-gold" />
                 Die Wirkung
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
@@ -139,22 +139,22 @@ export default function BerufsorientierungPage() {
             <Reveal delay={150}>
               <ul className="mt-8 space-y-3.5">
                 {NUTZEN.map((punkt) => (
-                  <li key={punkt} className="flex items-start gap-3.5 leading-relaxed text-cream/80">
-                    <span aria-hidden className="display mt-0.5 italic text-gold-bright">✓</span>
+                  <li key={punkt} className="flex items-start gap-3.5 leading-relaxed text-ink/75">
+                    <span aria-hidden className="display mt-0.5 italic text-gold">✓</span>
                     {punkt}
                   </li>
                 ))}
               </ul>
             </Reveal>
             <Reveal delay={250}>
-              <p className="mt-7 max-w-xl text-[0.95rem] leading-relaxed text-cream/60">
+              <p className="mt-7 max-w-xl text-[0.95rem] leading-relaxed text-ink/60">
                 Die motiviertere Grundhaltung zeigt sich im Schulalltag ebenso wie
                 bei der weiteren Orientierung – etwa in der Studienberatung, im BIZ
                 oder bei der Planung eines Schülerpraktikums.
               </p>
               <a
                 href={CONTACT.phoneHref}
-                className="mt-7 inline-flex items-center gap-2 font-semibold text-gold-bright transition-colors hover:text-cream"
+                className="mt-7 inline-flex items-center gap-2 font-semibold text-gold transition-colors hover:text-ink"
               >
                 Fragen? Rufen Sie an: {CONTACT.phone} <span aria-hidden>→</span>
               </a>

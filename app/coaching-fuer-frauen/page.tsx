@@ -15,7 +15,7 @@ export const metadata = pageMetadata({
   description:
     "Coaching für Frauen bei Kuhl & Engel: 14 Coachinnen begleiten Akademikerinnen bei Wiedereinstieg nach der Elternzeit, Neuorientierung und Sichtbarkeit – mit AVGS-Gutschein 100 % kostenfrei. Berlin, Potsdam & online.",
   path: "/coaching-fuer-frauen",
-  image: "/images/coaching-7.jpg",
+  image: "/images/ke-frauen.jpg",
   imageAlt: "Coaching von Frau zu Frau bei Kuhl & Engel",
 });
 
@@ -91,7 +91,7 @@ export default function CoachingFuerFrauenPage() {
           </>
         }
         intro="Wiedereinstieg nach der Elternzeit, Neuorientierung oder der nächste Karriereschritt: Bei Kuhl & Engel begleiten Sie Coachinnen, die Ihre Fragen aus eigener Erfahrung kennen. Gegründet von zwei Frauen, getragen von 14 Coachinnen – und mit AVGS-Gutschein zu 100 % kostenfrei."
-        image="/images/coaching-7.jpg"
+        image="/images/ke-frauen.jpg"
       />
 
       {/* Auf einen Blick */}
@@ -151,16 +151,16 @@ export default function CoachingFuerFrauenPage() {
       </section>
 
       {/* Zitat */}
-      <section className="on-dark bg-ink py-20 text-cream md:py-24">
+      <section className="bg-cream-deep py-20 md:py-24">
         <Reveal>
           <figure className="mx-auto max-w-3xl px-5 text-center md:px-8">
-            <blockquote className="display text-2xl italic leading-snug md:text-3xl">
+            <blockquote className="display text-2xl italic leading-snug text-ink/85 md:text-3xl">
               „Ich hatte die Möglichkeit herauszufinden, wohin es mich beruflich in
               Zukunft leiten darf. Dabei standen meine persönlichen Bedürfnisse an
               Leben, Beruf und Familie im Vordergrund – ebenso wie das Herausfiltern
               meiner persönlichen Stärken.“
             </blockquote>
-            <figcaption className="eyebrow mt-6 text-gold-bright">Lena W. · Google-Bewertung</figcaption>
+            <figcaption className="eyebrow mt-6 text-gold">Lena W. · Google-Bewertung</figcaption>
           </figure>
         </Reveal>
       </section>

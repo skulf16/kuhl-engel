@@ -73,7 +73,7 @@ export default function GruppenangebotePage() {
           </>
         }
         intro="Null Bock oder könnte gut werden? Wir sagen: wird gut. Unser Projekt „Mein Berufseinstieg“ ist eigens für Schulen konzipiert und steht für Begegnung auf Augenhöhe, vielfältige Methoden und intensive Betreuung."
-        image="/images/jugend-gruppe.jpg"
+        image="/images/ke-jugend-team.jpg"
       />
 
       {/* Auf einen Blick */}
@@ -125,13 +125,13 @@ export default function GruppenangebotePage() {
         </div>
       </section>
 
-      {/* PraxisBO Förderung (dunkel) */}
-      <section className="on-dark bg-ink py-24 text-cream md:py-32">
+      {/* PraxisBO Förderung */}
+      <section className="bg-cream-deep py-24 md:py-32">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 md:px-8 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
           <div>
             <Reveal>
-              <p className="eyebrow flex items-center gap-3 text-gold-bright">
-                <span aria-hidden className="inline-block h-px w-10 bg-gold-bright" />
+              <p className="eyebrow flex items-center gap-3 text-gold">
+                <span aria-hidden className="inline-block h-px w-10 bg-gold" />
                 Förderung über PraxisBO
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
@@ -139,7 +139,7 @@ export default function GruppenangebotePage() {
               </h2>
             </Reveal>
             <Reveal delay={150}>
-              <div className="mt-7 space-y-5 text-lg leading-relaxed text-cream/70">
+              <div className="mt-7 space-y-5 text-lg leading-relaxed text-ink/70">
                 <p>
                   PraxisBO ist ein Förderprogramm des Landes Brandenburg für
                   weiterführende Schulen, finanziert aus Mitteln des Europäischen
@@ -157,7 +157,7 @@ export default function GruppenangebotePage() {
             <Reveal delay={250}>
               <a
                 href={CONTACT.phoneHref}
-                className="mt-9 inline-flex items-center gap-2 font-semibold text-gold-bright transition-colors hover:text-cream"
+                className="mt-9 inline-flex items-center gap-2 font-semibold text-gold transition-colors hover:text-ink"
               >
                 Wir beraten gern: {CONTACT.phone} <span aria-hidden>→</span>
               </a>

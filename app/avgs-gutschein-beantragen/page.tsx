@@ -14,7 +14,7 @@ export const metadata = pageMetadata({
   description:
     "AVGS beantragen in 5 Schritten: Wer den Aktivierungs- und Vermittlungsgutschein bekommt, wie das Gespräch bei Agentur für Arbeit oder Jobcenter läuft und worauf Sie beim Gutschein achten müssen – damit Ihr Jobcoaching 100 % kostenfrei ist.",
   path: "/avgs-gutschein-beantragen",
-  image: "/images/coaching-4.jpg",
+  image: "/images/ke-unterlagen.jpg",
   imageAlt: "Coaching-Gespräch bei Kuhl & Engel",
 });
 
@@ -92,7 +92,7 @@ export default function AvgsGutscheinBeantragenPage() {
           description:
             "Schritt-für-Schritt-Anleitung: Wer Anspruch auf den Aktivierungs- und Vermittlungsgutschein (AVGS) hat, wie Sie ihn bei Agentur für Arbeit oder Jobcenter beantragen und worauf Sie beim Einlösen achten müssen.",
           path: "/avgs-gutschein-beantragen",
-          image: "/images/coaching-4.jpg",
+          image: "/images/ke-unterlagen.jpg",
           datePublished: "2026-07-10",
         })}
       />
@@ -112,7 +112,7 @@ export default function AvgsGutscheinBeantragenPage() {
           </>
         }
         intro="Mit dem Aktivierungs- und Vermittlungsgutschein zahlt die Agentur für Arbeit oder das Jobcenter Ihr komplettes Jobcoaching. Hier erfahren Sie, wer ihn bekommt, wie das Gespräch läuft und worauf Sie achten müssen."
-        image="/images/coaching-4.jpg"
+        image="/images/ke-unterlagen.jpg"
       />
 
       {/* Auf einen Blick */}

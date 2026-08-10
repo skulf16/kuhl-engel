@@ -51,7 +51,7 @@ export default function EinzelcoachingPage() {
           </>
         }
         intro="Geht es noch individueller? Na klar. An allen Standorten und online bieten wir Einzelcoaching zur beruflichen Orientierung für Schüler:innen, Abiturient:innen und junge Erwachsene an – passend zur jeweiligen Situation, systemisch und lösungsorientiert."
-        image="/images/jugend-einzel.jpg"
+        image="/images/ke-jugend-einzel.jpg"
       />
 
       {/* Auf einen Blick */}

@@ -29,7 +29,7 @@ export const BEREICHE: Bereich[] = [
       "Wir übernehmen den Papierkram",
     ],
     cta: "Zum AVGS Jobcoaching",
-    image: "/images/coaching-sq-2.jpg",
+    image: "/images/ke-einzelcoaching.jpg",
   },
   {
     slug: "/berufsorientierung",
@@ -43,7 +43,7 @@ export const BEREICHE: Bereich[] = [
       "Materialien für den Berufsstart",
     ],
     cta: "Zur Berufsorientierung",
-    image: "/images/jugend-quadrat.jpg",
+    image: "/images/ke-jugend-lachen.jpg",
   },
 ];
 
@@ -64,7 +64,7 @@ export const JOBCOACHING_LEISTUNGEN: Leistung[] = [
     title: "AVGS Coaching & Gutschein",
     claim: "Finanziert durch den AVGS-Gutschein",
     text: "Individuelles 1:1-Coaching mit dem Aktivierungs- und Vermittlungsgutschein – für Sie vollständig kostenfrei. Wir erklären Ihnen auch, wie Sie den Gutschein bekommen.",
-    image: "/images/coaching-sq-2.jpg",
+    image: "/images/ke-beratung.jpg",
   },
   {
     slug: "/coaching-fuer-frauen",
@@ -72,7 +72,7 @@ export const JOBCOACHING_LEISTUNGEN: Leistung[] = [
     title: "Coaching für Frauen",
     claim: "Von Frau zu Frau · 14 Coachinnen",
     text: "Wiedereinstieg nach der Elternzeit, Sichtbarkeit, Neuorientierung: Coachinnen, die Ihre Fragen aus eigener Erfahrung kennen.",
-    image: "/images/coaching-7.jpg",
+    image: "/images/ke-frauen.jpg",
   },
   {
     slug: "/jobcoaching-berlin",
@@ -88,7 +88,7 @@ export const JOBCOACHING_LEISTUNGEN: Leistung[] = [
     title: "Jobcoaching Potsdam",
     claim: "Nördliche Innenstadt & online",
     text: "AVGS Coaching in der Gutenbergstraße 87, nahe Holländisches Viertel – oder digital, ganz wie es zu Ihnen passt.",
-    image: "/images/standort-potsdam.jpg",
+    image: "/images/ke-tisch-beratung.jpg",
   },
 ];
 
@@ -100,7 +100,7 @@ export const JUGEND_ANGEBOTE: Leistung[] = [
     title: "Gruppenangebote",
     claim: "Für Schulen in Berlin & Brandenburg",
     text: "„Mein Berufseinstieg“: unser 2- bis 2,5-tägiges Coaching-Seminar für ganze Klassen – in Brandenburg über PraxisBO förderfähig.",
-    image: "/images/jugend-gruppe.jpg",
+    image: "/images/ke-jugend-team.jpg",
   },
   {
     slug: "/berufsorientierung/einzelcoaching",
@@ -108,7 +108,7 @@ export const JUGEND_ANGEBOTE: Leistung[] = [
     title: "Einzelcoaching",
     claim: "Für Schüler:innen & Abiturient:innen",
     text: "Ein geschützter Raum für junge Menschen: In vier Sitzungen finden wir die berufliche Richtung, lösen Blockaden und entwickeln konkrete Ziele.",
-    image: "/images/jugend-einzel.jpg",
+    image: "/images/ke-jugend-einzel.jpg",
   },
   {
     slug: "/berufsorientierung/berufsstart",
@@ -134,7 +134,7 @@ export const FOUNDERS: TeamMember[] = [
     role: "Gründerin · Standortmanagerin Berlin",
     quali:
       "Systemisch-integrative Coachin, Systemische Paarcoachin, Systemische Familien-Sozialtherapeutin, Seminarleiterin",
-    image: "/images/team-heike.jpg",
+    image: "/images/ke-team-heike.jpg",
     quote:
       "In unserer sich verändernden Arbeitswelt brauchen wir Menschen, die sich selbst gut kennen, aus ihrer Leidenschaft handeln und sich mit Resilienz führen können. Dafür sorgen wir!",
   },
@@ -143,7 +143,7 @@ export const FOUNDERS: TeamMember[] = [
     role: "Gründerin · Standortmanagerin Potsdam",
     quali:
       "Zertifizierte Lehr- und Senior-Coachin DCV, IOBC, freie Dozentin für Psychopathologie, Seminar- und Ausbildungsleiterin",
-    image: "/images/team-martina.jpg",
+    image: "/images/ke-team-martina.jpg",
     quote:
       "Mich erfüllt es mit unglaublich viel Freude zu sehen, wie ein:e Klient:in sich im Coaching die eigene Zukunft sinnhaft gestaltet und Selbstvertrauen gewinnt.",
   },

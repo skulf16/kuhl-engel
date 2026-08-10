@@ -5,14 +5,17 @@ export default function PageHero({
   title,
   intro,
   image,
+  imagePosition = "object-[center_30%]",
 }: {
   eyebrow: string;
   title: React.ReactNode;
   intro?: string;
   image?: string;
+  /** object-position-Klasse, um den Bildausschnitt pro Foto zu steuern */
+  imagePosition?: string;
 }) {
   return (
-    <section className="on-dark relative overflow-hidden bg-ink pb-20 pt-36 text-cream md:pb-28 md:pt-48">
+    <section className="relative overflow-hidden bg-cream pb-20 pt-36 md:pb-28 md:pt-48">
       {image && (
         <>
           <Image
@@ -21,26 +24,24 @@ export default function PageHero({
             fill
             priority
             sizes="100vw"
-            className="hero-zoom object-cover opacity-25"
+            className={`hero-zoom object-cover ${imagePosition}`}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-ink" />
+          {/* heller Verlauf nur auf der Textseite – das Foto bleibt voll sichtbar */}
+          <div className="absolute inset-0 bg-gradient-to-r from-cream/95 via-cream/70 to-transparent md:via-cream/45 md:to-transparent" />
         </>
       )}
-      {/* dezentes Linienornament */}
-      <div aria-hidden className="absolute -right-24 -top-24 h-96 w-96 rounded-full border border-cream/8" />
-      <div aria-hidden className="absolute -right-8 -top-8 h-96 w-96 rounded-full border border-cream/6" />
 
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <div className="max-w-3xl">
-          <p className="eyebrow hero-rise flex items-center gap-3 text-gold-bright">
-            <span aria-hidden className="inline-block h-px w-10 bg-gold-bright" />
+          <p className="eyebrow hero-rise flex items-center gap-3 text-gold">
+            <span aria-hidden className="inline-block h-px w-10 bg-gold" />
             {eyebrow}
           </p>
-          <h1 className="display hero-rise mt-6 text-4xl md:text-6xl" style={{ animationDelay: "120ms" }}>
+          <h1 className="display hero-rise mt-6 text-4xl text-ink md:text-6xl" style={{ animationDelay: "120ms" }}>
             {title}
           </h1>
           {intro && (
-            <p className="hero-rise mt-6 max-w-2xl text-lg leading-relaxed text-cream/75" style={{ animationDelay: "240ms" }}>
+            <p className="hero-rise mt-6 max-w-2xl text-lg leading-relaxed text-ink/80" style={{ animationDelay: "240ms" }}>
               {intro}
             </p>
           )}

@@ -13,7 +13,7 @@ export function pageMetadata(opts: {
   image?: string;
   imageAlt?: string;
 }): Metadata {
-  const image = opts.image ?? "/images/gruenderinnen.jpg";
+  const image = opts.image ?? "/images/ke-duo-lachen.jpg";
   const imageAlt =
     opts.imageAlt ??
     "Heike Kuhl und Martina Engel-Fürstberger, Gründerinnen von Kuhl & Engel Jobcoaching";

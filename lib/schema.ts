@@ -30,7 +30,7 @@ export const organizationGraph = {
         "@type": "ImageObject",
         url: `${BASE_URL}/images/logo.png`,
       },
-      image: `${BASE_URL}/images/gruenderinnen.jpg`,
+      image: `${BASE_URL}/images/ke-duo-lachen.jpg`,
       description:
         "AZAV-zertifizierter Träger mit zwei Schwerpunkten: AVGS-gefördertes Jobcoaching für Erwachsene und Berufsorientierung für Jugendliche – in Berlin, Potsdam, Augsburg und online.",
       slogan: "Jetzt, nicht irgendwann.",

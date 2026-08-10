@@ -55,61 +55,64 @@ export default function Home() {
     <>
       <JsonLd data={faqSchema(FAQS_AVGS, "/")} />
       {/* ---------- Hero ---------- */}
-      <section className="on-dark relative flex min-h-svh flex-col justify-center overflow-hidden bg-ink text-cream">
+      <section className="relative flex min-h-svh flex-col justify-center overflow-hidden bg-cream">
         <Image
-          src="/images/atelier-wide.jpg"
-          alt="Coaching-Gespräch bei Kuhl & Engel"
+          src="/images/ke-duo-fenster.jpg"
+          alt="Heike Kuhl und Martina Engel-Fürstberger in ihren Coaching-Räumen"
           fill
           priority
           sizes="100vw"
-          className="hero-zoom object-cover object-[center_35%] opacity-50"
+          className="hero-zoom object-cover object-[68%_center]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/35 to-ink" />
+        {/* heller Verlauf nur auf der Textseite – das Foto bleibt voll sichtbar */}
+        <div className="absolute inset-0 bg-gradient-to-r from-cream/95 via-cream/60 to-transparent md:via-cream/40" />
 
-        <div className="relative mx-auto w-full max-w-7xl px-5 pb-40 pt-40 text-center md:px-8">
-          <p className="eyebrow hero-rise inline-flex items-center gap-2.5 rounded-full border border-cream/25 bg-ink/40 px-4 py-2 text-cream/90 backdrop-blur-sm">
-            <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-gold-bright" />
-            100 % AVGS-zertifiziert · Berlin · Potsdam · Augsburg · Online
-          </p>
-          <h1 className="display mx-auto mt-8 max-w-4xl text-[2.4rem] md:text-7xl lg:text-[5.4rem]">
-            <span className="hero-rise block" style={{ animationDelay: "120ms" }}>
-              Den richtigen Weg finden.
-            </span>
-            <span className="hero-rise block" style={{ animationDelay: "240ms" }}>
-              <em>Beruflich und persönlich.</em>
-            </span>
-          </h1>
-          <p
-            className="hero-rise mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-cream/75 md:text-xl"
-            style={{ animationDelay: "360ms" }}
-          >
-            Systemisches Coaching bei Kuhl & Engel – AVGS-gefördertes Jobcoaching,
-            spezialisiert auf Akademikerinnen, und Berufsorientierung für Schulen,
-            Lehrkräfte und Kooperationspartner. Zwei Wege, ein Klick:
-          </p>
-          <div
-            className="hero-rise mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
-            style={{ animationDelay: "480ms" }}
-          >
-            <a
-              href="#wege"
-              className="group inline-flex items-center gap-3 rounded-lg bg-cream px-8 py-4 font-semibold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-bright"
+        <div className="relative mx-auto w-full max-w-7xl px-5 pb-40 pt-40 md:px-8">
+          <div className="max-w-3xl">
+            <p className="eyebrow hero-rise inline-flex items-center gap-2.5 rounded-full border border-ink/20 bg-cream/70 px-4 py-2 text-ink/85 backdrop-blur-sm">
+              <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-gold" />
+              100 % AVGS-zertifiziert · Berlin · Potsdam · Augsburg · Online
+            </p>
+            <h1 className="display mt-8 max-w-4xl text-[2.4rem] text-ink md:text-7xl lg:text-[5.4rem]">
+              <span className="hero-rise block" style={{ animationDelay: "120ms" }}>
+                Den richtigen Weg finden.
+              </span>
+              <span className="hero-rise block" style={{ animationDelay: "240ms" }}>
+                <em>Beruflich und persönlich.</em>
+              </span>
+            </h1>
+            <p
+              className="hero-rise mt-7 max-w-2xl text-lg leading-relaxed text-ink/80 md:text-xl"
+              style={{ animationDelay: "360ms" }}
             >
-              Meinen Weg wählen
-              <span aria-hidden className="transition-transform duration-300 group-hover:translate-y-0.5">↓</span>
-            </a>
-            <a
-              href={CONTACT.phoneHref}
-              className="inline-flex items-center gap-3 rounded-lg border border-cream/30 px-8 py-4 font-semibold text-cream transition-all duration-300 hover:border-gold-bright hover:text-gold-bright"
+              Systemisches Coaching bei Kuhl & Engel – AVGS-gefördertes Jobcoaching,
+              spezialisiert auf Akademikerinnen, und Berufsorientierung für Schulen,
+              Lehrkräfte und Kooperationspartner. Zwei Wege, ein Klick:
+            </p>
+            <div
+              className="hero-rise mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center"
+              style={{ animationDelay: "480ms" }}
             >
-              {CONTACT.phone}
-            </a>
+              <a
+                href="#wege"
+                className="group inline-flex items-center gap-3 rounded-lg bg-ink px-8 py-4 font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-700"
+              >
+                Meinen Weg wählen
+                <span aria-hidden className="transition-transform duration-300 group-hover:translate-y-0.5">↓</span>
+              </a>
+              <a
+                href={CONTACT.phoneHref}
+                className="inline-flex items-center gap-3 rounded-lg border border-ink/30 bg-cream/60 px-8 py-4 font-semibold text-ink backdrop-blur-sm transition-all duration-300 hover:border-gold hover:text-gold"
+              >
+                {CONTACT.phone}
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Scroll-Hinweis */}
         <div className="absolute bottom-28 left-1/2 hidden -translate-x-1/2 md:block" aria-hidden>
-          <div className="scroll-drip relative h-14 w-px overflow-hidden bg-cream/20" />
+          <div className="scroll-drip relative h-14 w-px overflow-hidden bg-ink/20" />
         </div>
       </section>
 
@@ -177,9 +180,9 @@ export default function Home() {
 
           {/* Bildkomposition */}
           <Reveal delay={150} className="relative">
-            <div className="relative ml-6 aspect-[4/5] overflow-hidden rounded-t-full md:ml-14">
+            <div className="relative ml-6 aspect-[4/5] overflow-hidden md:ml-14">
               <Image
-                src="/images/coaching-sq-1.jpg"
+                src="/images/ke-heike-tisch.jpg"
                 alt="Einzelcoaching in den Räumen von Kuhl & Engel"
                 fill
                 sizes="(max-width: 1024px) 100vw, 44vw"
@@ -237,8 +240,7 @@ export default function Home() {
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
-                    <p className="eyebrow absolute left-6 top-6 rounded-full border border-cream/30 bg-ink/40 px-3 py-1.5 text-cream backdrop-blur-sm">
+                    <p className="eyebrow absolute left-6 top-6 rounded-full border border-cream/30 bg-ink/60 px-3 py-1.5 text-cream backdrop-blur-sm">
                       {bereich.kicker}
                     </p>
                   </div>
@@ -269,7 +271,7 @@ export default function Home() {
       </section>
 
       {/* ---------- Methode (warm) ---------- */}
-      <section className="relative overflow-hidden bg-puder py-24 md:py-36">
+      <section className="relative overflow-hidden py-24 md:py-36">
         <div aria-hidden className="absolute -left-40 top-1/2 h-[34rem] w-[34rem] -translate-y-1/2 rounded-full border border-clay/20" />
         <div className="relative mx-auto max-w-7xl px-5 md:px-8">
           <Reveal>
@@ -325,7 +327,7 @@ export default function Home() {
           <Reveal className="relative order-2 lg:order-1">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Image
-                src="/images/gruenderinnen.jpg"
+                src="/images/ke-duo-lachen.jpg"
                 alt="Heike Kuhl und Martina Engel-Fürstberger"
                 fill
                 sizes="(max-width: 1024px) 100vw, 46vw"
@@ -401,7 +403,7 @@ export default function Home() {
           {COACHINNEN.map((coachin, i) => (
             <Reveal key={coachin.name} delay={i * 80}>
               <figure className="text-center">
-                <div className="relative aspect-[3/4] overflow-hidden rounded-t-full">
+                <div className="relative aspect-[3/4] overflow-hidden">
                   <Image
                     src={coachin.image}
                     alt={coachin.name}

@@ -15,7 +15,7 @@ export const metadata = pageMetadata({
   description:
     "Jobcoaching bei Kuhl & Engel: systemisches Karrierecoaching für berufliche Orientierung, Bewerbung und Neustart – mit AVGS-Gutschein 100 % kostenfrei. Berlin, Potsdam, Augsburg & online.",
   path: "/jobcoaching",
-  image: "/images/coaching-warm.jpg",
+  image: "/images/ke-coaching-draussen.jpg",
   imageAlt: "Coaching-Gespräch bei Kuhl & Engel",
 });
 
@@ -140,7 +140,7 @@ export default function JobcoachingPage() {
           </>
         }
         intro="Ob berufliche Orientierung, der nächste Karriereschritt oder ein kompletter Neustart: Als AVGS-zertifizierte Jobcoaches begleiten wir Sie dabei, eine Tätigkeit zu finden, die zu Ihnen passt – und Ihnen langfristig gefällt. Mit AVGS-Gutschein für Sie vollständig kostenfrei."
-        image="/images/coaching-warm.jpg"
+        image="/images/ke-coaching-draussen.jpg"
       />
 
       {/* Auf einen Blick */}
@@ -276,27 +276,27 @@ export default function JobcoachingPage() {
         </div>
       </section>
 
-      {/* Gründe (dunkel) */}
-      <section className="on-dark bg-ink py-24 text-cream md:py-32">
+      {/* Gründe */}
+      <section className="py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <Reveal>
-            <p className="eyebrow flex items-center gap-3 text-gold-bright">
-              <span aria-hidden className="inline-block h-px w-10 bg-gold-bright" />
+            <p className="eyebrow flex items-center gap-3 text-gold">
+              <span aria-hidden className="inline-block h-px w-10 bg-gold" />
               Warum Kuhl & Engel
             </p>
             <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
               Gute Gründe, mit uns zu <em>arbeiten.</em>
             </h2>
           </Reveal>
-          <div className="mt-14 grid gap-px overflow-hidden border border-cream/12 bg-cream/12 sm:grid-cols-2">
+          <div className="mt-14 grid gap-px overflow-hidden border border-ink/10 bg-ink/10 sm:grid-cols-2">
             {GRUENDE.map((grund, i) => (
               <Reveal key={grund.title} delay={i * 100} className="h-full">
-                <div className="h-full bg-ink p-9 md:p-11">
-                  <span className="display text-4xl italic text-gold-bright/50">
+                <div className="h-full bg-paper p-9 md:p-11">
+                  <span className="display text-4xl italic text-gold/50">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="display mt-5 text-2xl">{grund.title}</h3>
-                  <p className="mt-3 text-[0.95rem] leading-relaxed text-cream/65">{grund.text}</p>
+                  <p className="mt-3 text-[0.95rem] leading-relaxed text-ink/65">{grund.text}</p>
                 </div>
               </Reveal>
             ))}
@@ -305,12 +305,12 @@ export default function JobcoachingPage() {
             <div className="mt-12 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
               <Link
                 href="/avgs-coaching"
-                className="group inline-flex items-center gap-3 bg-cream px-8 py-4 font-semibold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold-bright"
+                className="group inline-flex items-center gap-3 bg-ink px-8 py-4 font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-700"
               >
                 AVGS Coaching starten
                 <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
-              <a href={CONTACT.phoneHref} className="font-semibold text-cream/80 transition-colors hover:text-gold-bright">
+              <a href={CONTACT.phoneHref} className="font-semibold text-ink/70 transition-colors hover:text-gold">
                 oder rufen Sie an: {CONTACT.phone}
               </a>
             </div>

@@ -51,9 +51,7 @@ export default function Header() {
   const solid = scrolled || open;
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 ${solid ? "text-ink" : "text-cream"}`}
-    >
+    <header className="fixed inset-x-0 top-0 z-50 text-ink">
       {/* Hintergrund der Leiste – getrennt vom Header, damit backdrop-filter
           nicht zum Containing Block des fixed Mobile-Overlays wird */}
       <div
@@ -70,7 +68,7 @@ export default function Header() {
           <span className="display text-[1.35rem] leading-none md:text-2xl">
             kuhl<em className="mx-0.5 transition-colors group-hover:text-gold-bright">&</em>engel
           </span>
-          <span className={`eyebrow mb-0.5 ml-2 hidden !text-[0.55rem] lg:inline ${solid ? "text-ink/50" : "text-cream/60"}`}>
+          <span className="eyebrow mb-0.5 ml-2 hidden !text-[0.55rem] text-ink/50 lg:inline">
             Jobcoaching
           </span>
         </Link>
@@ -86,16 +84,12 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-6 lg:flex">
-          <a href={CONTACT.phoneHref} className={`text-[0.88rem] font-medium tracking-wide transition-colors ${solid ? "text-ink/70 hover:text-ink" : "text-cream/80 hover:text-cream"}`}>
+          <a href={CONTACT.phoneHref} className="text-[0.88rem] font-medium tracking-wide text-ink/70 transition-colors hover:text-ink">
             {CONTACT.phone}
           </a>
           <Link
             href="/kontakt"
-            className={`px-5 py-2.5 text-[0.85rem] font-semibold tracking-wide transition-all duration-300 hover:-translate-y-0.5 ${
-              solid
-                ? "bg-ink text-cream hover:bg-ink-700"
-                : "bg-cream text-ink hover:bg-gold-bright"
-            }`}
+            className="bg-ink px-5 py-2.5 text-[0.85rem] font-semibold tracking-wide text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-700"
           >
             Erstgespräch buchen
           </Link>

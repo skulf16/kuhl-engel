@@ -15,7 +15,7 @@ export const metadata = pageMetadata({
   description:
     "Jobcoaching und AVGS Coaching in Potsdam: systemisches Karrierecoaching für Akademikerinnen und Akademiker in der Gutenbergstraße 87, nahe Holländisches Viertel – mit AVGS-Gutschein 100 % kostenfrei. Auch online.",
   path: "/jobcoaching-potsdam",
-  image: "/images/standort-potsdam.jpg",
+  image: "/images/ke-tisch-beratung.jpg",
   imageAlt: "Standort von Kuhl & Engel in der Gutenbergstraße 87, Potsdam",
 });
 
@@ -79,7 +79,7 @@ export default function JobcoachingPotsdamPage() {
           </>
         }
         intro="AVGS Coaching und berufliche Neuorientierung in der Gutenbergstraße 87, mitten in der Potsdamer Innenstadt – oder online, ganz wie es zu Ihnen passt."
-        image="/images/standort-potsdam.jpg"
+        image="/images/ke-tisch-beratung.jpg"
       />
 
       {/* Auf einen Blick */}
@@ -149,7 +149,7 @@ export default function JobcoachingPotsdamPage() {
             <div className="relative">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
-                  src="/images/coaching-sq-1.jpg"
+                  src="/images/ke-einzel-gespraech.jpg"
                   alt="Einzelcoaching bei Kuhl & Engel"
                   fill
                   sizes="(max-width: 1024px) 100vw, 46vw"
