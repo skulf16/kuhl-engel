@@ -74,6 +74,11 @@ const VIDEOS = [
     title: "Check den Steuerberater – das Schüler-Interview",
     thumbnail: "/images/yt-C9Jkb6Oss-s.jpg",
   },
+  {
+    videoId: "HKIIGXwUjrU",
+    title: "Check den Elektriker – das Schüler-Interview",
+    thumbnail: "/images/yt-HKIIGXwUjrU.jpg",
+  },
 ];
 
 export default function BerufsstartPage() {
@@ -150,7 +155,7 @@ export default function BerufsstartPage() {
               Schüler-Interviews von Job-Opener bekommst Du ehrliche Einblicke –
               direkt von Menschen, die den Job jeden Tag machen.
             </p>
-            <div className="mt-8 grid gap-8 sm:grid-cols-2">
+            <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {VIDEOS.map((video) => (
                 <YouTubeEmbed key={video.videoId} {...video} />
               ))}
