@@ -108,7 +108,7 @@ export default function BerufsstartPage() {
             <span className="font-semibold text-ink">Hinweis für Lehrkräfte und Eltern:</span>{" "}
             Diese Seite ist zum direkten Weitergeben gedacht – alle Links und
             Vorlagen sind frei zugänglich. Informationen zu unseren Angeboten für
-            Schulen finden Sie unter{" "}
+            Schulen findest Du unter{" "}
             <Link href="/berufsorientierung" className="link-gold font-semibold text-gold">
               Berufsorientierung
             </Link>
@@ -196,7 +196,6 @@ export default function BerufsstartPage() {
           </>
         }
         text="Melde Dich für ein unverbindliches Gespräch – wir helfen Dir, Deinen Weg nach der Schule zu finden."
-        informal
       />
 
       <div className="bg-cream-deep py-6 text-center">

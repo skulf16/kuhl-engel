@@ -22,11 +22,11 @@ export const metadata = pageMetadata({
 const FAQS_POTSDAM: Faq[] = [
   {
     q: "Wo findet das Jobcoaching in Potsdam statt?",
-    a: "Unser Potsdamer Standort liegt in der Gutenbergstraße 87, 14467 Potsdam – zentral in der nördlichen Innenstadt, nur wenige Gehminuten vom Holländischen Viertel. Alternativ coachen wir Sie online oder hybrid.",
+    a: "Unser Potsdamer Standort liegt in der Gutenbergstraße 87, 14467 Potsdam – zentral in der nördlichen Innenstadt, nur wenige Gehminuten vom Holländischen Viertel. Alternativ coachen wir Dich online oder hybrid.",
   },
   {
     q: "Kann ich meinen AVGS-Gutschein in Potsdam einlösen?",
-    a: "Ja. Kuhl & Engel ist AZAV-zertifizierter Träger, Sie können Ihren Aktivierungs- und Vermittlungsgutschein direkt in Potsdam einlösen. Der Gutschein muss noch mindestens 10 Tage gültig sein, mindestens 20 Unterrichtseinheiten umfassen und in Teilzeit ausgestellt sein – das Coaching ist dann für Sie kostenfrei.",
+    a: "Ja. Kuhl & Engel ist AZAV-zertifizierter Träger, Du kannst Deinen Aktivierungs- und Vermittlungsgutschein direkt in Potsdam einlösen. Der Gutschein muss noch mindestens 10 Tage gültig sein, mindestens 20 Unterrichtseinheiten umfassen und in Teilzeit ausgestellt sein – das Coaching ist dann für Dich kostenfrei.",
   },
   {
     q: "Welche Coaches arbeiten in Potsdam?",
@@ -49,7 +49,7 @@ const COACHES_POTSDAM = [
 
 const LEISTUNGEN = [
   { href: "/avgs-coaching", label: "AVGS Coaching", note: "Mit Gutschein 100 % kostenfrei" },
-  { href: "/coaching-fuer-frauen", label: "Coaching für Frauen", note: "Von Frau zu Frau – 14 Coachinnen" },
+  { href: "/karrierecoaching", label: "Karrierecoaching", note: "Auf Wunsch von Frau zu Frau" },
   { href: "/jobcoaching", label: "Karriere- & Bewerbungscoaching", note: "Orientierung, Bewerbung, Neustart" },
   { href: "/avgs-gutschein-beantragen", label: "AVGS-Gutschein beantragen", note: "Schritt für Schritt zur Förderung" },
 ];
@@ -78,7 +78,7 @@ export default function JobcoachingPotsdamPage() {
             Jobcoaching in Potsdam – <em>nahe Holländisches Viertel.</em>
           </>
         }
-        intro="AVGS Coaching und berufliche Neuorientierung in der Gutenbergstraße 87, mitten in der Potsdamer Innenstadt – oder online, ganz wie es zu Ihnen passt."
+        intro="AVGS Coaching und berufliche Neuorientierung in der Gutenbergstraße 87, mitten in der Potsdamer Innenstadt – oder online, ganz wie es zu Dir passt."
         image="/images/ke-tisch-beratung.jpg"
       />
 
@@ -112,7 +112,7 @@ export default function JobcoachingPotsdamPage() {
               </h2>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink/70">
                 Ob Neuorientierung nach der Elternzeit, der nächste Karriereschritt
-                oder der Berufseinstieg nach der Promotion: In Potsdam begleiten Sie
+                oder der Berufseinstieg nach der Promotion: In Potsdam begleiten Dich
                 fünf systemisch ausgebildete Coaches – auf Wunsch auch hybrid mit
                 Online-Terminen.
               </p>
@@ -171,10 +171,10 @@ export default function JobcoachingPotsdamPage() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              Ihr Team in Potsdam
+              Dein Team in Potsdam
             </p>
             <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-              Diese Coaches begleiten Sie <em>vor Ort.</em>
+              Diese Coaches begleiten Dich <em>vor Ort.</em>
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
@@ -200,7 +200,7 @@ export default function JobcoachingPotsdamPage() {
           </div>
           <Reveal delay={150}>
             <p className="mt-10 text-[0.95rem] text-ink/60">
-              Das komplette Team mit allen Schwerpunkten finden Sie{" "}
+              Das komplette Team mit allen Schwerpunkten findest Du{" "}
               <Link href="/ueber-uns#team" className="link-gold font-semibold text-gold">
                 hier →
               </Link>
@@ -226,10 +226,10 @@ export default function JobcoachingPotsdamPage() {
       <CtaBand
         title={
           <>
-            Lernen Sie uns in Potsdam <em>persönlich kennen.</em>
+            Lerne uns in Potsdam <em>persönlich kennen.</em>
           </>
         }
-        text="Vereinbaren Sie ein kostenloses Erstgespräch – in der Gutenbergstraße, telefonisch oder online."
+        text="Vereinbare ein kostenloses Erstgespräch – in der Gutenbergstraße, telefonisch oder online."
       />
     </>
   );

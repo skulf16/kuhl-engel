@@ -4,6 +4,13 @@ export const CONTACT = {
   email: "info@kuhlundengel.de",
 };
 
+/** Kennzahlen-Band – auf Startseite und Berufsorientierung im Einsatz. */
+export const STATS = [
+  { value: "6.555", label: "Unterrichtseinheiten Coaching" },
+  { value: "14", label: "Coachinnen im Team" },
+  { value: "5,0", label: "★ Google-Bewertung" },
+];
+
 /** Die zwei fokussierten Geschäftsbereiche – Basis der „Zwei-Wege-Weiche“. */
 export type Bereich = {
   slug: string;
@@ -22,7 +29,7 @@ export const BEREICHE: Bereich[] = [
     kicker: "Für Akademikerinnen & Akademiker",
     title: "AVGS Jobcoaching",
     claim: "Mit AVGS-Gutschein 100 % kostenfrei",
-    text: "Sie wollen beruflich neu durchstarten, nach der Elternzeit wieder einsteigen oder sicher in Bewerbungen gehen? Unser AVGS-zertifiziertes Jobcoaching begleitet Sie – finanziert über den AVGS-Gutschein der Agentur für Arbeit.",
+    text: "Du willst beruflich neu durchstarten, nach der Elternzeit wieder einsteigen oder sicher in Bewerbungen gehen? Unser AVGS-zertifiziertes Jobcoaching begleitet Dich – finanziert über den AVGS-Gutschein der Agentur für Arbeit.",
     points: [
       "Orientierung, Bewerbung & Wiedereinstieg",
       "14 Coachinnen – auf Wunsch von Frau zu Frau",
@@ -36,9 +43,9 @@ export const BEREICHE: Bereich[] = [
     kicker: "Für Schulen, Lehrkräfte & Partner",
     title: "Berufsorientierung",
     claim: "Mein Berufseinstieg – seit über 10 Jahren",
-    text: "Sie möchten Ihre Schüler:innen bei der Berufs- und Studienwahl unterstützen? Wir begleiten junge Menschen dabei, ihre Stärken zu erkennen und den Weg zu finden, der wirklich zu ihnen passt.",
+    text: "Du möchtest Deine Schüler:innen bei der Berufs- und Studienwahl unterstützen? Wir begleiten junge Menschen dabei, ihre Stärken zu erkennen und den Weg zu finden, der wirklich zu ihnen passt.",
     points: [
-      "Gruppenprojekte an Ihrer Schule",
+      "Gruppenprojekte an Deiner Schule",
       "Einzelcoaching für Schüler:innen",
       "Materialien für den Berufsstart",
     ],
@@ -63,15 +70,15 @@ export const JOBCOACHING_LEISTUNGEN: Leistung[] = [
     nr: "01",
     title: "AVGS Coaching & Gutschein",
     claim: "Finanziert durch den AVGS-Gutschein",
-    text: "Individuelles 1:1-Coaching mit dem Aktivierungs- und Vermittlungsgutschein – für Sie vollständig kostenfrei. Wir erklären Ihnen auch, wie Sie den Gutschein bekommen.",
+    text: "Individuelles 1:1-Coaching mit dem Aktivierungs- und Vermittlungsgutschein – für Dich vollständig kostenfrei. Wir erklären Dir auch, wie Du den Gutschein bekommst.",
     image: "/images/ke-beratung.jpg",
   },
   {
-    slug: "/coaching-fuer-frauen",
+    slug: "/karrierecoaching",
     nr: "02",
-    title: "Coaching für Frauen",
-    claim: "Von Frau zu Frau · 14 Coachinnen",
-    text: "Wiedereinstieg nach der Elternzeit, Sichtbarkeit, Neuorientierung: Coachinnen, die Ihre Fragen aus eigener Erfahrung kennen.",
+    title: "Karrierecoaching",
+    claim: "Auf Wunsch von Frau zu Frau",
+    text: "Wiedereinstieg nach der Elternzeit, Sichtbarkeit, Neuorientierung, der nächste Schritt: Coaches, die Deine Fragen aus eigener Erfahrung kennen.",
     image: "/images/ke-frauen.jpg",
   },
   {
@@ -87,7 +94,7 @@ export const JOBCOACHING_LEISTUNGEN: Leistung[] = [
     nr: "04",
     title: "Jobcoaching Potsdam",
     claim: "Nördliche Innenstadt & online",
-    text: "AVGS Coaching in der Gutenbergstraße 87, nahe Holländisches Viertel – oder digital, ganz wie es zu Ihnen passt.",
+    text: "AVGS Coaching in der Gutenbergstraße 87, nahe Holländisches Viertel – oder online, ganz wie es zu Dir passt.",
     image: "/images/ke-tisch-beratung.jpg",
   },
 ];
@@ -153,14 +160,14 @@ export const TEAM: TeamMember[] = [
   {
     name: "Anna Podakova",
     role: "Assistentin der Geschäftsführung",
-    quali: "Ihre Ansprechpartnerin für alle Fragen rund um Ihr Coaching",
+    quali: "Deine Ansprechpartnerin für alle Fragen rund um Dein Coaching",
     image: "/images/team-anna-podakova.jpg",
     quote:
       "Ich übernehme den Kontakt mit der Agentur oder dem Jobcenter für dich, sodass du dich ganz auf dich und deinen Prozess konzentrieren kannst.",
   },
   {
     name: "Bettina Brammer",
-    role: "Potsdam & digital",
+    role: "Potsdam & online",
     quali: "Systemische Coachin, Berufscoachin, Heilpraktikerin für Psychotherapie",
     image: "/images/team-bettina-brammer.jpg",
     quote:
@@ -168,7 +175,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Grit Staroste",
-    role: "Potsdam & digital",
+    role: "Potsdam & online",
     quali: "Systemisch-integrative Coachin",
     image: "/images/team-grit-staroste.jpg",
     quote:
@@ -176,7 +183,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Carmen Daum",
-    role: "Digital",
+    role: "Online",
     quali:
       "Systemisch-integrative Coachin, Heilpraktikerin für Psychotherapie, Mediation",
     image: "/images/team-carmen-daum.jpg",
@@ -185,7 +192,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Wanda Wolff",
-    role: "Potsdam & digital",
+    role: "Potsdam & online",
     quali: "Systemische Coachin",
     image: "/images/team-wanda-wolff.jpg",
     quote:
@@ -193,7 +200,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Saskia Sattler",
-    role: "Digital · auch auf Englisch",
+    role: "Online · auch auf Englisch",
     quali: "DCV-zertifizierte Coachin",
     image: "/images/team-saskia-sattler.jpg",
     quote:
@@ -201,7 +208,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Matthias Fink",
-    role: "Augsburg & digital · auch auf Englisch und Französisch",
+    role: "Augsburg & online · auch auf Englisch und Französisch",
     quali: "Systemisch-integrativer Coach",
     image: "/images/team-matthias-fink.jpg",
     quote:
@@ -209,7 +216,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Manuela Frank",
-    role: "Digital",
+    role: "Online",
     quali:
       "Systemisch-integrative Coachin, Mediatorin, Heilpraktikerin für Psychotherapie",
     image: "/images/team-manuela-frank.jpg",
@@ -218,7 +225,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Angelina Werner",
-    role: "Berlin & digital",
+    role: "Berlin & online",
     quali: "Systemisch-integrative Coachin, Job- und Karrierecoach, Hypnosecoach",
     image: "/images/team-angelina-werner.jpg",
     quote:
@@ -226,7 +233,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Anna-Sophie Börries",
-    role: "Digital",
+    role: "Online",
     quali: "EASC-zertifizierte Coachin, Holistic Coachin",
     image: "/images/team-anna-sophie-boerries.jpg",
     quote:
@@ -234,7 +241,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Dominique Günther",
-    role: "Digital",
+    role: "Online",
     quali: "Systemisch-integrative Coachin, Spirituelle Coachin",
     image: "/images/team-dominique-guenther.jpg",
     quote:
@@ -242,7 +249,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Dr. Anna Mandel-Zakharova, Ph.D.",
-    role: "Potsdam & digital · auch auf Englisch und Russisch",
+    role: "Potsdam & online · auch auf Englisch und Russisch",
     quali: "Systemisch-integrative Coachin, Neurowissenschaftlerin",
     image: "/images/team-anna-mandel-zakharova.jpg",
     quote:
@@ -250,7 +257,7 @@ export const TEAM: TeamMember[] = [
   },
   {
     name: "Carmen Pilger",
-    role: "Berlin & digital · auch auf Englisch",
+    role: "Berlin & online · auch auf Englisch",
     quali: "Systemisch-integrative Coachin und Aufstellerin",
     image: "/images/team-carmen-pilger.jpg",
     quote:
@@ -261,8 +268,8 @@ export const TEAM: TeamMember[] = [
 /** Optionen für den AVGS-Buchungsfunnel. */
 export const FUNNEL_GUTSCHEIN = [
   { value: "ja", label: "Ja, habe ich", hint: "Perfekt – dann kann es schnell losgehen." },
-  { value: "nein", label: "Nein, noch nicht", hint: "Kein Problem – wir zeigen Ihnen, wie Sie ihn bekommen." },
-  { value: "beantragung", label: "In Beantragung", hint: "Sehr gut – wir begleiten Sie durch den Rest." },
+  { value: "nein", label: "Nein, noch nicht", hint: "Kein Problem – wir zeigen Dir, wie Du ihn bekommst." },
+  { value: "beantragung", label: "In Beantragung", hint: "Sehr gut – wir begleiten Dich durch den Rest." },
 ];
 
 export const FUNNEL_THEMEN = [
@@ -321,7 +328,7 @@ export type Faq = { q: string; a: string };
 export const FAQS_AVGS: Faq[] = [
   {
     q: "Ich habe einen AVGS. Wie ist das Procedere?",
-    a: "Wir telefonieren und finden gemeinsam heraus, welche:r Coach:in zu Ihnen passt. Nach einem kostenlosen Erstgespräch (20–30 Minuten) entscheiden Sie, ob Sie das Coaching machen möchten. Sie schicken uns Ihren AVGS, wir füllen den Gutschein aus und übernehmen die gesamte Korrespondenz mit der Agentur oder dem Jobcenter. Sobald die Bewilligung vorliegt, kann das Coaching beginnen.",
+    a: "Wir telefonieren und finden gemeinsam heraus, welche:r Coach:in zu Dir passt. Nach einem kostenlosen Erstgespräch (20–30 Minuten) entscheidest Du, ob Du das Coaching machen möchtest. Du schickst uns Deinen AVGS, wir füllen den Gutschein aus und übernehmen die gesamte Korrespondenz mit der Agentur oder dem Jobcenter. Sobald die Bewilligung vorliegt, kann das Coaching beginnen.",
   },
   {
     q: "Was muss auf meinem AVGS stehen, damit ich ihn einlösen kann?",
@@ -329,15 +336,15 @@ export const FAQS_AVGS: Faq[] = [
   },
   {
     q: "Wo kann ich gecoacht werden?",
-    a: "An unseren Standorten in Berlin, Potsdam und Augsburg – oder digital. Eine hybride Form aus Coaching vor Ort und via Zoom ist ebenfalls möglich.",
+    a: "An unseren Standorten in Berlin, Potsdam und Augsburg – oder online. Eine hybride Form aus Coaching vor Ort und via Zoom ist ebenfalls möglich.",
   },
   {
     q: "Wie viele Stunden umfasst das AVGS Coaching?",
-    a: "Je nach Bewilligung 24 Unterrichtseinheiten in 6 Wochen, 32 UE in 8 Wochen oder 44 UE in 11 Wochen (1 UE = 45 Minuten). Welcher Umfang zu Ihrem Anliegen passt, klären wir im kostenlosen Erstgespräch – beantragt wird er über Ihren AVGS.",
+    a: "Je nach Bewilligung 24 Unterrichtseinheiten in 6 Wochen, 32 UE in 8 Wochen oder 44 UE in 11 Wochen (1 UE = 45 Minuten). Welcher Umfang zu Deinem Anliegen passt, klären wir im kostenlosen Erstgespräch – beantragt wird er über Deinen AVGS.",
   },
   {
-    q: "Ich habe keinen AVGS. Kann ich trotzdem zu Ihnen kommen?",
-    a: "Ja, unbedingt. Rufen Sie uns einfach an – wir schauen uns gemeinsam Ihre Situation an und finden eine individuelle Lösung.",
+    q: "Ich habe keinen AVGS. Kann ich trotzdem zu euch kommen?",
+    a: "Ja, unbedingt. Ruf uns einfach an – wir schauen uns gemeinsam Deine Situation an und finden eine individuelle Lösung.",
   },
 ];
 
@@ -370,6 +377,6 @@ export const STANDORTE: Standort[] = [
   {
     city: "Online",
     label: "Deutschlandweit",
-    address: ["Digitales Coaching", "via Zoom – auch hybrid"],
+    address: ["Online-Coaching", "via Zoom – auch hybrid"],
   },
 ];

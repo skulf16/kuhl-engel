@@ -180,10 +180,10 @@ export default function GruppenangebotePage() {
       <CtaBand
         title={
           <>
-            Bringen Sie „Mein Berufseinstieg“ <em>an Ihre Schule.</em>
+            Bring „Mein Berufseinstieg“ <em>an Deine Schule.</em>
           </>
         }
-        text="Wie sich das Seminar optimal in den Projektablauf an Ihrer Schule einbetten lässt, klären wir gern im persönlichen Gespräch – inklusive aller Fragen zur PraxisBO-Förderung."
+        text="Wie sich das Seminar optimal in den Projektablauf an Deiner Schule einbetten lässt, klären wir gern im persönlichen Gespräch – inklusive aller Fragen zur PraxisBO-Förderung."
       />
 
       <div className="bg-cream-deep py-6 text-center">

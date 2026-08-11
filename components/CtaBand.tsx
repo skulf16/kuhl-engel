@@ -5,25 +5,17 @@ import { CONTACT } from "@/lib/data";
 export default function CtaBand({
   title,
   text,
-  informal = false,
 }: {
   title?: React.ReactNode;
   text?: string;
-  /** Du-Ansprache (nur für die Schüler:innen-Seite /berufsorientierung/berufsstart) */
-  informal?: boolean;
 }) {
-  const fallbackTitle = informal ? (
+  const fallbackTitle = (
     <>
       Sag ja zu: <em>Jetzt, nicht irgendwann.</em>
     </>
-  ) : (
-    <>
-      Sagen Sie ja zu: <em>Jetzt, nicht irgendwann.</em>
-    </>
   );
-  const fallbackText = informal
-    ? "Lerne uns in einem kostenlosen, unverbindlichen Erstgespräch kennen – telefonisch, online oder vor Ort."
-    : "Lernen Sie uns in einem kostenlosen, unverbindlichen Erstgespräch kennen – telefonisch, online oder vor Ort.";
+  const fallbackText =
+    "Lerne uns in einem kostenlosen, unverbindlichen Erstgespräch kennen – telefonisch, online oder vor Ort.";
   return (
     <section className="relative overflow-hidden bg-cream-deep">
       <div aria-hidden className="display pointer-events-none absolute -bottom-24 right-0 select-none text-[22rem] italic leading-none text-gold/6">
@@ -46,7 +38,7 @@ export default function CtaBand({
                 href={CONTACT.phoneHref}
                 className="inline-flex items-center justify-center gap-2 px-4 py-4 font-semibold text-ink/80 transition-colors hover:text-gold"
               >
-                {informal ? "oder ruf an:" : "oder rufen Sie an:"} {CONTACT.phone}
+                oder ruf uns an: {CONTACT.phone}
               </a>
             </div>
           </div>

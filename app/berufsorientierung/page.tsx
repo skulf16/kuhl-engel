@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
-import { CONTACT, JUGEND_ANGEBOTE } from "@/lib/data";
+import { CONTACT, JUGEND_ANGEBOTE, STATS } from "@/lib/data";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
@@ -54,6 +54,21 @@ export default function BerufsorientierungPage() {
         image="/images/ke-jugend-gruppe.jpg"
       />
 
+      {/* Kennzahlen (überlappen den Hero) */}
+      <section className="relative z-10 mx-auto -mt-14 max-w-6xl px-5 md:px-8">
+        <Reveal>
+          <dl className="grid grid-cols-1 divide-y divide-ink/10 overflow-hidden rounded-xl border border-ink/10 bg-paper shadow-[0_32px_80px_-32px_rgba(14,29,43,0.35)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+            {STATS.map((stat) => (
+              <div key={stat.label} className="px-6 py-8 text-center md:py-10">
+                <dt className="sr-only">{stat.label}</dt>
+                <dd className="display text-4xl text-ink md:text-5xl">{stat.value}</dd>
+                <dd className="mt-2 text-[0.82rem] font-medium tracking-wide text-ink/55">{stat.label}</dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
+      </section>
+
       {/* Auf einen Blick */}
       <section className="mx-auto max-w-7xl px-5 pt-16 md:px-8 md:pt-20">
         <Reveal>
@@ -78,7 +93,7 @@ export default function BerufsorientierungPage() {
             Unsere Angebote zur Berufsorientierung
           </p>
           <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-            Drei Wege, wie wir <em>Ihre Schüler:innen stärken.</em>
+            Drei Wege, wie wir <em>Deine Schüler:innen stärken.</em>
           </h2>
         </Reveal>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
@@ -156,7 +171,7 @@ export default function BerufsorientierungPage() {
                 href={CONTACT.phoneHref}
                 className="mt-7 inline-flex items-center gap-2 font-semibold text-gold transition-colors hover:text-ink"
               >
-                Fragen? Rufen Sie an: {CONTACT.phone} <span aria-hidden>→</span>
+                Fragen? Ruf uns an: {CONTACT.phone} <span aria-hidden>→</span>
               </a>
             </Reveal>
           </div>
@@ -166,10 +181,10 @@ export default function BerufsorientierungPage() {
       <CtaBand
         title={
           <>
-            Holen Sie „Mein Berufseinstieg“ <em>an Ihre Schule.</em>
+            Hol „Mein Berufseinstieg“ <em>an Deine Schule.</em>
           </>
         }
-        text="Im unverbindlichen Gespräch finden wir gemeinsam heraus, welches Format zu Ihrer Schule oder Einrichtung passt – und wie die Förderung funktioniert."
+        text="Im unverbindlichen Gespräch finden wir gemeinsam heraus, welches Format zu Deiner Schule oder Einrichtung passt – und wie die Förderung funktioniert."
       />
     </>
   );

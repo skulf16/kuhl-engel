@@ -11,86 +11,86 @@ import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Coaching für Frauen – Karrierecoaching von Coachinnen",
+  title: "Karrierecoaching – für den nächsten beruflichen Schritt",
   description:
-    "Coaching für Frauen bei Kuhl & Engel: 14 Coachinnen begleiten Akademikerinnen bei Wiedereinstieg nach der Elternzeit, Neuorientierung und Sichtbarkeit – mit AVGS-Gutschein 100 % kostenfrei. Berlin, Potsdam & online.",
-  path: "/coaching-fuer-frauen",
+    "Karrierecoaching bei Kuhl & Engel: Wiedereinstieg nach der Elternzeit, Neuorientierung, Sichtbarkeit und der nächste Karriereschritt – mit AVGS-Gutschein 100 % kostenfrei. Berlin, Potsdam & online.",
+  path: "/karrierecoaching",
   image: "/images/ke-frauen.jpg",
-  imageAlt: "Coaching von Frau zu Frau bei Kuhl & Engel",
+  imageAlt: "Karrierecoaching bei Kuhl & Engel",
 });
 
 const THEMEN = [
   {
     nr: "01",
     title: "Wiedereinstieg nach der Elternzeit",
-    text: "Sie wollen zurück ins Berufsleben, aber nicht einfach zurück in den alten Trott? Gemeinsam klären wir, ob der alte Job noch passt, wie Sie sich neu ausrichten und wie Sie Beruf und Familie so verbinden, dass es Ihnen entspricht – ohne schlechtes Gewissen in beide Richtungen.",
+    text: "Du willst zurück ins Berufsleben, aber nicht einfach zurück in den alten Trott? Gemeinsam klären wir, ob der alte Job noch passt, wie Du Dich neu ausrichtest und wie Du Beruf und Familie so verbindest, dass es Dir entspricht – ohne schlechtes Gewissen in beide Richtungen.",
   },
   {
     nr: "02",
     title: "Sichtbarkeit & Selbstzweifel",
-    text: "Bestens qualifiziert und trotzdem das Gefühl, nicht zu genügen? Viele Akademikerinnen kennen das. Im Coaching reflektieren Sie Ihre Muster, erkennen Ihre Kernkompetenzen anhand echter Erfolge und lernen, auf natürliche Weise zu überzeugen – im Meeting wie im Vorstellungsgespräch.",
+    text: "Bestens qualifiziert und trotzdem das Gefühl, nicht zu genügen? Viele Hochqualifizierte kennen das. Im Coaching reflektierst Du Deine Muster, erkennst Deine Kernkompetenzen anhand echter Erfolge und lernst, auf natürliche Weise zu überzeugen – im Meeting wie im Vorstellungsgespräch.",
   },
   {
     nr: "03",
     title: "Neuorientierung nach Studium oder Promotion",
-    text: "Raus aus der Wissenschaft, rein – aber wohin? Wenn der akademische Weg nicht mehr trägt, helfen wir Ihnen, Ihre Fähigkeiten in neue Kontexte zu übersetzen und eine Richtung zu finden, die Ihrem Leben Sinn gibt.",
+    text: "Raus aus der Wissenschaft, rein – aber wohin? Wenn der akademische Weg nicht mehr trägt, helfen wir Dir, Deine Fähigkeiten in neue Kontexte zu übersetzen und eine Richtung zu finden, die Deinem Leben Sinn gibt.",
   },
   {
     nr: "04",
     title: "Der nächste Karriereschritt",
-    text: "Mehr Verantwortung, ein neues Feld oder endlich die Position, die Ihrem Können entspricht? Wir entwickeln mit Ihnen inspirierende, realistische Ziele und eine Strategie, die Sie souverän verhandeln und auftreten lässt.",
+    text: "Mehr Verantwortung, ein neues Feld oder endlich die Position, die Deinem Können entspricht? Wir entwickeln mit Dir inspirierende, realistische Ziele und eine Strategie, mit der Du souverän verhandelst und auftrittst.",
   },
 ];
 
-const FAQS_FRAUEN: Faq[] = [
+const FAQS_KARRIERE: Faq[] = [
   {
-    q: "Werde ich bei euch von einer Frau gecoacht?",
-    a: "Sehr wahrscheinlich – und auf Wunsch garantiert. 14 unserer 15 Coaches sind Frauen, beide Gründerinnen eingeschlossen. Sagen Sie uns im Erstgespräch einfach, dass Sie ein Coaching von Frau zu Frau möchten, und wir stellen die passende Coachin an Ihre Seite.",
+    q: "Kann ich mir aussuchen, wer mich coacht?",
+    a: "Ja. In unserem Team arbeiten 14 Coachinnen und ein Coach – mit unterschiedlichen Schwerpunkten, Biografien und Sprachen. Im Erstgespräch finden wir gemeinsam heraus, wer am besten zu Dir und Deinem Anliegen passt. Wenn Du ein Coaching von Frau zu Frau möchtest, sag es einfach – das garantieren wir Dir.",
   },
   {
     q: "Ist das Coaching wirklich kostenlos?",
-    a: "Ja – wenn Sie bei der Agentur für Arbeit oder dem Jobcenter arbeitssuchend gemeldet sind und einen AVGS-Gutschein bekommen, übernimmt die Agentur 100 % der Kosten. Das gilt auch während oder nach der Elternzeit. Wir übernehmen die komplette Abwicklung mit der Behörde.",
+    a: "Ja – wenn Du bei der Agentur für Arbeit oder dem Jobcenter arbeitssuchend gemeldet bist und einen AVGS-Gutschein bekommst, übernimmt die Agentur 100 % der Kosten. Das gilt auch während oder nach der Elternzeit. Wir übernehmen die komplette Abwicklung mit der Behörde.",
   },
   {
     q: "Ich stecke mitten in der Elternzeit – wann ist der richtige Zeitpunkt?",
-    a: "Früher, als die meisten denken: Ein Coaching vor dem Wiedereinstieg verschafft Ihnen Klarheit, bevor Sie Entscheidungen treffen oder verhandeln müssen. Viele Klientinnen starten sechs bis drei Monate vor dem geplanten Wiedereinstieg – online geht das auch mit Kind zu Hause.",
+    a: "Früher, als die meisten denken: Ein Coaching vor dem Wiedereinstieg verschafft Dir Klarheit, bevor Du Entscheidungen triffst oder verhandeln musst. Viele Klient:innen starten sechs bis drei Monate vor dem geplanten Wiedereinstieg – online geht das auch mit Kind zu Hause.",
   },
   {
     q: "Geht das Coaching auch online oder hybrid?",
-    a: "Ja. Alle Coachings finden wahlweise in Berlin, Potsdam oder Augsburg, komplett online via Zoom oder hybrid statt. Die Termine legen wir so, dass sie in Ihren Alltag passen.",
+    a: "Ja. Alle Coachings finden wahlweise in Berlin, Potsdam oder Augsburg, komplett online via Zoom oder hybrid statt. Die Termine legen wir so, dass sie in Deinen Alltag passen.",
   },
 ];
 
-const COACHINNEN = [
+const COACHES = [
   FOUNDERS[0],
   FOUNDERS[1],
-  ...TEAM.filter((m) => ["Carmen Pilger", "Angelina Werner"].includes(m.name)),
+  ...TEAM.filter((m) => ["Carmen Pilger", "Matthias Fink"].includes(m.name)),
 ];
 
-export default function CoachingFuerFrauenPage() {
+export default function KarrierecoachingPage() {
   return (
     <>
       <JsonLd
         data={serviceSchema({
-          name: "Coaching für Frauen",
+          name: "Karrierecoaching",
           description:
-            "Karrierecoaching für Frauen und Akademikerinnen: Wiedereinstieg nach der Elternzeit, berufliche Neuorientierung, Sichtbarkeit und der nächste Karriereschritt – begleitet von 14 Coachinnen, mit AVGS-Gutschein zu 100 % kostenfrei.",
-          path: "/coaching-fuer-frauen",
-          serviceType: "Karrierecoaching für Frauen",
-          audience: "Frauen, Akademikerinnen, Wiedereinsteigerinnen",
+            "Karrierecoaching für Akademikerinnen und Akademiker, Fach- und Führungskräfte: Wiedereinstieg nach der Elternzeit, berufliche Neuorientierung, Sichtbarkeit und der nächste Karriereschritt – mit AVGS-Gutschein zu 100 % kostenfrei.",
+          path: "/karrierecoaching",
+          serviceType: "Karrierecoaching",
+          audience: "Akademikerinnen und Akademiker, Fach- und Führungskräfte",
         })}
       />
-      <JsonLd data={faqSchema(FAQS_FRAUEN, "/coaching-fuer-frauen")} />
-      <JsonLd data={breadcrumbSchema([{ name: "Coaching für Frauen", path: "/coaching-fuer-frauen" }])} />
+      <JsonLd data={faqSchema(FAQS_KARRIERE, "/karrierecoaching")} />
+      <JsonLd data={breadcrumbSchema([{ name: "Karrierecoaching", path: "/karrierecoaching" }])} />
 
       <PageHero
-        eyebrow="Coaching für Frauen · Von Coachinnen"
+        eyebrow="Karrierecoaching · Für den nächsten Schritt"
         title={
           <>
-            Karrierecoaching <em>von Frau zu Frau.</em>
+            Karrierecoaching <em>auf Augenhöhe.</em>
           </>
         }
-        intro="Wiedereinstieg nach der Elternzeit, Neuorientierung oder der nächste Karriereschritt: Bei Kuhl & Engel begleiten Sie Coachinnen, die Ihre Fragen aus eigener Erfahrung kennen. Gegründet von zwei Frauen, getragen von 14 Coachinnen – und mit AVGS-Gutschein zu 100 % kostenfrei."
+        intro="Wiedereinstieg nach der Elternzeit, Neuorientierung oder der nächste Karriereschritt: Bei Kuhl & Engel begleiten Dich Coaches, die Deine Fragen aus eigener Erfahrung kennen – auf Wunsch auch garantiert von Frau zu Frau. Mit AVGS-Gutschein zu 100 % kostenfrei."
         image="/images/ke-frauen.jpg"
       />
 
@@ -98,10 +98,10 @@ export default function CoachingFuerFrauenPage() {
       <section className="mx-auto max-w-7xl px-5 pt-16 md:px-8 md:pt-20">
         <Reveal>
           <FactBox
-            question="Was macht Coaching für Frauen bei Kuhl & Engel aus?"
-            answer="Kuhl & Engel ist ein von zwei Frauen gegründetes Coaching-Unternehmen mit 14 Coachinnen im Team. Wir begleiten Frauen und Akademikerinnen bei Wiedereinstieg nach der Elternzeit, beruflicher Neuorientierung, Sichtbarkeit und dem nächsten Karriereschritt – systemisch, auf Augenhöhe und auf Wunsch garantiert von Frau zu Frau. Mit AVGS-Gutschein der Agentur für Arbeit ist das Coaching zu 100 % kostenfrei."
+            question="Was macht Karrierecoaching bei Kuhl & Engel aus?"
+            answer="Karrierecoaching bei Kuhl & Engel ist eine individuelle 1:1-Begleitung für alle, die beruflich den nächsten Schritt gehen wollen: Wiedereinstieg nach der Elternzeit, Neuorientierung, Sichtbarkeit oder mehr Verantwortung. 14 Coachinnen und ein Coach arbeiten systemisch und auf Augenhöhe – auf Wunsch garantiert von Frau zu Frau. Mit AVGS-Gutschein der Agentur für Arbeit ist das Coaching zu 100 % kostenfrei."
             facts={[
-              { label: "Team", value: "14 Coachinnen, 2 Gründerinnen" },
+              { label: "Team", value: "15 Coaches – 14 Coachinnen & 1 Coach" },
               { label: "Kosten", value: "Mit AVGS-Gutschein 0 €" },
               { label: "Schwerpunkte", value: "Wiedereinstieg, Neuorientierung, Sichtbarkeit, Karriere" },
               { label: "Formate", value: "Berlin, Potsdam, Augsburg, online oder hybrid" },
@@ -115,10 +115,10 @@ export default function CoachingFuerFrauenPage() {
         <Reveal>
           <p className="eyebrow flex items-center gap-3 text-gold">
             <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-            Womit Frauen zu uns kommen
+            Womit unsere Klient:innen zu uns kommen
           </p>
           <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-            Ihre Themen. <em>Unsere Erfahrung.</em>
+            Deine Themen. <em>Unsere Erfahrung.</em>
           </h2>
         </Reveal>
         <div className="mt-14 grid gap-px overflow-hidden border border-ink/10 bg-ink/10 sm:grid-cols-2">
@@ -144,7 +144,7 @@ export default function CoachingFuerFrauenPage() {
               <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
             <p className="text-[0.9rem] text-ink/55">
-              4 kurze Fragen – wir melden uns mit der passenden Coachin.
+              4 kurze Fragen – wir melden uns mit dem passenden Coach.
             </p>
           </div>
         </Reveal>
@@ -165,27 +165,27 @@ export default function CoachingFuerFrauenPage() {
         </Reveal>
       </section>
 
-      {/* Coachinnen */}
+      {/* Coaches */}
       <section className="bg-cream-deep py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              Von Frauen gegründet
+              Dein Team
             </p>
             <div className="mt-6 flex flex-wrap items-end justify-between gap-6">
               <h2 className="display max-w-xl text-4xl md:text-5xl">
-                Coachinnen, die Ihren Weg <em>selbst gegangen sind.</em>
+                Coaches, die Deinen Weg <em>selbst gegangen sind.</em>
               </h2>
               <p className="mb-2 max-w-md text-[0.95rem] leading-relaxed text-ink/60">
                 Heike Kuhl und Martina Engel-Fürstberger haben Kuhl & Engel
-                gegründet – heute begleiten 14 Coachinnen Frauen in beruflichen
-                Veränderungen.
+                gegründet – heute begleiten Dich 14 Coachinnen und ein Coach
+                in beruflichen Veränderungen.
               </p>
             </div>
           </Reveal>
           <div className="mt-14 grid gap-x-6 gap-y-12 grid-cols-2 lg:grid-cols-4">
-            {COACHINNEN.map((member, i) => (
+            {COACHES.map((member, i) => (
               <Reveal key={member.name} delay={i * 100}>
                 <article className="group">
                   <div className="relative aspect-[4/5] overflow-hidden bg-cream">
@@ -207,7 +207,7 @@ export default function CoachingFuerFrauenPage() {
           </div>
           <Reveal delay={150}>
             <p className="mt-10 text-[0.95rem] text-ink/60">
-              Alle 14 Coachinnen mit ihren Schwerpunkten finden Sie{" "}
+              Alle Coaches mit ihren Schwerpunkten findest Du{" "}
               <Link href="/ueber-uns#team" className="link-gold font-semibold text-gold">
                 im Team →
               </Link>
@@ -220,12 +220,12 @@ export default function CoachingFuerFrauenPage() {
       <section className="mx-auto max-w-4xl px-5 py-24 md:px-8 md:py-32">
         <Reveal>
           <h2 className="display text-center text-4xl md:text-5xl">
-            Häufige Fragen von <em>Frauen an uns.</em>
+            Häufige Fragen zum <em>Karrierecoaching.</em>
           </h2>
         </Reveal>
         <Reveal delay={150}>
           <div className="mt-12">
-            <Accordion items={FAQS_FRAUEN} />
+            <Accordion items={FAQS_KARRIERE} />
           </div>
         </Reveal>
       </section>
@@ -233,10 +233,10 @@ export default function CoachingFuerFrauenPage() {
       <CtaBand
         title={
           <>
-            Ihr nächstes Kapitel beginnt <em>mit einem Gespräch.</em>
+            Dein nächstes Kapitel beginnt <em>mit einem Gespräch.</em>
           </>
         }
-        text="Lernen Sie uns in einem kostenlosen Erstgespräch kennen – vertraulich, unverbindlich und auf Wunsch von Frau zu Frau."
+        text="Lern uns in einem kostenlosen Erstgespräch kennen – vertraulich, unverbindlich und auf Wunsch von Frau zu Frau."
       />
     </>
   );

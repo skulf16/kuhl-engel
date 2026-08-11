@@ -10,16 +10,10 @@ import {
   CONTACT,
   FAQS_AVGS,
   FOUNDERS,
+  STATS,
   TEAM,
   TESTIMONIALS,
 } from "@/lib/data";
-
-const STATS = [
-  { value: "246", label: "AVGS-Coachings seit 2022" },
-  { value: "6.555", label: "Unterrichtseinheiten Coaching" },
-  { value: "14", label: "Coachinnen im Team" },
-  { value: "5,0", label: "★ Google-Bewertung" },
-];
 
 const METHODE = [
   {
@@ -30,7 +24,7 @@ const METHODE = [
   {
     step: "II",
     title: "Veränderung umsetzen",
-    text: "Unterstützung und Motivation im Veränderungsprozess, kontinuierliche Begleitung unter Einbeziehung Ihres persönlichen Umfelds.",
+    text: "Unterstützung und Motivation im Veränderungsprozess, kontinuierliche Begleitung unter Einbeziehung Deines persönlichen Umfelds.",
   },
   {
     step: "III",
@@ -119,7 +113,7 @@ export default function Home() {
       {/* ---------- Kennzahlen (überlappen den Hero) ---------- */}
       <section className="relative z-10 mx-auto -mt-20 max-w-6xl px-5 md:px-8">
         <Reveal>
-          <dl className="grid grid-cols-2 divide-ink/10 overflow-hidden rounded-xl border border-ink/10 bg-paper shadow-[0_32px_80px_-32px_rgba(14,29,43,0.35)] md:grid-cols-4 md:divide-x">
+          <dl className="grid grid-cols-1 divide-y divide-ink/10 overflow-hidden rounded-xl border border-ink/10 bg-paper shadow-[0_32px_80px_-32px_rgba(14,29,43,0.35)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             {STATS.map((stat) => (
               <div key={stat.label} className="px-6 py-8 text-center md:py-10">
                 <dt className="sr-only">{stat.label}</dt>
@@ -153,16 +147,16 @@ export default function Home() {
                 schon alles? Mit langjähriger Erfahrung und maßgeschneidertem Ansatz
                 begleiten wir Akademikerinnen und Akademiker auf dem Weg zu einem Beruf, der
                 wirklich passt. Kein Schema F, sondern ein Prozess auf der Höhe
-                Ihres Werdegangs.
+                Deines Werdegangs.
               </p>
             </Reveal>
             <Reveal delay={300}>
               <ul className="mt-9 grid gap-4 sm:grid-cols-2">
                 {[
                   "Stärken und Talente präzise erkennen",
-                  "Klarheit über das, was Sie wirklich wollen",
+                  "Klarheit über das, was Du wirklich willst",
                   "Langfristig und groß denken",
-                  "Begleitung in Ihrem Tempo",
+                  "Begleitung in Deinem Tempo",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-[0.95rem] font-medium">
                     <span aria-hidden className="display mt-0.5 italic text-gold">✓</span>
@@ -173,7 +167,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={400}>
               <Link href="/ueber-uns" className="link-gold mt-10 inline-flex items-center gap-2 font-semibold text-gold">
-                Lernen Sie uns kennen <span aria-hidden>→</span>
+                Lern uns kennen <span aria-hidden>→</span>
               </Link>
             </Reveal>
           </div>
@@ -288,9 +282,9 @@ export default function Home() {
             </Reveal>
             <Reveal delay={200}>
               <p className="text-lg leading-relaxed text-ink/70">
-                Sie sind immer Teil von Systemen, die Sie selbst mitgestalten – eines
+                Du bist immer Teil von Systemen, die Du selbst mitgestaltest – eines
                 Teams, einer Organisation, einer Familie. Deshalb schauen wir nicht
-                nur auf Ihren Lebenslauf, sondern auf das Ganze: Gefühle, Gedanken,
+                nur auf Deinen Lebenslauf, sondern auf das Ganze: Gefühle, Gedanken,
                 Verhalten und Kommunikation.
               </p>
             </Reveal>
@@ -386,15 +380,15 @@ export default function Home() {
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow flex items-center justify-center gap-3 text-clay-deep">
               <span aria-hidden className="inline-block h-px w-10 bg-clay" />
-              Ihr Team
+              Dein Team
               <span aria-hidden className="inline-block h-px w-10 bg-clay" />
             </p>
             <h2 className="display mt-6 text-4xl md:text-5xl">
-              14 Coachinnen. <em>Eine, die zu Ihnen passt.</em>
+              14 Coachinnen. <em>Eine, die zu Dir passt.</em>
             </h2>
             <p className="mt-5 leading-relaxed text-ink/65">
               Systemisch ausgebildet, mit eigenen Karrierewegen, Brüchen und
-              Neustarts – auf Wunsch begleitet Sie garantiert eine Frau.
+              Neustarts – auf Wunsch begleitet Dich garantiert eine Frau.
             </p>
           </div>
         </Reveal>
@@ -490,7 +484,7 @@ export default function Home() {
         </Reveal>
         <Reveal delay={200}>
           <p className="mt-8 text-center text-[0.95rem] text-ink/60">
-            Ihre Frage war nicht dabei? Rufen Sie uns an:{" "}
+            Deine Frage war nicht dabei? Ruf uns an:{" "}
             <a href={CONTACT.phoneHref} className="link-gold font-semibold text-gold">
               {CONTACT.phone}
             </a>

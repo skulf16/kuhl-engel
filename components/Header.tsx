@@ -8,7 +8,7 @@ import { CONTACT } from "@/lib/data";
 const JOBCOACHING_LINKS = [
   { href: "/jobcoaching", label: "Jobcoaching – Überblick" },
   { href: "/avgs-coaching", label: "AVGS Coaching & Gutschein" },
-  { href: "/coaching-fuer-frauen", label: "Coaching für Frauen" },
+  { href: "/karrierecoaching", label: "Karrierecoaching" },
   { href: "/jobcoaching-berlin", label: "Jobcoaching Berlin" },
   { href: "/jobcoaching-potsdam", label: "Jobcoaching Potsdam" },
 ];
@@ -17,7 +17,7 @@ const JUGEND_LINKS = [
   { href: "/berufsorientierung", label: "Berufsorientierung – Überblick" },
   { href: "/berufsorientierung/einzelcoaching", label: "Einzelcoaching" },
   { href: "/berufsorientierung/gruppenangebote", label: "Gruppenangebote" },
-  { href: "/berufsorientierung/berufsstart", label: "Für den Berufsstart" },
+  { href: "/berufsorientierung/berufsstart", label: "Hilfreiches für den Berufsstart" },
 ];
 
 const UEBER_LINKS = [
@@ -76,7 +76,7 @@ export default function Header() {
         {/* Desktop-Navigation */}
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Hauptnavigation">
           <NavDropdown label="Jobcoaching" items={JOBCOACHING_LINKS} />
-          <NavDropdown label="Berufsorientierung" items={JUGEND_LINKS} />
+          <NavDropdown label="Berufsorientierung für Jugendliche" items={JUGEND_LINKS} />
           <NavDropdown label="Über uns" items={UEBER_LINKS} />
           <Link href="/kontakt" className="link-gold text-[0.92rem] font-medium">
             Kontakt
@@ -124,7 +124,7 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <p className="eyebrow mb-3 mt-7 text-gold">Berufsorientierung</p>
+          <p className="eyebrow mb-3 mt-7 text-gold">Berufsorientierung für Jugendliche</p>
           {JUGEND_LINKS.map((item) => (
             <Link
               key={item.href}

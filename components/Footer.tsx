@@ -6,7 +6,7 @@ const FOOTER_JOBCOACHING = [
   { href: "/jobcoaching", label: "Jobcoaching – Überblick" },
   { href: "/avgs-coaching", label: "AVGS Coaching & Gutschein" },
   { href: "/avgs-gutschein-beantragen", label: "AVGS-Gutschein beantragen" },
-  { href: "/coaching-fuer-frauen", label: "Coaching für Frauen" },
+  { href: "/karrierecoaching", label: "Karrierecoaching" },
   { href: "/jobcoaching-berlin", label: "Jobcoaching Berlin" },
   { href: "/jobcoaching-potsdam", label: "Jobcoaching Potsdam" },
 ];
@@ -23,7 +23,7 @@ const FOOTER_JUGEND = [
   { href: "/berufsorientierung", label: "Berufsorientierung" },
   { href: "/berufsorientierung/einzelcoaching", label: "Einzelcoaching" },
   { href: "/berufsorientierung/gruppenangebote", label: "Gruppenangebote" },
-  { href: "/berufsorientierung/berufsstart", label: "Für den Berufsstart" },
+  { href: "/berufsorientierung/berufsstart", label: "Hilfreiches für den Berufsstart" },
 ];
 
 export default function Footer() {

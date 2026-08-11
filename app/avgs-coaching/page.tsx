@@ -14,66 +14,66 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "AVGS Coaching & Gutschein – 100 % kostenfrei in Berlin & online",
   description:
-    "AVGS Coaching für Akademikerinnen und Akademiker: individuelles 1:1-Jobcoaching, mit Gutschein der Agentur für Arbeit zu 100 % kostenfrei. So bekommen und lösen Sie den AVGS-Gutschein ein – Berlin, Potsdam, Augsburg & online.",
+    "AVGS Coaching für Akademikerinnen und Akademiker: individuelles 1:1-Jobcoaching, mit Gutschein der Agentur für Arbeit zu 100 % kostenfrei. So bekommst und löst Du den AVGS-Gutschein ein – Berlin, Potsdam, Augsburg & online.",
   path: "/avgs-coaching",
   image: "/images/ke-beratung.jpg",
   imageAlt: "Coaching-Gespräch bei Kuhl & Engel",
 });
 
 const GUTSCHEIN_STEPS = [
-  { title: "Infogespräch mit uns", text: "Kontaktieren Sie uns für eine unverbindliche Erstberatung. Wir klären alle Fragen zu Ablauf und Möglichkeiten." },
-  { title: "AVGS beantragen", text: "Falls Sie noch keinen Gutschein haben: Ihre Agentur für Arbeit oder Ihr Jobcenter stellt ihn aus, wenn Sie die Voraussetzungen erfüllen." },
-  { title: "Kostenloses Vorgespräch", text: "Wir finden die passende Coachin oder den passenden Coach für Sie. Im Vorgespräch besprechen Sie gemeinsam Ihre Erwartungen." },
-  { title: "Wir übernehmen den Papierkram", text: "Sie schicken uns den Gutschein – wir erledigen die gesamte Abwicklung und Korrespondenz mit Agentur oder Jobcenter." },
-  { title: "Ihr Coaching beginnt", text: "Nach der Bewilligung geht es los. Auch die Abrechnung übernehmen wir. Ihnen entstehen keine Kosten." },
+  { title: "Infogespräch mit uns", text: "Kontaktiere uns für eine unverbindliche Erstberatung. Wir klären alle Fragen zu Ablauf und Möglichkeiten." },
+  { title: "AVGS beantragen", text: "Falls Du noch keinen Gutschein hast: Deine Agentur für Arbeit oder Dein Jobcenter stellt ihn aus, wenn Du die Voraussetzungen erfüllst." },
+  { title: "Kostenloses Vorgespräch", text: "Wir finden die passende Coachin oder den passenden Coach für Dich. Im Vorgespräch besprecht Ihr gemeinsam Deine Erwartungen." },
+  { title: "Wir übernehmen den Papierkram", text: "Du schickst uns den Gutschein – wir erledigen die gesamte Abwicklung und Korrespondenz mit Agentur oder Jobcenter." },
+  { title: "Dein Coaching beginnt", text: "Nach der Bewilligung geht es los. Auch die Abrechnung übernehmen wir. Dir entstehen keine Kosten." },
 ];
 
 const THEMEN = [
   {
     nr: "01",
-    q: "Sie wissen nicht, was Sie beruflich machen wollen?",
+    q: "Du weißt nicht, was Du beruflich machen willst?",
     intro:
-      "Berufliche Entscheidungen machen wir oft von äußeren Umständen abhängig – Familie, Lebensstandard, Erwartungen. Im Coaching finden Sie eine Ausrichtung, die Ihnen entspricht und Ihrem Leben Sinn gibt.",
+      "Berufliche Entscheidungen machen wir oft von äußeren Umständen abhängig – Familie, Lebensstandard, Erwartungen. Im Coaching findest Du eine Ausrichtung, die Dir entspricht und Deinem Leben Sinn gibt.",
     points: [
-      "Gemeinsam reflektieren wir Ihren Werdegang und finden heraus, was Ihnen wirklich wichtig ist.",
-      "Sie entwickeln eine Vision für Ihre berufliche Zukunft und erste Schritte, um sie zu erreichen.",
-      "Wir setzen klare, realistische Ziele, die Sie motivieren und Ihnen Orientierung geben.",
+      "Gemeinsam reflektieren wir Deinen Werdegang und finden heraus, was Dir wirklich wichtig ist.",
+      "Du entwickelst eine Vision für Deine berufliche Zukunft und erste Schritte, um sie zu erreichen.",
+      "Wir setzen klare, realistische Ziele, die Dich motivieren und Dir Orientierung geben.",
     ],
     image: "/images/ke-whiteboard.jpg",
   },
   {
     nr: "02",
-    q: "Sie fragen sich, was Sie wirklich gut können?",
+    q: "Du fragst Dich, was Du wirklich gut kannst?",
     intro:
-      "Viele Menschen wissen nicht genau, welche ihrer Fähigkeiten und Talente sie im Berufsleben am besten einsetzen können. Hier geht es darum, Ihre Stärken zu erkennen und zu nutzen.",
+      "Viele Menschen wissen nicht genau, welche ihrer Fähigkeiten und Talente sie im Berufsleben am besten einsetzen können. Hier geht es darum, Deine Stärken zu erkennen und zu nutzen.",
     points: [
-      "Sie erkunden Ihre Kernkompetenzen anhand Ihrer Erfolge und überwundenen Misserfolge.",
-      "Sie erforschen, welche Rollen und Aufgaben Ihnen Energie geben.",
-      "Wir erarbeiten, wie Sie Ihre Stärken im Beruf optimal einsetzen.",
+      "Du erkundest Deine Kernkompetenzen anhand Deiner Erfolge und überwundenen Misserfolge.",
+      "Du erforschst, welche Rollen und Aufgaben Dir Energie geben.",
+      "Wir erarbeiten, wie Du Deine Stärken im Beruf optimal einsetzt.",
     ],
     image: "/images/ke-gruppe-tisch.jpg",
   },
   {
     nr: "03",
-    q: "Sie zweifeln an sich?",
+    q: "Du zweifelst an Dir?",
     intro:
-      "Unsicherheit ist normal, wenn es um berufliche Veränderung geht. Wir stärken Ihr Selbstvertrauen, lösen innere Blockaden und bauen Resilienz auf.",
+      "Unsicherheit ist normal, wenn es um berufliche Veränderung geht. Wir stärken Dein Selbstvertrauen, lösen innere Blockaden und bauen Resilienz auf.",
     points: [
-      "Sie reflektieren Ihre Verhaltens- und Kommunikationsmuster und lernen, auf natürliche Weise zu überzeugen.",
-      "Wir arbeiten Rückschläge auf und entwickeln Strategien, aus denen Sie gestärkt hervorgehen.",
-      "Wir klären, ob Sie zusätzliche Qualifikationen brauchen – und wie Sie sie erwerben.",
+      "Du reflektierst Deine Verhaltens- und Kommunikationsmuster und lernst, auf natürliche Weise zu überzeugen.",
+      "Wir arbeiten Rückschläge auf und entwickeln Strategien, aus denen Du gestärkt hervorgehst.",
+      "Wir klären, ob Du zusätzliche Qualifikationen brauchst – und wie Du sie erwirbst.",
     ],
     image: "/images/ke-coaching-lachen.jpg",
   },
   {
     nr: "04",
-    q: "Sie haben Angst vor Bewerbungen?",
+    q: "Du hast Angst vor Bewerbungen?",
     intro:
-      "Der Bewerbungsprozess kann überwältigend sein. Wir geben Ihren Unterlagen den Feinschliff, trainieren Gespräche und begleiten Sie auf Wunsch durch den gesamten Prozess.",
+      "Der Bewerbungsprozess kann überwältigend sein. Wir geben Deinen Unterlagen den Feinschliff, trainieren Gespräche und begleiten Dich auf Wunsch durch den gesamten Prozess.",
     points: [
-      "Gemeinsam werten wir Stellenangebote aus, die zu Ihren Fähigkeiten und Zielen passen.",
-      "Ihre Bewerbung und Ihr Online-Profil werden professionell und überzeugend.",
-      "Durch Rollenspiele bereiten Sie sich gezielt auf Gespräche vor – sicher und souverän.",
+      "Gemeinsam werten wir Stellenangebote aus, die zu Deinen Fähigkeiten und Zielen passen.",
+      "Deine Bewerbung und Dein Online-Profil werden professionell und überzeugend.",
+      "Durch Rollenspiele bereitest Du Dich gezielt auf Gespräche vor – sicher und souverän.",
     ],
     image: "/images/ke-unterlagen-duo.jpg",
   },
@@ -97,11 +97,12 @@ export default function AvgsCoachingPage() {
         eyebrow="AVGS Coaching · Zu 100 % gefördert"
         title={
           <>
-            Ihre Profis für <em>AVGS Coaching.</em>
+            Deine Profis für <em>AVGS Coaching.</em>
           </>
         }
-        intro="Wir sind spezialisiert auf Coaching in beruflichen Veränderungssituationen und zertifiziert für Ihr AVGS Coaching. Mit langjähriger Erfahrung und maßgeschneidertem Ansatz begleiten wir Akademikerinnen und Akademiker auf dem Weg zu einem Job, der wirklich passt."
+        intro="Wir sind spezialisiert auf Coaching in beruflichen Veränderungssituationen und zertifiziert für Dein AVGS Coaching. Mit langjähriger Erfahrung und maßgeschneidertem Ansatz begleiten wir Akademikerinnen und Akademiker auf dem Weg zu einem Job, der wirklich passt."
         image="/images/ke-beratung.jpg"
+        cta={{ href: "#buchen", label: "Sofort starten" }}
       />
 
       {/* Auf einen Blick (zitierfähig für KI-Suche) */}
@@ -127,10 +128,10 @@ export default function AvgsCoachingPage() {
         <Reveal>
           <p className="eyebrow flex items-center gap-3 text-gold">
             <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-            Ihre wichtigsten Fragen
+            Deine wichtigsten Fragen
           </p>
           <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-            Der Weg zu Ihrem <em>beruflichen Glück.</em>
+            Der Weg zu Deinem <em>beruflichen Glück.</em>
           </h2>
         </Reveal>
 
@@ -197,11 +198,11 @@ export default function AvgsCoachingPage() {
           </p>
           <div className="mt-6 flex flex-wrap items-end justify-between gap-6">
             <h2 className="display max-w-2xl text-4xl md:text-5xl">
-              Ihr Coaching. <em>Finanziert durch den AVGS-Gutschein.</em>
+              Dein Coaching. <em>Finanziert durch den AVGS-Gutschein.</em>
             </h2>
             <p className="mb-1.5 max-w-sm text-[0.95rem] leading-relaxed text-ink/60">
               Der Aktivierungs- und Vermittlungsgutschein (AVGS) nach § 45 SGB III
-              deckt die Kosten zu 100 %. Wir begleiten Sie durch jeden Schritt.
+              deckt die Kosten zu 100 %. Wir begleiten Dich durch jeden Schritt.
             </p>
           </div>
         </Reveal>
@@ -218,9 +219,9 @@ export default function AvgsCoachingPage() {
         </ol>
         <Reveal delay={150}>
           <p className="mt-12 text-lg text-ink/70">
-            Sie haben noch keinen Gutschein?{" "}
+            Du hast noch keinen Gutschein?{" "}
             <Link href="/avgs-gutschein-beantragen" className="link-gold font-semibold text-gold">
-              So beantragen Sie den AVGS bei Agentur für Arbeit oder Jobcenter →
+              So beantragst Du den AVGS bei Agentur für Arbeit oder Jobcenter →
             </Link>
           </p>
         </Reveal>
@@ -236,10 +237,10 @@ export default function AvgsCoachingPage() {
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
             </p>
             <h2 className="display mt-6 text-center text-4xl md:text-5xl">
-              Starten Sie Ihr <em>AVGS Coaching.</em>
+              Starte Dein <em>AVGS Coaching.</em>
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-center leading-relaxed text-ink/65">
-              Beantworten Sie vier kurze Fragen – wir melden uns mit dem passenden Coach
+              Beantworte vier kurze Fragen – wir melden uns mit dem passenden Coach
               und allen Infos zum Gutschein. Unverbindlich und kostenlos.
             </p>
           </Reveal>
@@ -279,7 +280,7 @@ export default function AvgsCoachingPage() {
             Bereit für den ersten Schritt <em>Richtung Traumjob?</em>
           </>
         }
-        text="Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch. Unser AVGS Coaching hilft Ihnen, Ihre Stärken optimal zu nutzen und Ihre beruflichen Ziele zu erreichen."
+        text="Kontaktiere uns für ein unverbindliches Beratungsgespräch. Unser AVGS Coaching hilft Dir, Deine Stärken optimal zu nutzen und Deine beruflichen Ziele zu erreichen."
       />
     </>
   );

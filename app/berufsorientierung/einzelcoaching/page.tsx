@@ -121,10 +121,10 @@ export default function EinzelcoachingPage() {
       <CtaBand
         title={
           <>
-            Sie möchten einen jungen Menschen <em>unterstützen?</em>
+            Du möchtest einen jungen Menschen <em>unterstützen?</em>
           </>
         }
-        text="Ob als Lehrkraft, Elternteil oder Kooperationspartner: Schreiben Sie uns oder rufen Sie an – wir klären alle Fragen und finden heraus, ob die Chemie stimmt."
+        text="Ob als Lehrkraft, Elternteil oder Kooperationspartner: Schreib uns oder ruf an – wir klären alle Fragen und finden heraus, ob die Chemie stimmt."
       />
 
       <div className="bg-cream-deep py-6 text-center">

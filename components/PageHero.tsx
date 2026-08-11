@@ -6,6 +6,7 @@ export default function PageHero({
   intro,
   image,
   imagePosition = "object-[center_30%]",
+  cta,
 }: {
   eyebrow: string;
   title: React.ReactNode;
@@ -13,6 +14,8 @@ export default function PageHero({
   image?: string;
   /** object-position-Klasse, um den Bildausschnitt pro Foto zu steuern */
   imagePosition?: string;
+  /** optionaler Button, z. B. Sprungmarke zum Buchungsfunnel */
+  cta?: { href: string; label: string };
 }) {
   return (
     <section className="relative overflow-hidden bg-cream pb-20 pt-36 md:pb-28 md:pt-48">
@@ -44,6 +47,16 @@ export default function PageHero({
             <p className="hero-rise mt-6 max-w-2xl text-lg leading-relaxed text-ink/80" style={{ animationDelay: "240ms" }}>
               {intro}
             </p>
+          )}
+          {cta && (
+            <a
+              href={cta.href}
+              className="hero-rise group mt-9 inline-flex items-center gap-3 bg-ink px-8 py-4 font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-700"
+              style={{ animationDelay: "360ms" }}
+            >
+              {cta.label}
+              <span aria-hidden className="transition-transform duration-300 group-hover:translate-y-0.5">↓</span>
+            </a>
           )}
         </div>
       </div>
