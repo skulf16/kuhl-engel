@@ -213,6 +213,40 @@ export default function UeberUnsPage() {
               </Reveal>
             ))}
           </div>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            <Reveal delay={100}>
+              <figure>
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src="/images/ke-augsburg-einzel.jpg"
+                    alt="Coaching-Raum am Standort Augsburg mit zwei Sesseln"
+                    fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <figcaption className="mt-3 text-[0.85rem] text-ink/55">
+                  Einzelcoaching in Augsburg – Raum für Gespräche auf Augenhöhe
+                </figcaption>
+              </figure>
+            </Reveal>
+            <Reveal delay={200}>
+              <figure>
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src="/images/ke-augsburg-gruppe.jpg"
+                    alt="Gruppenraum mit Stuhlkreis und Flipchart am Standort Augsburg"
+                    fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <figcaption className="mt-3 text-[0.85rem] text-ink/55">
+                  Unser Gruppenraum in Augsburg
+                </figcaption>
+              </figure>
+            </Reveal>
+          </div>
           <Reveal delay={150}>
             <p className="mt-10 text-[0.95rem] text-ink/60">
               Alle Coachings bieten wir auch hybrid an – vor Ort kombiniert mit
