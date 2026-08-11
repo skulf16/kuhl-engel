@@ -4,6 +4,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import JsonLd from "@/components/JsonLd";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -59,6 +60,19 @@ const SECTIONS: {
       { label: "Ausbildung-in-Deutschland.de", href: "https://www.ausbildung-in-deutschland.de" },
       { label: "Ausbildungsmarkt.de", href: "https://www.ausbildungsmarkt.de" },
     ],
+  },
+];
+
+const VIDEOS = [
+  {
+    videoId: "FPCNaE7emrY",
+    title: "Check den Informationselektroniker – das Schüler-Interview",
+    thumbnail: "/images/yt-FPCNaE7emrY.jpg",
+  },
+  {
+    videoId: "C9Jkb6Oss-s",
+    title: "Check den Steuerberater – das Schüler-Interview",
+    thumbnail: "/images/yt-C9Jkb6Oss-s.jpg",
   },
 ];
 
@@ -124,6 +138,29 @@ export default function BerufsstartPage() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={80}>
+          <div className="mt-16">
+            <div className="flex items-baseline gap-5">
+              <span className="display text-sm italic text-gold">04</span>
+              <h2 className="display text-3xl md:text-4xl">Berufe im Video-Check</h2>
+            </div>
+            <p className="mt-5 max-w-2xl leading-relaxed text-ink/70">
+              Wie sieht der Arbeitsalltag in einem Beruf wirklich aus? In den
+              Schüler-Interviews von Job-Opener bekommst Du ehrliche Einblicke –
+              direkt von Menschen, die den Job jeden Tag machen.
+            </p>
+            <div className="mt-8 grid gap-8 sm:grid-cols-2">
+              {VIDEOS.map((video) => (
+                <YouTubeEmbed key={video.videoId} {...video} />
+              ))}
+            </div>
+            <p className="mt-5 text-[0.8rem] leading-relaxed text-ink/50">
+              Beim Abspielen wird eine Verbindung zu YouTube hergestellt und es
+              gelten die Datenschutzbestimmungen von Google.
+            </p>
+          </div>
+        </Reveal>
 
         <Reveal delay={100}>
           <div className="mt-16 border border-ink/10 border-l-4 border-l-gold bg-paper p-8 md:p-10">
