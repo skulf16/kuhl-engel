@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CONTACT, STANDORTE } from "@/lib/data";
 
@@ -114,7 +115,45 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-cream/10 pt-6 text-[0.82rem] text-cream/45 md:flex-row md:items-center md:justify-between">
+        {/* Partner & Förderung */}
+        <div className="mt-14 flex flex-col gap-7 border-t border-cream/10 pt-8 lg:flex-row lg:items-center lg:justify-between">
+          <p className="max-w-md text-[0.8rem] leading-relaxed text-cream/50">
+            Das Projekt „Praxisnahe Berufsorientierung“ wird aus Mitteln der
+            Europäischen Union, der Bundesagentur für Arbeit und des Landes
+            Brandenburg gefördert.
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex h-16 items-center bg-white px-4">
+              <Image
+                src="/images/logo-praxisbo.jpg"
+                alt="PraxisBO – Praxisnahe Berufsorientierung"
+                width={98}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </div>
+            <div className="flex h-16 items-center bg-white px-4">
+              <Image
+                src="/images/logo-foerderung.jpg"
+                alt="Kofinanziert von der Europäischen Union · Land Brandenburg · Bundesagentur für Arbeit"
+                width={171}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </div>
+            <div className="flex h-16 items-center bg-white px-4">
+              <Image
+                src="/images/logo-kobra-net.jpg"
+                alt="kobra.net – Beratung. Bildung. Brandenburg"
+                width={100}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 flex flex-col gap-4 border-t border-cream/10 pt-6 text-[0.82rem] text-cream/45 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Kuhl & Engel GbR – Jobcoaching, Berlin</p>
           <div className="flex gap-6">
             <Link href="/impressum" className="link-gold hover:text-cream">Impressum</Link>
