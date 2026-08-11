@@ -79,8 +79,8 @@ export default function Home() {
               className="hero-rise mt-7 max-w-2xl text-lg leading-relaxed text-ink/80 md:text-xl"
               style={{ animationDelay: "360ms" }}
             >
-              Systemisches Coaching bei Kuhl & Engel – AVGS-gefördertes Jobcoaching,
-              spezialisiert auf Akademikerinnen, und Berufsorientierung für Schulen,
+              AVGS-gefördertes Jobcoaching bei Kuhl & Engel, spezialisiert auf
+              Akademiker und Akademikerinnen, und Berufsorientierung für Schulen,
               Lehrkräfte und Kooperationspartner. Zwei Wege, ein Klick:
             </p>
             <div

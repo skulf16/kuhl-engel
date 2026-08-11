@@ -136,7 +136,8 @@ export default function JobcoachingPage() {
         eyebrow="Jobcoaching · Für Erwachsene"
         title={
           <>
-            Jobcoaching, das <em>wirklich weiterbringt.</em>
+            Jobcoaching, das <em>wirklich weiterbringt</em> – gefördert mit
+            AVGS-Gutschein.
           </>
         }
         intro="Ob berufliche Orientierung, der nächste Karriereschritt oder ein kompletter Neustart: Als AVGS-zertifizierte Jobcoaches begleiten wir Dich dabei, eine Tätigkeit zu finden, die zu Dir passt – und Dir langfristig gefällt. Mit AVGS-Gutschein für Dich vollständig kostenfrei."
