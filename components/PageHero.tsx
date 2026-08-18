@@ -17,6 +17,7 @@ export default function PageHero({
   /** optionaler Button, z. B. Sprungmarke zum Buchungsfunnel */
   cta?: { href: string; label: string };
 }) {
+  const ctaIsAnchor = cta?.href.startsWith("#");
   return (
     <section className="relative overflow-hidden bg-cream pb-20 pt-36 md:pb-28 md:pt-48">
       {image && (
@@ -55,7 +56,14 @@ export default function PageHero({
               style={{ animationDelay: "360ms" }}
             >
               {cta.label}
-              <span aria-hidden className="transition-transform duration-300 group-hover:translate-y-0.5">↓</span>
+              <span
+                aria-hidden
+                className={`transition-transform duration-300 ${
+                  ctaIsAnchor ? "group-hover:translate-y-0.5" : "group-hover:translate-x-1"
+                }`}
+              >
+                {ctaIsAnchor ? "↓" : "→"}
+              </span>
             </a>
           )}
         </div>
