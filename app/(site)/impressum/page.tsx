@@ -15,7 +15,7 @@ export default function ImpressumPage() {
         <div className="space-y-10 leading-relaxed text-ink/75">
           <div>
             <h2 className="display text-2xl text-ink">
-              Allgemeine Informationen (§ 5 Telemediengesetz)
+              Allgemeine Informationen (§ 5 Digitale-Dienste-Gesetz)
             </h2>
             <p className="mt-4">
               <strong className="text-ink">Herausgeber / Inhaltlich Verantwortliche / Inhaberinnen</strong>
@@ -38,6 +38,22 @@ export default function ImpressumPage() {
               Steuernummer: 36/277/02362
             </p>
             <p className="mt-4">Kuhl & Engel ist eine Gesellschaft bürgerlichen Rechts.</p>
+          </div>
+          <div>
+            <h2 className="display text-2xl text-ink">
+              Verantwortlich für journalistisch-redaktionelle Inhalte (§ 18 Abs. 2 MStV)
+            </h2>
+            <p className="mt-4">
+              Martina Engel-Fürstberger und Heike Kuhl, Anschrift wie oben.
+            </p>
+          </div>
+          <div>
+            <h2 className="display text-2xl text-ink">Verbraucherstreitbeilegung</h2>
+            <p className="mt-4">
+              Wir sind nicht bereit und nicht verpflichtet, an
+              Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+              teilzunehmen (§ 36 VSBG).
+            </p>
           </div>
           <div>
             <h2 className="display text-2xl text-ink">Haftungshinweis</h2>
