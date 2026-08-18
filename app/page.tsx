@@ -80,7 +80,7 @@ export default function Home() {
               style={{ animationDelay: "360ms" }}
             >
               AVGS-gefördertes Jobcoaching bei Kuhl & Engel, spezialisiert auf
-              Akademiker und Akademikerinnen, und Berufsorientierung für Schulen,
+              Akademiker:innen, und Berufsorientierung für Schulen,
               Lehrkräfte und Kooperationspartner. Zwei Wege, ein Klick:
             </p>
             <div
@@ -117,7 +117,7 @@ export default function Home() {
             <Reveal>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Spezialisiert auf Akademikerinnen und Akademiker
+                Spezialisiert auf Akademiker:innen
               </p>
             </Reveal>
             <Reveal delay={100}>
@@ -130,7 +130,7 @@ export default function Home() {
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink/70">
                 Studium, Promotion, Verantwortung – und trotzdem die Frage: War das
                 schon alles? Mit langjähriger Erfahrung und maßgeschneidertem Ansatz
-                begleiten wir Akademikerinnen und Akademiker auf dem Weg zu einem Beruf, der
+                begleiten wir Akademiker:innen auf dem Weg zu einem Beruf, der
                 wirklich passt. Kein Schema F, sondern ein Prozess auf der Höhe
                 Deines Werdegangs.
               </p>

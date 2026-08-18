@@ -10,7 +10,7 @@ import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Jobcoaching – Karrierecoaching für Akademikerinnen und Akademiker",
+  title: "Jobcoaching – Karrierecoaching für Akademiker:innen",
   description:
     "Jobcoaching bei Kuhl & Engel: systemisches Karrierecoaching für berufliche Orientierung, Bewerbung und Neustart – mit AVGS-Gutschein 100 % kostenfrei. Online, Berlin, Potsdam & Augsburg.",
   path: "/jobcoaching",
@@ -104,7 +104,7 @@ const FAQS_JOBCOACHING: Faq[] = [
   },
   {
     q: "Für wen ist Jobcoaching sinnvoll?",
-    a: "Für alle, die beruflich in einer Veränderungssituation stecken: Arbeitslose und Arbeitssuchende, Wiedereinsteigerinnen nach der Elternzeit, Absolventinnen und Promovierte auf Richtungssuche, Fach- und Führungskräfte vor dem nächsten Schritt. Wir sind auf Akademikerinnen und Akademiker spezialisiert – entscheidend ist aber Dein Anliegen, nicht Dein Titel.",
+    a: "Für alle, die beruflich in einer Veränderungssituation stecken: Arbeitslose und Arbeitssuchende, Wiedereinsteiger:innen nach der Elternzeit, Absolvent:innen und Promovierte auf Richtungssuche, Fach- und Führungskräfte vor dem nächsten Schritt. Wir sind auf Akademiker:innen spezialisiert – entscheidend ist aber Dein Anliegen, nicht Dein Titel.",
   },
   {
     q: "Was ist der Unterschied zwischen Jobcoaching und Bewerbungstraining?",
@@ -123,7 +123,7 @@ export default function JobcoachingPage() {
         data={serviceSchema({
           name: "Jobcoaching",
           description:
-            "Systemisches Jobcoaching und Karrierecoaching für Akademikerinnen und Akademiker, Fach- und Führungskräfte: berufliche Orientierung, Bewerbung und Neustart – mit AVGS-Gutschein förderfähig.",
+            "Systemisches Jobcoaching und Karrierecoaching für Akademiker:innen, Fach- und Führungskräfte: berufliche Orientierung, Bewerbung und Neustart – mit AVGS-Gutschein förderfähig.",
           path: "/jobcoaching",
           serviceType: "Jobcoaching / Karrierecoaching",
         })}
@@ -149,9 +149,9 @@ export default function JobcoachingPage() {
         <Reveal>
           <FactBox
             question="Was ist Jobcoaching?"
-            answer="Jobcoaching ist eine individuelle 1:1-Begleitung rund um Beruf und Karriere – von der beruflichen Orientierung über die Bewerbung bis zum Neustart. Bei Kuhl & Engel arbeiten wir systemisch und ganzheitlich und sind auf Akademikerinnen und Akademiker, Fach- und Führungskräfte spezialisiert: seit 2018, mit 246 AVGS-Coachings und über 6.500 Unterrichtseinheiten seit 2022. Über den AVGS-Gutschein der Agentur für Arbeit ist das Coaching für Dich zu 100 % kostenfrei."
+            answer="Jobcoaching ist eine individuelle 1:1-Begleitung rund um Beruf und Karriere – von der beruflichen Orientierung über die Bewerbung bis zum Neustart. Bei Kuhl & Engel arbeiten wir systemisch und ganzheitlich und sind auf Akademiker:innen, Fach- und Führungskräfte spezialisiert: seit 2018, mit 246 AVGS-Coachings und über 6.500 Unterrichtseinheiten seit 2022. Über den AVGS-Gutschein der Agentur für Arbeit ist das Coaching für Dich zu 100 % kostenfrei."
             facts={[
-              { label: "Für wen", value: "Jobsuchende, Akademikerinnen und Akademiker, Fach- & Führungskräfte" },
+              { label: "Für wen", value: "Jobsuchende, Akademiker:innen, Fach- & Führungskräfte" },
               { label: "Themen", value: "Orientierung, Bewerbung, Karriere, Neustart" },
               { label: "Umfang", value: "24, 32 oder 44 UE in 6–11 Wochen (1 UE = 45 Min.)" },
               { label: "Kosten", value: "Mit AVGS-Gutschein 0 €" },

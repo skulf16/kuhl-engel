@@ -259,9 +259,9 @@ export const TEAM: TeamMember[] = [
 
 /** Optionen für den AVGS-Buchungsfunnel. */
 export const FUNNEL_GUTSCHEIN = [
-  { value: "ja", label: "Ja, habe ich", hint: "Perfekt – dann kann es schnell losgehen." },
+  { value: "ja", label: "Ja, habe ich", hint: "Perfekt – es kann schnell losgehen." },
   { value: "nein", label: "Nein, noch nicht", hint: "Kein Problem – wir zeigen Dir, wie Du ihn bekommst." },
-  { value: "beantragung", label: "In Beantragung", hint: "Sehr gut – wir begleiten Dich durch den Rest." },
+  { value: "selbstzahler", label: "Ich zahle selbst", hint: "Sehr gut – wir erstellen Dir gerne ein Angebot." },
 ];
 
 export const FUNNEL_THEMEN = [
@@ -274,10 +274,10 @@ export const FUNNEL_THEMEN = [
 ];
 
 export const FUNNEL_ORTE = [
+  { value: "online", label: "Online", hint: "deutschlandweit via Zoom" },
   { value: "berlin", label: "Berlin", hint: "Bötzowstraße 28" },
   { value: "potsdam", label: "Potsdam", hint: "Gutenbergstraße 87" },
   { value: "augsburg", label: "Augsburg", hint: "Mauerberg 26" },
-  { value: "online", label: "Online", hint: "deutschlandweit via Zoom" },
 ];
 
 export const FUNNEL_ZEIT = ["9:00–12:00 Uhr", "12:00–18:00 Uhr", "nach 18:00 Uhr"];

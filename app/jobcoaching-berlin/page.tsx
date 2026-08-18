@@ -13,7 +13,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Jobcoaching Berlin – AVGS Coaching in Prenzlauer Berg",
   description:
-    "Jobcoaching Berlin: AVGS Coaching und Karrierecoaching für Akademikerinnen und Akademiker in der Bötzowstraße 28, Prenzlauer Berg – mit AVGS-Gutschein 100 % kostenfrei. AZAV-zertifiziert, auch online oder hybrid.",
+    "Jobcoaching Berlin: AVGS Coaching und Karrierecoaching für Akademiker:innen in der Bötzowstraße 28, Prenzlauer Berg – mit AVGS-Gutschein 100 % kostenfrei. AZAV-zertifiziert, auch online oder hybrid.",
   path: "/jobcoaching-berlin",
   image: "/images/ke-berlin-fenster.jpg",
   imageAlt: "Standort von Kuhl & Engel in der Bötzowstraße 28, Berlin-Prenzlauer Berg",
@@ -42,7 +42,7 @@ const FAQS_BERLIN: Faq[] = [
   },
   {
     q: "Ist Kuhl & Engel dasselbe wie das „Berliner JobCoaching“ des Senats?",
-    a: "Nein. Das „Berliner JobCoaching (BJC)“ ist ein Programm der Senatsverwaltung für Teilnehmende öffentlich geförderter Beschäftigungsmaßnahmen. Kuhl & Engel ist ein unabhängiger, AZAV-zertifizierter Träger: Unser AVGS-Jobcoaching ist ein individuelles 1:1-Karrierecoaching für Akademikerinnen und Akademiker – finanziert über den AVGS-Gutschein Deiner Agentur für Arbeit oder Deines Jobcenters.",
+    a: "Nein. Das „Berliner JobCoaching (BJC)“ ist ein Programm der Senatsverwaltung für Teilnehmende öffentlich geförderter Beschäftigungsmaßnahmen. Kuhl & Engel ist ein unabhängiger, AZAV-zertifizierter Träger: Unser AVGS-Jobcoaching ist ein individuelles 1:1-Karrierecoaching für Akademiker:innen – finanziert über den AVGS-Gutschein Deiner Agentur für Arbeit oder Deines Jobcenters.",
   },
   {
     q: "Welche Coaches arbeiten in Berlin?",
@@ -73,7 +73,7 @@ export default function JobcoachingBerlinPage() {
         data={serviceSchema({
           name: "Jobcoaching Berlin",
           description:
-            "AVGS Coaching und Karrierecoaching für Akademikerinnen und Akademiker in Berlin-Prenzlauer Berg (Bötzowstraße 28) – systemisch, individuell und mit AVGS-Gutschein zu 100 % kostenfrei.",
+            "AVGS Coaching und Karrierecoaching für Akademiker:innen in Berlin-Prenzlauer Berg (Bötzowstraße 28) – systemisch, individuell und mit AVGS-Gutschein zu 100 % kostenfrei.",
           path: "/jobcoaching-berlin",
           serviceType: "Jobcoaching / AVGS Coaching",
           areaServed: ["Berlin"],
@@ -99,7 +99,7 @@ export default function JobcoachingBerlinPage() {
         <Reveal>
           <FactBox
             question="Wo finde ich Jobcoaching in Berlin?"
-            answer="Kuhl & Engel bietet AVGS-gefördertes Jobcoaching in Berlin-Prenzlauer Berg an: Bötzowstraße 28, 10407 Berlin. Das Einzelcoaching richtet sich an Akademikerinnen und Akademiker, Fach- und Führungskräfte und ist mit einem AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters zu 100 % kostenfrei. Termine gibt es vor Ort, online oder hybrid."
+            answer="Kuhl & Engel bietet AVGS-gefördertes Jobcoaching in Berlin-Prenzlauer Berg an: Bötzowstraße 28, 10407 Berlin. Das Einzelcoaching richtet sich an Akademiker:innen, Fach- und Führungskräfte und ist mit einem AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters zu 100 % kostenfrei. Termine gibt es vor Ort, online oder hybrid."
             facts={[
               { label: "Adresse", value: "Bötzowstraße 28, 10407 Berlin (Prenzlauer Berg)" },
               { label: "Kosten", value: "Mit AVGS-Gutschein 0 €" },
@@ -265,7 +265,7 @@ export default function JobcoachingBerlinPage() {
               Beschäftigungsmaßnahmen. Unser Angebot ist davon unabhängig:
               Kuhl & Engel ist ein privater, AZAV-zertifizierter Träger für
               AVGS-Jobcoaching – individuelles 1:1-Karrierecoaching für
-              Akademikerinnen und Akademiker, Fach- und Führungskräfte. Mit
+              Akademiker:innen, Fach- und Führungskräfte. Mit
               einem AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters
               ist es für Dich zu 100 % kostenfrei.
             </p>

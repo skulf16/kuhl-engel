@@ -14,7 +14,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "AVGS Coaching & Gutschein – 100 % kostenfrei in Berlin & online",
   description:
-    "AVGS Coaching für Akademikerinnen und Akademiker: individuelles 1:1-Jobcoaching, mit Gutschein der Agentur für Arbeit zu 100 % kostenfrei. So bekommst und löst Du den AVGS-Gutschein ein – online, Berlin, Potsdam & Augsburg.",
+    "AVGS Coaching für Akademiker:innen: individuelles 1:1-Jobcoaching, mit Gutschein der Agentur für Arbeit zu 100 % kostenfrei. So bekommst und löst Du den AVGS-Gutschein ein – online, Berlin, Potsdam & Augsburg.",
   path: "/avgs-coaching",
   image: "/images/ke-beratung.jpg",
   imageAlt: "Coaching-Gespräch bei Kuhl & Engel",
@@ -86,7 +86,7 @@ export default function AvgsCoachingPage() {
         data={serviceSchema({
           name: "AVGS Coaching",
           description:
-            "Individuelles 1:1-Jobcoaching für Akademikerinnen und Akademiker, finanziert über den Aktivierungs- und Vermittlungsgutschein (AVGS) der Agentur für Arbeit oder des Jobcenters – zu 100 % kostenfrei.",
+            "Individuelles 1:1-Jobcoaching für Akademiker:innen, finanziert über den Aktivierungs- und Vermittlungsgutschein (AVGS) der Agentur für Arbeit oder des Jobcenters – zu 100 % kostenfrei.",
           path: "/avgs-coaching",
           serviceType: "Jobcoaching / Karrierecoaching (AVGS-gefördert)",
         })}
@@ -97,10 +97,10 @@ export default function AvgsCoachingPage() {
         eyebrow="AVGS Coaching · Zu 100 % gefördert"
         title={
           <>
-            Deine Profis für <em>AVGS Coaching.</em>
+            Deine Profis für AVGS Coaching <em>für Akademiker:innen.</em>
           </>
         }
-        intro="Wir sind spezialisiert auf Coaching in beruflichen Veränderungssituationen und zertifiziert für Dein AVGS Coaching. Mit langjähriger Erfahrung und maßgeschneidertem Ansatz begleiten wir Akademikerinnen und Akademiker auf dem Weg zu einem Job, der wirklich passt."
+        intro="Wir sind spezialisiert auf Coaching in beruflichen Veränderungssituationen und zertifiziert für Dein AVGS Coaching. Mit langjähriger Erfahrung und maßgeschneidertem Ansatz begleiten wir Dich auf dem Weg zu einem Job, der wirklich zu Dir passt."
         image="/images/ke-beratung.jpg"
         cta={{ href: "#buchen", label: "Sofort starten" }}
       />

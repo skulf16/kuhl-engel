@@ -49,7 +49,7 @@ export const organizationGraph = {
       knowsAbout: [
         "Jobcoaching",
         "AVGS Coaching (Aktivierungs- und Vermittlungsgutschein, § 45 SGB III)",
-        "Karrierecoaching für Akademikerinnen und Akademiker",
+        "Karrierecoaching für Akademiker:innen",
         "Berufliche Neuorientierung",
         "Wiedereinstieg nach der Elternzeit",
         "Bewerbungscoaching",
@@ -182,7 +182,7 @@ export function serviceSchema(opts: {
     ),
     audience: {
       "@type": "Audience",
-      audienceType: opts.audience ?? "Akademikerinnen und Akademiker, Fach- und Führungskräfte",
+      audienceType: opts.audience ?? "Akademiker:innen, Fach- und Führungskräfte",
     },
     availableChannel: [
       {

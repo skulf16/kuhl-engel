@@ -74,10 +74,10 @@ export default function KarrierecoachingPage() {
         data={serviceSchema({
           name: "Karrierecoaching",
           description:
-            "Karrierecoaching für Akademikerinnen und Akademiker, Fach- und Führungskräfte: Wiedereinstieg nach der Elternzeit, berufliche Neuorientierung, Sichtbarkeit und der nächste Karriereschritt – mit AVGS-Gutschein zu 100 % kostenfrei.",
+            "Karrierecoaching für Akademiker:innen, Fach- und Führungskräfte: Wiedereinstieg nach der Elternzeit, berufliche Neuorientierung, Sichtbarkeit und der nächste Karriereschritt – mit AVGS-Gutschein zu 100 % kostenfrei.",
           path: "/karrierecoaching",
           serviceType: "Karrierecoaching",
-          audience: "Akademikerinnen und Akademiker, Fach- und Führungskräfte",
+          audience: "Akademiker:innen, Fach- und Führungskräfte",
         })}
       />
       <JsonLd data={faqSchema(FAQS_KARRIERE, "/karrierecoaching")} />
