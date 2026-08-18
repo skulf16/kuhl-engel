@@ -2,19 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import CtaBand from "@/components/CtaBand";
+import ContactForm from "@/components/ContactForm";
 import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
-import { CONTACT, JUGEND_ANGEBOTE, STATS } from "@/lib/data";
+import { BO_STATS, CONTACT, JUGEND_ANGEBOTE } from "@/lib/data";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Berufsorientierung für Jugendliche – Angebote für Schulen",
   description:
-    "Berufsorientierung „Mein Berufseinstieg“ für Schulen, Lehrkräfte und Kooperationspartner: Gruppenprojekte für ganze Klassen, Einzelcoaching für Schüler:innen und Materialien für den Berufsstart. Seit über 10 Jahren in Berlin & Brandenburg.",
+    "Berufsorientierung „Mein Berufseinstieg“ für Schulen, Lehrkräfte und Kooperationspartner: Projekte für ganze Schulklassen, Einzelcoaching für Schüler:innen und Materialien für den Berufsstart. Seit über 15 Jahren in Berlin & Brandenburg.",
   path: "/berufsorientierung",
-  image: "/images/ke-jugend-gruppe.jpg",
+  image: "/images/jugend-klassen-coaching.jpg",
   imageAlt: "Berufsorientierung „Mein Berufseinstieg“ von Kuhl & Engel",
 });
 
@@ -34,7 +34,7 @@ export default function BerufsorientierungPage() {
         data={serviceSchema({
           name: "Berufsorientierung für Jugendliche",
           description:
-            "Coaching zur beruflichen Orientierung für Jugendliche: Gruppenprojekte für Schulklassen in Berlin und Brandenburg sowie Einzelcoaching für Schüler:innen und Abiturient:innen – ein Angebot für Schulen, Lehrkräfte und Kooperationspartner.",
+            "Coaching zur beruflichen Orientierung für Jugendliche: Projekte für ganze Schulklassen in Berlin und Brandenburg sowie Einzelcoaching für Schüler:innen und Abiturient:innen – ein Angebot für Schulen, Lehrkräfte und Kooperationspartner.",
           path: "/berufsorientierung",
           serviceType: "Berufsorientierung / Berufscoaching für Jugendliche",
           areaServed: ["Berlin", "Brandenburg", "online"],
@@ -50,15 +50,16 @@ export default function BerufsorientierungPage() {
             Mein Berufseinstieg – <em>Orientierung, die wirkt.</em>
           </>
         }
-        intro="Für die meisten Jugendlichen ist die Berufs- oder Studienwahl ein schwerer Brocken – bei viel Druck und wenig Erfahrung. Seit über 10 Jahren begleiten wir Schulen in Berlin und Brandenburg mit Gruppen- und Einzelcoachings zur beruflichen Orientierung. Professionell, jugendgerecht und mit messbarer Wirkung."
-        image="/images/ke-jugend-gruppe.jpg"
+        intro="Für die meisten Jugendlichen ist die Berufs- oder Studienwahl ein schwerer Brocken – bei viel Druck und wenig Erfahrung. Seit über 15 Jahren begleiten wir Schulen in Berlin und Brandenburg mit Coachings für Schulklassen und Einzelcoachings zur beruflichen Orientierung. Professionell, jugendgerecht und mit messbarer Wirkung."
+        image="/images/jugend-klassen-coaching.jpg"
+        cta={{ href: "#kontakt", label: "Unverbindlich anfragen" }}
       />
 
       {/* Kennzahlen (überlappen den Hero) */}
       <section className="relative z-10 mx-auto -mt-14 max-w-6xl px-5 md:px-8">
         <Reveal>
           <dl className="grid grid-cols-1 divide-y divide-ink/10 overflow-hidden rounded-xl border border-ink/10 bg-paper shadow-[0_32px_80px_-32px_rgba(14,29,43,0.35)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-            {STATS.map((stat) => (
+            {BO_STATS.map((stat) => (
               <div key={stat.label} className="px-6 py-8 text-center md:py-10">
                 <dt className="sr-only">{stat.label}</dt>
                 <dd className="display text-4xl text-ink md:text-5xl">{stat.value}</dd>
@@ -74,11 +75,11 @@ export default function BerufsorientierungPage() {
         <Reveal>
           <FactBox
             question="Was leistet „Mein Berufseinstieg“?"
-            answer="„Mein Berufseinstieg“ ist unser Programm zur Berufsorientierung für Jugendliche – als 2- bis 2,5-tägiges Gruppenprojekt an Schulen oder als Einzelcoaching für Schüler:innen und Abiturient:innen. Mehrere professionelle Coaches arbeiten mit jugendgerechten, spielerischen Methoden. Das Ergebnis: Die Jugendlichen kennen ihre Stärken, entwickeln eine klare berufliche Richtung und starten motivierter in Schule, Praktikum und Bewerbung."
+            answer="„Mein Berufseinstieg“ ist unser Programm zur Berufsorientierung für Jugendliche – als 2- bis 2,5-tägiges Projekt für ganze Schulklassen oder als Einzelcoaching für Schüler:innen und Abiturient:innen. Mehrere professionelle Coaches arbeiten mit jugendgerechten, spielerischen Methoden. Seit 2016 waren das 53 Schulprojekte mit 4.133 Schüler:innen. Das Ergebnis: Die Jugendlichen kennen ihre Stärken, entwickeln eine klare berufliche Richtung und starten motivierter in Schule, Praktikum und Bewerbung."
             facts={[
               { label: "Für wen", value: "Schulen, Lehrkräfte und Kooperationspartner" },
-              { label: "Formate", value: "Gruppenprojekte für Klassen & Einzelcoaching" },
-              { label: "Erfahrung", value: "Über 10 Jahre, viele Schulen begleitet" },
+              { label: "Formate", value: "Projekte für Schulklassen & Einzelcoaching" },
+              { label: "Erfahrung", value: "Seit über 15 Jahren · 53 Schulprojekte · 4.133 Schüler:innen" },
               { label: "Förderung", value: "In Brandenburg über PraxisBO förderfähig" },
             ]}
           />
@@ -178,14 +179,36 @@ export default function BerufsorientierungPage() {
         </div>
       </section>
 
-      <CtaBand
-        title={
-          <>
-            Hol „Mein Berufseinstieg“ <em>an Deine Schule.</em>
-          </>
-        }
-        text="Im unverbindlichen Gespräch finden wir gemeinsam heraus, welches Format zu Deiner Schule oder Einrichtung passt – und wie die Förderung funktioniert."
-      />
+      {/* Kontakt – eigenes Formular ohne AVGS-Abfrage (Kundenwunsch 18.08.) */}
+      <section id="kontakt" className="scroll-mt-24 bg-cream-deep py-24 md:py-32">
+        <div className="mx-auto grid max-w-7xl gap-14 px-5 md:px-8 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
+          <div>
+            <Reveal>
+              <p className="eyebrow flex items-center gap-3 text-gold">
+                <span aria-hidden className="inline-block h-px w-10 bg-gold" />
+                Kontakt
+              </p>
+              <h2 className="display mt-6 text-4xl md:text-5xl">
+                Hol „Mein Berufseinstieg“ <em>an Deine Schule.</em>
+              </h2>
+              <p className="mt-6 max-w-md text-lg leading-relaxed text-ink/70">
+                Im unverbindlichen Gespräch finden wir gemeinsam heraus, welches
+                Format zu Deiner Schule oder Einrichtung passt – und wie die
+                Förderung funktioniert.
+              </p>
+              <a
+                href={CONTACT.phoneHref}
+                className="mt-7 inline-flex items-center gap-2 font-semibold text-gold transition-colors hover:text-ink"
+              >
+                Oder ruf direkt an: {CONTACT.phone} <span aria-hidden>→</span>
+              </a>
+            </Reveal>
+          </div>
+          <Reveal delay={150}>
+            <ContactForm variant="schulen" />
+          </Reveal>
+        </div>
+      </section>
     </>
   );
 }

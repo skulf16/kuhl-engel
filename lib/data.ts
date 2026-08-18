@@ -4,11 +4,18 @@ export const CONTACT = {
   email: "info@kuhlundengel.de",
 };
 
-/** Kennzahlen-Band – auf Startseite und Berufsorientierung im Einsatz. */
+/** Kennzahlen-Band der Startseite. */
 export const STATS = [
   { value: "6.555", label: "Unterrichtseinheiten Coaching" },
   { value: "14", label: "Coach:innen im Team" },
   { value: "5,0", label: "★ Google-Bewertung" },
+];
+
+/** Kennzahlen Berufsorientierung (Zahlen von Heike, Stand 18.08.2026). */
+export const BO_STATS = [
+  { value: "53", label: "Schulprojekte seit 2016" },
+  { value: "4.133", label: "Schüler:innen gecoacht" },
+  { value: "13", label: "Schulen allein 2025" },
 ];
 
 /** Die zwei fokussierten Geschäftsbereiche – Basis der „Zwei-Wege-Weiche“. */
@@ -104,10 +111,10 @@ export const JUGEND_ANGEBOTE: Leistung[] = [
   {
     slug: "/berufsorientierung/gruppenangebote",
     nr: "01",
-    title: "Gruppenangebote",
+    title: "Schulklassen",
     claim: "Für Schulen in Berlin & Brandenburg",
-    text: "„Mein Berufseinstieg“: unser 2- bis 2,5-tägiges Coaching-Seminar für ganze Klassen – in Brandenburg über PraxisBO förderfähig.",
-    image: "/images/ke-jugend-team.jpg",
+    text: "„Mein Berufseinstieg“: unser 2- bis 2,5-tägiges Coaching-Seminar für ganze Schulklassen – in Brandenburg über PraxisBO förderfähig.",
+    image: "/images/jugend-klasse-draussen.jpg",
   },
   {
     slug: "/berufsorientierung/einzelcoaching",
@@ -120,10 +127,10 @@ export const JUGEND_ANGEBOTE: Leistung[] = [
   {
     slug: "/berufsorientierung/berufsstart",
     nr: "03",
-    title: "Für den Berufsstart",
-    claim: "Materialien zum Weitergeben",
-    text: "Bewerbungs- und Lebenslauf-Beispiele, Ausbildungsbörsen und Infos zu Studium & Ausbildung – zum direkten Weitergeben an Schüler:innen.",
-    image: "/images/jugend-beelitz-3.jpg",
+    title: "Hilfreiches für den Berufsstart",
+    claim: "Videos & Materialien zum Weitergeben",
+    text: "Berufe im Video-Check, Bewerbungs- und Lebenslauf-Beispiele, Ausbildungsbörsen und Infos zu Studium & Ausbildung – zum direkten Weitergeben an Schüler:innen.",
+    image: "/images/jugend-tisch-lachen.jpg",
   },
 ];
 

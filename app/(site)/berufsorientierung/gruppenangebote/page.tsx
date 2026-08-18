@@ -10,7 +10,7 @@ import { CONTACT } from "@/lib/data";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Gruppenangebote Berufsorientierung für Schulen (PraxisBO)",
+  title: "Schulklassen – Berufsorientierung für Schulen (PraxisBO)",
   description:
     "Coaching-Seminar „Mein Berufseinstieg“ für Schulklassen in Berlin und Brandenburg: 2–2,5 Tage, professionelle Coaches, jugendgerechte Methoden. Über PraxisBO für Schulen förderfähig.",
   alternates: { canonical: "/berufsorientierung/gruppenangebote" },
@@ -49,7 +49,7 @@ export default function GruppenangebotePage() {
     <>
       <JsonLd
         data={serviceSchema({
-          name: "Gruppenangebote Berufsorientierung für Schulen",
+          name: "Berufsorientierung für Schulklassen",
           description:
             "Coaching-Seminar „Mein Berufseinstieg“ zur Berufsorientierung für Schulklassen in Berlin und Brandenburg. 2 bis 2,5 Tage, mehrere professionelle Coaches, jugendgerechte Methoden. Über das Förderprogramm PraxisBO förderfähig.",
           path: "/berufsorientierung/gruppenangebote",
@@ -61,7 +61,7 @@ export default function GruppenangebotePage() {
       <JsonLd
         data={breadcrumbSchema([
           { name: "Berufsorientierung", path: "/berufsorientierung" },
-          { name: "Gruppenangebote", path: "/berufsorientierung/gruppenangebote" },
+          { name: "Schulklassen", path: "/berufsorientierung/gruppenangebote" },
         ])}
       />
 
@@ -184,6 +184,8 @@ export default function GruppenangebotePage() {
           </>
         }
         text="Wie sich das Seminar optimal in den Projektablauf an Deiner Schule einbetten lässt, klären wir gern im persönlichen Gespräch – inklusive aller Fragen zur PraxisBO-Förderung."
+        href="/berufsorientierung#kontakt"
+        label="Unverbindlich anfragen"
       />
 
       <div className="bg-cream-deep py-6 text-center">

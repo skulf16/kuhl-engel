@@ -16,7 +16,7 @@ const JOBCOACHING_LINKS = [
 const JUGEND_LINKS = [
   { href: "/berufsorientierung", label: "Berufsorientierung – Überblick" },
   { href: "/berufsorientierung/einzelcoaching", label: "Einzelcoaching" },
-  { href: "/berufsorientierung/gruppenangebote", label: "Gruppenangebote" },
+  { href: "/berufsorientierung/gruppenangebote", label: "Schulklassen" },
   { href: "/berufsorientierung/berufsstart", label: "Hilfreiches für den Berufsstart" },
 ];
 

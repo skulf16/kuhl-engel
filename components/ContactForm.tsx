@@ -6,7 +6,16 @@ import { CONTACT } from "@/lib/data";
 const inputStyles =
   "w-full border border-ink/15 bg-paper px-4 py-3.5 text-[0.95rem] outline-none transition-colors placeholder:text-ink/35 focus:border-gold";
 
-export default function ContactForm() {
+/**
+ * variant "default": Rückruf-Formular mit AVGS-Frage (Jobcoaching).
+ * variant "schulen": Anfrage zur Berufsorientierung – ohne AVGS-Frage,
+ * stattdessen Themen-Auswahl für Schulen, Lehrkräfte und Eltern.
+ */
+export default function ContactForm({
+  variant = "default",
+}: {
+  variant?: "default" | "schulen";
+}) {
   const [sent, setSent] = useState(false);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -17,12 +26,21 @@ export default function ContactForm() {
       `E-Mail: ${data.get("email")}`,
       `Telefon: ${data.get("phone")}`,
       `Erreichbarkeit: ${data.get("zeit") || "keine Angabe"}`,
-      `AVGS-Gutschein: ${data.get("avgs")}`,
+      variant === "schulen"
+        ? `Anliegen: ${data.get("anliegen")}`
+        : `AVGS-Gutschein: ${data.get("avgs")}`,
+      ...(variant === "schulen" && data.get("schule")
+        ? [`Schule/Einrichtung: ${data.get("schule")}`]
+        : []),
       "",
       `${data.get("nachricht") || ""}`,
     ];
+    const subject =
+      variant === "schulen"
+        ? "Anfrage Berufsorientierung über die Website"
+        : "Rückruf-Bitte über die Website";
     const mailto = `mailto:${CONTACT.email}?subject=${encodeURIComponent(
-      "Rückruf-Bitte über die Website",
+      subject,
     )}&body=${encodeURIComponent(lines.join("\n"))}`;
     window.location.href = mailto;
     setSent(true);
@@ -76,26 +94,59 @@ export default function ContactForm() {
           </select>
         </label>
       </div>
-      <fieldset className="grid gap-2">
-        <legend className="mb-2 text-sm font-semibold">Hast Du schon einen AVGS-Gutschein?</legend>
-        <div className="flex flex-wrap gap-3">
-          {["ja", "nein", "ist in Beantragung"].map((option) => (
-            <label
-              key={option}
-              className="flex cursor-pointer items-center gap-2.5 border border-ink/15 bg-paper px-4 py-2.5 text-sm transition-colors has-checked:border-gold has-checked:bg-gold/10"
-            >
-              <input
-                type="radio"
-                name="avgs"
-                value={option}
-                defaultChecked={option === "nein"}
-                className="accent-[#b9862c]"
-              />
-              {option}
-            </label>
-          ))}
-        </div>
-      </fieldset>
+      {variant === "schulen" ? (
+        <>
+          <fieldset className="grid gap-2">
+            <legend className="mb-2 text-sm font-semibold">Worum geht es?</legend>
+            <div className="flex flex-wrap gap-3">
+              {[
+                "Projekt für Schulklassen",
+                "Einzelcoaching für Schüler:innen",
+                "Material & Sonstiges",
+              ].map((option) => (
+                <label
+                  key={option}
+                  className="flex cursor-pointer items-center gap-2.5 border border-ink/15 bg-paper px-4 py-2.5 text-sm transition-colors has-checked:border-gold has-checked:bg-gold/10"
+                >
+                  <input
+                    type="radio"
+                    name="anliegen"
+                    value={option}
+                    defaultChecked={option === "Projekt für Schulklassen"}
+                    className="accent-[#b9862c]"
+                  />
+                  {option}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+          <label className="grid gap-2">
+            <span className="text-sm font-semibold">Schule / Einrichtung (optional)</span>
+            <input name="schule" className={inputStyles} placeholder="Name und Ort der Schule" />
+          </label>
+        </>
+      ) : (
+        <fieldset className="grid gap-2">
+          <legend className="mb-2 text-sm font-semibold">Hast Du schon einen AVGS-Gutschein?</legend>
+          <div className="flex flex-wrap gap-3">
+            {["ja", "nein", "ich zahle selbst"].map((option) => (
+              <label
+                key={option}
+                className="flex cursor-pointer items-center gap-2.5 border border-ink/15 bg-paper px-4 py-2.5 text-sm transition-colors has-checked:border-gold has-checked:bg-gold/10"
+              >
+                <input
+                  type="radio"
+                  name="avgs"
+                  value={option}
+                  defaultChecked={option === "nein"}
+                  className="accent-[#b9862c]"
+                />
+                {option}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      )}
       <label className="grid gap-2">
         <span className="text-sm font-semibold">Deine Nachricht (optional)</span>
         <textarea name="nachricht" rows={4} className={inputStyles} placeholder="Worum geht es Dir? Ein Satz genügt." />

@@ -11,7 +11,7 @@ import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Einzelcoaching Berufsorientierung für Schüler:innen",
   description:
-    "Einzelcoaching zur beruflichen Orientierung für Schüler:innen, Abiturient:innen und junge Erwachsene: 4 Sitzungen à 90 Minuten für 570 €, an allen Standorten oder online. Systemisch, ziel- und lösungsorientiert.",
+    "Einzelcoaching zur beruflichen Orientierung für Schüler:innen, Abiturient:innen und junge Erwachsene: 4 Sitzungen à 90 Minuten für 595 €, an allen Standorten oder online. Systemisch, ziel- und lösungsorientiert.",
   alternates: { canonical: "/berufsorientierung/einzelcoaching" },
 };
 
@@ -29,7 +29,7 @@ export default function EinzelcoachingPage() {
         data={serviceSchema({
           name: "Einzelcoaching Berufsorientierung für Jugendliche",
           description:
-            "Individuelles Coaching zur beruflichen Orientierung für Schüler:innen, Abiturient:innen und junge Erwachsene. Vier Sitzungen à 90 Minuten für 570 Euro, vor Ort oder online.",
+            "Individuelles Coaching zur beruflichen Orientierung für Schüler:innen, Abiturient:innen und junge Erwachsene. Vier Sitzungen à 90 Minuten für 595 Euro, vor Ort oder online.",
           path: "/berufsorientierung/einzelcoaching",
           serviceType: "Einzelcoaching Berufsorientierung",
           areaServed: ["online", "Berlin", "Potsdam", "Augsburg"],
@@ -63,7 +63,7 @@ export default function EinzelcoachingPage() {
             facts={[
               { label: "Für wen", value: "Schüler:innen, Abiturient:innen, junge Erwachsene" },
               { label: "Umfang", value: "4 Sitzungen à 90 Minuten" },
-              { label: "Preis", value: "570 € für das Coaching-Paket" },
+              { label: "Preis", value: "595 € für das Coaching-Paket" },
               { label: "Wo", value: "Online, Berlin, Potsdam oder Augsburg" },
             ]}
           />
@@ -110,7 +110,7 @@ export default function EinzelcoachingPage() {
                 />
               </div>
               <div className="absolute -bottom-6 -left-4 bg-ink px-7 py-5 text-cream md:-left-8">
-                <p className="display text-2xl italic text-gold-bright">570 €</p>
+                <p className="display text-2xl italic text-gold-bright">595 €</p>
                 <p className="mt-1 text-[0.8rem] text-cream/70">4 Sitzungen à 90 Minuten</p>
               </div>
             </div>
@@ -125,6 +125,8 @@ export default function EinzelcoachingPage() {
           </>
         }
         text="Ob als Lehrkraft, Elternteil oder Kooperationspartner: Schreib uns oder ruf an – wir klären alle Fragen und finden heraus, ob die Chemie stimmt."
+        href="/berufsorientierung#kontakt"
+        label="Unverbindlich anfragen"
       />
 
       <div className="bg-cream-deep py-6 text-center">

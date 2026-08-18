@@ -5,9 +5,14 @@ import { CONTACT } from "@/lib/data";
 export default function CtaBand({
   title,
   text,
+  href = "/kontakt",
+  label = "Kostenloses Erstgespräch",
 }: {
   title?: React.ReactNode;
   text?: string;
+  /** Ziel des Buttons, z. B. das Schul-Kontaktformular */
+  href?: string;
+  label?: string;
 }) {
   const fallbackTitle = (
     <>
@@ -28,10 +33,10 @@ export default function CtaBand({
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/70">{text ?? fallbackText}</p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Link
-                href="/kontakt"
+                href={href}
                 className="group inline-flex items-center justify-center gap-3 bg-ink px-8 py-4 font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-700"
               >
-                Kostenloses Erstgespräch
+                {label}
                 <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
               <a
