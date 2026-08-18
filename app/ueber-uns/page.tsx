@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Über uns & Team – zertifizierte Coach:innen",
   description:
-    "Kuhl & Engel, das sind Heike Kuhl und Martina Engel-Fürstberger – mit einem Team aus 14 zertifizierten, systemisch arbeitenden Coach:innen in Berlin, Potsdam, Augsburg und online.",
+    "Kuhl & Engel, das sind Heike Kuhl und Martina Engel-Fürstberger – mit einem Team aus 14 zertifizierten, systemisch arbeitenden Coach:innen – online, in Berlin, Potsdam und Augsburg.",
   path: "/ueber-uns",
 });
 
@@ -187,7 +187,7 @@ export default function UeberUnsPage() {
               Unsere Standorte
             </p>
             <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-              Berlin, Potsdam, Augsburg – <em>oder bei Dir.</em>
+              Online, Berlin, Potsdam, Augsburg – <em>oder bei Dir.</em>
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

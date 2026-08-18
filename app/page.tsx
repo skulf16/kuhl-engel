@@ -65,7 +65,7 @@ export default function Home() {
           <div className="max-w-3xl">
             <p className="eyebrow hero-rise inline-flex items-center gap-2.5 rounded-full border border-ink/20 bg-cream/70 px-4 py-2 text-ink/85 backdrop-blur-sm">
               <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-gold" />
-              100 % AVGS-zertifiziert · Berlin · Potsdam · Augsburg · Online
+              100 % AVGS-zertifiziert · Online · Berlin · Potsdam · Augsburg
             </p>
             <h1 className="display mt-8 max-w-4xl text-[2.4rem] text-ink md:text-7xl lg:text-[5.4rem]">
               <span className="hero-rise block" style={{ animationDelay: "120ms" }}>

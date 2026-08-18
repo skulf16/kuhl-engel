@@ -324,11 +324,11 @@ export const FAQS_AVGS: Faq[] = [
   },
   {
     q: "Was muss auf meinem AVGS stehen, damit ich ihn einlösen kann?",
-    a: "Der AVGS muss noch mindestens 10 Tage gültig sein, mindestens 20 Unterrichtseinheiten umfassen und in Teilzeit ausgestellt sein. Wir können Gutscheine an unseren Standorten in Berlin, Potsdam, Augsburg oder virtuell annehmen.",
+    a: "Der AVGS muss noch mindestens 10 Tage gültig sein, mindestens 20 Unterrichtseinheiten umfassen und in Teilzeit ausgestellt sein. Wir können Gutscheine virtuell oder an unseren Standorten in Berlin, Potsdam und Augsburg annehmen.",
   },
   {
     q: "Wo kann ich gecoacht werden?",
-    a: "An unseren Standorten in Berlin, Potsdam und Augsburg – oder online. Eine hybride Form aus Coaching vor Ort und via Zoom ist ebenfalls möglich.",
+    a: "Online – oder an unseren Standorten in Berlin, Potsdam und Augsburg. Eine hybride Form aus Coaching vor Ort und via Zoom ist ebenfalls möglich.",
   },
   {
     q: "Wie viele Stunden umfasst das AVGS Coaching?",
@@ -350,6 +350,11 @@ export type Standort = {
 
 export const STANDORTE: Standort[] = [
   {
+    city: "Online",
+    label: "Deutschlandweit",
+    address: ["Online-Coaching", "via Zoom – auch hybrid"],
+  },
+  {
     city: "Berlin",
     label: "Prenzlauer Berg",
     address: ["Bötzowstraße 28", "10407 Berlin"],
@@ -365,10 +370,5 @@ export const STANDORTE: Standort[] = [
     city: "Augsburg",
     label: "Altstadt",
     address: ["Mauerberg 26", "86152 Augsburg"],
-  },
-  {
-    city: "Online",
-    label: "Deutschlandweit",
-    address: ["Online-Coaching", "via Zoom – auch hybrid"],
   },
 ];

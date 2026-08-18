@@ -14,7 +14,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "AVGS Coaching & Gutschein – 100 % kostenfrei in Berlin & online",
   description:
-    "AVGS Coaching für Akademikerinnen und Akademiker: individuelles 1:1-Jobcoaching, mit Gutschein der Agentur für Arbeit zu 100 % kostenfrei. So bekommst und löst Du den AVGS-Gutschein ein – Berlin, Potsdam, Augsburg & online.",
+    "AVGS Coaching für Akademikerinnen und Akademiker: individuelles 1:1-Jobcoaching, mit Gutschein der Agentur für Arbeit zu 100 % kostenfrei. So bekommst und löst Du den AVGS-Gutschein ein – online, Berlin, Potsdam & Augsburg.",
   path: "/avgs-coaching",
   image: "/images/ke-beratung.jpg",
   imageAlt: "Coaching-Gespräch bei Kuhl & Engel",
@@ -114,7 +114,7 @@ export default function AvgsCoachingPage() {
             facts={[
               { label: "Kosten", value: "0 € – vollständig durch den AVGS gedeckt" },
               { label: "Format", value: "1:1-Einzelcoaching, Umfang individuell (mind. 20 UE)" },
-              { label: "Orte", value: "Berlin, Potsdam, Augsburg, online oder hybrid" },
+              { label: "Orte", value: "Online, Berlin, Potsdam, Augsburg oder hybrid" },
               { label: "Team", value: "14 erfahrene Coach:innen – Du wählst, wer Dich begleitet" },
               { label: "Sprachen", value: "Deutsch, Englisch, Französisch, Russisch" },
               { label: "Start", value: "Kostenloses Erstgespräch, Beginn nach Bewilligung" },

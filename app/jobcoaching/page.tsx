@@ -13,7 +13,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Jobcoaching – Karrierecoaching für Akademikerinnen und Akademiker",
   description:
-    "Jobcoaching bei Kuhl & Engel: systemisches Karrierecoaching für berufliche Orientierung, Bewerbung und Neustart – mit AVGS-Gutschein 100 % kostenfrei. Berlin, Potsdam, Augsburg & online.",
+    "Jobcoaching bei Kuhl & Engel: systemisches Karrierecoaching für berufliche Orientierung, Bewerbung und Neustart – mit AVGS-Gutschein 100 % kostenfrei. Online, Berlin, Potsdam & Augsburg.",
   path: "/jobcoaching",
   image: "/images/ke-coaching-draussen.jpg",
   imageAlt: "Coaching-Gespräch bei Kuhl & Engel",
@@ -155,7 +155,7 @@ export default function JobcoachingPage() {
               { label: "Themen", value: "Orientierung, Bewerbung, Karriere, Neustart" },
               { label: "Umfang", value: "24, 32 oder 44 UE in 6–11 Wochen (1 UE = 45 Min.)" },
               { label: "Kosten", value: "Mit AVGS-Gutschein 0 €" },
-              { label: "Orte", value: "Berlin, Potsdam, Augsburg, online oder hybrid" },
+              { label: "Orte", value: "Online, Berlin, Potsdam, Augsburg oder hybrid" },
             ]}
           />
         </Reveal>

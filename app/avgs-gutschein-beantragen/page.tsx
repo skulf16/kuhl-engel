@@ -68,7 +68,7 @@ const SCHRITTE = [
   },
   {
     title: "Träger auswählen",
-    text: "Den Gutschein löst Du bei einem AZAV-zertifizierten Träger Deiner Wahl ein – zum Beispiel bei Kuhl & Engel in Berlin, Potsdam, Augsburg oder online. Im kostenlosen Erstgespräch findest Du heraus, ob wir zu Dir passen.",
+    text: "Den Gutschein löst Du bei einem AZAV-zertifizierten Träger Deiner Wahl ein – zum Beispiel bei Kuhl & Engel, online oder in Berlin, Potsdam und Augsburg. Im kostenlosen Erstgespräch findest Du heraus, ob wir zu Dir passen.",
   },
   {
     title: "Wir übernehmen den Papierkram",
@@ -125,7 +125,7 @@ export default function AvgsGutscheinBeantragenPage() {
               { label: "Rechtsgrundlage", value: "§ 45 SGB III" },
               { label: "Kosten für Dich", value: "0 € – vollständig gefördert" },
               { label: "Richtige Variante", value: "AVGS MAT (Maßnahme bei einem Träger)" },
-              { label: "Einlösbar bei", value: "Kuhl & Engel – Berlin, Potsdam, Augsburg, online" },
+              { label: "Einlösbar bei", value: "Kuhl & Engel – online, Berlin, Potsdam, Augsburg" },
             ]}
           />
         </Reveal>

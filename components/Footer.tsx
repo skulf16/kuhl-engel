@@ -38,7 +38,7 @@ export default function Footer() {
             </p>
             <p className="mt-4 max-w-xs text-[0.92rem] leading-relaxed text-cream/60">
               AZAV-zertifiziertes Jobcoaching und Berufsorientierung für
-              Jugendliche. In Berlin, Potsdam, Augsburg und online.
+              Jugendliche. Online, in Berlin, Potsdam und Augsburg.
             </p>
             <p className="display mt-6 text-lg italic text-gold-bright">
               Jetzt, nicht irgendwann.

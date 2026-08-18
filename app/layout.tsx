@@ -26,12 +26,12 @@ export const metadata: Metadata = {
     template: "%s · Kuhl & Engel",
   },
   description:
-    "AZAV-zertifiziertes Jobcoaching für Akademikerinnen und Akademiker, Fach- und Führungskräfte: AVGS Coaching, Karrierecoaching, Bewerbungscoaching und Wiedereinstieg nach der Elternzeit – in Berlin, Potsdam, Augsburg und online. Mit AVGS-Gutschein 100 % kostenfrei.",
+    "AZAV-zertifiziertes Jobcoaching für Akademikerinnen und Akademiker, Fach- und Führungskräfte: AVGS Coaching, Karrierecoaching, Bewerbungscoaching und Wiedereinstieg nach der Elternzeit – online, in Berlin, Potsdam und Augsburg. Mit AVGS-Gutschein 100 % kostenfrei.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "AVGS Jobcoaching Berlin & Potsdam – für Akademikerinnen & Akademiker · Kuhl & Engel",
     description:
-      "Systemisches Karrierecoaching für Akademikerinnen und Akademiker, Fach- und Führungskräfte. Mit AVGS-Gutschein zu 100 % kostenfrei – Berlin, Potsdam, Augsburg & online.",
+      "Systemisches Karrierecoaching für Akademikerinnen und Akademiker, Fach- und Führungskräfte. Mit AVGS-Gutschein zu 100 % kostenfrei – online, Berlin, Potsdam & Augsburg.",
     locale: "de_DE",
     type: "website",
     siteName: "Kuhl & Engel – Jobcoaching",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AVGS Jobcoaching Berlin & Potsdam · Kuhl & Engel",
     description:
-      "Systemisches Karrierecoaching für Akademikerinnen und Akademiker. Mit AVGS-Gutschein 100 % kostenfrei – Berlin, Potsdam, Augsburg & online.",
+      "Systemisches Karrierecoaching für Akademikerinnen und Akademiker. Mit AVGS-Gutschein 100 % kostenfrei – online, Berlin, Potsdam & Augsburg.",
     images: ["/images/ke-duo-lachen.jpg"],
   },
 };

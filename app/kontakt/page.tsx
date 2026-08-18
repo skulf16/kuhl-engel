@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Kontakt & Standorte",
   description:
-    "Kontaktiere Kuhl & Engel: Rückruf-Service, Telefon 030 51565388-0 oder info@kuhlundengel.de. Standorte in Berlin, Potsdam, Augsburg – und online.",
+    "Kontaktiere Kuhl & Engel: Rückruf-Service, Telefon 030 51565388-0 oder info@kuhlundengel.de. Coaching online sowie in Berlin, Potsdam und Augsburg.",
   path: "/kontakt",
 });
 
@@ -99,7 +99,7 @@ export default function KontaktPage() {
               Unsere Standorte
             </p>
             <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-              Berlin, Potsdam, Augsburg – <em>oder bei Dir.</em>
+              Online, Berlin, Potsdam, Augsburg – <em>oder bei Dir.</em>
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

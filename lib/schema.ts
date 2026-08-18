@@ -32,7 +32,7 @@ export const organizationGraph = {
       },
       image: `${BASE_URL}/images/ke-duo-lachen.jpg`,
       description:
-        "AZAV-zertifizierter Träger mit zwei Schwerpunkten: AVGS-gefördertes Jobcoaching für Erwachsene und Berufsorientierung für Jugendliche – in Berlin, Potsdam, Augsburg und online.",
+        "AZAV-zertifizierter Träger mit zwei Schwerpunkten: AVGS-gefördertes Jobcoaching für Erwachsene und Berufsorientierung für Jugendliche – online, in Berlin, Potsdam und Augsburg.",
       slogan: "Jetzt, nicht irgendwann.",
       foundingDate: "2018",
       email: "info@kuhlundengel.de",
@@ -177,7 +177,7 @@ export function serviceSchema(opts: {
           },
         }
       : {}),
-    areaServed: (opts.areaServed ?? ["Berlin", "Potsdam", "Augsburg", "Deutschland (online)"]).map(
+    areaServed: (opts.areaServed ?? ["Deutschland (online)", "Berlin", "Potsdam", "Augsburg"]).map(
       (name) => ({ "@type": "Place", name }),
     ),
     audience: {

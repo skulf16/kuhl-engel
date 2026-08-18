@@ -13,7 +13,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Karrierecoaching – für den nächsten beruflichen Schritt",
   description:
-    "Karrierecoaching bei Kuhl & Engel: Wiedereinstieg nach der Elternzeit, Neuorientierung, Sichtbarkeit und der nächste Karriereschritt – mit AVGS-Gutschein 100 % kostenfrei. Berlin, Potsdam & online.",
+    "Karrierecoaching bei Kuhl & Engel: Wiedereinstieg nach der Elternzeit, Neuorientierung, Sichtbarkeit und der nächste Karriereschritt – mit AVGS-Gutschein 100 % kostenfrei. Online, Berlin & Potsdam.",
   path: "/karrierecoaching",
   image: "/images/ke-frauen.jpg",
   imageAlt: "Karrierecoaching bei Kuhl & Engel",
@@ -57,7 +57,7 @@ const FAQS_KARRIERE: Faq[] = [
   },
   {
     q: "Geht das Coaching auch online oder hybrid?",
-    a: "Ja. Alle Coachings finden wahlweise in Berlin, Potsdam oder Augsburg, komplett online via Zoom oder hybrid statt. Die Termine legen wir so, dass sie in Deinen Alltag passen.",
+    a: "Ja. Alle Coachings finden wahlweise komplett online via Zoom, in Berlin, Potsdam oder Augsburg oder hybrid statt. Die Termine legen wir so, dass sie in Deinen Alltag passen.",
   },
 ];
 
@@ -104,7 +104,7 @@ export default function KarrierecoachingPage() {
               { label: "Team", value: "14 erfahrene Coach:innen" },
               { label: "Kosten", value: "Mit AVGS-Gutschein 0 €" },
               { label: "Schwerpunkte", value: "Wiedereinstieg, Neuorientierung, Sichtbarkeit, Karriere" },
-              { label: "Formate", value: "Berlin, Potsdam, Augsburg, online oder hybrid" },
+              { label: "Formate", value: "Online, Berlin, Potsdam, Augsburg oder hybrid" },
             ]}
           />
         </Reveal>

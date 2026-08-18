@@ -32,7 +32,7 @@ export default function EinzelcoachingPage() {
             "Individuelles Coaching zur beruflichen Orientierung für Schüler:innen, Abiturient:innen und junge Erwachsene. Vier Sitzungen à 90 Minuten für 570 Euro, vor Ort oder online.",
           path: "/berufsorientierung/einzelcoaching",
           serviceType: "Einzelcoaching Berufsorientierung",
-          areaServed: ["Berlin", "Potsdam", "Augsburg", "online"],
+          areaServed: ["online", "Berlin", "Potsdam", "Augsburg"],
           audience: "Eltern, Lehrkräfte und junge Menschen vor der Berufswahl",
         })}
       />
@@ -64,7 +64,7 @@ export default function EinzelcoachingPage() {
               { label: "Für wen", value: "Schüler:innen, Abiturient:innen, junge Erwachsene" },
               { label: "Umfang", value: "4 Sitzungen à 90 Minuten" },
               { label: "Preis", value: "570 € für das Coaching-Paket" },
-              { label: "Wo", value: "Berlin, Potsdam, Augsburg oder online" },
+              { label: "Wo", value: "Online, Berlin, Potsdam oder Augsburg" },
             ]}
           />
         </Reveal>
