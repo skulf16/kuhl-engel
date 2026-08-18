@@ -33,14 +33,14 @@ const METHODE = [
   },
 ];
 
-// Portrait-Leiste: bewusst nur Coachinnen – Anna Podakova (Assistenz) und
-// Matthias Fink (einziger Coach) gehören nicht zu den „14 Coachinnen“.
-const COACHINNEN = [
+// Portrait-Leiste: sechs Gesichter aus dem Coach:innen-Team –
+// Anna Podakova (Assistenz der Geschäftsführung) gehört nicht dazu.
+const COACHES = [
   { name: "Dr. Anna Mandel-Zakharova, Ph.D.", fach: "Neurowissenschaftlerin & Coachin" },
   { name: "Angelina Werner", fach: "Job- und Karrierecoach" },
   { name: "Bettina Brammer", fach: "Systemische Berufscoachin" },
   { name: "Carmen Pilger", fach: "Systemisch-integrative Coachin" },
-  { name: "Saskia Sattler", fach: "DCV-zertifizierte Coachin" },
+  { name: "Matthias Fink", fach: "Systemisch-integrativer Coach" },
   { name: "Grit Staroste", fach: "Systemisch-integrative Coachin" },
 ].map((c) => ({ ...c, image: TEAM.find((m) => m.name === c.name)!.image }));
 
@@ -348,11 +348,11 @@ export default function Home() {
             </Reveal>
             <Reveal delay={200}>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink/70">
-                Von Frauen gegründet, von Coachinnen getragen: Hinter uns steht ein
-                Team von 14 erfahrenen Coachinnen und einem Coach – mit eigenen
-                Brüchen, Neustarts und Karrieren. Statt höher, schneller, weiter
-                plädieren wir für selbstbestimmt, verbunden und erfüllt. Wer von
-                einer Frau gecoacht werden möchte, sagt es einfach im Erstgespräch.
+                Von zwei Frauen gegründet: Hinter uns steht ein Team von 14
+                erfahrenen Coach:innen – mit eigenen Brüchen, Neustarts und
+                Karrieren. Statt höher, schneller, weiter plädieren wir für
+                selbstbestimmt, verbunden und erfüllt. Im Erstgespräch findest
+                Du heraus, wer am besten zu Dir passt.
               </p>
             </Reveal>
             <Reveal delay={300}>
@@ -374,7 +374,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- Coachinnen ---------- */}
+      {/* ---------- Coach:innen ---------- */}
       <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
         <Reveal>
           <div className="mx-auto max-w-2xl text-center">
@@ -384,31 +384,31 @@ export default function Home() {
               <span aria-hidden className="inline-block h-px w-10 bg-clay" />
             </p>
             <h2 className="display mt-6 text-4xl md:text-5xl">
-              14 Coachinnen. <em>Eine, die zu Dir passt.</em>
+              14 Coach:innen. <em>Wer passt zu Dir?</em>
             </h2>
             <p className="mt-5 leading-relaxed text-ink/65">
               Systemisch ausgebildet, mit eigenen Karrierewegen, Brüchen und
-              Neustarts – auf Wunsch begleitet Dich garantiert eine Frau.
+              Neustarts – im Erstgespräch findest Du heraus, wer zu Dir passt.
             </p>
           </div>
         </Reveal>
 
         <div className="mt-14 grid grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
-          {COACHINNEN.map((coachin, i) => (
-            <Reveal key={coachin.name} delay={i * 80}>
+          {COACHES.map((coach, i) => (
+            <Reveal key={coach.name} delay={i * 80}>
               <figure className="text-center">
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <Image
-                    src={coachin.image}
-                    alt={coachin.name}
+                    src={coach.image}
+                    alt={coach.name}
                     fill
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
                     className="object-cover transition-transform duration-700 hover:scale-105"
                   />
                 </div>
                 <figcaption className="mt-4">
-                  <p className="text-[0.92rem] font-semibold leading-snug">{coachin.name}</p>
-                  <p className="mt-1 text-[0.78rem] leading-snug text-ink/55">{coachin.fach}</p>
+                  <p className="text-[0.92rem] font-semibold leading-snug">{coach.name}</p>
+                  <p className="mt-1 text-[0.78rem] leading-snug text-ink/55">{coach.fach}</p>
                 </figcaption>
               </figure>
             </Reveal>
@@ -417,9 +417,9 @@ export default function Home() {
 
         <Reveal delay={200}>
           <p className="mt-12 text-center text-[0.95rem] text-ink/60">
-            … und acht weitere Kolleginnen.{" "}
+            … und acht weitere Kolleg:innen.{" "}
             <Link href="/ueber-uns" className="link-gold font-semibold text-gold">
-              Alle Coachinnen kennenlernen <span aria-hidden>→</span>
+              Alle Coach:innen kennenlernen <span aria-hidden>→</span>
             </Link>
           </p>
         </Reveal>

@@ -113,7 +113,7 @@ const FAQS_JOBCOACHING: Faq[] = [
   },
   {
     q: "Ist Jobcoaching auch online möglich?",
-    a: "Ja. Du kannst komplett online via Zoom gecoacht werden, vor Ort in Berlin, Potsdam oder Augsburg – oder hybrid als Kombination aus beidem. Die Wirkung ist dieselbe, entscheidend ist die Beziehung zu Deiner Coachin.",
+    a: "Ja. Du kannst komplett online via Zoom gecoacht werden, vor Ort in Berlin, Potsdam oder Augsburg – oder hybrid als Kombination aus beidem. Die Wirkung ist dieselbe – entscheidend ist, dass die Chemie zwischen Dir und Deinem:Deiner Coach:in stimmt.",
   },
 ];
 

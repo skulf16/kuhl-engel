@@ -49,7 +49,7 @@ const COACHES_POTSDAM = [
 
 const LEISTUNGEN = [
   { href: "/avgs-coaching", label: "AVGS Coaching", note: "Mit Gutschein 100 % kostenfrei" },
-  { href: "/karrierecoaching", label: "Karrierecoaching", note: "Auf Wunsch von Frau zu Frau" },
+  { href: "/karrierecoaching", label: "Karrierecoaching", note: "Für Selbstzahler:innen & Unternehmen" },
   { href: "/jobcoaching", label: "Karriere- & Bewerbungscoaching", note: "Orientierung, Bewerbung, Neustart" },
   { href: "/avgs-gutschein-beantragen", label: "AVGS-Gutschein beantragen", note: "Schritt für Schritt zur Förderung" },
 ];

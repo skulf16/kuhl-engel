@@ -45,7 +45,7 @@ const THEMEN = [
 const FAQS_KARRIERE: Faq[] = [
   {
     q: "Kann ich mir aussuchen, wer mich coacht?",
-    a: "Ja. In unserem Team arbeiten 14 Coachinnen und ein Coach – mit unterschiedlichen Schwerpunkten, Biografien und Sprachen. Im Erstgespräch finden wir gemeinsam heraus, wer am besten zu Dir und Deinem Anliegen passt. Wenn Du ein Coaching von Frau zu Frau möchtest, sag es einfach – das garantieren wir Dir.",
+    a: "Ja. In unserem Team arbeiten erfahrene Coach:innen mit unterschiedlichen Schwerpunkten, Biografien und Sprachen. Im Erstgespräch finden wir gemeinsam heraus, wer am besten zu Dir und Deinem Anliegen passt.",
   },
   {
     q: "Ist das Coaching wirklich kostenlos?",
@@ -90,7 +90,7 @@ export default function KarrierecoachingPage() {
             Karrierecoaching <em>auf Augenhöhe.</em>
           </>
         }
-        intro="Wiedereinstieg nach der Elternzeit, Neuorientierung oder der nächste Karriereschritt: Bei Kuhl & Engel begleiten Dich Coaches, die Deine Fragen aus eigener Erfahrung kennen – auf Wunsch auch garantiert von Frau zu Frau. Mit AVGS-Gutschein zu 100 % kostenfrei."
+        intro="Wiedereinstieg nach der Elternzeit, Neuorientierung oder der nächste Karriereschritt: Bei Kuhl & Engel begleiten Dich Coach:innen, die Deine Fragen aus eigener Erfahrung kennen. Mit AVGS-Gutschein zu 100 % kostenfrei."
         image="/images/ke-frauen.jpg"
       />
 
@@ -99,9 +99,9 @@ export default function KarrierecoachingPage() {
         <Reveal>
           <FactBox
             question="Was macht Karrierecoaching bei Kuhl & Engel aus?"
-            answer="Karrierecoaching bei Kuhl & Engel ist eine individuelle 1:1-Begleitung für alle, die beruflich den nächsten Schritt gehen wollen: Wiedereinstieg nach der Elternzeit, Neuorientierung, Sichtbarkeit oder mehr Verantwortung. 14 Coachinnen und ein Coach arbeiten systemisch und auf Augenhöhe – auf Wunsch garantiert von Frau zu Frau. Mit AVGS-Gutschein der Agentur für Arbeit ist das Coaching zu 100 % kostenfrei."
+            answer="Karrierecoaching bei Kuhl & Engel ist eine individuelle 1:1-Begleitung für alle, die beruflich den nächsten Schritt gehen wollen: Wiedereinstieg nach der Elternzeit, Neuorientierung, Sichtbarkeit oder mehr Verantwortung. Erfahrene Coach:innen arbeiten systemisch und auf Augenhöhe. Mit AVGS-Gutschein der Agentur für Arbeit ist das Coaching zu 100 % kostenfrei."
             facts={[
-              { label: "Team", value: "15 Coaches – 14 Coachinnen & 1 Coach" },
+              { label: "Team", value: "14 erfahrene Coach:innen" },
               { label: "Kosten", value: "Mit AVGS-Gutschein 0 €" },
               { label: "Schwerpunkte", value: "Wiedereinstieg, Neuorientierung, Sichtbarkeit, Karriere" },
               { label: "Formate", value: "Berlin, Potsdam, Augsburg, online oder hybrid" },
@@ -179,7 +179,7 @@ export default function KarrierecoachingPage() {
               </h2>
               <p className="mb-2 max-w-md text-[0.95rem] leading-relaxed text-ink/60">
                 Heike Kuhl und Martina Engel-Fürstberger haben Kuhl & Engel
-                gegründet – heute begleiten Dich 14 Coachinnen und ein Coach
+                gegründet – heute begleitet Dich ein Team erfahrener Coach:innen
                 in beruflichen Veränderungen.
               </p>
             </div>
@@ -236,7 +236,7 @@ export default function KarrierecoachingPage() {
             Dein nächstes Kapitel beginnt <em>mit einem Gespräch.</em>
           </>
         }
-        text="Lern uns in einem kostenlosen Erstgespräch kennen – vertraulich, unverbindlich und auf Wunsch von Frau zu Frau."
+        text="Lern uns in einem kostenlosen Erstgespräch kennen – vertraulich und unverbindlich."
       />
     </>
   );

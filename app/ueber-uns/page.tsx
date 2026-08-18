@@ -9,9 +9,9 @@ import { breadcrumbSchema, teamGraph } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Über uns & Team – 15+ zertifizierte Coaches",
+  title: "Über uns & Team – zertifizierte Coach:innen",
   description:
-    "Kuhl & Engel, das sind Heike Kuhl und Martina Engel-Fürstberger – mit einem Team aus 15+ zertifizierten, systemisch arbeitenden Coaches in Berlin, Potsdam, Augsburg und online.",
+    "Kuhl & Engel, das sind Heike Kuhl und Martina Engel-Fürstberger – mit einem Team aus 14 zertifizierten, systemisch arbeitenden Coach:innen in Berlin, Potsdam, Augsburg und online.",
   path: "/ueber-uns",
 });
 

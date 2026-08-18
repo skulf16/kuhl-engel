@@ -7,7 +7,7 @@ export const CONTACT = {
 /** Kennzahlen-Band – auf Startseite und Berufsorientierung im Einsatz. */
 export const STATS = [
   { value: "6.555", label: "Unterrichtseinheiten Coaching" },
-  { value: "14", label: "Coachinnen im Team" },
+  { value: "14", label: "Coach:innen im Team" },
   { value: "5,0", label: "★ Google-Bewertung" },
 ];
 
@@ -26,13 +26,13 @@ export type Bereich = {
 export const BEREICHE: Bereich[] = [
   {
     slug: "/jobcoaching",
-    kicker: "Für Akademikerinnen & Akademiker",
+    kicker: "Für Akademiker:innen",
     title: "AVGS Jobcoaching",
     claim: "Mit AVGS-Gutschein 100 % kostenfrei",
     text: "Du willst beruflich neu durchstarten, nach der Elternzeit wieder einsteigen oder sicher in Bewerbungen gehen? Unser AVGS-zertifiziertes Jobcoaching begleitet Dich – finanziert über den AVGS-Gutschein der Agentur für Arbeit.",
     points: [
       "Orientierung, Bewerbung & Wiedereinstieg",
-      "14 Coachinnen – auf Wunsch von Frau zu Frau",
+      "Erfahrene Coach:innen an Deiner Seite",
       "Wir übernehmen den Papierkram",
     ],
     cta: "Zum AVGS Jobcoaching",
@@ -77,7 +77,7 @@ export const JOBCOACHING_LEISTUNGEN: Leistung[] = [
     slug: "/karrierecoaching",
     nr: "02",
     title: "Karrierecoaching",
-    claim: "Auf Wunsch von Frau zu Frau",
+    claim: "Für Selbstzahler:innen & Unternehmen",
     text: "Wiedereinstieg nach der Elternzeit, Sichtbarkeit, Neuorientierung, der nächste Schritt: Coaches, die Deine Fragen aus eigener Erfahrung kennen.",
     image: "/images/ke-frauen.jpg",
   },
@@ -197,14 +197,6 @@ export const TEAM: TeamMember[] = [
     image: "/images/team-wanda-wolff.jpg",
     quote:
       "Ich begleite dich auf deinem Weg der Selbsterkenntnis – mit Humor und Tiefgründigkeit.",
-  },
-  {
-    name: "Saskia Sattler",
-    role: "Online · auch auf Englisch",
-    quali: "DCV-zertifizierte Coachin",
-    image: "/images/team-saskia-sattler.jpg",
-    quote:
-      "Coaching ist für mich eine Einladung zur Reflexion und zum Perspektivwechsel – ein Entwicklungsprozess hin zur persönlichen Entfaltung.",
   },
   {
     name: "Matthias Fink",

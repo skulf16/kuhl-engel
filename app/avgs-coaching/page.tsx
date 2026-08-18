@@ -115,7 +115,7 @@ export default function AvgsCoachingPage() {
               { label: "Kosten", value: "0 € – vollständig durch den AVGS gedeckt" },
               { label: "Format", value: "1:1-Einzelcoaching, Umfang individuell (mind. 20 UE)" },
               { label: "Orte", value: "Berlin, Potsdam, Augsburg, online oder hybrid" },
-              { label: "Team", value: "14 Coachinnen & 1 Coach – auf Wunsch Coaching von Frau zu Frau" },
+              { label: "Team", value: "14 erfahrene Coach:innen – Du wählst, wer Dich begleitet" },
               { label: "Sprachen", value: "Deutsch, Englisch, Französisch, Russisch" },
               { label: "Start", value: "Kostenloses Erstgespräch, Beginn nach Bewilligung" },
             ]}

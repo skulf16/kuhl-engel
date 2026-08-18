@@ -38,7 +38,7 @@ const FAQS_BERLIN: Faq[] = [
   },
   {
     q: "Wie finde ich einen seriösen Jobcoach in Berlin?",
-    a: "Achte auf drei Dinge: eine AZAV-Zertifizierung des Trägers (Voraussetzung, um AVGS-Gutscheine annehmen zu dürfen), eine fundierte, zertifizierte Coaching-Ausbildung und ein kostenloses Erstgespräch, in dem Du prüfst, ob die Chemie stimmt. Kuhl & Engel erfüllt alle drei Kriterien – und wenn es doch nicht passt, wechselst Du einfach die Coachin.",
+    a: "Achte auf drei Dinge: eine AZAV-Zertifizierung des Trägers (Voraussetzung, um AVGS-Gutscheine annehmen zu dürfen), eine fundierte, zertifizierte Coaching-Ausbildung und ein kostenloses Erstgespräch, in dem Du prüfst, ob die Chemie stimmt. Kuhl & Engel erfüllt alle drei Kriterien – und wenn es doch nicht passt, wechselst Du einfach Deine:n Coach:in.",
   },
   {
     q: "Ist Kuhl & Engel dasselbe wie das „Berliner JobCoaching“ des Senats?",
@@ -50,7 +50,7 @@ const FAQS_BERLIN: Faq[] = [
   },
   {
     q: "Geht das Jobcoaching auch auf Englisch?",
-    a: "Ja. In Berlin coacht Carmen Pilger auch auf Englisch, online zusätzlich Saskia Sattler (Englisch), Matthias Fink (Englisch, Französisch) und Dr. Anna Mandel-Zakharova (Englisch, Russisch).",
+    a: "Ja. In Berlin coacht Carmen Pilger auch auf Englisch, online zusätzlich Matthias Fink (Englisch, Französisch) und Dr. Anna Mandel-Zakharova (Englisch, Russisch).",
   },
 ];
 
@@ -61,7 +61,7 @@ const COACHES_BERLIN = [
 
 const LEISTUNGEN = [
   { href: "/avgs-coaching", label: "AVGS Coaching", note: "Mit Gutschein 100 % kostenfrei" },
-  { href: "/karrierecoaching", label: "Karrierecoaching", note: "Auf Wunsch von Frau zu Frau" },
+  { href: "/karrierecoaching", label: "Karrierecoaching", note: "Für Selbstzahler:innen & Unternehmen" },
   { href: "/jobcoaching", label: "Karriere- & Bewerbungscoaching", note: "Orientierung, Bewerbung, Neustart" },
   { href: "/avgs-gutschein-beantragen", label: "AVGS-Gutschein beantragen", note: "Schritt für Schritt zur Förderung" },
 ];
@@ -127,7 +127,7 @@ export default function JobcoachingBerlinPage() {
                 Karrierecoaching bis zum Wiedereinstieg nach der Elternzeit:
                 Am Berliner Standort steht Dir unser komplettes Angebot offen –
                 begleitet von systemisch ausgebildeten, zertifizierten
-                Coachinnen und Coaches.
+                Coach:innen.
               </p>
             </Reveal>
             <Reveal delay={150}>
