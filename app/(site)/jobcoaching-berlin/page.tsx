@@ -6,7 +6,7 @@ import CtaBand from "@/components/CtaBand";
 import Accordion from "@/components/Accordion";
 import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
-import { FOUNDERS, TEAM, TESTIMONIALS, type Faq } from "@/lib/data";
+import { TEAM, TESTIMONIALS, type Faq } from "@/lib/data";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
@@ -46,7 +46,7 @@ const FAQS_BERLIN: Faq[] = [
   },
   {
     q: "Welche Coaches arbeiten in Berlin?",
-    a: "In Berlin coachen unter anderem Gründerin Heike Kuhl, Angelina Werner und Carmen Pilger – alle systemisch ausgebildet und zertifiziert. Carmen Pilger coacht auch auf Englisch. Gemeinsam finden wir die Person, die am besten zu Dir und Deinem Thema passt.",
+    a: "In Berlin coachen Angelina Werner und Carmen Pilger – beide systemisch ausgebildet und zertifiziert. Carmen Pilger coacht auch auf Englisch. Gemeinsam finden wir die Person, die am besten zu Dir und Deinem Thema passt.",
   },
   {
     q: "Geht das Jobcoaching auch auf Englisch?",
@@ -54,10 +54,9 @@ const FAQS_BERLIN: Faq[] = [
   },
 ];
 
-const COACHES_BERLIN = [
-  FOUNDERS[0],
-  ...TEAM.filter((m) => m.role.startsWith("Berlin")),
-];
+// Heike und Martina coachen selbst nicht im AVGS-Standortbetrieb
+// (Kundenvorgabe 18.08.2026) – hier nur die Coach:innen vor Ort.
+const COACHES_BERLIN = TEAM.filter((m) => m.role.startsWith("Berlin"));
 
 const LEISTUNGEN = [
   { href: "/avgs-coaching", label: "AVGS Coaching", note: "Mit Gutschein 100 % kostenfrei" },
@@ -162,8 +161,8 @@ export default function JobcoachingBerlinPage() {
             <div className="relative">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
-                  src="/images/standort-berlin.jpg"
-                  alt="Standort von Kuhl & Engel in der Bötzowstraße 28, Berlin-Prenzlauer Berg"
+                  src="/images/ke-berlin-fenster.jpg"
+                  alt="Blick aus den Coaching-Räumen von Kuhl & Engel in der Bötzowstraße 28, Berlin-Prenzlauer Berg"
                   fill
                   sizes="(max-width: 1024px) 100vw, 46vw"
                   className="object-cover transition-transform duration-700 hover:scale-105"

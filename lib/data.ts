@@ -94,7 +94,7 @@ export const JOBCOACHING_LEISTUNGEN: Leistung[] = [
     title: "Jobcoaching Berlin",
     claim: "Prenzlauer Berg & online",
     text: "AVGS Coaching in der Bötzowstraße 28 – oder online. Systemisch, individuell und auf Augenhöhe.",
-    image: "/images/standort-berlin.jpg",
+    image: "/images/ke-berlin-fenster.jpg",
   },
   {
     slug: "/jobcoaching-potsdam",
@@ -351,6 +351,7 @@ export type Standort = {
   city: string;
   label: string;
   address: string[];
+  image: string;
   href?: string;
   note?: string;
 };
@@ -360,22 +361,27 @@ export const STANDORTE: Standort[] = [
     city: "Online",
     label: "Deutschlandweit",
     address: ["Online-Coaching", "via Zoom – auch hybrid"],
+    image: "/images/ke-martina-laptop.jpg",
   },
   {
     city: "Berlin",
     label: "Prenzlauer Berg",
     address: ["Bötzowstraße 28", "10407 Berlin"],
+    image: "/images/ke-berlin-fenster.jpg",
     href: "/jobcoaching-berlin",
   },
   {
     city: "Potsdam",
     label: "Nördliche Innenstadt",
     address: ["Gutenbergstraße 87", "14467 Potsdam"],
+    image: "/images/standort-potsdam.jpg",
     href: "/jobcoaching-potsdam",
   },
   {
     city: "Augsburg",
     label: "Altstadt",
     address: ["Mauerberg 26", "86152 Augsburg"],
+    image: "/images/ke-augsburg-einzel.jpg",
+    href: "/jobcoaching-augsburg",
   },
 ];

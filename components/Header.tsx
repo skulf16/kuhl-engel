@@ -11,6 +11,7 @@ const JOBCOACHING_LINKS = [
   { href: "/karrierecoaching", label: "Karrierecoaching" },
   { href: "/jobcoaching-berlin", label: "Jobcoaching Berlin" },
   { href: "/jobcoaching-potsdam", label: "Jobcoaching Potsdam" },
+  { href: "/jobcoaching-augsburg", label: "Jobcoaching Augsburg" },
 ];
 
 const JUGEND_LINKS = [

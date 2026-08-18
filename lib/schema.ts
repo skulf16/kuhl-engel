@@ -69,7 +69,7 @@ export const organizationGraph = {
       knowsLanguage: ["de", "en", "fr", "ru"],
       hasCredential: {
         "@type": "EducationalOccupationalCredential",
-        name: "AZAV-Trägerzulassung (Maßnahmezulassung, Certuria Certification Germany)",
+        name: "AZAV-Trägerzulassung (Maßnahmezulassung, Europanozert)",
       },
       address: {
         "@type": "PostalAddress",

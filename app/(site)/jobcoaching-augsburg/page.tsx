@@ -11,40 +11,40 @@ import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Jobcoaching Potsdam – AVGS Coaching in der Innenstadt",
+  title: "Jobcoaching Augsburg – AVGS Coaching in der Altstadt",
   description:
-    "Jobcoaching und AVGS Coaching in Potsdam: systemisches Karrierecoaching für Akademiker:innen in der Gutenbergstraße 87, nahe Holländisches Viertel – mit AVGS-Gutschein 100 % kostenfrei. Auch online.",
-  path: "/jobcoaching-potsdam",
-  image: "/images/ke-tisch-beratung.jpg",
-  imageAlt: "Standort von Kuhl & Engel in der Gutenbergstraße 87, Potsdam",
+    "Jobcoaching und AVGS Coaching in Augsburg: systemisches Karrierecoaching für Akademiker:innen am Mauerberg 26, mitten in der Altstadt – mit AVGS-Gutschein 100 % kostenfrei. Auch online.",
+  path: "/jobcoaching-augsburg",
+  image: "/images/ke-augsburg-einzel.jpg",
+  imageAlt: "Coaching-Raum von Kuhl & Engel am Mauerberg 26, Augsburg",
 });
 
-const FAQS_POTSDAM: Faq[] = [
+const FAQS_AUGSBURG: Faq[] = [
   {
-    q: "Wo findet das Jobcoaching in Potsdam statt?",
-    a: "Unser Potsdamer Standort liegt in der Gutenbergstraße 87, 14467 Potsdam – zentral in der nördlichen Innenstadt, nur wenige Gehminuten vom Holländischen Viertel. Alternativ coachen wir Dich online oder hybrid.",
+    q: "Wo findet das Jobcoaching in Augsburg statt?",
+    a: "Unser Augsburger Standort liegt am Mauerberg 26, 86152 Augsburg – mitten in der Altstadt. Alternativ coachen wir Dich online oder hybrid.",
   },
   {
-    q: "Kann ich meinen AVGS-Gutschein in Potsdam einlösen?",
-    a: "Ja. Kuhl & Engel ist AZAV-zertifizierter Träger, Du kannst Deinen Aktivierungs- und Vermittlungsgutschein direkt in Potsdam einlösen. Der Gutschein muss noch mindestens 10 Tage gültig sein, mindestens 20 Unterrichtseinheiten umfassen und in Teilzeit ausgestellt sein – das Coaching ist dann für Dich kostenfrei.",
+    q: "Kann ich meinen AVGS-Gutschein in Augsburg einlösen?",
+    a: "Ja. Kuhl & Engel ist AZAV-zertifizierter Träger, Du kannst Deinen Aktivierungs- und Vermittlungsgutschein direkt in Augsburg einlösen. Der Gutschein muss noch mindestens 10 Tage gültig sein, mindestens 20 Unterrichtseinheiten umfassen und in Teilzeit ausgestellt sein – das Coaching ist dann für Dich kostenfrei.",
   },
   {
-    q: "Welche Coaches arbeiten in Potsdam?",
-    a: "In Potsdam coachen Bettina Brammer, Grit Staroste, Wanda Wolff und Dr. Anna Mandel-Zakharova – alle systemisch ausgebildet und zertifiziert. Dr. Mandel-Zakharova coacht auch auf Englisch und Russisch.",
+    q: "Wer coacht in Augsburg?",
+    a: "In Augsburg coacht Matthias Fink – systemisch-integrativer Coach, auf Wunsch auch auf Englisch oder Französisch. Online steht Dir zusätzlich das gesamte Team von Kuhl & Engel offen.",
   },
   {
-    q: "Ich wohne in Brandenburg außerhalb Potsdams – geht das trotzdem?",
+    q: "Ich wohne in Bayern außerhalb Augsburgs – geht das trotzdem?",
     a: "Ja. Viele unserer Klient:innen kombinieren Termine vor Ort mit Online-Sitzungen via Zoom (hybrid) oder lassen sich komplett digital coachen. So funktioniert das Coaching unabhängig vom Wohnort.",
   },
   {
-    q: "Was kostet ein Jobcoaching in Potsdam?",
+    q: "Was kostet ein Jobcoaching in Augsburg?",
     a: "Mit einem AVGS-Gutschein (Aktivierungs- und Vermittlungsgutschein) der Agentur für Arbeit oder des Jobcenters ist das Jobcoaching bei Kuhl & Engel zu 100 % kostenfrei – die Förderung deckt alle Kosten ab. Auch das Erstgespräch kostet nichts.",
   },
 ];
 
 // Heike und Martina coachen selbst nicht im AVGS-Standortbetrieb
 // (Kundenvorgabe 18.08.2026) – hier nur die Coach:innen vor Ort.
-const COACHES_POTSDAM = TEAM.filter((m) => m.role.startsWith("Potsdam"));
+const COACHES_AUGSBURG = TEAM.filter((m) => m.role.startsWith("Augsburg"));
 
 const LEISTUNGEN = [
   { href: "/avgs-coaching", label: "AVGS Coaching", note: "Mit Gutschein 100 % kostenfrei" },
@@ -53,42 +53,42 @@ const LEISTUNGEN = [
   { href: "/avgs-gutschein-beantragen", label: "AVGS-Gutschein beantragen", note: "Schritt für Schritt zur Förderung" },
 ];
 
-export default function JobcoachingPotsdamPage() {
+export default function JobcoachingAugsburgPage() {
   return (
     <>
       <JsonLd
         data={serviceSchema({
-          name: "Jobcoaching Potsdam",
+          name: "Jobcoaching Augsburg",
           description:
-            "AVGS Coaching und Karrierecoaching für Akademiker:innen in Potsdam (Gutenbergstraße 87, nördliche Innenstadt) – systemisch, individuell und mit AVGS-Gutschein zu 100 % kostenfrei.",
-          path: "/jobcoaching-potsdam",
+            "AVGS Coaching und Karrierecoaching für Akademiker:innen in der Augsburger Altstadt (Mauerberg 26) – systemisch, individuell und mit AVGS-Gutschein zu 100 % kostenfrei.",
+          path: "/jobcoaching-augsburg",
           serviceType: "Jobcoaching / AVGS Coaching",
-          areaServed: ["Potsdam", "Brandenburg"],
+          areaServed: ["Augsburg", "Bayern"],
           avgsFree: true,
         })}
       />
-      <JsonLd data={faqSchema(FAQS_POTSDAM, "/jobcoaching-potsdam")} />
-      <JsonLd data={breadcrumbSchema([{ name: "Jobcoaching Potsdam", path: "/jobcoaching-potsdam" }])} />
+      <JsonLd data={faqSchema(FAQS_AUGSBURG, "/jobcoaching-augsburg")} />
+      <JsonLd data={breadcrumbSchema([{ name: "Jobcoaching Augsburg", path: "/jobcoaching-augsburg" }])} />
 
       <PageHero
-        eyebrow="Standort Potsdam · Nördliche Innenstadt"
+        eyebrow="Standort Augsburg · Altstadt"
         title={
           <>
-            Jobcoaching in Potsdam – <em>nahe Holländisches Viertel.</em>
+            Jobcoaching in Augsburg – <em>mitten in der Altstadt.</em>
           </>
         }
-        intro="AVGS Coaching und berufliche Neuorientierung in der Gutenbergstraße 87, mitten in der Potsdamer Innenstadt – oder online, ganz wie es zu Dir passt."
-        image="/images/ke-tisch-beratung.jpg"
+        intro="AVGS Coaching und berufliche Neuorientierung am Mauerberg 26, im Herzen der Augsburger Altstadt – oder online, ganz wie es zu Dir passt."
+        image="/images/ke-augsburg-einzel.jpg"
       />
 
       {/* Auf einen Blick */}
       <section className="mx-auto max-w-7xl px-5 pt-16 md:px-8 md:pt-20">
         <Reveal>
           <FactBox
-            question="Wo finde ich Jobcoaching in Potsdam?"
-            answer="Kuhl & Engel bietet AVGS-gefördertes Jobcoaching in der Potsdamer Innenstadt an: Gutenbergstraße 87, 14467 Potsdam, wenige Gehminuten vom Holländischen Viertel. Das Einzelcoaching richtet sich an Akademiker:innen, Fach- und Führungskräfte und ist mit einem AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters zu 100 % kostenfrei. Termine gibt es vor Ort, online oder hybrid."
+            question="Wo finde ich Jobcoaching in Augsburg?"
+            answer="Kuhl & Engel bietet AVGS-gefördertes Jobcoaching in der Augsburger Altstadt an: Mauerberg 26, 86152 Augsburg. Das Einzelcoaching richtet sich an Akademiker:innen, Fach- und Führungskräfte und ist mit einem AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters zu 100 % kostenfrei. Termine gibt es vor Ort, online oder hybrid."
             facts={[
-              { label: "Adresse", value: "Gutenbergstraße 87, 14467 Potsdam (Nördliche Innenstadt)" },
+              { label: "Adresse", value: "Mauerberg 26, 86152 Augsburg (Altstadt)" },
               { label: "Kosten", value: "Mit AVGS-Gutschein 0 €" },
               { label: "Telefon", value: "030 51565388-0" },
               { label: "Formate", value: "Vor Ort, online oder hybrid" },
@@ -104,15 +104,15 @@ export default function JobcoachingPotsdamPage() {
             <Reveal>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Angebote in Potsdam
+                Angebote in Augsburg
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                Karrierecoaching für Potsdam <em>und Brandenburg.</em>
+                Karrierecoaching für Augsburg <em>und Bayern.</em>
               </h2>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink/70">
-                Ob Neuorientierung nach der Elternzeit, der nächste Karriereschritt
-                oder der Berufseinstieg nach der Promotion: In Potsdam begleiten Dich
-                vier systemisch ausgebildete Coach:innen – auf Wunsch auch hybrid mit
+                Ob Neuorientierung, der nächste Karriereschritt oder der
+                Wiedereinstieg: In Augsburg begleitet Dich ein systemisch
+                ausgebildeter Coach – auf Wunsch auch hybrid mit
                 Online-Terminen.
               </p>
             </Reveal>
@@ -145,20 +145,36 @@ export default function JobcoachingPotsdamPage() {
             </Reveal>
           </div>
           <Reveal delay={100}>
-            <div className="relative">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src="/images/standort-potsdam.jpg"
-                  alt="Das Haus von Kuhl & Engel in der Gutenbergstraße 87, Potsdam"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 46vw"
-                  className="object-cover transition-transform duration-700 hover:scale-105"
-                />
+            <div className="grid gap-6">
+              <div className="relative">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src="/images/ke-augsburg-einzel.jpg"
+                    alt="Coaching-Raum am Standort Augsburg mit zwei Sesseln"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 46vw"
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="absolute -bottom-6 left-6 bg-ink px-6 py-4 text-cream">
+                  <p className="display text-base italic text-gold-bright">Mauerberg 26</p>
+                  <p className="mt-0.5 text-[0.8rem] text-cream/70">86152 Augsburg · Altstadt</p>
+                </div>
               </div>
-              <div className="absolute -bottom-6 left-6 bg-ink px-6 py-4 text-cream">
-                <p className="display text-base italic text-gold-bright">Gutenbergstraße 87</p>
-                <p className="mt-0.5 text-[0.8rem] text-cream/70">14467 Potsdam · Nördliche Innenstadt</p>
-              </div>
+              <figure className="mt-8">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src="/images/ke-augsburg-gruppe.jpg"
+                    alt="Gruppenraum mit Stuhlkreis und Flipchart am Standort Augsburg"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 46vw"
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <figcaption className="mt-3 text-[0.85rem] text-ink/55">
+                  Unser Gruppenraum in Augsburg
+                </figcaption>
+              </figure>
             </div>
           </Reveal>
         </div>
@@ -170,14 +186,14 @@ export default function JobcoachingPotsdamPage() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              Dein Team in Potsdam
+              Dein Team in Augsburg
             </p>
             <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-              Diese Coaches begleiten Dich <em>vor Ort.</em>
+              Dein Coach <em>vor Ort.</em>
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {COACHES_POTSDAM.map((member, i) => (
+            {COACHES_AUGSBURG.map((member, i) => (
               <Reveal key={member.name} delay={(i % 3) * 100}>
                 <article className="group">
                   <div className="relative aspect-[4/5] overflow-hidden bg-cream">
@@ -199,9 +215,9 @@ export default function JobcoachingPotsdamPage() {
           </div>
           <Reveal delay={150}>
             <p className="mt-10 text-[0.95rem] text-ink/60">
-              Das komplette Team mit allen Schwerpunkten findest Du{" "}
+              Online begleitet Dich auf Wunsch das gesamte Team –{" "}
               <Link href="/ueber-uns#team" className="link-gold font-semibold text-gold">
-                hier →
+                alle Coach:innen kennenlernen →
               </Link>
             </p>
           </Reveal>
@@ -212,12 +228,12 @@ export default function JobcoachingPotsdamPage() {
       <section className="mx-auto max-w-4xl px-5 py-24 md:px-8 md:py-32">
         <Reveal>
           <h2 className="display text-center text-4xl md:text-5xl">
-            Häufige Fragen zum <em>Standort Potsdam.</em>
+            Häufige Fragen zum <em>Jobcoaching in Augsburg.</em>
           </h2>
         </Reveal>
         <Reveal delay={150}>
           <div className="mt-12">
-            <Accordion items={FAQS_POTSDAM} />
+            <Accordion items={FAQS_AUGSBURG} />
           </div>
         </Reveal>
       </section>
@@ -225,11 +241,17 @@ export default function JobcoachingPotsdamPage() {
       <CtaBand
         title={
           <>
-            Lerne uns in Potsdam <em>persönlich kennen.</em>
+            Starte Dein Coaching <em>in Augsburg.</em>
           </>
         }
-        text="Vereinbare ein kostenloses Erstgespräch – in der Gutenbergstraße, telefonisch oder online."
+        text="Lern uns in einem kostenlosen Erstgespräch kennen – vor Ort am Mauerberg, online oder hybrid."
       />
+
+      <div className="bg-cream-deep py-6 text-center">
+        <Link href="/ueber-uns#standorte" className="link-gold text-sm font-semibold text-gold">
+          ← Alle Standorte ansehen
+        </Link>
+      </div>
     </>
   );
 }

@@ -193,59 +193,36 @@ export default function UeberUnsPage() {
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {STANDORTE.map((standort, i) => (
               <Reveal key={standort.city} delay={i * 100} className="h-full">
-                <div className="group flex h-full flex-col border border-ink/10 bg-paper p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_56px_-28px_rgba(14,29,43,0.3)]">
-                  <p className="display text-sm italic text-gold">{String(i + 1).padStart(2, "0")}</p>
-                  <h3 className="display mt-4 text-2xl transition-colors group-hover:text-gold">
-                    {standort.city}
-                  </h3>
-                  <p className="eyebrow mt-1.5 !text-[0.58rem] text-ink/45">{standort.label}</p>
-                  <p className="mt-5 grow leading-relaxed text-ink/70">
-                    {standort.address.map((line) => (
-                      <span key={line} className="block">{line}</span>
-                    ))}
-                  </p>
-                  {standort.href && (
-                    <Link href={standort.href} className="link-gold mt-5 inline-flex items-center gap-2 text-sm font-semibold text-gold">
-                      Zum Standort <span aria-hidden>→</span>
-                    </Link>
-                  )}
+                <div className="group flex h-full flex-col overflow-hidden border border-ink/10 bg-paper transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_56px_-28px_rgba(14,29,43,0.3)]">
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={standort.image}
+                      alt={`Standort ${standort.city} – Kuhl & Engel`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 25vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex grow flex-col p-7">
+                    <p className="display text-sm italic text-gold">{String(i + 1).padStart(2, "0")}</p>
+                    <h3 className="display mt-3 text-2xl transition-colors group-hover:text-gold">
+                      {standort.city}
+                    </h3>
+                    <p className="eyebrow mt-1.5 !text-[0.58rem] text-ink/45">{standort.label}</p>
+                    <p className="mt-4 grow leading-relaxed text-ink/70">
+                      {standort.address.map((line) => (
+                        <span key={line} className="block">{line}</span>
+                      ))}
+                    </p>
+                    {standort.href && (
+                      <Link href={standort.href} className="link-gold mt-5 inline-flex items-center gap-2 text-sm font-semibold text-gold">
+                        Zum Standort <span aria-hidden>→</span>
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </Reveal>
             ))}
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            <Reveal delay={100}>
-              <figure>
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src="/images/ke-augsburg-einzel.jpg"
-                    alt="Coaching-Raum am Standort Augsburg mit zwei Sesseln"
-                    fill
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <figcaption className="mt-3 text-[0.85rem] text-ink/55">
-                  Einzelcoaching in Augsburg – Raum für Gespräche auf Augenhöhe
-                </figcaption>
-              </figure>
-            </Reveal>
-            <Reveal delay={200}>
-              <figure>
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src="/images/ke-augsburg-gruppe.jpg"
-                    alt="Gruppenraum mit Stuhlkreis und Flipchart am Standort Augsburg"
-                    fill
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-                <figcaption className="mt-3 text-[0.85rem] text-ink/55">
-                  Unser Gruppenraum in Augsburg
-                </figcaption>
-              </figure>
-            </Reveal>
           </div>
           <Reveal delay={150}>
             <p className="mt-10 text-[0.95rem] text-ink/60">
@@ -261,10 +238,10 @@ export default function UeberUnsPage() {
         <Reveal>
           <div className="mx-auto flex max-w-4xl flex-col items-center gap-8 px-5 text-center md:flex-row md:text-left">
             <Image
-              src="/images/azav-siegel.jpg"
-              alt="Certuria AZAV-Siegel Maßnahmezulassung"
-              width={130}
-              height={103}
+              src="/images/europanozert-siegel.png"
+              alt="Europanozert AZAV-Siegel Maßnahmezulassung"
+              width={120}
+              height={120}
               className="shrink-0 border border-ink/10 bg-white p-2"
             />
             <p className="text-lg leading-relaxed text-ink/75">
