@@ -25,7 +25,7 @@ export type Bereich = {
 
 export const BEREICHE: Bereich[] = [
   {
-    slug: "/jobcoaching",
+    slug: "/avgs-coaching",
     kicker: "Für Akademiker:innen",
     title: "AVGS Jobcoaching",
     claim: "Mit AVGS-Gutschein 100 % kostenfrei",
@@ -41,8 +41,8 @@ export const BEREICHE: Bereich[] = [
   {
     slug: "/berufsorientierung",
     kicker: "Für Schulen, Lehrkräfte & Partner",
-    title: "Berufsorientierung",
-    claim: "Mein Berufseinstieg – seit über 10 Jahren",
+    title: "Berufsorientierung für Jugendliche",
+    claim: "Mein Berufseinstieg – seit über 15 Jahren",
     text: "Du möchtest Deine Schüler:innen bei der Berufs- und Studienwahl unterstützen? Wir begleiten junge Menschen dabei, ihre Stärken zu erkennen und den Weg zu finden, der wirklich zu ihnen passt.",
     points: [
       "Gruppenprojekte an Deiner Schule",
@@ -50,7 +50,7 @@ export const BEREICHE: Bereich[] = [
       "Materialien für den Berufsstart",
     ],
     cta: "Zur Berufsorientierung",
-    image: "/images/ke-jugend-lachen.jpg",
+    image: "/images/jugend-lachen-duo.jpg",
   },
 ];
 

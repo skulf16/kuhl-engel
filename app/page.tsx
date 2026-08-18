@@ -49,25 +49,25 @@ export default function Home() {
     <>
       <JsonLd data={faqSchema(FAQS_AVGS, "/")} />
       {/* ---------- Hero ---------- */}
-      <section className="relative flex min-h-svh flex-col justify-center overflow-hidden bg-cream">
+      <section className="relative flex min-h-svh flex-col justify-end overflow-hidden bg-cream">
         <Image
           src="/images/ke-duo-fenster.jpg"
           alt="Heike Kuhl und Martina Engel-Fürstberger in ihren Coaching-Räumen"
           fill
           priority
           sizes="100vw"
-          className="hero-zoom object-cover object-[68%_center]"
+          className="hero-zoom object-cover object-[74%_28%]"
         />
         {/* heller Verlauf nur auf der Textseite – das Foto bleibt voll sichtbar */}
         <div className="absolute inset-0 bg-gradient-to-r from-cream/95 via-cream/60 to-transparent md:via-cream/40" />
 
-        <div className="relative mx-auto w-full max-w-7xl px-5 pb-40 pt-40 md:px-8">
+        <div className="relative mx-auto w-full max-w-7xl px-5 pb-24 pt-28 md:px-8 md:pb-28">
           <div className="max-w-3xl">
             <p className="eyebrow hero-rise inline-flex items-center gap-2.5 rounded-full border border-ink/20 bg-cream/70 px-4 py-2 text-ink/85 backdrop-blur-sm">
               <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-gold" />
               100 % AVGS-zertifiziert · Online · Berlin · Potsdam · Augsburg
             </p>
-            <h1 className="display mt-8 max-w-4xl text-[2.4rem] text-ink md:text-7xl lg:text-[5.4rem]">
+            <h1 className="display mt-8 max-w-4xl text-[2.4rem] text-ink md:text-6xl lg:text-[4.8rem]">
               <span className="hero-rise block" style={{ animationDelay: "120ms" }}>
                 Den richtigen Weg finden.
               </span>
@@ -108,21 +108,6 @@ export default function Home() {
         <div className="absolute bottom-28 left-1/2 hidden -translate-x-1/2 md:block" aria-hidden>
           <div className="scroll-drip relative h-14 w-px overflow-hidden bg-ink/20" />
         </div>
-      </section>
-
-      {/* ---------- Kennzahlen (überlappen den Hero) ---------- */}
-      <section className="relative z-10 mx-auto -mt-20 max-w-6xl px-5 md:px-8">
-        <Reveal>
-          <dl className="grid grid-cols-1 divide-y divide-ink/10 overflow-hidden rounded-xl border border-ink/10 bg-paper shadow-[0_32px_80px_-32px_rgba(14,29,43,0.35)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-            {STATS.map((stat) => (
-              <div key={stat.label} className="px-6 py-8 text-center md:py-10">
-                <dt className="sr-only">{stat.label}</dt>
-                <dd className="display text-4xl text-ink md:text-5xl">{stat.value}</dd>
-                <dd className="mt-2 text-[0.82rem] font-medium tracking-wide text-ink/55">{stat.label}</dd>
-              </div>
-            ))}
-          </dl>
-        </Reveal>
       </section>
 
       {/* ---------- Positionierung ---------- */}
@@ -262,6 +247,21 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* ---------- Kennzahlen ---------- */}
+      <section className="mx-auto max-w-6xl px-5 pt-24 md:px-8 md:pt-32">
+        <Reveal>
+          <dl className="grid grid-cols-1 divide-y divide-ink/10 overflow-hidden rounded-xl border border-ink/10 bg-paper shadow-[0_32px_80px_-32px_rgba(14,29,43,0.35)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+            {STATS.map((stat) => (
+              <div key={stat.label} className="px-6 py-8 text-center md:py-10">
+                <dt className="sr-only">{stat.label}</dt>
+                <dd className="display text-4xl text-ink md:text-5xl">{stat.value}</dd>
+                <dd className="mt-2 text-[0.82rem] font-medium tracking-wide text-ink/55">{stat.label}</dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
       </section>
 
       {/* ---------- Methode (warm) ---------- */}
