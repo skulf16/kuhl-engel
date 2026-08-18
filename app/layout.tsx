@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Fraunces, Instrument_Sans } from "next/font/google";
+import { Karla, Instrument_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { organizationGraph } from "@/lib/schema";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const karla = Karla({
   subsets: ["latin"],
   style: ["normal", "italic"],
-  variable: "--font-fraunces",
+  variable: "--font-karla",
 });
 
 const instrument = Instrument_Sans({
@@ -55,7 +55,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="de" className={`${fraunces.variable} ${instrument.variable}`}>
+    <html lang="de" className={`${karla.variable} ${instrument.variable}`}>
       <body>
         <JsonLd data={organizationGraph} />
         <Header />

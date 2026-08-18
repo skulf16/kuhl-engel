@@ -2,7 +2,7 @@
 
 @theme inline {
   --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-display: var(--font-karla), ui-sans-serif, system-ui, sans-serif;
 
   --color-ink: #0e1d2b;
   --color-ink-800: #142a3e;
@@ -57,15 +57,15 @@ body::after {
 
 .display {
   font-family: var(--font-display);
-  font-weight: 480;
-  line-height: 1.06;
-  letter-spacing: -0.015em;
+  font-weight: 640;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
 }
 
 .display em,
 .accent-italic {
   font-style: italic;
-  font-weight: 420;
+  font-weight: 500;
   color: var(--color-gold);
 }
 
