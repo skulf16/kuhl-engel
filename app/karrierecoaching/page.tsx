@@ -6,14 +6,14 @@ import CtaBand from "@/components/CtaBand";
 import Accordion from "@/components/Accordion";
 import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
-import { FOUNDERS, TEAM, type Faq } from "@/lib/data";
+import { FOUNDERS, type Faq } from "@/lib/data";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Karrierecoaching – für den nächsten beruflichen Schritt",
+  title: "Karrierecoaching – auf Augenhöhe für Selbstzahler:innen und Unternehmen",
   description:
-    "Karrierecoaching bei Kuhl & Engel: Wiedereinstieg nach der Elternzeit, Neuorientierung, Sichtbarkeit und der nächste Karriereschritt – mit AVGS-Gutschein 100 % kostenfrei. Online, Berlin & Potsdam.",
+    "Karrierecoaching bei Kuhl & Engel: Wiedereinstieg nach der Elternzeit, Neuorientierung, Sichtbarkeit und der nächste Karriereschritt – auf Augenhöhe für Selbstzahler:innen und Unternehmen. Online, Berlin & Potsdam.",
   path: "/karrierecoaching",
   image: "/images/ke-frauen.jpg",
   imageAlt: "Karrierecoaching bei Kuhl & Engel",
@@ -45,11 +45,11 @@ const THEMEN = [
 const FAQS_KARRIERE: Faq[] = [
   {
     q: "Kann ich mir aussuchen, wer mich coacht?",
-    a: "Ja. In unserem Team arbeiten erfahrene Coach:innen mit unterschiedlichen Schwerpunkten, Biografien und Sprachen. Im Erstgespräch finden wir gemeinsam heraus, wer am besten zu Dir und Deinem Anliegen passt.",
+    a: "Im Karrierecoaching begleiten Dich die beiden Gründerinnen Heike Kuhl und Martina Engel-Fürstberger persönlich. Im Erstgespräch finden wir gemeinsam heraus, wer von beiden am besten zu Dir und Deinem Anliegen passt.",
   },
   {
-    q: "Ist das Coaching wirklich kostenlos?",
-    a: "Ja – wenn Du bei der Agentur für Arbeit oder dem Jobcenter arbeitssuchend gemeldet bist und einen AVGS-Gutschein bekommst, übernimmt die Agentur 100 % der Kosten. Das gilt auch während oder nach der Elternzeit. Wir übernehmen die komplette Abwicklung mit der Behörde.",
+    q: "Was kostet das Karrierecoaching?",
+    a: "Das Karrierecoaching ist unser Angebot für Selbstzahler:innen und Unternehmen – Du bekommst nach dem kostenlosen Erstgespräch ein individuelles Angebot, das zu Deinem Anliegen passt. Bist Du arbeitssuchend gemeldet und hast Anspruch auf einen AVGS-Gutschein, ist unser AVGS Coaching für Dich zu 100 % kostenfrei – der Wechsel dorthin ist jederzeit möglich.",
   },
   {
     q: "Ich stecke mitten in der Elternzeit – wann ist der richtige Zeitpunkt?",
@@ -57,15 +57,13 @@ const FAQS_KARRIERE: Faq[] = [
   },
   {
     q: "Geht das Coaching auch online oder hybrid?",
-    a: "Ja. Alle Coachings finden wahlweise komplett online via Zoom, in Berlin, Potsdam oder Augsburg oder hybrid statt. Die Termine legen wir so, dass sie in Deinen Alltag passen.",
+    a: "Ja. Alle Coachings finden wahlweise komplett online via Zoom, in Berlin oder Potsdam oder hybrid statt. Die Termine legen wir so, dass sie in Deinen Alltag passen.",
   },
 ];
 
-const COACHES = [
-  FOUNDERS[0],
-  FOUNDERS[1],
-  ...TEAM.filter((m) => ["Carmen Pilger", "Matthias Fink"].includes(m.name)),
-];
+// Im Karrierecoaching (Selbstzahler:innen & Unternehmen) coachen nur die
+// beiden Gründerinnen persönlich – Kundenvorgabe 18.08.2026.
+const COACHES = [FOUNDERS[0], FOUNDERS[1]];
 
 export default function KarrierecoachingPage() {
   return (
@@ -74,24 +72,25 @@ export default function KarrierecoachingPage() {
         data={serviceSchema({
           name: "Karrierecoaching",
           description:
-            "Karrierecoaching für Akademiker:innen, Fach- und Führungskräfte: Wiedereinstieg nach der Elternzeit, berufliche Neuorientierung, Sichtbarkeit und der nächste Karriereschritt – mit AVGS-Gutschein zu 100 % kostenfrei.",
+            "Karrierecoaching für Selbstzahler:innen und Unternehmen: Wiedereinstieg nach der Elternzeit, berufliche Neuorientierung, Sichtbarkeit und der nächste Karriereschritt – persönlich begleitet von den Gründerinnen Heike Kuhl und Martina Engel-Fürstberger.",
           path: "/karrierecoaching",
           serviceType: "Karrierecoaching",
-          audience: "Akademiker:innen, Fach- und Führungskräfte",
+          audience: "Selbstzahler:innen und Unternehmen",
         })}
       />
       <JsonLd data={faqSchema(FAQS_KARRIERE, "/karrierecoaching")} />
       <JsonLd data={breadcrumbSchema([{ name: "Karrierecoaching", path: "/karrierecoaching" }])} />
 
       <PageHero
-        eyebrow="Karrierecoaching · Für den nächsten Schritt"
+        eyebrow="Karrierecoaching · Selbstzahler:innen & Unternehmen"
         title={
           <>
-            Karrierecoaching <em>auf Augenhöhe.</em>
+            Karrierecoaching auf Augenhöhe – <em>für Selbstzahler:innen und Unternehmen.</em>
           </>
         }
-        intro="Wiedereinstieg nach der Elternzeit, Neuorientierung oder der nächste Karriereschritt: Bei Kuhl & Engel begleiten Dich Coach:innen, die Deine Fragen aus eigener Erfahrung kennen. Mit AVGS-Gutschein zu 100 % kostenfrei."
+        intro="Wiedereinstieg nach der Elternzeit, Neuorientierung oder der nächste Karriereschritt: Bei Kuhl & Engel begleiten Dich die beiden Gründerinnen persönlich – mit Fragen, die sie aus eigener Erfahrung kennen. Du hast einen AVGS-Gutschein? Dann ist Dein Coaching sogar kostenfrei:"
         image="/images/ke-frauen.jpg"
+        cta={{ href: "/avgs-coaching", label: "Zum AVGS Coaching geht es hier" }}
       />
 
       {/* Auf einen Blick */}
@@ -99,12 +98,13 @@ export default function KarrierecoachingPage() {
         <Reveal>
           <FactBox
             question="Was macht Karrierecoaching bei Kuhl & Engel aus?"
-            answer="Karrierecoaching bei Kuhl & Engel ist eine individuelle 1:1-Begleitung für alle, die beruflich den nächsten Schritt gehen wollen: Wiedereinstieg nach der Elternzeit, Neuorientierung, Sichtbarkeit oder mehr Verantwortung. Erfahrene Coach:innen arbeiten systemisch und auf Augenhöhe. Mit AVGS-Gutschein der Agentur für Arbeit ist das Coaching zu 100 % kostenfrei."
+            answer="Karrierecoaching bei Kuhl & Engel ist eine individuelle 1:1-Begleitung für alle, die beruflich den nächsten Schritt gehen wollen: Wiedereinstieg nach der Elternzeit, Neuorientierung, Sichtbarkeit oder mehr Verantwortung. Die beiden Gründerinnen coachen persönlich – systemisch und auf Augenhöhe, für Selbstzahler:innen und Unternehmen. Mit AVGS-Gutschein steht Dir alternativ das geförderte AVGS Coaching offen."
             facts={[
-              { label: "Team", value: "14 erfahrene Coach:innen" },
-              { label: "Kosten", value: "Mit AVGS-Gutschein 0 €" },
+              { label: "Deine Coaches", value: "Heike Kuhl & Martina Engel-Fürstberger – die Gründerinnen persönlich" },
+              { label: "Für wen", value: "Selbstzahler:innen & Unternehmen" },
+              { label: "Kosten", value: "Individuelles Angebot nach kostenlosem Erstgespräch" },
               { label: "Schwerpunkte", value: "Wiedereinstieg, Neuorientierung, Sichtbarkeit, Karriere" },
-              { label: "Formate", value: "Online, Berlin, Potsdam, Augsburg oder hybrid" },
+              { label: "Formate", value: "Online, Berlin, Potsdam oder hybrid" },
             ]}
           />
         </Reveal>
@@ -178,38 +178,43 @@ export default function KarrierecoachingPage() {
                 Coaches, die Deinen Weg <em>selbst gegangen sind.</em>
               </h2>
               <p className="mb-2 max-w-md text-[0.95rem] leading-relaxed text-ink/60">
-                Heike Kuhl und Martina Engel-Fürstberger haben Kuhl & Engel
-                gegründet – heute begleitet Dich ein Team erfahrener Coach:innen
-                in beruflichen Veränderungen.
+                Im Karrierecoaching begleiten Dich die beiden Gründerinnen
+                persönlich – mit eigenen Brüchen, Neustarts und Karrieren.
               </p>
             </div>
           </Reveal>
-          <div className="mt-14 grid gap-x-6 gap-y-12 grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-8 md:grid-cols-2">
             {COACHES.map((member, i) => (
-              <Reveal key={member.name} delay={i * 100}>
-                <article className="group">
-                  <div className="relative aspect-[4/5] overflow-hidden bg-cream">
+              <Reveal key={member.name} delay={i * 150}>
+                <article className="group grid h-full overflow-hidden border border-ink/10 bg-paper sm:grid-cols-[42%_1fr]">
+                  <div className="relative aspect-[4/5] sm:aspect-auto">
                     <Image
                       src={member.image}
                       alt={member.name}
                       fill
-                      sizes="(max-width: 1024px) 50vw, 25vw"
+                      sizes="(max-width: 640px) 100vw, 24vw"
                       className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
-                  <h3 className="display mt-4 text-lg transition-colors group-hover:text-gold md:text-xl">
-                    {member.name}
-                  </h3>
-                  <p className="mt-1.5 text-[0.8rem] leading-relaxed text-ink/55">{member.quali}</p>
+                  <div className="flex flex-col p-8">
+                    <h3 className="display text-2xl">{member.name}</h3>
+                    <p className="eyebrow mt-2 !text-[0.6rem] text-gold">{member.role}</p>
+                    <blockquote className="display mt-5 grow text-[1.05rem] italic leading-relaxed text-ink/75">
+                      „{member.quote}“
+                    </blockquote>
+                    <p className="mt-5 border-t border-ink/10 pt-4 text-[0.8rem] leading-relaxed text-ink/50">
+                      {member.quali}
+                    </p>
+                  </div>
                 </article>
               </Reveal>
             ))}
           </div>
           <Reveal delay={150}>
             <p className="mt-10 text-[0.95rem] text-ink/60">
-              Alle Coaches mit ihren Schwerpunkten findest Du{" "}
+              Das ganze Team hinter Kuhl & Engel findest Du{" "}
               <Link href="/ueber-uns#team" className="link-gold font-semibold text-gold">
-                im Team →
+                auf der Über-uns-Seite →
               </Link>
             </p>
           </Reveal>
