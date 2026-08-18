@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
 import { Karla, Instrument_Sans } from "next/font/google";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import JsonLd from "@/components/JsonLd";
-import { organizationGraph } from "@/lib/schema";
 import "./globals.css";
 
 const karla = Karla({
@@ -56,12 +52,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="de" className={`${karla.variable} ${instrument.variable}`}>
-      <body>
-        <JsonLd data={organizationGraph} />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
