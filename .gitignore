@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Foto-Rohmaterial vom Kunden (Originale, nicht fürs Repo)
+/Fotos-Schüler_2022-11-14_2032/
+/Fotos_StefanSpecht_heike und Martina/
+/Fotos_Stefan_07:2024 Gruppen/
