@@ -44,3 +44,6 @@ next-env.d.ts
 /Fotos-Schüler_2022-11-14_2032/
 /Fotos_StefanSpecht_heike und Martina/
 /Fotos_Stefan_07:2024 Gruppen/
+
+# CMS: lokale Inhalte & Uploads (Produktion: Postgres + Volume)
+/data/
