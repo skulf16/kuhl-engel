@@ -15,6 +15,7 @@ import {
   getTestimonials,
 } from "@/lib/content";
 import { getGoogleRating } from "@/lib/googleRating";
+import GoogleReviews from "@/components/GoogleReviews";
 
 // Portrait-Leiste: sechs Gesichter aus dem Coach:innen-Team –
 // Anna Podakova (Assistenz der Geschäftsführung) gehört nicht dazu.
@@ -432,7 +433,7 @@ export default async function Home() {
                 {content.stimmen.headline} <em>{content.stimmen.headlineEm}</em>
               </h2>
             </div>
-            {googleRating ? (
+            {googleRating && googleRating.reviews.length > 0 ? null : googleRating ? (
               <a
                 href={googleRating.reviewsUrl}
                 target="_blank"
@@ -449,25 +450,33 @@ export default async function Home() {
           </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {testimonials.map((t, i) => (
-            <Reveal key={t.author} delay={(i % 2) * 120}>
-              <figure className="flex h-full flex-col rounded-xl border border-ink/10 bg-paper p-9 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_56px_-28px_rgba(14,29,43,0.3)] md:p-10">
-                <p aria-hidden className="display text-6xl italic leading-none text-clay/40">„</p>
-                <blockquote className="display mt-2 grow text-lg leading-relaxed md:text-xl">
-                  {t.quote}
-                </blockquote>
-                <figcaption className="mt-7 flex items-center gap-4">
-                  <span aria-hidden className="h-px w-8 bg-gold" />
-                  <span>
-                    <span className="block text-[0.95rem] font-semibold">{t.author}</span>
-                    {t.meta && <span className="block text-[0.8rem] text-ink/50">{t.meta}</span>}
-                  </span>
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
+        {googleRating && googleRating.reviews.length > 0 ? (
+          <Reveal delay={150}>
+            <div className="mt-14">
+              <GoogleReviews rating={googleRating} />
+            </div>
+          </Reveal>
+        ) : (
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
+            {testimonials.map((t, i) => (
+              <Reveal key={t.author} delay={(i % 2) * 120}>
+                <figure className="flex h-full flex-col rounded-xl border border-ink/10 bg-paper p-9 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_56px_-28px_rgba(14,29,43,0.3)] md:p-10">
+                  <p aria-hidden className="display text-6xl italic leading-none text-clay/40">„</p>
+                  <blockquote className="display mt-2 grow text-lg leading-relaxed md:text-xl">
+                    {t.quote}
+                  </blockquote>
+                  <figcaption className="mt-7 flex items-center gap-4">
+                    <span aria-hidden className="h-px w-8 bg-gold" />
+                    <span>
+                      <span className="block text-[0.95rem] font-semibold">{t.author}</span>
+                      {t.meta && <span className="block text-[0.8rem] text-ink/50">{t.meta}</span>}
+                    </span>
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        )}
       </section>
 
       {/* ---------- FAQ ---------- */}
