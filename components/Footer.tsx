@@ -134,6 +134,15 @@ export default function Footer() {
             </div>
             <div className="flex h-16 items-center bg-white px-4">
               <Image
+                src="/images/logo-spi.png"
+                alt="Stiftung SPI, Niederlassung Brandenburg – Praxis BO, Regionalpartner Süd-Ost"
+                width={109}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </div>
+            <div className="flex h-16 items-center bg-white px-4">
+              <Image
                 src="/images/logo-foerderung.jpg"
                 alt="Kofinanziert von der Europäischen Union · Land Brandenburg · Bundesagentur für Arbeit"
                 width={171}
