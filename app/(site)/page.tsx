@@ -6,52 +6,61 @@ import Accordion from "@/components/Accordion";
 import JsonLd from "@/components/JsonLd";
 import { faqSchema } from "@/lib/schema";
 import {
-  BEREICHE,
-  CONTACT,
-  FAQS_AVGS,
-  FOUNDERS,
-  STATS,
-  TEAM,
-  TESTIMONIALS,
-} from "@/lib/data";
-
-const METHODE = [
-  {
-    step: "I",
-    title: "Veränderung erarbeiten",
-    text: "Neue Perspektiven, Werte und Kompetenzen entwickeln – mit kreativen Denkansätzen für berufliche und persönliche Herausforderungen.",
-  },
-  {
-    step: "II",
-    title: "Veränderung umsetzen",
-    text: "Unterstützung und Motivation im Veränderungsprozess, kontinuierliche Begleitung unter Einbeziehung Deines persönlichen Umfelds.",
-  },
-  {
-    step: "III",
-    title: "Veränderung stabilisieren",
-    text: "Berufliche und soziale Kompetenzen erweitern, Orientierung am Arbeitsmarkt stärken, Qualifizierungsbedarf identifizieren.",
-  },
-];
+  getBereiche,
+  getFaqsAvgs,
+  getKontakt,
+  getStartseite,
+  getStats,
+  getTeam,
+  getTestimonials,
+} from "@/lib/content";
+import { getGoogleRating } from "@/lib/googleRating";
 
 // Portrait-Leiste: sechs Gesichter aus dem Coach:innen-Team –
 // Anna Podakova (Assistenz der Geschäftsführung) gehört nicht dazu.
-const COACHES = [
+// Die Fotos kommen aus dem Team-Baustein im CMS.
+const COACH_SELECTION = [
   { name: "Dr. Anna Mandel-Zakharova, Ph.D.", fach: "Neurowissenschaftlerin & Coachin" },
   { name: "Angelina Werner", fach: "Job- und Karrierecoach" },
   { name: "Bettina Brammer", fach: "Systemische Berufscoachin" },
   { name: "Carmen Pilger", fach: "Systemisch-integrative Coachin" },
   { name: "Matthias Fink", fach: "Systemisch-integrativer Coach" },
   { name: "Grit Staroste", fach: "Systemisch-integrative Coachin" },
-].map((c) => ({ ...c, image: TEAM.find((m) => m.name === c.name)!.image }));
+];
 
-export default function Home() {
+export default async function Home() {
+  const [content, bereiche, stats, kontakt, team, testimonials, faqs, googleRating] =
+    await Promise.all([
+      getStartseite(),
+      getBereiche(),
+      getStats(),
+      getKontakt(),
+      getTeam(),
+      getTestimonials(),
+      getFaqsAvgs(),
+      getGoogleRating(),
+    ]);
+
+  const coaches = COACH_SELECTION.flatMap((c) => {
+    const member = team.members.find((m) => m.name === c.name);
+    return member ? [{ ...c, image: member.image }] : [];
+  });
+
+  // Kennzahlen-Band: die Google-Kennzahl bekommt das Live-Rating,
+  // solange die Places API antwortet (sonst bleibt der CMS-Wert).
+  const liveStats = googleRating
+    ? stats.map((s) =>
+        s.label.includes("Google") ? { ...s, value: googleRating.ratingFormatted } : s
+      )
+    : stats;
+
   return (
     <>
-      <JsonLd data={faqSchema(FAQS_AVGS, "/")} />
+      <JsonLd data={faqSchema(faqs, "/")} />
       {/* ---------- Hero ---------- */}
       <section className="relative flex min-h-svh flex-col justify-end overflow-hidden bg-cream">
         <Image
-          src="/images/ke-duo-fenster.jpg"
+          src={content.hero.image}
           alt="Heike Kuhl und Martina Engel-Fürstberger in ihren Coaching-Räumen"
           fill
           priority
@@ -65,23 +74,21 @@ export default function Home() {
           <div className="max-w-3xl">
             <p className="eyebrow hero-rise inline-flex items-center gap-2.5 rounded-full border border-ink/20 bg-cream/70 px-4 py-2 text-ink/85 backdrop-blur-sm">
               <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-gold" />
-              100 % AVGS-zertifiziert · Online · Berlin · Potsdam · Augsburg
+              {content.hero.badge}
             </p>
             <h1 className="display mt-8 max-w-4xl text-[2.4rem] text-ink md:text-6xl lg:text-[4.8rem]">
               <span className="hero-rise block" style={{ animationDelay: "120ms" }}>
-                Den richtigen Weg finden.
+                {content.hero.headline1}
               </span>
               <span className="hero-rise block" style={{ animationDelay: "240ms" }}>
-                <em>Beruflich und persönlich.</em>
+                <em>{content.hero.headline2}</em>
               </span>
             </h1>
             <p
               className="hero-rise mt-7 max-w-2xl text-lg leading-relaxed text-ink/80 md:text-xl"
               style={{ animationDelay: "360ms" }}
             >
-              AVGS-gefördertes Jobcoaching bei Kuhl & Engel, spezialisiert auf
-              Akademiker:innen, und Berufsorientierung für Schulen,
-              Lehrkräfte und Kooperationspartner. Zwei Wege, ein Klick:
+              {content.hero.subline}
             </p>
             <div
               className="hero-rise mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center"
@@ -91,14 +98,14 @@ export default function Home() {
                 href="#wege"
                 className="group inline-flex items-center gap-3 rounded-lg bg-ink px-8 py-4 font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-700"
               >
-                Meinen Weg wählen
+                {content.hero.ctaLabel}
                 <span aria-hidden className="transition-transform duration-300 group-hover:translate-y-0.5">↓</span>
               </a>
               <a
-                href={CONTACT.phoneHref}
+                href={kontakt.phoneHref}
                 className="inline-flex items-center gap-3 rounded-lg border border-ink/30 bg-cream/60 px-8 py-4 font-semibold text-ink backdrop-blur-sm transition-all duration-300 hover:border-gold hover:text-gold"
               >
-                {CONTACT.phone}
+                {kontakt.phone}
               </a>
             </div>
           </div>
@@ -117,32 +124,23 @@ export default function Home() {
             <Reveal>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Spezialisiert auf Akademiker:innen
+                {content.positionierung.eyebrow}
               </p>
             </Reveal>
             <Reveal delay={100}>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                Anspruchsvolle Laufbahnen brauchen{" "}
-                <em>anspruchsvolles Coaching.</em>
+                {content.positionierung.headline}{" "}
+                <em>{content.positionierung.headlineEm}</em>
               </h2>
             </Reveal>
             <Reveal delay={200}>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink/70">
-                Studium, Promotion, Verantwortung – und trotzdem die Frage: War das
-                schon alles? Mit langjähriger Erfahrung und maßgeschneidertem Ansatz
-                begleiten wir Akademiker:innen auf dem Weg zu einem Beruf, der
-                wirklich passt. Kein Schema F, sondern ein Prozess auf der Höhe
-                Deines Werdegangs.
+                {content.positionierung.text}
               </p>
             </Reveal>
             <Reveal delay={300}>
               <ul className="mt-9 grid gap-4 sm:grid-cols-2">
-                {[
-                  "Stärken und Talente präzise erkennen",
-                  "Klarheit über das, was Du wirklich willst",
-                  "Langfristig und groß denken",
-                  "Begleitung in Deinem Tempo",
-                ].map((item) => (
+                {content.positionierung.bullets.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-[0.95rem] font-medium">
                     <span aria-hidden className="display mt-0.5 italic text-gold">✓</span>
                     {item}
@@ -152,7 +150,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={400}>
               <Link href="/ueber-uns" className="link-gold mt-10 inline-flex items-center gap-2 font-semibold text-gold">
-                Lern uns kennen <span aria-hidden>→</span>
+                {content.positionierung.linkLabel} <span aria-hidden>→</span>
               </Link>
             </Reveal>
           </div>
@@ -161,7 +159,7 @@ export default function Home() {
           <Reveal delay={150} className="relative">
             <div className="relative ml-6 aspect-[4/5] overflow-hidden md:ml-14">
               <Image
-                src="/images/ke-heike-tisch.jpg"
+                src={content.positionierung.imageMain}
                 alt="Einzelcoaching in den Räumen von Kuhl & Engel"
                 fill
                 sizes="(max-width: 1024px) 100vw, 44vw"
@@ -170,7 +168,7 @@ export default function Home() {
             </div>
             <div className="absolute -bottom-8 left-0 w-52 overflow-hidden rounded-xl border-8 border-cream bg-cream md:w-64">
               <Image
-                src="/images/raum.jpg"
+                src={content.positionierung.imageSmall}
                 alt="Coaching-Raum mit zwei Sesseln"
                 width={512}
                 height={234}
@@ -191,21 +189,20 @@ export default function Home() {
             <div className="mx-auto max-w-2xl text-center">
               <p className="eyebrow flex items-center justify-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Unsere zwei Bereiche
+                {content.weiche.eyebrow}
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                Zwei Wege, <em>ein Ziel: Orientierung, die trägt.</em>
+                {content.weiche.headline} <em>{content.weiche.headlineEm}</em>
               </h2>
               <p className="mt-5 leading-relaxed text-ink/65">
-                Ein Klick führt direkt zum passenden Angebot – für Jobsuchende oder
-                für Schulen, Lehrkräfte und Kooperationspartner.
+                {content.weiche.intro}
               </p>
             </div>
           </Reveal>
 
           <div className="mt-14 grid gap-6 lg:grid-cols-2">
-            {BEREICHE.map((bereich, i) => (
+            {bereiche.map((bereich, i) => (
               <Reveal key={bereich.slug} delay={i * 140} className="h-full">
                 <Link
                   href={bereich.slug}
@@ -253,7 +250,7 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-5 pt-24 md:px-8 md:pt-32">
         <Reveal>
           <dl className="grid grid-cols-1 divide-y divide-ink/10 overflow-hidden rounded-xl border border-ink/10 bg-paper shadow-[0_32px_80px_-32px_rgba(14,29,43,0.35)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-            {STATS.map((stat) => (
+            {liveStats.map((stat) => (
               <div key={stat.label} className="px-6 py-8 text-center md:py-10">
                 <dt className="sr-only">{stat.label}</dt>
                 <dd className="display text-4xl text-ink md:text-5xl">{stat.value}</dd>
@@ -271,27 +268,24 @@ export default function Home() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-clay-deep">
               <span aria-hidden className="inline-block h-px w-10 bg-clay" />
-              Unsere Methode
+              {content.methode.eyebrow}
             </p>
           </Reveal>
           <div className="mt-6 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-24">
             <Reveal delay={100}>
               <h2 className="display text-4xl md:text-5xl">
-                Systemisch. Ganzheitlich. <em>Nachhaltig.</em>
+                {content.methode.headline} <em>{content.methode.headlineEm}</em>
               </h2>
             </Reveal>
             <Reveal delay={200}>
               <p className="text-lg leading-relaxed text-ink/70">
-                Du bist immer Teil von Systemen, die Du selbst mitgestaltest – eines
-                Teams, einer Organisation, einer Familie. Deshalb schauen wir nicht
-                nur auf Deinen Lebenslauf, sondern auf das Ganze: Gefühle, Gedanken,
-                Verhalten und Kommunikation.
+                {content.methode.intro}
               </p>
             </Reveal>
           </div>
 
           <div className="mt-16 grid gap-px overflow-hidden rounded-xl border border-ink/10 bg-ink/10 md:grid-cols-3">
-            {METHODE.map((phase, i) => (
+            {content.methode.steps.map((phase, i) => (
               <Reveal key={phase.step} delay={i * 140} className="h-full">
                 <div className="group h-full bg-paper p-9 transition-colors duration-500 hover:bg-cream md:p-11">
                   <p className="display text-5xl italic text-clay/60 transition-colors duration-500 group-hover:text-clay">
@@ -307,9 +301,11 @@ export default function Home() {
           <Reveal delay={150}>
             <figure className="mx-auto mt-20 max-w-2xl text-center">
               <blockquote className="display text-2xl italic leading-snug text-ink/85 md:text-3xl">
-                „Welch eine himmlische Empfindung ist es, seinem Herzen zu folgen.“
+                {content.methode.quote}
               </blockquote>
-              <figcaption className="eyebrow mt-5 text-clay-deep">J. W. von Goethe</figcaption>
+              <figcaption className="eyebrow mt-5 text-clay-deep">
+                {content.methode.quoteAuthor}
+              </figcaption>
             </figure>
           </Reveal>
         </div>
@@ -321,7 +317,7 @@ export default function Home() {
           <Reveal className="relative order-2 lg:order-1">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
               <Image
-                src="/images/ke-duo-lachen.jpg"
+                src={content.gruenderinnen.image}
                 alt="Heike Kuhl und Martina Engel-Fürstberger"
                 fill
                 sizes="(max-width: 1024px) 100vw, 46vw"
@@ -330,7 +326,9 @@ export default function Home() {
             </div>
             <div className="absolute -bottom-6 -right-4 rounded-lg bg-ink px-7 py-5 text-cream md:-right-8">
               <p className="display text-lg italic text-gold-bright">Kuhl & Engel</p>
-              <p className="mt-1 text-[0.8rem] text-cream/70">Heike Kuhl · Martina Engel-Fürstberger</p>
+              <p className="mt-1 text-[0.8rem] text-cream/70">
+                {team.founders.map((f) => f.name).join(" · ")}
+              </p>
             </div>
           </Reveal>
 
@@ -338,26 +336,23 @@ export default function Home() {
             <Reveal>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Wer hinter Kuhl & Engel steht
+                {content.gruenderinnen.eyebrow}
               </p>
             </Reveal>
             <Reveal delay={100}>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                Zwei Gründerinnen, ein Anspruch: <em>Berufung statt Beruf.</em>
+                {content.gruenderinnen.headline}{" "}
+                <em>{content.gruenderinnen.headlineEm}</em>
               </h2>
             </Reveal>
             <Reveal delay={200}>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink/70">
-                Von zwei Frauen gegründet: Hinter uns steht ein Team von 14
-                erfahrenen Coach:innen – mit eigenen Brüchen, Neustarts und
-                Karrieren. Statt höher, schneller, weiter plädieren wir für
-                selbstbestimmt, verbunden und erfüllt. Im Erstgespräch findest
-                Du heraus, wer am besten zu Dir passt.
+                {content.gruenderinnen.text}
               </p>
             </Reveal>
             <Reveal delay={300}>
               <div className="mt-9 grid gap-6 sm:grid-cols-2">
-                {FOUNDERS.map((founder) => (
+                {team.founders.map((founder) => (
                   <div key={founder.name} className="border-l-2 border-gold/60 pl-5">
                     <p className="display text-lg">{founder.name}</p>
                     <p className="mt-1 text-[0.82rem] leading-relaxed text-ink/55">{founder.role}</p>
@@ -367,7 +362,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={400}>
               <Link href="/ueber-uns" className="link-gold mt-10 inline-flex items-center gap-2 font-semibold text-gold">
-                Das ganze Team kennenlernen <span aria-hidden>→</span>
+                {content.gruenderinnen.linkLabel} <span aria-hidden>→</span>
               </Link>
             </Reveal>
           </div>
@@ -380,21 +375,20 @@ export default function Home() {
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow flex items-center justify-center gap-3 text-clay-deep">
               <span aria-hidden className="inline-block h-px w-10 bg-clay" />
-              Dein Team
+              {content.coaches.eyebrow}
               <span aria-hidden className="inline-block h-px w-10 bg-clay" />
             </p>
             <h2 className="display mt-6 text-4xl md:text-5xl">
-              14 Coach:innen. <em>Wer passt zu Dir?</em>
+              {content.coaches.headline} <em>{content.coaches.headlineEm}</em>
             </h2>
             <p className="mt-5 leading-relaxed text-ink/65">
-              Systemisch ausgebildet, mit eigenen Karrierewegen, Brüchen und
-              Neustarts – im Erstgespräch findest Du heraus, wer zu Dir passt.
+              {content.coaches.intro}
             </p>
           </div>
         </Reveal>
 
         <div className="mt-14 grid grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
-          {COACHES.map((coach, i) => (
+          {coaches.map((coach, i) => (
             <Reveal key={coach.name} delay={i * 80}>
               <figure className="text-center">
                 <div className="relative aspect-[3/4] overflow-hidden">
@@ -417,9 +411,9 @@ export default function Home() {
 
         <Reveal delay={200}>
           <p className="mt-12 text-center text-[0.95rem] text-ink/60">
-            … und acht weitere Kolleg:innen.{" "}
+            {content.coaches.outro}{" "}
             <Link href="/ueber-uns" className="link-gold font-semibold text-gold">
-              Alle Coach:innen kennenlernen <span aria-hidden>→</span>
+              {content.coaches.linkLabel} <span aria-hidden>→</span>
             </Link>
           </p>
         </Reveal>
@@ -432,20 +426,31 @@ export default function Home() {
             <div>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Stimmen unserer Klient:innen
+                {content.stimmen.eyebrow}
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                Ergebnisse, die <em>für sich sprechen.</em>
+                {content.stimmen.headline} <em>{content.stimmen.headlineEm}</em>
               </h2>
             </div>
-            <p className="mb-2 text-[0.9rem] font-medium text-ink/55">
-              5,0 ★ · 25 Google-Bewertungen
-            </p>
+            {googleRating ? (
+              <a
+                href={googleRating.reviewsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-gold mb-2 text-[0.9rem] font-medium text-ink/55"
+              >
+                {googleRating.note} <span aria-hidden>→</span>
+              </a>
+            ) : (
+              <p className="mb-2 text-[0.9rem] font-medium text-ink/55">
+                {content.stimmen.ratingNote}
+              </p>
+            )}
           </div>
         </Reveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {TESTIMONIALS.map((t, i) => (
+          {testimonials.map((t, i) => (
             <Reveal key={t.author} delay={(i % 2) * 120}>
               <figure className="flex h-full flex-col rounded-xl border border-ink/10 bg-paper p-9 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_56px_-28px_rgba(14,29,43,0.3)] md:p-10">
                 <p aria-hidden className="display text-6xl italic leading-none text-clay/40">„</p>
@@ -470,23 +475,23 @@ export default function Home() {
         <Reveal>
           <p className="eyebrow flex items-center justify-center gap-3 text-gold">
             <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-            Häufige Fragen
+            {content.faq.eyebrow}
             <span aria-hidden className="inline-block h-px w-10 bg-gold" />
           </p>
           <h2 className="display mt-6 text-center text-4xl md:text-5xl">
-            Gut zu <em>wissen.</em>
+            {content.faq.headline} <em>{content.faq.headlineEm}</em>
           </h2>
         </Reveal>
         <Reveal delay={150}>
           <div className="mt-12">
-            <Accordion items={FAQS_AVGS} />
+            <Accordion items={faqs} />
           </div>
         </Reveal>
         <Reveal delay={200}>
           <p className="mt-8 text-center text-[0.95rem] text-ink/60">
-            Deine Frage war nicht dabei? Ruf uns an:{" "}
-            <a href={CONTACT.phoneHref} className="link-gold font-semibold text-gold">
-              {CONTACT.phone}
+            {content.faq.outro}{" "}
+            <a href={kontakt.phoneHref} className="link-gold font-semibold text-gold">
+              {kontakt.phone}
             </a>
           </p>
         </Reveal>
