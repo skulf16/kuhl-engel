@@ -41,6 +41,17 @@ export const loadSection = cache(async (key: string): Promise<unknown> => {
   return saved == null ? fallback : deepMerge(fallback, saved);
 });
 
+/**
+ * Für Seiten-Sektionen, deren Defaults im eigenen Modul liegen
+ * (lib/cms/pages/*): lädt das Dokument und merged es über die Defaults.
+ */
+export const loadPage = cache(
+  async <T,>(key: string, fallback: T): Promise<T> => {
+    const saved = await getDocument(key);
+    return saved == null ? fallback : (deepMerge(fallback, saved) as T);
+  }
+);
+
 // ---------- Typisierte Getter für die Seiten ----------
 
 export const getStartseite = () =>

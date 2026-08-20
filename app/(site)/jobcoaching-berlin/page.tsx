@@ -6,7 +6,8 @@ import CtaBand from "@/components/CtaBand";
 import Accordion from "@/components/Accordion";
 import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
-import { TEAM, TESTIMONIALS, type Faq } from "@/lib/data";
+import { DEFAULTS, KEY } from "@/lib/cms/pages/seite-jobcoaching-berlin";
+import { getTeam, getTestimonials, loadPage } from "@/lib/content";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
@@ -19,53 +20,17 @@ export const metadata = pageMetadata({
   imageAlt: "Coaching-Situation bei Kuhl & Engel in Berlin: Arbeit am Flipchart in den Räumen in Prenzlauer Berg",
 });
 
-const FAQS_BERLIN: Faq[] = [
-  {
-    q: "Wo findet das Jobcoaching in Berlin statt?",
-    a: "Unser Berliner Standort liegt in der Bötzowstraße 28, 10407 Berlin – im ruhigen Bötzowviertel in Prenzlauer Berg, wenige Minuten vom Volkspark Friedrichshain. Alternativ coachen wir Dich online oder hybrid.",
-  },
-  {
-    q: "Was kostet ein Jobcoaching in Berlin?",
-    a: "Mit einem AVGS-Gutschein (Aktivierungs- und Vermittlungsgutschein) der Agentur für Arbeit oder des Jobcenters ist das Jobcoaching bei Kuhl & Engel zu 100 % kostenfrei – die Förderung deckt alle Kosten ab. Auch das Erstgespräch kostet nichts. Ohne Gutschein finden wir im kostenlosen Erstgespräch eine individuelle Lösung.",
-  },
-  {
-    q: "Kann ich meinen AVGS-Gutschein in Berlin einlösen?",
-    a: "Ja. Kuhl & Engel ist AZAV-zertifizierter Träger, Du kannst Deinen Aktivierungs- und Vermittlungsgutschein direkt an unserem Berliner Standort einlösen. Der Gutschein muss noch mindestens 10 Tage gültig sein, mindestens 20 Unterrichtseinheiten umfassen und in Teilzeit ausgestellt sein – das Coaching ist dann für Dich kostenfrei.",
-  },
-  {
-    q: "Was genau macht ein Jobcoach?",
-    a: "Ein Jobcoach begleitet Dich im 1:1 bei beruflicher Orientierung, Bewerbungsstrategie, Vorstellungsgesprächen und Karriereentscheidungen. Bei Kuhl & Engel arbeiten alle Coaches systemisch: Statt fertiger Rezepte entwickelst Du Klarheit über Deine Stärken, Werte und Ziele – und einen konkreten Plan für Deinen nächsten beruflichen Schritt.",
-  },
-  {
-    q: "Wie finde ich einen seriösen Jobcoach in Berlin?",
-    a: "Achte auf drei Dinge: eine AZAV-Zertifizierung des Trägers (Voraussetzung, um AVGS-Gutscheine annehmen zu dürfen), eine fundierte, zertifizierte Coaching-Ausbildung und ein kostenloses Erstgespräch, in dem Du prüfst, ob die Chemie stimmt. Kuhl & Engel erfüllt alle drei Kriterien – und wenn es doch nicht passt, wechselst Du einfach Deine:n Coach:in.",
-  },
-  {
-    q: "Ist Kuhl & Engel dasselbe wie das „Berliner JobCoaching“ des Senats?",
-    a: "Nein. Das „Berliner JobCoaching (BJC)“ ist ein Programm der Senatsverwaltung für Teilnehmende öffentlich geförderter Beschäftigungsmaßnahmen. Kuhl & Engel ist ein unabhängiger, AZAV-zertifizierter Träger: Unser AVGS-Jobcoaching ist ein individuelles 1:1-Karrierecoaching für Akademiker:innen – finanziert über den AVGS-Gutschein Deiner Agentur für Arbeit oder Deines Jobcenters.",
-  },
-  {
-    q: "Welche Coaches arbeiten in Berlin?",
-    a: "In Berlin coachen Angelina Werner und Carmen Pilger – beide systemisch ausgebildet und zertifiziert. Carmen Pilger coacht auch auf Englisch. Gemeinsam finden wir die Person, die am besten zu Dir und Deinem Thema passt.",
-  },
-  {
-    q: "Geht das Jobcoaching auch auf Englisch?",
-    a: "Ja. In Berlin coacht Carmen Pilger auch auf Englisch, online zusätzlich Matthias Fink (Englisch, Französisch) und Dr. Anna Mandel-Zakharova (Englisch, Russisch).",
-  },
-];
+export default async function JobcoachingBerlinPage() {
+  const [c, team, testimonials] = await Promise.all([
+    loadPage(KEY, DEFAULTS),
+    getTeam(),
+    getTestimonials(),
+  ]);
 
-// Heike und Martina coachen selbst nicht im AVGS-Standortbetrieb
-// (Kundenvorgabe 18.08.2026) – hier nur die Coach:innen vor Ort.
-const COACHES_BERLIN = TEAM.filter((m) => m.role.startsWith("Berlin"));
+  // Heike und Martina coachen selbst nicht im AVGS-Standortbetrieb
+  // (Kundenvorgabe 18.08.2026) – hier nur die Coach:innen vor Ort.
+  const coachesBerlin = team.members.filter((m) => m.role.startsWith("Berlin"));
 
-const LEISTUNGEN = [
-  { href: "/avgs-coaching", label: "AVGS Coaching", note: "Mit Gutschein 100 % kostenfrei" },
-  { href: "/karrierecoaching", label: "Karrierecoaching", note: "Für Selbstzahler:innen & Unternehmen" },
-  { href: "/jobcoaching", label: "Karriere- & Bewerbungscoaching", note: "Orientierung, Bewerbung, Neustart" },
-  { href: "/avgs-gutschein-beantragen", label: "AVGS-Gutschein beantragen", note: "Schritt für Schritt zur Förderung" },
-];
-
-export default function JobcoachingBerlinPage() {
   return (
     <>
       <JsonLd
@@ -79,32 +44,27 @@ export default function JobcoachingBerlinPage() {
           avgsFree: true,
         })}
       />
-      <JsonLd data={faqSchema(FAQS_BERLIN, "/jobcoaching-berlin")} />
+      <JsonLd data={faqSchema(c.faq.items, "/jobcoaching-berlin")} />
       <JsonLd data={breadcrumbSchema([{ name: "Jobcoaching Berlin", path: "/jobcoaching-berlin" }])} />
 
       <PageHero
-        eyebrow="Standort Berlin · Prenzlauer Berg"
+        eyebrow={c.hero.eyebrow}
         title={
           <>
-            Jobcoaching in Berlin – <em>mitten im Bötzowviertel.</em>
+            {c.hero.headline} <em>{c.hero.headlineEm}</em>
           </>
         }
-        intro="AVGS Coaching, Karrierecoaching und berufliche Neuorientierung in der Bötzowstraße 28, wenige Minuten vom Volkspark Friedrichshain – oder online, ganz wie es zu Dir passt."
-        image="/images/ke-flipchart-duo.jpg"
+        intro={c.hero.intro}
+        image={c.hero.image}
       />
 
       {/* Auf einen Blick */}
       <section className="mx-auto max-w-7xl px-5 pt-16 md:px-8 md:pt-20">
         <Reveal>
           <FactBox
-            question="Wo finde ich Jobcoaching in Berlin?"
-            answer="Kuhl & Engel bietet AVGS-gefördertes Jobcoaching in Berlin-Prenzlauer Berg an: Bötzowstraße 28, 10407 Berlin. Das Einzelcoaching richtet sich an Akademiker:innen, Fach- und Führungskräfte und ist mit einem AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters zu 100 % kostenfrei. Termine gibt es vor Ort, online oder hybrid."
-            facts={[
-              { label: "Adresse", value: "Bötzowstraße 28, 10407 Berlin (Prenzlauer Berg)" },
-              { label: "Kosten", value: "Mit AVGS-Gutschein 0 €" },
-              { label: "Telefon", value: "030 51565388-0" },
-              { label: "Formate", value: "Vor Ort, online oder hybrid" },
-            ]}
+            question={c.fakten.question}
+            answer={c.fakten.answer}
+            facts={c.fakten.facts}
           />
         </Reveal>
       </section>
@@ -116,22 +76,18 @@ export default function JobcoachingBerlinPage() {
             <Reveal>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Angebote in Berlin
+                {c.leistungen.eyebrow}
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                Alles, was Deine Karriere <em>weiterbringt.</em>
+                {c.leistungen.headline} <em>{c.leistungen.headlineEm}</em>
               </h2>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink/70">
-                Vom geförderten AVGS Coaching über Bewerbungs- und
-                Karrierecoaching bis zum Wiedereinstieg nach der Elternzeit:
-                Am Berliner Standort steht Dir unser komplettes Angebot offen –
-                begleitet von systemisch ausgebildeten, zertifizierten
-                Coach:innen.
+                {c.leistungen.text}
               </p>
             </Reveal>
             <Reveal delay={150}>
               <ul className="mt-10 border-t border-ink/10">
-                {LEISTUNGEN.map((leistung, i) => (
+                {c.leistungen.items.map((leistung, i) => (
                   <li key={leistung.href}>
                     <Link
                       href={leistung.href}
@@ -161,7 +117,7 @@ export default function JobcoachingBerlinPage() {
             <div className="relative">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
-                  src="/images/ke-berlin-fenster.jpg"
+                  src={c.leistungen.image}
                   alt="Blick aus den Coaching-Räumen von Kuhl & Engel in der Bötzowstraße 28, Berlin-Prenzlauer Berg"
                   fill
                   sizes="(max-width: 1024px) 100vw, 46vw"
@@ -169,8 +125,8 @@ export default function JobcoachingBerlinPage() {
                 />
               </div>
               <div className="absolute -bottom-6 left-6 bg-ink px-6 py-4 text-cream">
-                <p className="display text-base italic text-gold-bright">Bötzowstraße 28</p>
-                <p className="mt-0.5 text-[0.8rem] text-cream/70">10407 Berlin · Prenzlauer Berg</p>
+                <p className="display text-base italic text-gold-bright">{c.leistungen.cardTitle}</p>
+                <p className="mt-0.5 text-[0.8rem] text-cream/70">{c.leistungen.cardSub}</p>
               </div>
             </div>
           </Reveal>
@@ -183,14 +139,14 @@ export default function JobcoachingBerlinPage() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              Dein Team in Berlin
+              {c.coaches.eyebrow}
             </p>
             <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-              Diese Coaches begleiten Dich <em>vor Ort.</em>
+              {c.coaches.headline} <em>{c.coaches.headlineEm}</em>
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {COACHES_BERLIN.map((member, i) => (
+            {coachesBerlin.map((member, i) => (
               <Reveal key={member.name} delay={i * 100}>
                 <article className="group">
                   <div className="relative aspect-[4/5] overflow-hidden bg-cream">
@@ -212,9 +168,9 @@ export default function JobcoachingBerlinPage() {
           </div>
           <Reveal delay={150}>
             <p className="mt-10 text-[0.95rem] text-ink/60">
-              Das komplette Team mit allen Schwerpunkten findest Du{" "}
+              {c.coaches.outro}{" "}
               <Link href="/ueber-uns#team" className="link-gold font-semibold text-gold">
-                hier →
+                {c.coaches.linkLabel}
               </Link>
             </p>
           </Reveal>
@@ -227,51 +183,38 @@ export default function JobcoachingBerlinPage() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              Anfahrt
+              {c.anfahrt.eyebrow}
             </p>
             <h2 className="display mt-6 text-3xl md:text-4xl">
-              Aus allen Berliner Bezirken <em>gut erreichbar.</em>
+              {c.anfahrt.headline} <em>{c.anfahrt.headlineEm}</em>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
-              Das Bötzowviertel liegt wenige Minuten vom Volkspark
-              Friedrichshain: Die Tram M10 (Haltestelle Arnswalder Platz) hält
-              um die Ecke, der S-Bahnhof Greifswalder Straße ist fußläufig
-              erreichbar. Unsere Klientinnen und Klienten kommen aus Prenzlauer
-              Berg, Pankow, Mitte, Friedrichshain-Kreuzberg, Lichtenberg – und
-              aus dem gesamten Stadtgebiet. Wer sich den Weg sparen möchte,
-              nimmt Termine online oder hybrid wahr.
+              {c.anfahrt.text}
             </p>
             <blockquote className="mt-10 border-l-2 border-gold pl-6">
               <p className="display text-lg italic leading-relaxed text-ink/80">
-                „{TESTIMONIALS[3].quote}“
+                „{testimonials[3].quote}“
               </p>
               <footer className="mt-4 text-[0.85rem] text-ink/55">
-                {TESTIMONIALS[3].author} · {TESTIMONIALS[3].meta}
+                {testimonials[3].author} · {testimonials[3].meta}
               </footer>
             </blockquote>
           </Reveal>
           <Reveal delay={100}>
             <p className="eyebrow flex items-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              Gut zu wissen
+              {c.abgrenzung.eyebrow}
             </p>
             <h2 className="display mt-6 text-3xl md:text-4xl">
-              Kuhl & Engel oder <em>„Berliner JobCoaching“?</em>
+              {c.abgrenzung.headline} <em>{c.abgrenzung.headlineEm}</em>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
-              Das „Berliner JobCoaching (BJC)“ der Senatsverwaltung richtet
-              sich an Teilnehmende öffentlich geförderter
-              Beschäftigungsmaßnahmen. Unser Angebot ist davon unabhängig:
-              Kuhl & Engel ist ein privater, AZAV-zertifizierter Träger für
-              AVGS-Jobcoaching – individuelles 1:1-Karrierecoaching für
-              Akademiker:innen, Fach- und Führungskräfte. Mit
-              einem AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters
-              ist es für Dich zu 100 % kostenfrei.
+              {c.abgrenzung.text}
             </p>
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
-              Du hast noch keinen Gutschein?{" "}
+              {c.abgrenzung.outro}{" "}
               <Link href="/avgs-gutschein-beantragen" className="link-gold font-semibold text-gold">
-                So beantragst Du den AVGS →
+                {c.abgrenzung.outroLinkLabel}
               </Link>
             </p>
           </Reveal>
@@ -282,12 +225,12 @@ export default function JobcoachingBerlinPage() {
       <section className="mx-auto max-w-4xl px-5 py-24 md:px-8 md:py-32">
         <Reveal>
           <h2 className="display text-center text-4xl md:text-5xl">
-            Häufige Fragen zum <em>Jobcoaching in Berlin.</em>
+            {c.faq.headline} <em>{c.faq.headlineEm}</em>
           </h2>
         </Reveal>
         <Reveal delay={150}>
           <div className="mt-12">
-            <Accordion items={FAQS_BERLIN} />
+            <Accordion items={c.faq.items} />
           </div>
         </Reveal>
       </section>
@@ -295,10 +238,10 @@ export default function JobcoachingBerlinPage() {
       <CtaBand
         title={
           <>
-            Lerne uns in Berlin <em>persönlich kennen.</em>
+            {c.cta.title} <em>{c.cta.titleEm}</em>
           </>
         }
-        text="Vereinbare ein kostenloses Erstgespräch – in der Bötzowstraße, telefonisch oder online."
+        text={c.cta.text}
       />
     </>
   );

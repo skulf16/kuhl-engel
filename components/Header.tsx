@@ -26,7 +26,12 @@ const UEBER_LINKS = [
   { href: "/ueber-uns#standorte", label: "Standorte" },
 ];
 
-export default function Header() {
+export default function Header({
+  kontakt = CONTACT,
+}: {
+  /** Kontaktdaten aus dem CMS – Fallback sind die Defaults aus lib/data. */
+  kontakt?: typeof CONTACT;
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -85,8 +90,8 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-6 lg:flex">
-          <a href={CONTACT.phoneHref} className="text-[0.88rem] font-medium tracking-wide text-ink/70 transition-colors hover:text-ink">
-            {CONTACT.phone}
+          <a href={kontakt.phoneHref} className="text-[0.88rem] font-medium tracking-wide text-ink/70 transition-colors hover:text-ink">
+            {kontakt.phone}
           </a>
           <Link
             href="/kontakt"
@@ -152,8 +157,8 @@ export default function Header() {
             <Link href="/kontakt" className="bg-ink px-6 py-4 text-center font-semibold text-cream">
               Erstgespräch buchen
             </Link>
-            <a href={CONTACT.phoneHref} className="text-center font-medium text-ink/70">
-              {CONTACT.phone}
+            <a href={kontakt.phoneHref} className="text-center font-medium text-ink/70">
+              {kontakt.phone}
             </a>
           </div>
         </nav>

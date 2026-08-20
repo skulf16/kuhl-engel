@@ -5,7 +5,8 @@ import CtaBand from "@/components/CtaBand";
 import Accordion from "@/components/Accordion";
 import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
-import { CONTACT, type Faq } from "@/lib/data";
+import { DEFAULTS, KEY } from "@/lib/cms/pages/seite-jobcoaching";
+import { getKontakt, loadPage } from "@/lib/content";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
@@ -18,105 +19,9 @@ export const metadata = pageMetadata({
   imageAlt: "Coaching-Gespräch bei Kuhl & Engel",
 });
 
-const GRUENDE = [
-  {
-    title: "Nachhaltig & ganzheitlich",
-    text: "Wir entwickeln mit Dir eine berufliche Ausrichtung, die Dich langfristig motiviert – nicht die schnelle Notlösung.",
-  },
-  {
-    title: "Empathisch & wertschätzend",
-    text: "Zugewandte Coaches, die Deinen Handlungsspielraum mit Dir neu definieren. Immer auf Augenhöhe.",
-  },
-  {
-    title: "Persönlich & individuell",
-    text: "Kein Schema F: Du gibst die Richtung an, wir begleiten Dich an Deinen Bedürfnissen ausgerichtet.",
-  },
-  {
-    title: "Professionell & erfahren",
-    text: "14 zertifizierte, systemisch ausgebildete Coach:innen mit vielseitiger Expertise und langjähriger Erfahrung.",
-  },
-];
+export default async function JobcoachingPage() {
+  const [c, kontakt] = await Promise.all([loadPage(KEY, DEFAULTS), getKontakt()]);
 
-const SZENARIEN = [
-  {
-    title: "Du willst raus – weißt aber nicht, wohin.",
-    text: "Der aktuelle Job trägt nicht mehr, doch keine Stellenanzeige fühlt sich richtig an. Im Coaching findest Du heraus, was Dir wirklich wichtig ist – und welche Wege dazu passen.",
-  },
-  {
-    title: "Deine Bewerbungen bleiben unbeantwortet.",
-    text: "Starke Qualifikation, wenig Resonanz: Gemeinsam schärfen wir Deine Positionierung, Deine Unterlagen und Deine Strategie – bis die Einladungen kommen.",
-  },
-  {
-    title: "Du willst nach der Elternzeit neu ansetzen.",
-    text: "Zurück ja – aber nicht zurück in den alten Trott. Wir klären, wie ein Wiedereinstieg aussieht, der zu Deinem Leben von heute passt.",
-  },
-  {
-    title: "Nach Studium oder Promotion fehlt der rote Faden.",
-    text: "Hochqualifiziert, aber der Arbeitsmarkt wirkt unübersichtlich? Wir übersetzen Deine Fähigkeiten in konkrete berufliche Richtungen.",
-  },
-  {
-    title: "Im Vorstellungsgespräch bleibst Du unter Deinem Wert.",
-    text: "Du kannst mehr, als Du zeigst. Wir arbeiten an Auftreten, Selbstsicherheit und dem Umgang mit schwierigen Fragen – bis Du überzeugst, ohne Dich zu verbiegen.",
-  },
-  {
-    title: "Die Arbeitslosigkeit nagt am Selbstvertrauen.",
-    text: "Je länger die Suche, desto lauter die Zweifel. Im Coaching gewinnst Du Struktur, Zuversicht und einen Plan, der Dich wieder in Bewegung bringt.",
-  },
-];
-
-const PAKETE = [
-  {
-    ue: "24 UE",
-    dauer: "6 Wochen",
-    name: "Kompakt",
-    text: "Für ein klar umrissenes Anliegen – zum Beispiel Bewerbungsstrategie, Unterlagen und Vorstellungsgespräche.",
-  },
-  {
-    ue: "32 UE",
-    dauer: "8 Wochen",
-    name: "Ausgewogen",
-    text: "Standortbestimmung, neue Richtung und Umsetzung in einem Prozess – mit genug Raum für beides.",
-  },
-  {
-    ue: "44 UE",
-    dauer: "11 Wochen",
-    name: "Intensiv",
-    text: "Für den kompletten Neustart: tiefe Standortbestimmung, Neuausrichtung und Begleitung bis zum Ziel.",
-  },
-];
-
-const FAQS_JOBCOACHING: Faq[] = [
-  {
-    q: "Was kostet ein Jobcoaching?",
-    a: "Mit einem AVGS-Gutschein (Aktivierungs- und Vermittlungsgutschein) der Agentur für Arbeit oder des Jobcenters ist das Jobcoaching bei Kuhl & Engel zu 100 % kostenfrei – wir rechnen direkt mit der Behörde ab. Auch das Erstgespräch kostet nichts. Ohne Gutschein finden wir im kostenlosen Erstgespräch eine individuelle Lösung.",
-  },
-  {
-    q: "Was macht ein Jobcoach genau?",
-    a: "Ein Jobcoach begleitet Dich im 1:1 durch berufliche Veränderung: Standortbestimmung, Klarheit über Stärken und Werte, Bewerbungsstrategie, Vorstellungsgespräche und Entscheidungen. Anders als eine Beratung gibt Dir ein Coach keine fertigen Antworten vor, sondern führt Dich mit Methoden, Struktur und Feedback zu Deinen eigenen – die deshalb auch langfristig tragen.",
-  },
-  {
-    q: "Wie lange dauert ein Jobcoaching?",
-    a: "Bei Kuhl & Engel gibt es drei Umfänge: 24 Unterrichtseinheiten in 6 Wochen, 32 UE in 8 Wochen oder 44 UE in 11 Wochen (1 UE = 45 Minuten). Welcher Umfang zu Deinem Anliegen passt, klären wir im kostenlosen Erstgespräch – bewilligt wird er über Deinen AVGS.",
-  },
-  {
-    q: "Wer bezahlt das Jobcoaching?",
-    a: "In den meisten Fällen die Agentur für Arbeit oder das Jobcenter – über den AVGS-Gutschein nach § 45 SGB III. Die Kostenübernahme ist vollständig, es gibt keinen Eigenanteil. Wie Du den Gutschein bekommst, erklären wir Schritt für Schritt in unserem AVGS-Ratgeber.",
-  },
-  {
-    q: "Für wen ist Jobcoaching sinnvoll?",
-    a: "Für alle, die beruflich in einer Veränderungssituation stecken: Arbeitslose und Arbeitssuchende, Wiedereinsteiger:innen nach der Elternzeit, Absolvent:innen und Promovierte auf Richtungssuche, Fach- und Führungskräfte vor dem nächsten Schritt. Wir sind auf Akademiker:innen spezialisiert – entscheidend ist aber Dein Anliegen, nicht Dein Titel.",
-  },
-  {
-    q: "Was ist der Unterschied zwischen Jobcoaching und Bewerbungstraining?",
-    a: "Ein Bewerbungstraining übt Unterlagen und Gespräche. Jobcoaching setzt früher an: Erst klären wir, wohin Du überhaupt willst und was Dich ausmacht – dann folgen Strategie und Bewerbung. Die Bewerbungsthemen sind also ein Teil des Coachings, nicht das Ganze.",
-  },
-  {
-    q: "Ist Jobcoaching auch online möglich?",
-    a: "Ja. Du kannst komplett online via Zoom gecoacht werden, vor Ort in Berlin, Potsdam oder Augsburg – oder hybrid als Kombination aus beidem. Die Wirkung ist dieselbe – entscheidend ist, dass die Chemie zwischen Dir und Deinem:Deiner Coach:in stimmt.",
-  },
-];
-
-export default function JobcoachingPage() {
   return (
     <>
       <JsonLd
@@ -128,35 +33,28 @@ export default function JobcoachingPage() {
           serviceType: "Jobcoaching / Karrierecoaching",
         })}
       />
-      <JsonLd data={faqSchema(FAQS_JOBCOACHING, "/jobcoaching")} />
+      <JsonLd data={faqSchema(c.faq.items, "/jobcoaching")} />
       <JsonLd data={breadcrumbSchema([{ name: "Jobcoaching", path: "/jobcoaching" }])} />
 
       <PageHero
-        eyebrow="Jobcoaching · Für Erwachsene"
+        eyebrow={c.hero.eyebrow}
         title={
           <>
-            Jobcoaching, das <em>wirklich weiterbringt</em> – gefördert mit
-            AVGS-Gutschein.
+            {c.hero.headline} <em>{c.hero.headlineEm}</em> {c.hero.headlineAfter}
           </>
         }
-        intro="Ob berufliche Orientierung, der nächste Karriereschritt oder ein kompletter Neustart: Als AVGS-zertifizierte Jobcoaches begleiten wir Dich dabei, eine Tätigkeit zu finden, die zu Dir passt – und Dir langfristig gefällt. Mit AVGS-Gutschein für Dich vollständig kostenfrei."
-        image="/images/ke-coaching-draussen.jpg"
-        cta={{ href: "/kontakt#rueckruf", label: "Sofort starten" }}
+        intro={c.hero.intro}
+        image={c.hero.image}
+        cta={{ href: "/kontakt#rueckruf", label: c.hero.ctaLabel }}
       />
 
       {/* Auf einen Blick */}
       <section className="mx-auto max-w-7xl px-5 pt-16 md:px-8 md:pt-20">
         <Reveal>
           <FactBox
-            question="Was ist Jobcoaching?"
-            answer="Jobcoaching ist eine individuelle 1:1-Begleitung rund um Beruf und Karriere – von der beruflichen Orientierung über die Bewerbung bis zum Neustart. Bei Kuhl & Engel arbeiten wir systemisch und ganzheitlich und sind auf Akademiker:innen, Fach- und Führungskräfte spezialisiert: seit 2018, mit 246 AVGS-Coachings und über 6.500 Unterrichtseinheiten seit 2022. Über den AVGS-Gutschein der Agentur für Arbeit ist das Coaching für Dich zu 100 % kostenfrei."
-            facts={[
-              { label: "Für wen", value: "Jobsuchende, Akademiker:innen, Fach- & Führungskräfte" },
-              { label: "Themen", value: "Orientierung, Bewerbung, Karriere, Neustart" },
-              { label: "Umfang", value: "24, 32 oder 44 UE in 6–11 Wochen (1 UE = 45 Min.)" },
-              { label: "Kosten", value: "Mit AVGS-Gutschein 0 €" },
-              { label: "Orte", value: "Online, Berlin, Potsdam, Augsburg oder hybrid" },
-            ]}
+            question={c.fakten.question}
+            answer={c.fakten.answer}
+            facts={c.fakten.facts}
           />
         </Reveal>
       </section>
@@ -166,19 +64,17 @@ export default function JobcoachingPage() {
         <Reveal>
           <p className="eyebrow flex items-center gap-3 text-gold">
             <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-            Wozu brauche ich das?
+            {c.szenarien.eyebrow}
           </p>
           <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-            Sechs Situationen, in denen Jobcoaching <em>den Unterschied macht.</em>
+            {c.szenarien.headline} <em>{c.szenarien.headlineEm}</em>
           </h2>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/70">
-            Ein Jobcoaching brauchst Du nicht, weil mit Dir etwas nicht stimmt –
-            sondern weil berufliche Veränderung allein schwer ist. Erkennst Du
-            Dich in einer dieser Situationen wieder?
+            {c.szenarien.intro}
           </p>
         </Reveal>
         <div className="mt-14 grid gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
-          {SZENARIEN.map((szenario, i) => (
+          {c.szenarien.items.map((szenario, i) => (
             <Reveal key={szenario.title} delay={(i % 3) * 100}>
               <div className="border-t border-ink/10 pt-6">
                 <h3 className="display text-xl md:text-2xl">{szenario.title}</h3>
@@ -195,21 +91,19 @@ export default function JobcoachingPage() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              Ablauf & Umfang
+              {c.pakete.eyebrow}
             </p>
             <div className="mt-6 flex flex-wrap items-end justify-between gap-6">
               <h2 className="display max-w-2xl text-4xl md:text-5xl">
-                So läuft Dein Jobcoaching <em>ab.</em>
+                {c.pakete.headline} <em>{c.pakete.headlineEm}</em>
               </h2>
               <p className="mb-1.5 max-w-sm text-[0.95rem] leading-relaxed text-ink/60">
-                Alle Termine finden 1:1 statt – vor Ort in Berlin, Potsdam oder
-                Augsburg, online via Zoom oder hybrid. Eine Unterrichtseinheit
-                (UE) dauert 45 Minuten.
+                {c.pakete.note}
               </p>
             </div>
           </Reveal>
           <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {PAKETE.map((paket, i) => (
+            {c.pakete.items.map((paket, i) => (
               <Reveal key={paket.name} delay={i * 100} className="h-full">
                 <div className="flex h-full flex-col border border-ink/10 bg-cream p-8 md:p-9">
                   <p className="eyebrow text-gold">{paket.name}</p>
@@ -224,12 +118,11 @@ export default function JobcoachingPage() {
           </div>
           <Reveal delay={150}>
             <p className="mt-10 max-w-3xl text-lg leading-relaxed text-ink/70">
-              Welcher Umfang zu Deinem Anliegen passt, klären wir im kostenlosen
-              Erstgespräch – bewilligt wird er über Deinen{" "}
+              {c.pakete.outro}{" "}
               <Link href="/avgs-gutschein-beantragen" className="link-gold font-semibold text-gold">
-                AVGS-Gutschein
+                {c.pakete.outroLinkLabel}
               </Link>
-              . Den Papierkram mit Agentur oder Jobcenter übernehmen wir.
+              {c.pakete.outroAfter}
             </p>
           </Reveal>
         </div>
@@ -241,14 +134,14 @@ export default function JobcoachingPage() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              Warum Kuhl & Engel
+              {c.gruende.eyebrow}
             </p>
             <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-              Gute Gründe, mit uns zu <em>arbeiten.</em>
+              {c.gruende.headline} <em>{c.gruende.headlineEm}</em>
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-px overflow-hidden border border-ink/10 bg-ink/10 sm:grid-cols-2">
-            {GRUENDE.map((grund, i) => (
+            {c.gruende.items.map((grund, i) => (
               <Reveal key={grund.title} delay={i * 100} className="h-full">
                 <div className="h-full bg-paper p-9 md:p-11">
                   <span className="display text-4xl italic text-gold/50">
@@ -266,11 +159,11 @@ export default function JobcoachingPage() {
                 href="/kontakt#rueckruf"
                 className="group inline-flex items-center gap-3 bg-ink px-8 py-4 font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-700"
               >
-                AVGS Coaching jetzt starten
+                {c.gruende.ctaLabel}
                 <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
-              <a href={CONTACT.phoneHref} className="font-semibold text-ink/70 transition-colors hover:text-gold">
-                oder ruf an: {CONTACT.phone}
+              <a href={kontakt.phoneHref} className="font-semibold text-ink/70 transition-colors hover:text-gold">
+                {c.gruende.phonePrefix} {kontakt.phone}
               </a>
             </div>
           </Reveal>
@@ -283,44 +176,31 @@ export default function JobcoachingPage() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              Unsere Methode
+              {c.methode.eyebrow}
             </p>
             <h2 className="display mt-6 text-3xl md:text-4xl">
-              Systemisch heißt: Wir schauen <em>aufs Ganze.</em>
+              {c.methode.headline} <em>{c.methode.headlineEm}</em>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
-              Dein Beruf ist kein isoliertes Thema. Er hängt mit Deinen Werten
-              zusammen, mit Deiner Lebenssituation, mit den Erwartungen von
-              Familie und Umfeld – und mit Glaubenssätzen, die Du oft gar nicht
-              bemerkst. Systemisches Coaching bezieht dieses ganze System ein,
-              statt nur am Lebenslauf zu polieren.
+              {c.methode.text1}
             </p>
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
-              Das Ergebnis sind keine schnellen Notlösungen, sondern
-              Entscheidungen, die von Dir selbst kommen – und deshalb auch dann
-              noch tragen, wenn das Coaching längst abgeschlossen ist.
+              {c.methode.text2}
             </p>
           </Reveal>
           <Reveal delay={100}>
             <p className="eyebrow flex items-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              Gut zu wissen
+              {c.abgrenzung.eyebrow}
             </p>
             <h2 className="display mt-6 text-3xl md:text-4xl">
-              Coaching oder <em>Beratung?</em>
+              {c.abgrenzung.headline} <em>{c.abgrenzung.headlineEm}</em>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
-              Eine Karriereberatung gibt Dir Empfehlungen von außen. Ein
-              Jobcoaching entwickelt Deine eigenen Antworten – mit Methoden,
-              Struktur und ehrlichem Feedback. Beides hat seinen Platz; wenn Du
-              nachhaltige Klarheit suchst, ist Coaching der wirksamere Weg.
+              {c.abgrenzung.text1}
             </p>
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
-              Das Beste: Am Preis ändert der Unterschied nichts. Mit einem
-              AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters ist
-              das komplette 1:1-Coaching für Dich kostenfrei – Du bekommst
-              echte Begleitung statt Beratung von der Stange, ohne einen Euro
-              zu zahlen.
+              {c.abgrenzung.text2}
             </p>
           </Reveal>
         </div>
@@ -330,19 +210,19 @@ export default function JobcoachingPage() {
       <section className="mx-auto max-w-4xl px-5 pb-24 md:px-8 md:pb-32">
         <Reveal>
           <h2 className="display text-center text-4xl md:text-5xl">
-            Häufige Fragen zum <em>Jobcoaching.</em>
+            {c.faq.headline} <em>{c.faq.headlineEm}</em>
           </h2>
         </Reveal>
         <Reveal delay={150}>
           <div className="mt-12">
-            <Accordion items={FAQS_JOBCOACHING} />
+            <Accordion items={c.faq.items} />
           </div>
         </Reveal>
         <Reveal delay={200}>
           <p className="mt-10 text-center text-lg text-ink/70">
-            Noch keinen Gutschein?{" "}
+            {c.faq.outro}{" "}
             <Link href="/avgs-gutschein-beantragen" className="link-gold font-semibold text-gold">
-              So beantragst Du den AVGS →
+              {c.faq.outroLinkLabel}
             </Link>
           </p>
         </Reveal>
@@ -351,10 +231,10 @@ export default function JobcoachingPage() {
       <CtaBand
         title={
           <>
-            Stell Dir eine Arbeit vor, die <em>zu Dir passt.</em>
+            {c.cta.title} <em>{c.cta.titleEm}</em>
           </>
         }
-        text="Klingt weltfremd? Wir sind überzeugt: Das geht. Lerne uns in einem kostenlosen Erstgespräch kennen."
+        text={c.cta.text}
       />
     </>
   );

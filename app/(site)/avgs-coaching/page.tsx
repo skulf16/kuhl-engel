@@ -7,7 +7,8 @@ import Accordion from "@/components/Accordion";
 import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
 import BookingFunnel from "@/components/BookingFunnel";
-import { FAQS_AVGS } from "@/lib/data";
+import { KEY, DEFAULTS } from "@/lib/cms/pages/seite-avgs-coaching";
+import { getFaqsAvgs, getKontakt, loadPage } from "@/lib/content";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
@@ -20,66 +21,13 @@ export const metadata = pageMetadata({
   imageAlt: "Coaching-Gespräch bei Kuhl & Engel",
 });
 
-const GUTSCHEIN_STEPS = [
-  { title: "Infogespräch mit uns", text: "Kontaktiere uns für eine unverbindliche Erstberatung. Wir klären alle Fragen zu Ablauf und Möglichkeiten." },
-  { title: "AVGS beantragen", text: "Falls Du noch keinen Gutschein hast: Deine Agentur für Arbeit oder Dein Jobcenter stellt ihn aus, wenn Du die Voraussetzungen erfüllst." },
-  { title: "Kostenloses Vorgespräch", text: "Wir finden die passende Coachin oder den passenden Coach für Dich. Im Vorgespräch besprecht Ihr gemeinsam Deine Erwartungen." },
-  { title: "Wir übernehmen den Papierkram", text: "Du schickst uns den Gutschein – wir erledigen die gesamte Abwicklung und Korrespondenz mit Agentur oder Jobcenter." },
-  { title: "Dein Coaching beginnt", text: "Nach der Bewilligung geht es los. Auch die Abrechnung übernehmen wir. Dir entstehen keine Kosten." },
-];
+export default async function AvgsCoachingPage() {
+  const [c, faqs, kontakt] = await Promise.all([
+    loadPage(KEY, DEFAULTS),
+    getFaqsAvgs(),
+    getKontakt(),
+  ]);
 
-const THEMEN = [
-  {
-    nr: "01",
-    q: "Du weißt nicht, was Du beruflich machen willst?",
-    intro:
-      "Berufliche Entscheidungen machen wir oft von äußeren Umständen abhängig – Familie, Lebensstandard, Erwartungen. Im Coaching findest Du eine Ausrichtung, die Dir entspricht und Deinem Leben Sinn gibt.",
-    points: [
-      "Gemeinsam reflektieren wir Deinen Werdegang und finden heraus, was Dir wirklich wichtig ist.",
-      "Du entwickelst eine Vision für Deine berufliche Zukunft und erste Schritte, um sie zu erreichen.",
-      "Wir setzen klare, realistische Ziele, die Dich motivieren und Dir Orientierung geben.",
-    ],
-    image: "/images/ke-whiteboard.jpg",
-  },
-  {
-    nr: "02",
-    q: "Du fragst Dich, was Du wirklich gut kannst?",
-    intro:
-      "Viele Menschen wissen nicht genau, welche ihrer Fähigkeiten und Talente sie im Berufsleben am besten einsetzen können. Hier geht es darum, Deine Stärken zu erkennen und zu nutzen.",
-    points: [
-      "Du erkundest Deine Kernkompetenzen anhand Deiner Erfolge und überwundenen Misserfolge.",
-      "Du erforschst, welche Rollen und Aufgaben Dir Energie geben.",
-      "Wir erarbeiten, wie Du Deine Stärken im Beruf optimal einsetzt.",
-    ],
-    image: "/images/ke-gruppe-tisch.jpg",
-  },
-  {
-    nr: "03",
-    q: "Du zweifelst an Dir?",
-    intro:
-      "Unsicherheit ist normal, wenn es um berufliche Veränderung geht. Wir stärken Dein Selbstvertrauen, lösen innere Blockaden und bauen Resilienz auf.",
-    points: [
-      "Du reflektierst Deine Verhaltens- und Kommunikationsmuster und lernst, auf natürliche Weise zu überzeugen.",
-      "Wir arbeiten Rückschläge auf und entwickeln Strategien, aus denen Du gestärkt hervorgehst.",
-      "Wir klären, ob Du zusätzliche Qualifikationen brauchst – und wie Du sie erwirbst.",
-    ],
-    image: "/images/ke-coaching-lachen.jpg",
-  },
-  {
-    nr: "04",
-    q: "Du hast Angst vor Bewerbungen?",
-    intro:
-      "Der Bewerbungsprozess kann überwältigend sein. Wir geben Deinen Unterlagen den Feinschliff, trainieren Gespräche und begleiten Dich auf Wunsch durch den gesamten Prozess.",
-    points: [
-      "Gemeinsam werten wir Stellenangebote aus, die zu Deinen Fähigkeiten und Zielen passen.",
-      "Deine Bewerbung und Dein Online-Profil werden professionell und überzeugend.",
-      "Durch Rollenspiele bereitest Du Dich gezielt auf Gespräche vor – sicher und souverän.",
-    ],
-    image: "/images/ke-unterlagen-duo.jpg",
-  },
-];
-
-export default function AvgsCoachingPage() {
   return (
     <>
       <JsonLd
@@ -91,34 +39,27 @@ export default function AvgsCoachingPage() {
           serviceType: "Jobcoaching / Karrierecoaching (AVGS-gefördert)",
         })}
       />
-      <JsonLd data={faqSchema(FAQS_AVGS, "/avgs-coaching")} />
+      <JsonLd data={faqSchema(faqs, "/avgs-coaching")} />
       <JsonLd data={breadcrumbSchema([{ name: "AVGS Coaching", path: "/avgs-coaching" }])} />
       <PageHero
-        eyebrow="AVGS Coaching · Zu 100 % gefördert"
+        eyebrow={c.hero.eyebrow}
         title={
           <>
-            Deine Profis für AVGS Coaching <em>für Akademiker:innen.</em>
+            {c.hero.headline} <em>{c.hero.headlineEm}</em>
           </>
         }
-        intro="Wir sind spezialisiert auf Coaching in beruflichen Veränderungssituationen und zertifiziert für Dein AVGS Coaching. Mit langjähriger Erfahrung und maßgeschneidertem Ansatz begleiten wir Dich auf dem Weg zu einem Job, der wirklich zu Dir passt."
-        image="/images/ke-beratung.jpg"
-        cta={{ href: "#buchen", label: "Sofort starten" }}
+        intro={c.hero.intro}
+        image={c.hero.image}
+        cta={{ href: "#buchen", label: c.hero.ctaLabel }}
       />
 
       {/* Auf einen Blick (zitierfähig für KI-Suche) */}
       <section className="mx-auto max-w-7xl px-5 pt-16 md:px-8 md:pt-20">
         <Reveal>
           <FactBox
-            question="Was ist AVGS Coaching?"
-            answer="AVGS Coaching ist ein individuelles Einzelcoaching zur beruflichen Orientierung, Bewerbung und Karriereentwicklung, das über den Aktivierungs- und Vermittlungsgutschein (AVGS) nach § 45 SGB III finanziert wird. Wer bei der Agentur für Arbeit oder dem Jobcenter arbeitssuchend gemeldet ist, erhält den Gutschein auf Anfrage – das Coaching bei Kuhl & Engel ist damit zu 100 % kostenfrei."
-            facts={[
-              { label: "Kosten", value: "0 € – vollständig durch den AVGS gedeckt" },
-              { label: "Format", value: "1:1-Einzelcoaching, Umfang individuell (mind. 20 UE)" },
-              { label: "Orte", value: "Online, Berlin, Potsdam, Augsburg oder hybrid" },
-              { label: "Team", value: "14 erfahrene Coach:innen – Du wählst, wer Dich begleitet" },
-              { label: "Sprachen", value: "Deutsch, Englisch, Französisch, Russisch" },
-              { label: "Start", value: "Kostenloses Erstgespräch, Beginn nach Bewilligung" },
-            ]}
+            question={c.factbox.question}
+            answer={c.factbox.answer}
+            facts={c.factbox.facts}
           />
         </Reveal>
       </section>
@@ -128,15 +69,15 @@ export default function AvgsCoachingPage() {
         <Reveal>
           <p className="eyebrow flex items-center gap-3 text-gold">
             <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-            Deine wichtigsten Fragen
+            {c.themen.eyebrow}
           </p>
           <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-            Der Weg zu Deinem <em>beruflichen Glück.</em>
+            {c.themen.headline} <em>{c.themen.headlineEm}</em>
           </h2>
         </Reveal>
 
         <div className="mt-16 space-y-20 md:space-y-28">
-          {THEMEN.map((thema, i) => (
+          {c.themen.items.map((thema, i) => (
             <div
               key={thema.nr}
               className={`grid items-center gap-10 lg:grid-cols-2 lg:gap-20 ${
@@ -148,7 +89,7 @@ export default function AvgsCoachingPage() {
                   <p className="display text-sm italic text-gold">{thema.nr}</p>
                   <h3 className="display mt-4 text-3xl md:text-4xl">{thema.q}</h3>
                   <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/70">{thema.intro}</p>
-                  <p className="eyebrow mt-8 text-ink/45">Das passiert im Coaching</p>
+                  <p className="eyebrow mt-8 text-ink/45">{c.themen.listLabel}</p>
                   <ul className="mt-4 space-y-3.5">
                     {thema.points.map((point) => (
                       <li key={point} className="flex items-start gap-3.5 leading-relaxed text-ink/75">
@@ -180,11 +121,9 @@ export default function AvgsCoachingPage() {
         <Reveal>
           <figure className="mx-auto max-w-3xl px-5 text-center md:px-8">
             <blockquote className="display text-2xl italic leading-snug text-ink/85 md:text-3xl">
-              „Coaching war eine großartige Erfahrung und hat mir jetzt und
-              langfristig sehr geholfen. Ich würde Kuhl & Engel jedem empfehlen, der
-              professionelles und qualitativ hochwertiges Coaching sucht!“
+              {c.zitat.quote}
             </blockquote>
-            <figcaption className="eyebrow mt-6 text-gold">Franziska M.</figcaption>
+            <figcaption className="eyebrow mt-6 text-gold">{c.zitat.author}</figcaption>
           </figure>
         </Reveal>
       </section>
@@ -194,20 +133,19 @@ export default function AvgsCoachingPage() {
         <Reveal>
           <p className="eyebrow flex items-center gap-3 text-gold">
             <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-            Der AVGS-Gutschein
+            {c.gutschein.eyebrow}
           </p>
           <div className="mt-6 flex flex-wrap items-end justify-between gap-6">
             <h2 className="display max-w-2xl text-4xl md:text-5xl">
-              Dein Coaching. <em>Finanziert durch den AVGS-Gutschein.</em>
+              {c.gutschein.headline} <em>{c.gutschein.headlineEm}</em>
             </h2>
             <p className="mb-1.5 max-w-sm text-[0.95rem] leading-relaxed text-ink/60">
-              Der Aktivierungs- und Vermittlungsgutschein (AVGS) nach § 45 SGB III
-              deckt die Kosten zu 100 %. Wir begleiten Dich durch jeden Schritt.
+              {c.gutschein.sideText}
             </p>
           </div>
         </Reveal>
         <ol className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
-          {GUTSCHEIN_STEPS.map((step, i) => (
+          {c.gutschein.steps.map((step, i) => (
             <Reveal key={step.title} delay={i * 100}>
               <li className="border-t-2 border-ink/12 pt-6 transition-colors duration-500 hover:border-gold">
                 <span className="display text-sm italic text-gold">Schritt {i + 1}</span>
@@ -219,9 +157,9 @@ export default function AvgsCoachingPage() {
         </ol>
         <Reveal delay={150}>
           <p className="mt-12 text-lg text-ink/70">
-            Du hast noch keinen Gutschein?{" "}
+            {c.gutschein.hinweisText}{" "}
             <Link href="/avgs-gutschein-beantragen" className="link-gold font-semibold text-gold">
-              So beantragst Du den AVGS bei Agentur für Arbeit oder Jobcenter →
+              {c.gutschein.hinweisLinkLabel} →
             </Link>
           </p>
         </Reveal>
@@ -233,20 +171,19 @@ export default function AvgsCoachingPage() {
           <Reveal>
             <p className="eyebrow flex items-center justify-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              In 4 Schritten zum Erstgespräch
+              {c.buchen.eyebrow}
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
             </p>
             <h2 className="display mt-6 text-center text-4xl md:text-5xl">
-              Starte Dein <em>AVGS Coaching.</em>
+              {c.buchen.headline} <em>{c.buchen.headlineEm}</em>
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-center leading-relaxed text-ink/65">
-              Beantworte vier kurze Fragen – wir melden uns mit dem passenden Coach
-              und allen Infos zum Gutschein. Unverbindlich und kostenlos.
+              {c.buchen.intro}
             </p>
           </Reveal>
           <Reveal delay={150}>
             <div className="mt-12">
-              <BookingFunnel />
+              <BookingFunnel kontakt={kontakt} />
             </div>
           </Reveal>
         </div>
@@ -256,19 +193,19 @@ export default function AvgsCoachingPage() {
       <section className="mx-auto max-w-4xl px-5 py-24 md:px-8 md:py-32">
         <Reveal>
           <h2 className="display text-center text-4xl md:text-5xl">
-            FAQs zum <em>AVGS Coaching.</em>
+            {c.faq.headline} <em>{c.faq.headlineEm}</em>
           </h2>
         </Reveal>
         <Reveal delay={150}>
           <div className="mt-12">
-            <Accordion items={FAQS_AVGS} />
+            <Accordion items={faqs} />
           </div>
         </Reveal>
         <Reveal delay={200}>
           <p className="mt-8 text-center text-[0.95rem] text-ink/60">
-            Noch unsicher, ob AVGS das Richtige ist?{" "}
+            {c.faq.outroText}{" "}
             <Link href="/jobcoaching" className="link-gold font-semibold text-gold">
-              Zurück zum Jobcoaching-Überblick →
+              {c.faq.outroLinkLabel} →
             </Link>
           </p>
         </Reveal>
@@ -277,10 +214,10 @@ export default function AvgsCoachingPage() {
       <CtaBand
         title={
           <>
-            Bereit für den ersten Schritt <em>Richtung Traumjob?</em>
+            {c.cta.title} <em>{c.cta.titleEm}</em>
           </>
         }
-        text="Kontaktiere uns für ein unverbindliches Beratungsgespräch. Unser AVGS Coaching hilft Dir, Deine Stärken optimal zu nutzen und Deine beruflichen Ziele zu erreichen."
+        text={c.cta.text}
       />
     </>
   );

@@ -13,8 +13,11 @@ const inputStyles =
  */
 export default function ContactForm({
   variant = "default",
+  kontakt = CONTACT,
 }: {
   variant?: "default" | "schulen";
+  /** Kontaktdaten aus dem CMS – Fallback sind die Defaults aus lib/data. */
+  kontakt?: typeof CONTACT;
 }) {
   const [sent, setSent] = useState(false);
 
@@ -39,7 +42,7 @@ export default function ContactForm({
       variant === "schulen"
         ? "Anfrage Berufsorientierung über die Website"
         : "Rückruf-Bitte über die Website";
-    const mailto = `mailto:${CONTACT.email}?subject=${encodeURIComponent(
+    const mailto = `mailto:${kontakt.email}?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(lines.join("\n"))}`;
     window.location.href = mailto;
@@ -54,12 +57,12 @@ export default function ContactForm({
           Dein E-Mail-Programm hat sich mit der vorbereiteten Nachricht geöffnet –
           einfach absenden, wir melden uns schnellstmöglich bei Dir. Falls sich kein
           Fenster geöffnet hat, erreichst Du uns direkt unter{" "}
-          <a href={`mailto:${CONTACT.email}`} className="font-semibold text-gold">
-            {CONTACT.email}
+          <a href={`mailto:${kontakt.email}`} className="font-semibold text-gold">
+            {kontakt.email}
           </a>{" "}
           oder telefonisch unter{" "}
-          <a href={CONTACT.phoneHref} className="font-semibold text-gold">
-            {CONTACT.phone}
+          <a href={kontakt.phoneHref} className="font-semibold text-gold">
+            {kontakt.phone}
           </a>
           .
         </p>

@@ -24,7 +24,12 @@ const TOTAL_STEPS = 4;
 const inputStyles =
   "w-full border border-ink/15 bg-paper px-4 py-3.5 text-[0.95rem] outline-none transition-colors placeholder:text-ink/35 focus:border-gold";
 
-export default function BookingFunnel() {
+export default function BookingFunnel({
+  kontakt = CONTACT,
+}: {
+  /** Kontaktdaten aus dem CMS – Fallback sind die Defaults aus lib/data. */
+  kontakt?: typeof CONTACT;
+}) {
   const [step, setStep] = useState(0);
   const [done, setDone] = useState(false);
   const [answers, setAnswers] = useState<Answers>({
@@ -62,7 +67,7 @@ export default function BookingFunnel() {
       `Telefon: ${answers.phone}`,
       `E-Mail: ${answers.email}`,
     ].join("\n");
-    window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(
+    window.location.href = `mailto:${kontakt.email}?subject=${encodeURIComponent(
       "AVGS-Coaching – Buchungsanfrage",
     )}&body=${encodeURIComponent(body)}`;
     setDone(true);
@@ -76,8 +81,8 @@ export default function BookingFunnel() {
           Dein E-Mail-Programm hat sich mit Deiner Anfrage geöffnet – einmal
           absenden, und wir rufen Dich zu Deiner Wunschzeit zurück. Falls sich
           nichts geöffnet hat, erreichst Du uns direkt unter{" "}
-          <a href={CONTACT.phoneHref} className="font-semibold text-gold">
-            {CONTACT.phone}
+          <a href={kontakt.phoneHref} className="font-semibold text-gold">
+            {kontakt.phone}
           </a>
           .
         </p>

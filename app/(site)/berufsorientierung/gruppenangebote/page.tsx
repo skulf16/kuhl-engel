@@ -6,8 +6,9 @@ import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
-import { CONTACT } from "@/lib/data";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { KEY, DEFAULTS } from "@/lib/cms/pages/seite-bo-gruppenangebote";
+import { getKontakt, loadPage } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Schulklassen – Berufsorientierung für Schulen (PraxisBO)",
@@ -16,35 +17,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/berufsorientierung/gruppenangebote" },
 };
 
-const ABLAUF = [
-  {
-    phase: "Vorbereitung",
-    points: [
-      "Komplette Organisation und Koordination mit allen Beteiligten",
-      "Information an Schulleitung, Lehrkräfte, Schüler:innen und Eltern",
-      "Inhaltliche Konzeption und Zusammenstellung des Teams",
-    ],
-  },
-  {
-    phase: "Durchführung",
-    points: [
-      "Team- und Kommunikationsübungen, Vertrauensübungen",
-      "Talente, Werte und Haltung zur Schule herausarbeiten",
-      "Mission Statement sowie kurz- und mittelfristige Ziele",
-      "Verankerung im Kletterpark, individuelles Einzelcoaching",
-    ],
-  },
-  {
-    phase: "Nachbereitung",
-    points: [
-      "Evaluationsbögen auswerten",
-      "Nachbesprechung mit der Schulleitung",
-      "Berichterstattung in den Medien und Abrechnung",
-    ],
-  },
-];
+export default async function GruppenangebotePage() {
+  const [c, kontakt] = await Promise.all([loadPage(KEY, DEFAULTS), getKontakt()]);
 
-export default function GruppenangebotePage() {
   return (
     <>
       <JsonLd
@@ -66,28 +41,23 @@ export default function GruppenangebotePage() {
       />
 
       <PageHero
-        eyebrow="Berufsorientierung · Für Schulen"
+        eyebrow={c.hero.eyebrow}
         title={
           <>
-            Mein Berufseinstieg – <em>das Seminar für ganze Klassen.</em>
+            {c.hero.headline} <em>{c.hero.headlineEm}</em>
           </>
         }
-        intro="Null Bock oder könnte gut werden? Wir sagen: wird gut. Unser Projekt „Mein Berufseinstieg“ ist eigens für Schulen konzipiert und steht für Begegnung auf Augenhöhe, vielfältige Methoden und intensive Betreuung."
-        image="/images/ke-jugend-team.jpg"
+        intro={c.hero.intro}
+        image={c.hero.image}
       />
 
       {/* Auf einen Blick */}
       <section className="mx-auto max-w-7xl px-5 pt-16 md:px-8 md:pt-20">
         <Reveal>
           <FactBox
-            question="Wie läuft das Gruppen-Seminar ab?"
-            answer="Das Coaching-Seminar dauert 2 bis 2,5 Tage und wird mit je einer Klasse an einem attraktiven Lernort außerhalb der Schule durchgeführt. Mehrere professionelle Coaches begleiten die Jugendlichen – in der ganzen Klasse, in kleinen Gruppen und teilweise einzeln. Über das Förderprogramm PraxisBO ist das Seminar für Brandenburger Schulen förderfähig, für öffentliche Schulen ohne zusätzliche Kosten."
-            facts={[
-              { label: "Format", value: "2–2,5 Tage pro Klasse, externer Lernort" },
-              { label: "Betreuung", value: "Mehrere Coaches, Klein- und Einzelgruppen" },
-              { label: "Förderung", value: "PraxisBO – bis zu 35.000 € / Schuljahr" },
-              { label: "Region", value: "Berlin und Brandenburg" },
-            ]}
+            question={c.aufEinenBlick.question}
+            answer={c.aufEinenBlick.answer}
+            facts={c.aufEinenBlick.facts}
           />
         </Reveal>
       </section>
@@ -97,14 +67,14 @@ export default function GruppenangebotePage() {
         <Reveal>
           <p className="eyebrow flex items-center gap-3 text-gold">
             <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-            So läuft unsere Zusammenarbeit
+            {c.ablauf.eyebrow}
           </p>
           <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-            Von der Planung bis zur <em>Nachbereitung.</em>
+            {c.ablauf.headline} <em>{c.ablauf.headlineEm}</em>
           </h2>
         </Reveal>
         <div className="mt-14 grid gap-px overflow-hidden border border-ink/10 bg-ink/10 md:grid-cols-3">
-          {ABLAUF.map((block, i) => (
+          {c.ablauf.phasen.map((block, i) => (
             <Reveal key={block.phase} delay={i * 120} className="h-full">
               <div className="h-full bg-paper p-8 md:p-9">
                 <span className="display text-4xl italic text-gold/50">
@@ -132,41 +102,31 @@ export default function GruppenangebotePage() {
             <Reveal>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Förderung über PraxisBO
+                {c.praxisbo.eyebrow}
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                Für öffentliche Schulen <em>ohne zusätzliche Kosten.</em>
+                {c.praxisbo.headline} <em>{c.praxisbo.headlineEm}</em>
               </h2>
             </Reveal>
             <Reveal delay={150}>
               <div className="mt-7 space-y-5 text-lg leading-relaxed text-ink/70">
-                <p>
-                  PraxisBO ist ein Förderprogramm des Landes Brandenburg für
-                  weiterführende Schulen, finanziert aus Mitteln des Europäischen
-                  Sozialfonds und der Agentur für Arbeit. Darüber lassen sich
-                  Projekte zur Berufs- und Studienorientierung umsetzen.
-                </p>
-                <p>
-                  Für mehrzügige Schulen stehen bis zu 35.000 € zzgl. Fahrtkosten
-                  pro Schuljahr zur Verfügung. Für öffentliche Schulen fallen keine
-                  zusätzlichen Kosten an; Schulen in privater Trägerschaft tragen
-                  einen Eigenanteil von 38 %.
-                </p>
+                <p>{c.praxisbo.absatz1}</p>
+                <p>{c.praxisbo.absatz2}</p>
               </div>
             </Reveal>
             <Reveal delay={250}>
               <a
-                href={CONTACT.phoneHref}
+                href={kontakt.phoneHref}
                 className="mt-9 inline-flex items-center gap-2 font-semibold text-gold transition-colors hover:text-ink"
               >
-                Wir beraten gern: {CONTACT.phone} <span aria-hidden>→</span>
+                {c.praxisbo.phoneLinkLabel} {kontakt.phone} <span aria-hidden>→</span>
               </a>
             </Reveal>
           </div>
           <Reveal delay={100}>
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src="/images/jugend-seminar.jpg"
+                src={c.praxisbo.image}
                 alt="Berufsorientierungs-Seminar für eine Schulklasse"
                 fill
                 sizes="(max-width: 1024px) 100vw, 42vw"
@@ -180,17 +140,17 @@ export default function GruppenangebotePage() {
       <CtaBand
         title={
           <>
-            Bring „Mein Berufseinstieg“ <em>an Deine Schule.</em>
+            {c.cta.headline} <em>{c.cta.headlineEm}</em>
           </>
         }
-        text="Wie sich das Seminar optimal in den Projektablauf an Deiner Schule einbetten lässt, klären wir gern im persönlichen Gespräch – inklusive aller Fragen zur PraxisBO-Förderung."
+        text={c.cta.text}
         href="/berufsorientierung#kontakt"
-        label="Unverbindlich anfragen"
+        label={c.cta.buttonLabel}
       />
 
       <div className="bg-cream-deep py-6 text-center">
         <Link href="/berufsorientierung" className="link-gold text-sm font-semibold text-gold">
-          ← Zurück zur Berufsorientierung
+          {c.zurueck.label}
         </Link>
       </div>
     </>

@@ -7,6 +7,8 @@ import CtaBand from "@/components/CtaBand";
 import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
+import { KEY, DEFAULTS } from "@/lib/cms/pages/seite-bo-einzelcoaching";
+import { loadPage } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Einzelcoaching Berufsorientierung für Schüler:innen",
@@ -15,14 +17,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/berufsorientierung/einzelcoaching" },
 };
 
-const IM_COACHING = [
-  "Gemeinsam finden wir die berufliche Ausrichtung des jungen Menschen",
-  "Wir lösen hinderliche Haltungen, Muster und Überzeugungen",
-  "Die Jugendlichen entwickeln Ziele, die sie wirklich motivieren",
-  "Daraus leiten wir konkrete nächste Schritte und Handlungen ab",
-];
+export default async function EinzelcoachingPage() {
+  const c = await loadPage(KEY, DEFAULTS);
 
-export default function EinzelcoachingPage() {
   return (
     <>
       <JsonLd
@@ -44,28 +41,23 @@ export default function EinzelcoachingPage() {
       />
 
       <PageHero
-        eyebrow="Berufsorientierung · Einzelcoaching"
+        eyebrow={c.hero.eyebrow}
         title={
           <>
-            Ein geschützter Raum – <em>ganz für den jungen Menschen.</em>
+            {c.hero.headline} <em>{c.hero.headlineEm}</em>
           </>
         }
-        intro="Geht es noch individueller? Na klar. An allen Standorten und online bieten wir Einzelcoaching zur beruflichen Orientierung für Schüler:innen, Abiturient:innen und junge Erwachsene an – passend zur jeweiligen Situation, systemisch und lösungsorientiert."
-        image="/images/ke-jugend-einzel.jpg"
+        intro={c.hero.intro}
+        image={c.hero.image}
       />
 
       {/* Auf einen Blick */}
       <section className="mx-auto max-w-7xl px-5 pt-16 md:px-8 md:pt-20">
         <Reveal>
           <FactBox
-            question="Wie läuft das Einzelcoaching ab?"
-            answer="In vier Sitzungen à 90 Minuten finden wir gemeinsam mit dem jungen Menschen die berufliche Ausrichtung, lösen hinderliche Haltungen und entwickeln konkrete Ziele. Das Coaching ist systemisch, ziel- und lösungsorientiert und aktiviert vorhandene Ressourcen. Die Erfahrung zeigt: Nach den Sitzungen ist die eigene Ausrichtung deutlich klarer – motivierter Start in Bewerbung, Ausbildung oder Studium inklusive."
-            facts={[
-              { label: "Für wen", value: "Schüler:innen, Abiturient:innen, junge Erwachsene" },
-              { label: "Umfang", value: "4 Sitzungen à 90 Minuten" },
-              { label: "Preis", value: "595 € für das Coaching-Paket" },
-              { label: "Wo", value: "Online, Berlin, Potsdam oder Augsburg" },
-            ]}
+            question={c.aufEinenBlick.question}
+            answer={c.aufEinenBlick.answer}
+            facts={c.aufEinenBlick.facts}
           />
         </Reveal>
       </section>
@@ -77,19 +69,16 @@ export default function EinzelcoachingPage() {
             <div>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Was im Coaching passiert
+                {c.inhalt.eyebrow}
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                In vier Schritten <em>zu einer klaren Richtung.</em>
+                {c.inhalt.headline} <em>{c.inhalt.headlineEm}</em>
               </h2>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/70">
-                Neben der Berufsorientierung können im Einzelcoaching auch
-                unförderliche Muster und Überzeugungen oder belastende Situationen
-                reflektiert und gelöst werden – im Tempo des jungen Menschen, in
-                einem vertrauensvollen Rahmen.
+                {c.inhalt.text}
               </p>
               <ul className="mt-8 space-y-3.5">
-                {IM_COACHING.map((punkt) => (
+                {c.inhalt.bullets.map((punkt) => (
                   <li key={punkt} className="flex items-start gap-3.5 leading-relaxed text-ink/75">
                     <span aria-hidden className="display mt-0.5 italic text-gold">✓</span>
                     {punkt}
@@ -102,7 +91,7 @@ export default function EinzelcoachingPage() {
             <div className="relative">
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
-                  src="/images/jugend-beelitz-2.jpg"
+                  src={c.inhalt.image}
                   alt="Einzelcoaching zur Berufsorientierung"
                   fill
                   sizes="(max-width: 1024px) 100vw, 44vw"
@@ -110,8 +99,8 @@ export default function EinzelcoachingPage() {
                 />
               </div>
               <div className="absolute -bottom-6 -left-4 bg-ink px-7 py-5 text-cream md:-left-8">
-                <p className="display text-2xl italic text-gold-bright">595 €</p>
-                <p className="mt-1 text-[0.8rem] text-cream/70">4 Sitzungen à 90 Minuten</p>
+                <p className="display text-2xl italic text-gold-bright">{c.inhalt.price}</p>
+                <p className="mt-1 text-[0.8rem] text-cream/70">{c.inhalt.priceNote}</p>
               </div>
             </div>
           </Reveal>
@@ -121,17 +110,17 @@ export default function EinzelcoachingPage() {
       <CtaBand
         title={
           <>
-            Du möchtest einen jungen Menschen <em>unterstützen?</em>
+            {c.cta.headline} <em>{c.cta.headlineEm}</em>
           </>
         }
-        text="Ob als Lehrkraft, Elternteil oder Kooperationspartner: Schreib uns oder ruf an – wir klären alle Fragen und finden heraus, ob die Chemie stimmt."
+        text={c.cta.text}
         href="/berufsorientierung#kontakt"
-        label="Unverbindlich anfragen"
+        label={c.cta.buttonLabel}
       />
 
       <div className="bg-cream-deep py-6 text-center">
         <Link href="/berufsorientierung" className="link-gold text-sm font-semibold text-gold">
-          ← Zurück zur Berufsorientierung
+          {c.zurueck.label}
         </Link>
       </div>
     </>

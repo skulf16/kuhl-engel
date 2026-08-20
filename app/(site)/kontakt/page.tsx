@@ -3,7 +3,11 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
 import JsonLd from "@/components/JsonLd";
-import { CONTACT, STANDORTE } from "@/lib/data";
+import {
+  KEY as KONTAKT_KEY,
+  DEFAULTS as KONTAKT_DEFAULTS,
+} from "@/lib/cms/pages/seite-kontakt";
+import { loadPage, getKontakt, getStandorte } from "@/lib/content";
 import { breadcrumbSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
@@ -14,18 +18,24 @@ export const metadata = pageMetadata({
   path: "/kontakt",
 });
 
-export default function KontaktPage() {
+export default async function KontaktPage() {
+  const [c, kontakt, standorte] = await Promise.all([
+    loadPage(KONTAKT_KEY, KONTAKT_DEFAULTS),
+    getKontakt(),
+    getStandorte(),
+  ]);
+
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Kontakt & Standorte", path: "/kontakt" }])} />
       <PageHero
-        eyebrow="Kontakt"
+        eyebrow={c.hero.eyebrow}
         title={
           <>
-            Der erste Schritt ist <em>ein Gespräch.</em>
+            {c.hero.headline} <em>{c.hero.headlineEm}</em>
           </>
         }
-        intro="Ruf uns an, schreib uns oder nutze den Rückruf-Service – wir melden uns schnellstmöglich und finden gemeinsam heraus, welches Coaching zu Dir passt."
+        intro={c.hero.intro}
       />
 
       {/* Kontakt + Formular */}
@@ -35,37 +45,37 @@ export default function KontaktPage() {
             <Reveal>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Direkter Draht
+                {c.direkt.eyebrow}
               </p>
               <h2 className="display mt-6 text-4xl">
-                Wir freuen uns <em>auf Dich.</em>
+                {c.direkt.headline} <em>{c.direkt.headlineEm}</em>
               </h2>
             </Reveal>
             <Reveal delay={150}>
               <dl className="mt-10 space-y-8">
                 <div>
-                  <dt className="eyebrow text-ink/45">Telefon</dt>
+                  <dt className="eyebrow text-ink/45">{c.direkt.labelTelefon}</dt>
                   <dd className="mt-2">
-                    <a href={CONTACT.phoneHref} className="display link-gold text-2xl hover:text-gold md:text-3xl">
-                      {CONTACT.phone}
+                    <a href={kontakt.phoneHref} className="display link-gold text-2xl hover:text-gold md:text-3xl">
+                      {kontakt.phone}
                     </a>
                   </dd>
                 </div>
                 <div>
-                  <dt className="eyebrow text-ink/45">E-Mail</dt>
+                  <dt className="eyebrow text-ink/45">{c.direkt.labelEmail}</dt>
                   <dd className="mt-2">
-                    <a href={`mailto:${CONTACT.email}`} className="display link-gold text-2xl hover:text-gold md:text-3xl">
-                      {CONTACT.email}
+                    <a href={`mailto:${kontakt.email}`} className="display link-gold text-2xl hover:text-gold md:text-3xl">
+                      {kontakt.email}
                     </a>
                   </dd>
                 </div>
                 <div>
-                  <dt className="eyebrow text-ink/45">Deine Ansprechpartnerinnen</dt>
+                  <dt className="eyebrow text-ink/45">{c.direkt.labelAnsprech}</dt>
                   <dd className="mt-2 leading-relaxed text-ink/70">
-                    Heike Kuhl & Martina Engel-Fürstberger
+                    {c.direkt.ansprechpartnerinnen}
                     <br />
                     <span className="text-[0.9rem] text-ink/55">
-                      Organisation & Coach-Vermittlung: Anna Podakova
+                      {c.direkt.organisation}
                     </span>
                   </dd>
                 </div>
@@ -76,14 +86,13 @@ export default function KontaktPage() {
           <Reveal delay={100}>
             <div className="border border-ink/10 bg-cream-deep p-8 md:p-12">
               <h3 className="display text-3xl">
-                Rückruf, <em>bitte!</em>
+                {c.rueckruf.headline} <em>{c.rueckruf.headlineEm}</em>
               </h3>
               <p className="mt-3 text-[0.95rem] leading-relaxed text-ink/65">
-                Hinterlass uns Deine Nummer – wir rufen Dich zu Deiner Wunschzeit
-                zurück.
+                {c.rueckruf.text}
               </p>
               <div className="mt-8">
-                <ContactForm />
+                <ContactForm kontakt={kontakt} />
               </div>
             </div>
           </Reveal>
@@ -96,14 +105,14 @@ export default function KontaktPage() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              Unsere Standorte
+              {c.standorte.eyebrow}
             </p>
             <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-              Online, Berlin, Potsdam, Augsburg – <em>oder bei Dir.</em>
+              {c.standorte.headline} <em>{c.standorte.headlineEm}</em>
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {STANDORTE.map((standort, i) => (
+            {standorte.map((standort, i) => (
               <Reveal key={standort.city} delay={i * 100} className="h-full">
                 <div className="group flex h-full flex-col border border-ink/10 bg-paper p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_56px_-28px_rgba(14,29,43,0.3)]">
                   <p className="display text-sm italic text-gold">{String(i + 1).padStart(2, "0")}</p>
@@ -123,7 +132,7 @@ export default function KontaktPage() {
                       href={standort.href}
                       className="link-gold mt-5 inline-flex items-center gap-2 text-sm font-semibold text-gold"
                     >
-                      Mehr zum Standort <span aria-hidden>→</span>
+                      {c.standorte.linkLabel} <span aria-hidden>→</span>
                     </Link>
                   )}
                 </div>
@@ -132,8 +141,7 @@ export default function KontaktPage() {
           </div>
           <Reveal delay={150}>
             <p className="mt-10 text-[0.95rem] text-ink/60">
-              Alle Coachings bieten wir auch hybrid an – vor Ort kombiniert mit
-              Online-Terminen via Zoom.
+              {c.standorte.hybridNote}
             </p>
           </Reveal>
         </div>

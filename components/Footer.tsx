@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CONTACT, STANDORTE } from "@/lib/data";
+import { getKontakt, getStandorte } from "@/lib/content";
 
 const FOOTER_JOBCOACHING = [
   { href: "/jobcoaching", label: "Jobcoaching – Überblick" },
@@ -26,7 +26,8 @@ const FOOTER_JUGEND = [
   { href: "/berufsorientierung/berufsstart", label: "Hilfreiches für den Berufsstart" },
 ];
 
-export default function Footer() {
+export default async function Footer() {
+  const [CONTACT, STANDORTE] = await Promise.all([getKontakt(), getStandorte()]);
   return (
     <footer className="on-dark bg-ink text-cream">
       <div className="mx-auto max-w-7xl px-5 pb-10 pt-16 md:px-8 md:pt-20">

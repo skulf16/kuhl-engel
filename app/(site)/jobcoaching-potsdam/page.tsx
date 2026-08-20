@@ -6,7 +6,8 @@ import CtaBand from "@/components/CtaBand";
 import Accordion from "@/components/Accordion";
 import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
-import { TEAM, type Faq } from "@/lib/data";
+import { KEY, DEFAULTS } from "@/lib/cms/pages/seite-jobcoaching-potsdam";
+import { loadPage, getTeam } from "@/lib/content";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
@@ -19,41 +20,27 @@ export const metadata = pageMetadata({
   imageAlt: "Standort von Kuhl & Engel in der Gutenbergstraße 87, Potsdam",
 });
 
-const FAQS_POTSDAM: Faq[] = [
-  {
-    q: "Wo findet das Jobcoaching in Potsdam statt?",
-    a: "Unser Potsdamer Standort liegt in der Gutenbergstraße 87, 14467 Potsdam – zentral in der nördlichen Innenstadt, nur wenige Gehminuten vom Holländischen Viertel. Alternativ coachen wir Dich online oder hybrid.",
-  },
-  {
-    q: "Kann ich meinen AVGS-Gutschein in Potsdam einlösen?",
-    a: "Ja. Kuhl & Engel ist AZAV-zertifizierter Träger, Du kannst Deinen Aktivierungs- und Vermittlungsgutschein direkt in Potsdam einlösen. Der Gutschein muss noch mindestens 10 Tage gültig sein, mindestens 20 Unterrichtseinheiten umfassen und in Teilzeit ausgestellt sein – das Coaching ist dann für Dich kostenfrei.",
-  },
-  {
-    q: "Welche Coaches arbeiten in Potsdam?",
-    a: "In Potsdam coachen Bettina Brammer, Grit Staroste, Wanda Wolff und Dr. Anna Mandel-Zakharova – alle systemisch ausgebildet und zertifiziert. Dr. Mandel-Zakharova coacht auch auf Englisch und Russisch.",
-  },
-  {
-    q: "Ich wohne in Brandenburg außerhalb Potsdams – geht das trotzdem?",
-    a: "Ja. Viele unserer Klient:innen kombinieren Termine vor Ort mit Online-Sitzungen via Zoom (hybrid) oder lassen sich komplett digital coachen. So funktioniert das Coaching unabhängig vom Wohnort.",
-  },
-  {
-    q: "Was kostet ein Jobcoaching in Potsdam?",
-    a: "Mit einem AVGS-Gutschein (Aktivierungs- und Vermittlungsgutschein) der Agentur für Arbeit oder des Jobcenters ist das Jobcoaching bei Kuhl & Engel zu 100 % kostenfrei – die Förderung deckt alle Kosten ab. Auch das Erstgespräch kostet nichts.",
-  },
+// Ziel-Links der Angebotsliste – bewusst fest im Code,
+// im CMS werden nur die Beschriftungen bearbeitet.
+const LEISTUNGEN_HREFS = [
+  "/avgs-coaching",
+  "/karrierecoaching",
+  "/jobcoaching",
+  "/avgs-gutschein-beantragen",
 ];
 
-// Heike und Martina coachen selbst nicht im AVGS-Standortbetrieb
-// (Kundenvorgabe 18.08.2026) – hier nur die Coach:innen vor Ort.
-const COACHES_POTSDAM = TEAM.filter((m) => m.role.startsWith("Potsdam"));
+export default async function JobcoachingPotsdamPage() {
+  const [c, team] = await Promise.all([loadPage(KEY, DEFAULTS), getTeam()]);
 
-const LEISTUNGEN = [
-  { href: "/avgs-coaching", label: "AVGS Coaching", note: "Mit Gutschein 100 % kostenfrei" },
-  { href: "/karrierecoaching", label: "Karrierecoaching", note: "Für Selbstzahler:innen & Unternehmen" },
-  { href: "/jobcoaching", label: "Karriere- & Bewerbungscoaching", note: "Orientierung, Bewerbung, Neustart" },
-  { href: "/avgs-gutschein-beantragen", label: "AVGS-Gutschein beantragen", note: "Schritt für Schritt zur Förderung" },
-];
+  // Heike und Martina coachen selbst nicht im AVGS-Standortbetrieb
+  // (Kundenvorgabe 18.08.2026) – hier nur die Coach:innen vor Ort.
+  const coachesPotsdam = team.members.filter((m) => m.role.startsWith("Potsdam"));
 
-export default function JobcoachingPotsdamPage() {
+  const leistungen = c.leistungen.items.map((item, i) => ({
+    ...item,
+    href: LEISTUNGEN_HREFS[i] ?? "/jobcoaching",
+  }));
+
   return (
     <>
       <JsonLd
@@ -67,32 +54,27 @@ export default function JobcoachingPotsdamPage() {
           avgsFree: true,
         })}
       />
-      <JsonLd data={faqSchema(FAQS_POTSDAM, "/jobcoaching-potsdam")} />
+      <JsonLd data={faqSchema(c.faq.items, "/jobcoaching-potsdam")} />
       <JsonLd data={breadcrumbSchema([{ name: "Jobcoaching Potsdam", path: "/jobcoaching-potsdam" }])} />
 
       <PageHero
-        eyebrow="Standort Potsdam · Nördliche Innenstadt"
+        eyebrow={c.hero.eyebrow}
         title={
           <>
-            Jobcoaching in Potsdam – <em>nahe Holländisches Viertel.</em>
+            {c.hero.headline} <em>{c.hero.headlineEm}</em>
           </>
         }
-        intro="AVGS Coaching und berufliche Neuorientierung in der Gutenbergstraße 87, mitten in der Potsdamer Innenstadt – oder online, ganz wie es zu Dir passt."
-        image="/images/ke-tisch-beratung.jpg"
+        intro={c.hero.intro}
+        image={c.hero.image}
       />
 
       {/* Auf einen Blick */}
       <section className="mx-auto max-w-7xl px-5 pt-16 md:px-8 md:pt-20">
         <Reveal>
           <FactBox
-            question="Wo finde ich Jobcoaching in Potsdam?"
-            answer="Kuhl & Engel bietet AVGS-gefördertes Jobcoaching in der Potsdamer Innenstadt an: Gutenbergstraße 87, 14467 Potsdam, wenige Gehminuten vom Holländischen Viertel. Das Einzelcoaching richtet sich an Akademiker:innen, Fach- und Führungskräfte und ist mit einem AVGS-Gutschein der Agentur für Arbeit oder des Jobcenters zu 100 % kostenfrei. Termine gibt es vor Ort, online oder hybrid."
-            facts={[
-              { label: "Adresse", value: "Gutenbergstraße 87, 14467 Potsdam (Nördliche Innenstadt)" },
-              { label: "Kosten", value: "Mit AVGS-Gutschein 0 €" },
-              { label: "Telefon", value: "030 51565388-0" },
-              { label: "Formate", value: "Vor Ort, online oder hybrid" },
-            ]}
+            question={c.fakten.question}
+            answer={c.fakten.answer}
+            facts={c.fakten.facts}
           />
         </Reveal>
       </section>
@@ -104,21 +86,18 @@ export default function JobcoachingPotsdamPage() {
             <Reveal>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Angebote in Potsdam
+                {c.leistungen.eyebrow}
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                Karrierecoaching für Potsdam <em>und Brandenburg.</em>
+                {c.leistungen.headline} <em>{c.leistungen.headlineEm}</em>
               </h2>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink/70">
-                Ob Neuorientierung nach der Elternzeit, der nächste Karriereschritt
-                oder der Berufseinstieg nach der Promotion: In Potsdam begleiten Dich
-                vier systemisch ausgebildete Coach:innen – auf Wunsch auch hybrid mit
-                Online-Terminen.
+                {c.leistungen.text}
               </p>
             </Reveal>
             <Reveal delay={150}>
               <ul className="mt-10 border-t border-ink/10">
-                {LEISTUNGEN.map((leistung, i) => (
+                {leistungen.map((leistung, i) => (
                   <li key={leistung.href}>
                     <Link
                       href={leistung.href}
@@ -148,7 +127,7 @@ export default function JobcoachingPotsdamPage() {
             <div className="relative">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
-                  src="/images/standort-potsdam.jpg"
+                  src={c.leistungen.image}
                   alt="Das Haus von Kuhl & Engel in der Gutenbergstraße 87, Potsdam"
                   fill
                   sizes="(max-width: 1024px) 100vw, 46vw"
@@ -156,8 +135,8 @@ export default function JobcoachingPotsdamPage() {
                 />
               </div>
               <div className="absolute -bottom-6 left-6 bg-ink px-6 py-4 text-cream">
-                <p className="display text-base italic text-gold-bright">Gutenbergstraße 87</p>
-                <p className="mt-0.5 text-[0.8rem] text-cream/70">14467 Potsdam · Nördliche Innenstadt</p>
+                <p className="display text-base italic text-gold-bright">{c.leistungen.cardTitle}</p>
+                <p className="mt-0.5 text-[0.8rem] text-cream/70">{c.leistungen.cardSub}</p>
               </div>
             </div>
           </Reveal>
@@ -170,14 +149,14 @@ export default function JobcoachingPotsdamPage() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              Dein Team in Potsdam
+              {c.coaches.eyebrow}
             </p>
             <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-              Diese Coaches begleiten Dich <em>vor Ort.</em>
+              {c.coaches.headline} <em>{c.coaches.headlineEm}</em>
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-            {COACHES_POTSDAM.map((member, i) => (
+            {coachesPotsdam.map((member, i) => (
               <Reveal key={member.name} delay={(i % 3) * 100}>
                 <article className="group">
                   <div className="relative aspect-[4/5] overflow-hidden bg-cream">
@@ -199,9 +178,9 @@ export default function JobcoachingPotsdamPage() {
           </div>
           <Reveal delay={150}>
             <p className="mt-10 text-[0.95rem] text-ink/60">
-              Das komplette Team mit allen Schwerpunkten findest Du{" "}
+              {c.coaches.outro}{" "}
               <Link href="/ueber-uns#team" className="link-gold font-semibold text-gold">
-                hier →
+                {c.coaches.linkLabel}
               </Link>
             </p>
           </Reveal>
@@ -212,12 +191,12 @@ export default function JobcoachingPotsdamPage() {
       <section className="mx-auto max-w-4xl px-5 py-24 md:px-8 md:py-32">
         <Reveal>
           <h2 className="display text-center text-4xl md:text-5xl">
-            Häufige Fragen zum <em>Standort Potsdam.</em>
+            {c.faq.headline} <em>{c.faq.headlineEm}</em>
           </h2>
         </Reveal>
         <Reveal delay={150}>
           <div className="mt-12">
-            <Accordion items={FAQS_POTSDAM} />
+            <Accordion items={c.faq.items} />
           </div>
         </Reveal>
       </section>
@@ -225,10 +204,10 @@ export default function JobcoachingPotsdamPage() {
       <CtaBand
         title={
           <>
-            Lerne uns in Potsdam <em>persönlich kennen.</em>
+            {c.cta.headline} <em>{c.cta.headlineEm}</em>
           </>
         }
-        text="Vereinbare ein kostenloses Erstgespräch – in der Gutenbergstraße, telefonisch oder online."
+        text={c.cta.text}
       />
     </>
   );

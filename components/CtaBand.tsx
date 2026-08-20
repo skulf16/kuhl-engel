@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import { CONTACT } from "@/lib/data";
+import { getKontakt } from "@/lib/content";
 
-export default function CtaBand({
+export default async function CtaBand({
   title,
   text,
   href = "/kontakt",
@@ -14,6 +14,7 @@ export default function CtaBand({
   href?: string;
   label?: string;
 }) {
+  const CONTACT = await getKontakt();
   const fallbackTitle = (
     <>
       Sag ja zu: <em>Jetzt, nicht irgendwann.</em>

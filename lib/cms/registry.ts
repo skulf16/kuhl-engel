@@ -12,6 +12,47 @@ import {
 } from "@/lib/data";
 import { STARTSEITE_DEFAULTS } from "./defaults/startseite";
 import type { Field, SectionDef } from "./types";
+import * as SeiteJobcoaching from "./pages/seite-jobcoaching";
+import * as SeiteAvgsCoaching from "./pages/seite-avgs-coaching";
+import * as SeiteAvgsGutschein from "./pages/seite-avgs-gutschein";
+import * as SeiteKarrierecoaching from "./pages/seite-karrierecoaching";
+import * as SeiteJobcoachingBerlin from "./pages/seite-jobcoaching-berlin";
+import * as SeiteJobcoachingPotsdam from "./pages/seite-jobcoaching-potsdam";
+import * as SeiteJobcoachingAugsburg from "./pages/seite-jobcoaching-augsburg";
+import * as SeiteBerufsorientierung from "./pages/seite-berufsorientierung";
+import * as SeiteBoEinzelcoaching from "./pages/seite-bo-einzelcoaching";
+import * as SeiteBoGruppenangebote from "./pages/seite-bo-gruppenangebote";
+import * as SeiteBoBerufsstart from "./pages/seite-bo-berufsstart";
+import * as SeiteUeberUns from "./pages/seite-ueber-uns";
+import * as SeiteKontakt from "./pages/seite-kontakt";
+
+/**
+ * Seiten-Module aus lib/cms/pages/ – jedes exportiert KEY, TITLE,
+ * DESCRIPTION, FIELDS und DEFAULTS. Reihenfolge = Reihenfolge im Admin.
+ */
+const PAGE_MODULES = [
+  SeiteJobcoaching,
+  SeiteAvgsCoaching,
+  SeiteAvgsGutschein,
+  SeiteKarrierecoaching,
+  SeiteJobcoachingBerlin,
+  SeiteJobcoachingPotsdam,
+  SeiteJobcoachingAugsburg,
+  SeiteBerufsorientierung,
+  SeiteBoEinzelcoaching,
+  SeiteBoGruppenangebote,
+  SeiteBoBerufsstart,
+  SeiteUeberUns,
+  SeiteKontakt,
+] as const;
+
+const PAGE_SECTIONS: SectionDef[] = PAGE_MODULES.map((mod) => ({
+  key: mod.KEY,
+  title: mod.TITLE,
+  group: "Seiten",
+  description: mod.DESCRIPTION,
+  fields: mod.FIELDS,
+}));
 
 /**
  * Registry aller im Admin editierbaren Sektionen.
@@ -164,6 +205,7 @@ export const SECTIONS: SectionDef[] = [
     description: "Alle Texte und Bilder der Startseite – vom Hero bis zur FAQ-Überschrift.",
     fields: startseiteFields,
   },
+  ...PAGE_SECTIONS,
   {
     key: "kontakt",
     title: "Kontaktdaten",
@@ -341,6 +383,7 @@ export const SECTIONS: SectionDef[] = [
 /** Default-Inhalte je Sektion – identisch strukturiert zu den gespeicherten Dokumenten. */
 export const DEFAULTS: Record<string, unknown> = {
   startseite: STARTSEITE_DEFAULTS,
+  ...Object.fromEntries(PAGE_MODULES.map((mod) => [mod.KEY, mod.DEFAULTS])),
   kontakt: CONTACT,
   stats: { items: STATS },
   bereiche: { items: BEREICHE },

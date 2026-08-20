@@ -5,9 +5,10 @@ import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
 import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
-import { BO_STATS, CONTACT, JUGEND_ANGEBOTE } from "@/lib/data";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
+import { KEY, DEFAULTS } from "@/lib/cms/pages/seite-berufsorientierung";
+import { getJugendAngebote, getKontakt, loadPage } from "@/lib/content";
 
 export const metadata = pageMetadata({
   title: "Berufsorientierung für Jugendliche – Angebote für Schulen",
@@ -18,16 +19,13 @@ export const metadata = pageMetadata({
   imageAlt: "Berufsorientierung „Mein Berufseinstieg“ von Kuhl & Engel",
 });
 
-const NUTZEN = [
-  "lernen ihre Stärken und Interessen kennen",
-  "beschäftigen sich mit ihren Werten und Prioritäten",
-  "entwickeln ein Mission Statement, das sie berührt und motiviert",
-  "haben eine klare Vorstellung von ihrer beruflichen Richtung",
-  "können sich selbst besser einschätzen",
-  "lernen, eigene Ziele zu entwerfen und ihre Zukunft zu planen",
-];
+export default async function BerufsorientierungPage() {
+  const [c, kontakt, angebote] = await Promise.all([
+    loadPage(KEY, DEFAULTS),
+    getKontakt(),
+    getJugendAngebote(),
+  ]);
 
-export default function BerufsorientierungPage() {
   return (
     <>
       <JsonLd
@@ -44,22 +42,22 @@ export default function BerufsorientierungPage() {
       <JsonLd data={breadcrumbSchema([{ name: "Berufsorientierung", path: "/berufsorientierung" }])} />
 
       <PageHero
-        eyebrow="Berufsorientierung · Für Schulen, Lehrkräfte & Partner"
+        eyebrow={c.hero.eyebrow}
         title={
           <>
-            Mein Berufseinstieg – <em>Orientierung, die wirkt.</em>
+            {c.hero.headline} <em>{c.hero.headlineEm}</em>
           </>
         }
-        intro="Für die meisten Jugendlichen ist die Berufs- oder Studienwahl ein schwerer Brocken – bei viel Druck und wenig Erfahrung. Seit über 15 Jahren begleiten wir Schulen in Berlin und Brandenburg mit Coachings für Schulklassen und Einzelcoachings zur beruflichen Orientierung. Professionell, jugendgerecht und mit messbarer Wirkung."
-        image="/images/jugend-klassen-coaching.jpg"
-        cta={{ href: "#kontakt", label: "Unverbindlich anfragen" }}
+        intro={c.hero.intro}
+        image={c.hero.image}
+        cta={{ href: "#kontakt", label: c.hero.ctaLabel }}
       />
 
       {/* Kennzahlen (überlappen den Hero) */}
       <section className="relative z-10 mx-auto -mt-14 max-w-6xl px-5 md:px-8">
         <Reveal>
           <dl className="grid grid-cols-1 divide-y divide-ink/10 overflow-hidden rounded-xl border border-ink/10 bg-paper shadow-[0_32px_80px_-32px_rgba(14,29,43,0.35)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-            {BO_STATS.map((stat) => (
+            {c.kennzahlen.items.map((stat) => (
               <div key={stat.label} className="px-6 py-8 text-center md:py-10">
                 <dt className="sr-only">{stat.label}</dt>
                 <dd className="display text-4xl text-ink md:text-5xl">{stat.value}</dd>
@@ -74,14 +72,9 @@ export default function BerufsorientierungPage() {
       <section className="mx-auto max-w-7xl px-5 pt-16 md:px-8 md:pt-20">
         <Reveal>
           <FactBox
-            question="Was leistet „Mein Berufseinstieg“?"
-            answer="„Mein Berufseinstieg“ ist unser Programm zur Berufsorientierung für Jugendliche – als 2- bis 2,5-tägiges Projekt für ganze Schulklassen oder als Einzelcoaching für Schüler:innen und Abiturient:innen. Mehrere professionelle Coaches arbeiten mit jugendgerechten, spielerischen Methoden. Seit 2016 waren das 53 Schulprojekte mit 4.133 Schüler:innen. Das Ergebnis: Die Jugendlichen kennen ihre Stärken, entwickeln eine klare berufliche Richtung und starten motivierter in Schule, Praktikum und Bewerbung."
-            facts={[
-              { label: "Für wen", value: "Schulen, Lehrkräfte und Kooperationspartner" },
-              { label: "Formate", value: "Projekte für Schulklassen & Einzelcoaching" },
-              { label: "Erfahrung", value: "Seit über 15 Jahren · 53 Schulprojekte · 4.133 Schüler:innen" },
-              { label: "Förderung", value: "In Brandenburg über PraxisBO förderfähig" },
-            ]}
+            question={c.aufEinenBlick.question}
+            answer={c.aufEinenBlick.answer}
+            facts={c.aufEinenBlick.facts}
           />
         </Reveal>
       </section>
@@ -91,14 +84,14 @@ export default function BerufsorientierungPage() {
         <Reveal>
           <p className="eyebrow flex items-center gap-3 text-gold">
             <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-            Unsere Angebote zur Berufsorientierung
+            {c.angebote.eyebrow}
           </p>
           <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-            Drei Wege, wie wir <em>Deine Schüler:innen stärken.</em>
+            {c.angebote.headline} <em>{c.angebote.headlineEm}</em>
           </h2>
         </Reveal>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {JUGEND_ANGEBOTE.map((item, i) => (
+          {angebote.map((item, i) => (
             <Reveal key={item.slug} delay={i * 120} className="h-full">
               <Link
                 href={item.slug}
@@ -119,7 +112,7 @@ export default function BerufsorientierungPage() {
                   <p className="eyebrow mt-2 !text-[0.6rem] text-ink/45">{item.claim}</p>
                   <p className="mt-4 grow text-[0.95rem] leading-relaxed text-ink/65">{item.text}</p>
                   <span className="link-gold mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold">
-                    Mehr erfahren <span aria-hidden>→</span>
+                    {c.angebote.linkLabel} <span aria-hidden>→</span>
                   </span>
                 </div>
               </Link>
@@ -134,7 +127,7 @@ export default function BerufsorientierungPage() {
           <Reveal>
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src="/images/jugend-beelitz-1.jpg"
+                src={c.wirkung.image}
                 alt="Jugendliche im Coaching zur Berufsorientierung"
                 fill
                 sizes="(max-width: 1024px) 100vw, 46vw"
@@ -146,15 +139,15 @@ export default function BerufsorientierungPage() {
             <Reveal>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Die Wirkung
+                {c.wirkung.eyebrow}
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                Schüler:innen, die teilnehmen, <em>starten klarer und motivierter.</em>
+                {c.wirkung.headline} <em>{c.wirkung.headlineEm}</em>
               </h2>
             </Reveal>
             <Reveal delay={150}>
               <ul className="mt-8 space-y-3.5">
-                {NUTZEN.map((punkt) => (
+                {c.wirkung.bullets.map((punkt) => (
                   <li key={punkt} className="flex items-start gap-3.5 leading-relaxed text-ink/75">
                     <span aria-hidden className="display mt-0.5 italic text-gold">✓</span>
                     {punkt}
@@ -164,15 +157,13 @@ export default function BerufsorientierungPage() {
             </Reveal>
             <Reveal delay={250}>
               <p className="mt-7 max-w-xl text-[0.95rem] leading-relaxed text-ink/60">
-                Die motiviertere Grundhaltung zeigt sich im Schulalltag ebenso wie
-                bei der weiteren Orientierung – etwa in der Studienberatung, im BIZ
-                oder bei der Planung eines Schülerpraktikums.
+                {c.wirkung.outro}
               </p>
               <a
-                href={CONTACT.phoneHref}
+                href={kontakt.phoneHref}
                 className="mt-7 inline-flex items-center gap-2 font-semibold text-gold transition-colors hover:text-ink"
               >
-                Fragen? Ruf uns an: {CONTACT.phone} <span aria-hidden>→</span>
+                {c.wirkung.phoneLinkLabel} {kontakt.phone} <span aria-hidden>→</span>
               </a>
             </Reveal>
           </div>
@@ -186,26 +177,24 @@ export default function BerufsorientierungPage() {
             <Reveal>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Kontakt
+                {c.kontakt.eyebrow}
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                Hol „Mein Berufseinstieg“ <em>an Deine Schule.</em>
+                {c.kontakt.headline} <em>{c.kontakt.headlineEm}</em>
               </h2>
               <p className="mt-6 max-w-md text-lg leading-relaxed text-ink/70">
-                Im unverbindlichen Gespräch finden wir gemeinsam heraus, welches
-                Format zu Deiner Schule oder Einrichtung passt – und wie die
-                Förderung funktioniert.
+                {c.kontakt.text}
               </p>
               <a
-                href={CONTACT.phoneHref}
+                href={kontakt.phoneHref}
                 className="mt-7 inline-flex items-center gap-2 font-semibold text-gold transition-colors hover:text-ink"
               >
-                Oder ruf direkt an: {CONTACT.phone} <span aria-hidden>→</span>
+                {c.kontakt.phoneLinkLabel} {kontakt.phone} <span aria-hidden>→</span>
               </a>
             </Reveal>
           </div>
           <Reveal delay={150}>
-            <ContactForm variant="schulen" />
+            <ContactForm variant="schulen" kontakt={kontakt} />
           </Reveal>
         </div>
       </section>

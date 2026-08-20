@@ -4,7 +4,11 @@ import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import JsonLd from "@/components/JsonLd";
 import Link from "next/link";
-import { FOUNDERS, STANDORTE, TEAM } from "@/lib/data";
+import {
+  KEY as UEBER_UNS_KEY,
+  DEFAULTS as UEBER_UNS_DEFAULTS,
+} from "@/lib/cms/pages/seite-ueber-uns";
+import { loadPage, getStandorte, getTeam } from "@/lib/content";
 import { breadcrumbSchema, teamGraph } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
@@ -15,20 +19,26 @@ export const metadata = pageMetadata({
   path: "/ueber-uns",
 });
 
-export default function UeberUnsPage() {
+export default async function UeberUnsPage() {
+  const [c, team, standorte] = await Promise.all([
+    loadPage(UEBER_UNS_KEY, UEBER_UNS_DEFAULTS),
+    getTeam(),
+    getStandorte(),
+  ]);
+
   return (
     <>
       <JsonLd data={teamGraph} />
       <JsonLd data={breadcrumbSchema([{ name: "Über uns & Team", path: "/ueber-uns" }])} />
       <PageHero
-        eyebrow="Über uns"
+        eyebrow={c.hero.eyebrow}
         title={
           <>
-            Arbeit darf <em>leicht sein.</em>
+            {c.hero.headline} <em>{c.hero.headlineEm}</em>
           </>
         }
-        intro="Ganzheitliches Coaching für mehr Sinn und Freude im Berufsleben: Wir glauben daran, dass jeder Mensch etwas Wertvolles zu geben hat – und alle Potenziale dafür in sich trägt."
-        image="/images/ke-duo-blick.jpg"
+        intro={c.hero.intro}
+        image={c.hero.image}
       />
 
       {/* Haltung */}
@@ -38,24 +48,16 @@ export default function UeberUnsPage() {
             <Reveal>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Was uns motiviert
+                {c.motivation.eyebrow}
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                Berufung <em>statt Beruf.</em>
+                {c.motivation.headline} <em>{c.motivation.headlineEm}</em>
               </h2>
             </Reveal>
             <Reveal delay={150}>
               <div className="mt-7 space-y-5 text-lg leading-relaxed text-ink/70">
-                <p>
-                  Kuhl & Engel, das sind wir: Heike Kuhl und Martina
-                  Engel-Fürstberger. Wir arbeiten seit vielen Jahren als Coaches und
-                  möchten Dich als authentische Persönlichkeiten mit all unseren
-                  Erfahrungen in Deiner beruflichen Entwicklung unterstützen.
-                </p>
-                <p>
-                  Statt höher, schneller, weiter plädieren wir als gesamtes Team
-                  für: selbstbestimmt, verbunden und erfüllt.
-                </p>
+                <p>{c.motivation.text1}</p>
+                <p>{c.motivation.text2}</p>
               </div>
             </Reveal>
           </div>
@@ -63,24 +65,16 @@ export default function UeberUnsPage() {
             <Reveal delay={100}>
               <p className="eyebrow flex items-center gap-3 text-gold">
                 <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-                Wie wir arbeiten
+                {c.arbeitsweise.eyebrow}
               </p>
               <h2 className="display mt-6 text-4xl md:text-5xl">
-                Auf <em>Augenhöhe.</em>
+                {c.arbeitsweise.headline} <em>{c.arbeitsweise.headlineEm}</em>
               </h2>
             </Reveal>
             <Reveal delay={250}>
               <div className="mt-7 space-y-5 text-lg leading-relaxed text-ink/70">
-                <p>
-                  In unseren Coachings schaffen wir eine sichere und vertrauensvolle
-                  Atmosphäre, in der Du ankommen, loslassen und Du selbst sein
-                  darfst. Wir holen Dich da ab, wo Du gerade stehst – und erforschen
-                  gemeinsam, was Deine innere Stimme Dir sagt.
-                </p>
-                <p>
-                  Wir arbeiten wertschätzend, ressourcenorientiert und bieten Dir
-                  systemisches Coaching auf höchstem Niveau.
-                </p>
+                <p>{c.arbeitsweise.text1}</p>
+                <p>{c.arbeitsweise.text2}</p>
               </div>
             </Reveal>
           </div>
@@ -93,14 +87,14 @@ export default function UeberUnsPage() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              Die Gründerinnen
+              {c.gruenderinnen.eyebrow}
             </p>
             <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-              Zwei Wege, <em>ein gemeinsames Warum.</em>
+              {c.gruenderinnen.headline} <em>{c.gruenderinnen.headlineEm}</em>
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-8 md:grid-cols-2">
-            {FOUNDERS.map((founder, i) => (
+            {team.founders.map((founder, i) => (
               <Reveal key={founder.name} delay={i * 150}>
                 <article className="group grid h-full overflow-hidden border border-ink/10 bg-paper sm:grid-cols-[42%_1fr]">
                   <div className="relative aspect-[4/5] sm:aspect-auto">
@@ -134,21 +128,20 @@ export default function UeberUnsPage() {
         <Reveal>
           <p className="eyebrow flex items-center gap-3 text-gold">
             <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-            Gemeinsam stark
+            {c.team.eyebrow}
           </p>
           <div className="mt-6 flex flex-wrap items-end justify-between gap-6">
             <h2 className="display max-w-xl text-4xl md:text-5xl">
-              Unser <em>Team.</em>
+              {c.team.headline} <em>{c.team.headlineEm}</em>
             </h2>
             <p className="mb-2 max-w-md text-[0.95rem] leading-relaxed text-ink/60">
-              Vielseitige Expertise, hohes Engagement und verschiedenste Biografien –
-              alle zertifiziert, alle systemisch arbeitend.
+              {c.team.intro}
             </p>
           </div>
         </Reveal>
 
         <div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-          {TEAM.map((member, i) => (
+          {team.members.map((member, i) => (
             <Reveal key={member.name} delay={(i % 3) * 100}>
               <article className="group">
                 <div className="relative aspect-[4/5] overflow-hidden bg-cream-deep">
@@ -184,14 +177,14 @@ export default function UeberUnsPage() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3 text-gold">
               <span aria-hidden className="inline-block h-px w-10 bg-gold" />
-              Unsere Standorte
+              {c.standorte.eyebrow}
             </p>
             <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
-              Online, Berlin, Potsdam, Augsburg – <em>oder bei Dir.</em>
+              {c.standorte.headline} <em>{c.standorte.headlineEm}</em>
             </h2>
           </Reveal>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {STANDORTE.map((standort, i) => (
+            {standorte.map((standort, i) => (
               <Reveal key={standort.city} delay={i * 100} className="h-full">
                 <div className="group flex h-full flex-col overflow-hidden border border-ink/10 bg-paper transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_56px_-28px_rgba(14,29,43,0.3)]">
                   <div className="relative aspect-[16/10] overflow-hidden">
@@ -216,7 +209,7 @@ export default function UeberUnsPage() {
                     </p>
                     {standort.href && (
                       <Link href={standort.href} className="link-gold mt-5 inline-flex items-center gap-2 text-sm font-semibold text-gold">
-                        Zum Standort <span aria-hidden>→</span>
+                        {c.standorte.linkLabel} <span aria-hidden>→</span>
                       </Link>
                     )}
                   </div>
@@ -226,8 +219,7 @@ export default function UeberUnsPage() {
           </div>
           <Reveal delay={150}>
             <p className="mt-10 text-[0.95rem] text-ink/60">
-              Alle Coachings bieten wir auch hybrid an – vor Ort kombiniert mit
-              Online-Terminen via Zoom.
+              {c.standorte.hybridNote}
             </p>
           </Reveal>
         </div>
@@ -238,17 +230,16 @@ export default function UeberUnsPage() {
         <Reveal>
           <div className="mx-auto flex max-w-4xl flex-col items-center gap-8 px-5 text-center md:flex-row md:text-left">
             <Image
-              src="/images/europanozert-siegel.png"
+              src={c.zertifizierung.image}
               alt="Europanozert AZAV-Siegel Maßnahmezulassung"
               width={120}
               height={120}
               className="shrink-0 border border-ink/10 bg-white p-2"
             />
             <p className="text-lg leading-relaxed text-ink/75">
-              Kuhl & Engel steht für <strong className="text-ink">zertifizierte Qualität</strong>:
-              Als AZAV-zugelassener Träger sind wir zu 100 % für das AVGS Coaching
-              zertifiziert – für langjährige Erfahrung, individuelles und
-              nachhaltiges Coaching.
+              {c.zertifizierung.textVor}{" "}
+              <strong className="text-ink">{c.zertifizierung.textFett}</strong>
+              {c.zertifizierung.textNach}
             </p>
           </div>
         </Reveal>
@@ -257,10 +248,10 @@ export default function UeberUnsPage() {
       <CtaBand
         title={
           <>
-            Mach Dich mit uns <em>auf den Weg.</em>
+            {c.ctaBand.headline} <em>{c.ctaBand.headlineEm}</em>
           </>
         }
-        text="Buch Dir gleich ein kostenloses Erstgespräch – wir finden gemeinsam heraus, welche:r Coach:in am besten zu Dir passt."
+        text={c.ctaBand.text}
       />
     </>
   );
