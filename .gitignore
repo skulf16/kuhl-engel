@@ -47,3 +47,4 @@ next-env.d.ts
 
 # CMS: lokale Inhalte & Uploads (Produktion: Postgres + Volume)
 /data/
+/Fotos_Portraits_Team/
