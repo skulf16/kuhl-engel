@@ -15,8 +15,8 @@ export const metadata = pageMetadata({
   description:
     "Jobcoaching Berlin: AVGS Coaching und Karrierecoaching für Akademiker:innen in der Bötzowstraße 28, Prenzlauer Berg – mit AVGS-Gutschein 100 % kostenfrei. AZAV-zertifiziert, auch online oder hybrid.",
   path: "/jobcoaching-berlin",
-  image: "/images/ke-berlin-fenster.jpg",
-  imageAlt: "Standort von Kuhl & Engel in der Bötzowstraße 28, Berlin-Prenzlauer Berg",
+  image: "/images/ke-flipchart-duo.jpg",
+  imageAlt: "Coaching-Situation bei Kuhl & Engel in Berlin: Arbeit am Flipchart in den Räumen in Prenzlauer Berg",
 });
 
 const FAQS_BERLIN: Faq[] = [
@@ -90,7 +90,7 @@ export default function JobcoachingBerlinPage() {
           </>
         }
         intro="AVGS Coaching, Karrierecoaching und berufliche Neuorientierung in der Bötzowstraße 28, wenige Minuten vom Volkspark Friedrichshain – oder online, ganz wie es zu Dir passt."
-        image="/images/ke-berlin-fenster.jpg"
+        image="/images/ke-flipchart-duo.jpg"
       />
 
       {/* Auf einen Blick */}
