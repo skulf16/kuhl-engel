@@ -5,6 +5,7 @@ import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import Accordion from "@/components/Accordion";
 import FactBox from "@/components/FactBox";
+import StandortGalerie from "@/components/StandortGalerie";
 import JsonLd from "@/components/JsonLd";
 import { DEFAULTS, KEY } from "@/lib/cms/pages/seite-jobcoaching-berlin";
 import { getTeam, getTestimonials, loadPage } from "@/lib/content";
@@ -220,6 +221,32 @@ export default async function JobcoachingBerlinPage() {
           </Reveal>
         </div>
       </section>
+
+      {/* Galerie */}
+      <StandortGalerie
+        headline="Unsere Räume in"
+        headlineEm="Prenzlauer Berg"
+        images={[
+          {
+            src: "/images/standort-berlin-stuehle.jpg",
+            alt: "Sitzecke mit zwei Sesseln in den Coaching-Räumen von Kuhl & Engel in der Bötzowstraße 28, Berlin",
+            wide: true,
+          },
+          {
+            src: "/images/standort-berlin-laden.jpg",
+            alt: "Heller Gemeinschaftsraum mit großem Tisch in den Räumen von Kuhl & Engel in Berlin-Prenzlauer Berg",
+          },
+          {
+            src: "/images/standort-berlin-raum.jpg",
+            alt: "Coaching-Raum mit Sesseln und Blick in den Garten bei Kuhl & Engel in Berlin",
+          },
+          {
+            src: "/images/standort-berlin-goldwand.jpg",
+            alt: "Goldene Wandinstallation in den Coaching-Räumen von Kuhl & Engel in Berlin",
+            wide: true,
+          },
+        ]}
+      />
 
       {/* FAQ */}
       <section className="mx-auto max-w-4xl px-5 py-24 md:px-8 md:py-32">

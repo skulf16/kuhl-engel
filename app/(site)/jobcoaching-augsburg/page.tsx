@@ -5,6 +5,7 @@ import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import Accordion from "@/components/Accordion";
 import FactBox from "@/components/FactBox";
+import StandortGalerie from "@/components/StandortGalerie";
 import JsonLd from "@/components/JsonLd";
 import { KEY, DEFAULTS } from "@/lib/cms/pages/seite-jobcoaching-augsburg";
 import { loadPage, getTeam } from "@/lib/content";
@@ -202,6 +203,30 @@ export default async function JobcoachingAugsburgPage() {
           </Reveal>
         </div>
       </section>
+
+      {/* Galerie */}
+      <StandortGalerie
+        headline="Unser Standort am"
+        headlineEm="Mauerberg"
+        images={[
+          {
+            src: "/images/standort-augsburg-aussen.jpg",
+            alt: "Außenansicht des Standorts von Kuhl & Engel am Mauerberg 26 in der Augsburger Altstadt",
+          },
+          {
+            src: "/images/standort-augsburg-kanal.jpg",
+            alt: "Blick über den Lechkanal auf das Gebäude von Kuhl & Engel in der Augsburger Altstadt",
+          },
+          {
+            src: "/images/standort-augsburg-fenster.jpg",
+            alt: "Fassade mit Sprossenfenstern am Standort von Kuhl & Engel in Augsburg",
+          },
+          {
+            src: "/images/standort-augsburg-raum.jpg",
+            alt: "Seminarraum mit grünen Stühlen bei Kuhl & Engel in Augsburg",
+          },
+        ]}
+      />
 
       {/* FAQ */}
       <section className="mx-auto max-w-4xl px-5 py-24 md:px-8 md:py-32">

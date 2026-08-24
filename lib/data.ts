@@ -367,7 +367,7 @@ export const STANDORTE: Standort[] = [
     city: "Berlin",
     label: "Prenzlauer Berg",
     address: ["Bötzowstraße 28", "10407 Berlin"],
-    image: "/images/ke-berlin-fenster.jpg",
+    image: "/images/standort-berlin-stuehle.jpg",
     href: "/jobcoaching-berlin",
   },
   {
@@ -381,7 +381,7 @@ export const STANDORTE: Standort[] = [
     city: "Augsburg",
     label: "Altstadt",
     address: ["Mauerberg 26", "86152 Augsburg"],
-    image: "/images/ke-augsburg-einzel.jpg",
+    image: "/images/standort-augsburg-aussen.jpg",
     href: "/jobcoaching-augsburg",
   },
 ];

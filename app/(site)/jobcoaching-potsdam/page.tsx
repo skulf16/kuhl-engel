@@ -5,6 +5,7 @@ import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import Accordion from "@/components/Accordion";
 import FactBox from "@/components/FactBox";
+import StandortGalerie from "@/components/StandortGalerie";
 import JsonLd from "@/components/JsonLd";
 import { KEY, DEFAULTS } from "@/lib/cms/pages/seite-jobcoaching-potsdam";
 import { loadPage, getTeam } from "@/lib/content";
@@ -186,6 +187,30 @@ export default async function JobcoachingPotsdamPage() {
           </Reveal>
         </div>
       </section>
+
+      {/* Galerie */}
+      <StandortGalerie
+        headline="Unsere Räume in der"
+        headlineEm="Gutenbergstraße"
+        images={[
+          {
+            src: "/images/standort-potsdam.jpg",
+            alt: "Außenansicht des Standorts von Kuhl & Engel in der Gutenbergstraße 87, Potsdam",
+          },
+          {
+            src: "/images/standort-potsdam-lounge.jpg",
+            alt: "Coaching-Raum mit zwei Ledersesseln bei Kuhl & Engel in Potsdam",
+          },
+          {
+            src: "/images/standort-potsdam-coaching.jpg",
+            alt: "Coaching-Raum mit Flipchart und Sesseln bei Kuhl & Engel in Potsdam",
+          },
+          {
+            src: "/images/standort-potsdam-dachgeschoss.jpg",
+            alt: "Heller Coaching-Raum im Dachgeschoss bei Kuhl & Engel in Potsdam",
+          },
+        ]}
+      />
 
       {/* FAQ */}
       <section className="mx-auto max-w-4xl px-5 py-24 md:px-8 md:py-32">
