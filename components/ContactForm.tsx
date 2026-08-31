@@ -19,9 +19,11 @@ export default function ContactForm({
   /** Kontaktdaten aus dem CMS – Fallback sind die Defaults aus lib/data. */
   kontakt?: typeof CONTACT;
 }) {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle",
+  );
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const lines = [
@@ -42,21 +44,33 @@ export default function ContactForm({
       variant === "schulen"
         ? "Anfrage Berufsorientierung über die Website"
         : "Rückruf-Bitte über die Website";
-    const mailto = `mailto:${kontakt.email}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(lines.join("\n"))}`;
-    window.location.href = mailto;
-    setSent(true);
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/kontakt", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject,
+          text: lines.join("\n"),
+          name: data.get("name"),
+          email: data.get("email"),
+          website: data.get("website"),
+        }),
+      });
+      setStatus(res.ok ? "sent" : "error");
+    } catch {
+      setStatus("error");
+    }
   }
 
-  if (sent) {
+  if (status === "sent") {
     return (
       <div className="border border-gold/40 bg-gold/8 p-8">
-        <p className="display text-2xl">Fast geschafft!</p>
+        <p className="display text-2xl">Danke für Deine Anfrage!</p>
         <p className="mt-3 leading-relaxed text-ink/70">
-          Dein E-Mail-Programm hat sich mit der vorbereiteten Nachricht geöffnet –
-          einfach absenden, wir melden uns schnellstmöglich bei Dir. Falls sich kein
-          Fenster geöffnet hat, erreichst Du uns direkt unter{" "}
+          Deine Nachricht ist bei uns angekommen – wir melden uns
+          schnellstmöglich bei Dir. Wenn es eilig ist, erreichst Du uns direkt
+          unter{" "}
           <a href={`mailto:${kontakt.email}`} className="font-semibold text-gold">
             {kontakt.email}
           </a>{" "}
@@ -154,6 +168,15 @@ export default function ContactForm({
         <span className="text-sm font-semibold">Deine Nachricht (optional)</span>
         <textarea name="nachricht" rows={4} className={inputStyles} placeholder="Worum geht es Dir? Ein Satz genügt." />
       </label>
+      {/* Honeypot gegen Spam-Bots – für Menschen unsichtbar */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
       <p className="text-[0.82rem] leading-relaxed text-ink/50">
         Mit dem Absenden erkennst Du unsere{" "}
         <a href="/datenschutz" className="underline decoration-gold underline-offset-2 hover:text-ink">
@@ -161,11 +184,22 @@ export default function ContactForm({
         </a>{" "}
         an.
       </p>
+      {status === "error" && (
+        <p className="text-[0.9rem] font-medium text-red-700">
+          Das hat leider nicht geklappt. Bitte versuche es noch einmal oder
+          schreib uns direkt an{" "}
+          <a href={`mailto:${kontakt.email}`} className="underline decoration-gold underline-offset-2">
+            {kontakt.email}
+          </a>
+          .
+        </p>
+      )}
       <button
         type="submit"
-        className="group mt-1 inline-flex items-center justify-center gap-3 bg-ink px-8 py-4 font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-700 sm:justify-self-start"
+        disabled={status === "sending"}
+        className="group mt-1 inline-flex items-center justify-center gap-3 bg-ink px-8 py-4 font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-700 disabled:cursor-wait disabled:opacity-60 sm:justify-self-start"
       >
-        Rückruf anfordern
+        {status === "sending" ? "Wird gesendet …" : "Rückruf anfordern"}
         <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
       </button>
     </form>

@@ -31,7 +31,9 @@ export default function BookingFunnel({
   kontakt?: typeof CONTACT;
 }) {
   const [step, setStep] = useState(0);
-  const [done, setDone] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">(
+    "idle",
+  );
   const [answers, setAnswers] = useState<Answers>({
     gutschein: "",
     thema: "",
@@ -50,8 +52,9 @@ export default function BookingFunnel({
     setStep((s) => Math.min(s + 1, TOTAL_STEPS - 1));
   };
 
-  function submit(e: React.FormEvent<HTMLFormElement>) {
+  async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const data = new FormData(e.currentTarget);
     const g = FUNNEL_GUTSCHEIN.find((o) => o.value === answers.gutschein)?.label;
     const t = FUNNEL_THEMEN.find((o) => o.value === answers.thema)?.label;
     const o = FUNNEL_ORTE.find((x) => x.value === answers.ort)?.label;
@@ -67,20 +70,32 @@ export default function BookingFunnel({
       `Telefon: ${answers.phone}`,
       `E-Mail: ${answers.email}`,
     ].join("\n");
-    window.location.href = `mailto:${kontakt.email}?subject=${encodeURIComponent(
-      "AVGS-Coaching – Buchungsanfrage",
-    )}&body=${encodeURIComponent(body)}`;
-    setDone(true);
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/kontakt", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: "AVGS-Coaching – Buchungsanfrage",
+          text: body,
+          name: answers.name,
+          email: answers.email,
+          website: data.get("website"),
+        }),
+      });
+      setStatus(res.ok ? "done" : "error");
+    } catch {
+      setStatus("error");
+    }
   }
 
-  if (done) {
+  if (status === "done") {
     return (
       <div className="border border-gold/40 bg-gold/8 p-8 md:p-10">
         <p className="display text-3xl">Geschafft – wir melden uns!</p>
         <p className="mt-4 max-w-xl leading-relaxed text-ink/70">
-          Dein E-Mail-Programm hat sich mit Deiner Anfrage geöffnet – einmal
-          absenden, und wir rufen Dich zu Deiner Wunschzeit zurück. Falls sich
-          nichts geöffnet hat, erreichst Du uns direkt unter{" "}
+          Deine Anfrage ist bei uns angekommen – wir rufen Dich zu Deiner
+          Wunschzeit zurück. Wenn es eilig ist, erreichst Du uns direkt unter{" "}
           <a href={kontakt.phoneHref} className="font-semibold text-gold">
             {kontakt.phone}
           </a>
@@ -229,15 +244,35 @@ export default function BookingFunnel({
               ))}
             </select>
           </label>
+          {/* Honeypot gegen Spam-Bots – für Menschen unsichtbar */}
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="hidden"
+          />
           <p className="text-[0.82rem] leading-relaxed text-ink/50">
             Mit dem Absenden erkennst Du unsere{" "}
             <a href="/datenschutz" className="underline decoration-gold underline-offset-2 hover:text-ink">Datenschutzerklärung</a> an.
           </p>
+          {status === "error" && (
+            <p className="text-[0.9rem] font-medium text-red-700">
+              Das hat leider nicht geklappt. Bitte versuche es noch einmal oder
+              ruf uns direkt an:{" "}
+              <a href={kontakt.phoneHref} className="underline decoration-gold underline-offset-2">
+                {kontakt.phone}
+              </a>
+              .
+            </p>
+          )}
           <button
             type="submit"
-            className="group inline-flex items-center justify-center gap-3 bg-ink px-8 py-4 font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-700 sm:justify-self-start"
+            disabled={status === "sending"}
+            className="group inline-flex items-center justify-center gap-3 bg-ink px-8 py-4 font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink-700 disabled:cursor-wait disabled:opacity-60 sm:justify-self-start"
           >
-            Kostenloses Erstgespräch anfragen
+            {status === "sending" ? "Wird gesendet …" : "Kostenloses Erstgespräch anfragen"}
             <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
           </button>
         </form>
