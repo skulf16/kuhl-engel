@@ -51,6 +51,13 @@ export type Content = {
     ctaLabel: string;
     phonePrefix: string;
   };
+  standorte: {
+    eyebrow: string;
+    headline: string;
+    headlineEm: string;
+    linkLabel: string;
+    hybridNote: string;
+  };
   methode: {
     eyebrow: string;
     headline: string;
@@ -189,6 +196,14 @@ export const DEFAULTS: Content = {
     ],
     ctaLabel: "AVGS Coaching jetzt starten",
     phonePrefix: "oder ruf an:",
+  },
+  standorte: {
+    eyebrow: "Unsere Standorte",
+    headline: "Online, Berlin, Potsdam, Augsburg –",
+    headlineEm: "oder hybrid.",
+    linkLabel: "Mehr zum Standort",
+    hybridNote:
+      "Alle Coachings bieten wir auch hybrid an – vor Ort kombiniert mit Online-Terminen via Zoom.",
   },
   methode: {
     eyebrow: "Unsere Methode",
@@ -373,6 +388,17 @@ export const FIELDS: Field[] = [
       },
       { type: "text", key: "ctaLabel", label: "Beschriftung des Buttons" },
       { type: "text", key: "phonePrefix", label: "Text vor der Telefonnummer" },
+    ],
+  },
+  {
+    type: "group",
+    key: "standorte",
+    label: "Standorte – Überschriften",
+    help: "Adressen der Standorte bearbeitest Du unter „Bausteine → Standorte“.",
+    fields: [
+      ...headlineFields,
+      { type: "text", key: "linkLabel", label: "Link-Text auf den Karten" },
+      { type: "textarea", key: "hybridNote", label: "Hinweiszeile unter den Karten", rows: 2 },
     ],
   },
   {

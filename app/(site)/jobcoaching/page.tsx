@@ -6,7 +6,7 @@ import Accordion from "@/components/Accordion";
 import FactBox from "@/components/FactBox";
 import JsonLd from "@/components/JsonLd";
 import { DEFAULTS, KEY } from "@/lib/cms/pages/seite-jobcoaching";
-import { getKontakt, loadPage } from "@/lib/content";
+import { getKontakt, getStandorte, loadPage } from "@/lib/content";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
@@ -20,7 +20,11 @@ export const metadata = pageMetadata({
 });
 
 export default async function JobcoachingPage() {
-  const [c, kontakt] = await Promise.all([loadPage(KEY, DEFAULTS), getKontakt()]);
+  const [c, kontakt, standorte] = await Promise.all([
+    loadPage(KEY, DEFAULTS),
+    getKontakt(),
+    getStandorte(),
+  ]);
 
   return (
     <>
@@ -166,6 +170,54 @@ export default async function JobcoachingPage() {
                 {c.gruende.phonePrefix} {kontakt.phone}
               </a>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Standorte */}
+      <section className="bg-cream-deep py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <Reveal>
+            <p className="eyebrow flex items-center gap-3 text-gold">
+              <span aria-hidden className="inline-block h-px w-10 bg-gold" />
+              {c.standorte.eyebrow}
+            </p>
+            <h2 className="display mt-6 max-w-2xl text-4xl md:text-5xl">
+              {c.standorte.headline} <em>{c.standorte.headlineEm}</em>
+            </h2>
+          </Reveal>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {standorte.map((standort, i) => (
+              <Reveal key={standort.city} delay={i * 100} className="h-full">
+                <div className="group flex h-full flex-col border border-ink/10 bg-paper p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_56px_-28px_rgba(14,29,43,0.3)]">
+                  <p className="display text-sm italic text-gold">{String(i + 1).padStart(2, "0")}</p>
+                  <h3 className="display mt-4 text-2xl transition-colors group-hover:text-gold">
+                    {standort.city}
+                  </h3>
+                  <p className="eyebrow mt-1.5 !text-[0.58rem] text-ink/45">{standort.label}</p>
+                  <p className="mt-5 grow leading-relaxed text-ink/70">
+                    {standort.address.map((line) => (
+                      <span key={line} className="block">
+                        {line}
+                      </span>
+                    ))}
+                  </p>
+                  {standort.href && (
+                    <Link
+                      href={standort.href}
+                      className="link-gold mt-5 inline-flex items-center gap-2 text-sm font-semibold text-gold"
+                    >
+                      {c.standorte.linkLabel} <span aria-hidden>→</span>
+                    </Link>
+                  )}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={150}>
+            <p className="mt-10 text-[0.95rem] text-ink/60">
+              {c.standorte.hybridNote}
+            </p>
           </Reveal>
         </div>
       </section>
