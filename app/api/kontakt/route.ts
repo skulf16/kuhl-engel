@@ -9,7 +9,7 @@ import nodemailer from "nodemailer";
  * Konfiguration über Env-Variablen (in Coolify hinterlegen):
  *   SMTP_HOST, SMTP_PORT (Standard 587), SMTP_USER, SMTP_PASS
  *   MAIL_FROM  – Absenderadresse (Standard: SMTP_USER)
- *   MAIL_TO    – Empfänger im Büro (Standard: MAIL_FROM)
+ *   CONTACT_TO – Empfänger im Büro (alias MAIL_TO; Standard: MAIL_FROM)
  *
  * Ohne SMTP_HOST (lokale Entwicklung) wird die Mail nur ins Log geschrieben.
  */
@@ -51,7 +51,7 @@ export async function POST(req: Request) {
 
   const host = process.env.SMTP_HOST;
   const from = process.env.MAIL_FROM || process.env.SMTP_USER || "";
-  const to = process.env.MAIL_TO || from;
+  const to = process.env.CONTACT_TO || process.env.MAIL_TO || from;
 
   const mail = {
     from: name ? { name: `${name} über die Website`, address: from } : from,
