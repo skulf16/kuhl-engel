@@ -15,7 +15,7 @@ export const metadata = pageMetadata({
   description:
     "Berufsorientierung „Mein Berufseinstieg“ für Schulen, Lehrkräfte und Kooperationspartner: Projekte für ganze Schulklassen, Einzelcoaching für Schüler:innen und Materialien für den Berufsstart. Seit über 15 Jahren in Berlin & Brandenburg.",
   path: "/berufsorientierung",
-  image: "/images/jugend-klassen-coaching.jpg",
+  image: "/images/jugend-hero.jpg",
   imageAlt: "Berufsorientierung „Mein Berufseinstieg“ von Kuhl & Engel",
 });
 

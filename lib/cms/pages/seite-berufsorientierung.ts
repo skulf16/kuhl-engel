@@ -59,7 +59,7 @@ export const DEFAULTS: Content = {
     headlineEm: "Orientierung, die wirkt.",
     intro:
       "Für die meisten Jugendlichen ist die Berufs- oder Studienwahl ein schwerer Brocken – bei viel Druck und wenig Erfahrung. Seit über 15 Jahren begleiten wir Schulen in Berlin und Brandenburg mit Coachings für Schulklassen und Einzelcoachings zur beruflichen Orientierung. Professionell, jugendgerecht und mit messbarer Wirkung.",
-    image: "/images/jugend-klassen-coaching.jpg",
+    image: "/images/jugend-hero.jpg",
     ctaLabel: "Unverbindlich anfragen",
   },
   kennzahlen: {
