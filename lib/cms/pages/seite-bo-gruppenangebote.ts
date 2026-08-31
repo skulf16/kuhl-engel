@@ -28,6 +28,9 @@ export type Content = {
     headlineEm: string;
     phasen: { phase: string; points: string[] }[];
   };
+  foerderpartner: {
+    text: string;
+  };
   praxisbo: {
     eyebrow: string;
     headline: string;
@@ -99,6 +102,9 @@ export const DEFAULTS: Content = {
         ],
       },
     ],
+  },
+  foerderpartner: {
+    text: "Das Projekt „Praxisnahe Berufsorientierung“ wird aus Mitteln der Europäischen Union, der Bundesagentur für Arbeit und des Landes Brandenburg gefördert.",
   },
   praxisbo: {
     eyebrow: "Förderung über PraxisBO",
@@ -184,6 +190,20 @@ export const FIELDS: Field[] = [
           { type: "text", key: "phase", label: "Titel der Phase" },
           { type: "stringList", key: "points", label: "Häkchen-Punkte", itemLabel: "Punkt" },
         ],
+      },
+    ],
+  },
+  {
+    type: "group",
+    key: "foerderpartner",
+    label: "Förderpartner – Logoleiste",
+    fields: [
+      {
+        type: "textarea",
+        key: "text",
+        label: "Text neben den Logos",
+        rows: 3,
+        help: "Die vier Logos selbst sind fest hinterlegt.",
       },
     ],
   },

@@ -10,6 +10,29 @@ import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { KEY, DEFAULTS } from "@/lib/cms/pages/seite-bo-gruppenangebote";
 import { getKontakt, loadPage } from "@/lib/content";
 
+const FOERDERLOGOS = [
+  {
+    src: "/images/logo-praxisbo.jpg",
+    alt: "PraxisBO – Praxisnahe Berufsorientierung",
+    width: 98,
+  },
+  {
+    src: "/images/logo-spi.png",
+    alt: "Stiftung SPI, Niederlassung Brandenburg – Praxis BO, Regionalpartner Süd-Ost",
+    width: 109,
+  },
+  {
+    src: "/images/logo-foerderung.jpg",
+    alt: "Kofinanziert von der Europäischen Union · Land Brandenburg · Bundesagentur für Arbeit",
+    width: 171,
+  },
+  {
+    src: "/images/logo-kobra-net.jpg",
+    alt: "kobra.net – Beratung. Bildung. Brandenburg",
+    width: 100,
+  },
+];
+
 export const metadata: Metadata = {
   title: "Schulklassen – Berufsorientierung für Schulen (PraxisBO)",
   description:
@@ -93,6 +116,30 @@ export default async function GruppenangebotePage() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* Förderpartner */}
+      <section className="mx-auto max-w-7xl px-5 pb-24 md:px-8 md:pb-32">
+        <Reveal>
+          <div className="flex flex-col gap-8 border-y border-ink/10 py-10 lg:flex-row lg:items-center lg:justify-between">
+            <p className="max-w-md text-[0.9rem] leading-relaxed text-ink/60">
+              {c.foerderpartner.text}
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              {FOERDERLOGOS.map((logo) => (
+                <div key={logo.src} className="flex h-16 items-center border border-ink/10 bg-white px-4">
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={logo.width}
+                    height={40}
+                    className="h-10 w-auto"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       {/* PraxisBO Förderung */}
