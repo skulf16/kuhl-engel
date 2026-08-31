@@ -104,7 +104,7 @@ export default function ContactForm({
             <div className="flex flex-wrap gap-3">
               {[
                 "Projekt für Schulklassen",
-                "Einzelcoaching für Schüler:innen",
+                "Einzelcoaching für Jugendliche",
                 "Material & Sonstiges",
               ].map((option) => (
                 <label
